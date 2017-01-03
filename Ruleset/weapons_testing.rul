@@ -1,0 +1,763 @@
+items:
+  - type: STR_PULSE_RIFLE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.2
+    costBuy: 3000
+    costSell: 750
+    weight: 8
+    bigSprite: 100
+    floorSprite: 100
+    handSprite: 136
+    bulletSprite: 11
+    fireSound: 11
+    compatibleAmmo:
+      - STR_PULSE_STD_BATTERY
+      - STR_PULSE_FLARE
+      - STR_PULSE_GRENADE
+    accuracyAuto: 50
+    accuracySnap: 70
+    accuracyAimed: 110
+    tuAuto: 40
+    tuSnap: 30
+    tuAimed: 80
+    tuLoad: 5
+    tuUnload: 1
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 85
+    invWidth: 1
+    invHeight: 3
+  - type: STR_PULSE_BATTLE_RIFLE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.2
+    costBuy: 3600
+    costSell: 900
+    weight: 11
+    bigSprite: 101
+    floorSprite: 101
+    handSprite: 144
+    bulletSprite: 6
+    fireSound: 11
+    compatibleAmmo:
+      - STR_PULSE_BATTLE_BATTERY
+      - STR_PULSE_STD_BATTERY
+      - STR_PULSE_FLARE
+      - STR_PULSE_GRENADE
+    accuracySnap: 80
+    accuracyAimed: 120
+    tuSnap: 28
+    tuAimed: 65
+    tuLoad: 5
+    tuUnload: 1
+    shotgunChoke: 100
+    battleType: 1
+    twoHanded: true
+    invWidth: 1
+    invHeight: 3
+  - type: STR_PULSE_BATTLE_RIFLE_COPY
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.2
+    costBuy: 0
+    costSell: 0
+    weight: 11
+    bigSprite: 101
+    floorSprite: 1
+    handSprite: 144
+    bulletSprite: 11
+    fireSound: 11
+    compatibleAmmo:
+      - STR_PULSE_GRENADE
+    accuracySnap: 80
+    accuracyAimed: 120
+    tuSnap: 28
+    tuAimed: 65
+    shotgunChoke: 100
+    battleType: 1
+    twoHanded: true
+    invWidth: 1
+    invHeight: 3
+    recover: false
+  - type: STR_PULSE_CARBINE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.2
+    costBuy: 2800
+    costSell: 700
+    weight: 7
+    bigSprite: 102
+    floorSprite: 102
+    handSprite: 152
+    bulletSprite: 6
+    fireSound: 11
+    compatibleAmmo:
+      - STR_PULSE_STD_BATTERY
+      - STR_PULSE_FLARE
+      - STR_PULSE_GRENADE
+    accuracySnap: 80
+    accuracyAimed: 120
+    tuSnap: 25
+    tuAimed: 80
+    tuLoad: 5
+    tuUnload: 1
+    aimRange: 12
+    snapRange: 10
+    dropoff: 3
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 90
+    invWidth: 1
+    invHeight: 3
+  - type: STR_PULSE_SPUD
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.2
+    costBuy: 2400
+    costSell: 600
+    weight: 5
+    bigSprite: 103
+    floorSprite: 103
+    handSprite: 160
+    bulletSprite: 12
+    fireSound: 11
+    compatibleAmmo:
+      - STR_PULSE_FLARE
+      - STR_PULSE_GRENADE
+      - STR_PULSE_OVERCHARGED_FLARE
+    accuracySnap: 80
+    accuracyAimed: 120
+    tuSnap: 22
+    tuAimed: 40
+    tuLoad: 5
+    tuUnload: 1
+    aimRange: 12
+    snapRange: 10
+    dropoff: 3
+    arcingShot: true
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 95
+    invWidth: 1
+    invHeight: 2
+  - type: STR_PULSE_STD_BATTERY
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.1
+    costBuy: 1000
+    costSell: 250
+    weight: 3
+    bigSprite: 104
+    floorSprite: 104
+    handSprite: 168
+    bulletSprite: 11
+    hitSound: 19
+    hitAnimation: 36
+    power: 36
+    damageType: 1
+    clipSize: -1
+    battleType: 2
+  - type: STR_PULSE_BATTLE_BATTERY
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.1
+    costBuy: 1200
+    costSell: 300
+    weight: 3
+    bigSprite: 105
+    floorSprite: 105
+    handSprite: 176
+    hitSound: 19
+    hitAnimation: 36
+    shotgunBehavior: 1
+    shotgunSpread: 5
+    shotgunPellets: 3
+    power: 30
+    damageAlter:
+        armorEffectiveness: 0.75
+    damageType: 1
+    clipSize: -1
+    battleType: 2
+  - type: STR_PULSE_FLARE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.1
+    costBuy: 200
+    costSell: 50
+    weight: 2
+    bigSprite: 106
+    floorSprite: 106
+    bulletSprite: 12
+    handSprite: 184
+    hitSound: 0
+    hitAnimation: 0
+    power: 40
+    damageType: 2
+    damageAlter:
+        FireBlastCalc: False
+    clipSize: 1
+    battleType: 2
+  - type: STR_PULSE_OVERCHARGED_FLARE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.1
+    costBuy: 400
+    costSell: 100
+    weight: 2
+    bigSprite: 107
+    floorSprite: 107
+    handSprite: 192
+    bulletSprite: 12
+    fireSound: 0
+    hitSound: 0
+    hitAnimation: 0
+    tuAimed: 45
+    accuracyAimed: 80
+    accuracyMultiplier:
+      firing: 0.0
+      throwing: 1.0
+    maxRange: 16
+    power: 60
+    damageType: 2
+    damageAlter:
+        FireBlastCalc: False
+        RandomType: 2
+    blastRadius: 2
+    clipSize: 1
+    battleType: 1
+  - type: STR_PULSE_GRENADE
+    requires:
+      - STR_PULSE_WEAPONS
+    size: 0.1
+    costBuy: 300
+    costSell: 75
+    weight: 2
+    bigSprite: 108
+    floorSprite: 108
+    handSprite: 200
+    bulletSprite: 12
+    hitSound: 0
+    hitAnimation: 0
+    power: 50
+    damageType: 3
+    damageAlter:
+        toStun: 1.0
+    clipSize: 1
+    battleType: 2
+  - type: STR_LINAC_PISTOL
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 10000
+    costSell: 2500
+    weight: 7
+    bigSprite: 109
+    floorSprite: 109
+    handSprite: 208
+    bulletSprite: 13
+    compatibleAmmo:
+      - STR_LINAC_PISTOL_BATTERY
+      - STR_LINAC_FLARE
+      - STR_LINAC_GRENADE
+    accuracyAuto: 65
+    accuracySnap: 70
+    accuracyAimed: 85
+    tuAuto: 22
+    tuSnap: 16
+    tuAimed: 30
+    tuLoad: 5
+    tuUnload: 1
+    aimRange: 20
+    snapRange: 15
+    autoRange: 9
+    battleType: 1
+    invWidth: 1
+    invHeight: 2
+  - type: STR_LINAC_CARBINE
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 15000
+    costSell: 3750
+    weight: 7
+    bigSprite: 110
+    floorSprite: 110
+    handSprite: 216
+    bulletSprite: 13
+    compatibleAmmo:
+      - STR_LINAC_PISTOL_BATTERY
+      - STR_LINAC_FLARE
+      - STR_LINAC_GRENADE
+    accuracySnap: 80
+    accuracyAimed: 120
+    tuSnap: 22
+    tuAimed: 65
+    tuLoad: 5
+    tuUnload: 1
+    aimRange: 22
+    snapRange: 14
+    dropoff: 3
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 90
+    invWidth: 1
+    invHeight: 3
+  - type: STR_LINAC_RIFLE
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.2
+    costBuy: 18000
+    costSell: 4500
+    weight: 8
+    bigSprite: 111
+    floorSprite: 111
+    handSprite: 224
+    bulletSprite: 11
+    fireSound: 11
+    compatibleAmmo:
+      - STR_LINAC_STD_BATTERY
+      - STR_LINAC_FLARE
+      - STR_LINAC_GRENADE
+    accuracyAuto: 55
+    accuracySnap: 78
+    accuracyAimed: 120
+    tuAuto: 35
+    tuSnap: 28
+    tuAimed: 75
+    tuLoad: 5
+    tuUnload: 1
+    battleType: 1
+    twoHanded: true
+    oneHandedPenalty: 85
+    invWidth: 1
+    invHeight: 3
+  - type: STR_LINAC_BATTLE_RIFLE
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.2
+    costBuy: 20000
+    costSell: 5000
+    weight: 11
+    bigSprite: 112
+    floorSprite: 112
+    handSprite: 232
+    bulletSprite: 6
+    fireSound: 11
+    compatibleAmmo:
+      - STR_LINAC_BATTLE_BATTERY
+      - STR_LINAC_STD_BATTERY
+      - STR_LINAC_FLARE
+      - STR_LINAC_GRENADE
+    accuracySnap: 90
+    accuracyAimed: 135
+    tuSnap: 22
+    tuAimed: 55
+    tuLoad: 5
+    tuUnload: 1
+    shotgunChoke: 100
+    battleType: 1
+    twoHanded: true
+    invWidth: 1
+    invHeight: 3
+  - type: STR_LINAC_BATTLE_RIFLE_COPY
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.2
+    costBuy: 0
+    costSell: 0
+    weight: 11
+    bigSprite: 112
+    floorSprite: 112
+    handSprite: 232
+    bulletSprite: 6
+    fireSound: 11
+    compatibleAmmo:
+      - STR_LINAC_GRENADE
+    accuracySnap: 90
+    accuracyAimed: 135
+    tuSnap: 22
+    tuAimed: 55
+    tuLoad: 5
+    tuUnload: 1
+    shotgunChoke: 100
+    battleType: 1
+    twoHanded: true
+    invWidth: 1
+    invHeight: 3
+    recover: false
+  - type: STR_LINAC_PISTOL_BATTERY
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 4000
+    costSell: 1000
+    weight: 3
+    bigSprite: 113
+    floorSprite: 113
+    handSprite: 240
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    power: 55
+    powerRangeRediuction: 3.0
+    powerRangeThreshold: 15.0
+    damageType: 5
+    damageAlter:
+      ToArmorPre: 0.04      
+    clipSize: -1
+    battleType: 2
+  - type: STR_LINAC_STD_BATTERY
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 5000
+    costSell: 1250
+    weight: 3
+    bigSprite: 114
+    floorSprite: 114
+    handSprite: 248
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    power: 72
+    powerRangeRediuction: 3.0
+    powerRangeThreshold: 20.0
+    damageType: 5
+    damageAlter:
+      ToArmorPre: 0.05      
+    clipSize: -1
+    battleType: 2
+  - type: STR_LINAC_BATTLE_BATTERY
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 8000
+    costSell: 2000
+    weight: 3
+    bigSprite: 115
+    floorSprite: 115
+    handSprite: 256
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    shotgunBehavior: 1
+    shotgunSpread: 5
+    shotgunPellets: 3
+    power: 60
+    powerRangeRediuction: 2.0
+    powerRangeThreshold: 30.0
+    damageType: 5
+    damageAlter:
+      ToArmorPre: 0.06      
+    clipSize: -1
+    battleType: 2
+  - type: STR_LINAC_FLARE
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 1500
+    costSell: 375
+    weight: 2
+    bigSprite: 116
+    floorSprite: 116
+    bulletSprite: 12
+    handSprite: 264
+    hitSound: 0
+    hitAnimation: 0
+    power: 60
+    damageType: 2
+    damageAlter:
+        FireBlastCalc: False
+        RandomType: 2
+        ToArmorPre: 0.05
+    clipSize: 1
+    battleType: 2
+  - type: STR_LINAC_GRENADE
+    requires:
+      - STR_LINAC_WEAPONS
+    size: 0.1
+    costBuy: 2000
+    costSell: 500
+    weight: 2
+    bigSprite: 117
+    floorSprite: 117
+    handSprite: 272
+    bulletSprite: 12
+    hitSound: 0
+    hitAnimation: 0
+    power: 75
+    damageType: 3
+    damageAlter:
+        toArmorPre: 0.05
+        toStun: 1.0
+    clipSize: 1
+    battleType: 2
+research:
+  - name: STR_PULSE_WEAPONS
+    cost: 50
+    points: 10
+    dependencies:
+      - STR_LASER_WEAPONS
+  - name: STR_LINAC_WEAPONS
+    cost: 100
+    points: 10
+    dependencies:
+      - STR_PULSE_WEAPONS
+      - STR_UFO_POWER_SOURCE
+ufopaedia:
+  - id: STR_PULSE_WEAPONS
+    type_id: 8
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_WEAPONS_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_RIFLE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_RIFLE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_STD_BATTERY
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_PULSE_STD_BATTERY_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_FLARE
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_PULSE_FLARE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_GRENADE
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_PULSE_GRENADE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_BATTLE_RIFLE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_BATTLE_RIFLE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_BATTLE_RIFLE_COPY
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_BATTLE_RIFLE_COPY_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_BATTLE_BATTERY
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_BATTLE_BATTERY_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_CARBINE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_CARBINE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_SPUD
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_SPUD_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_PULSE_OVERCHARGED_FLARE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_PULSE_OVERCHARGED_FLARE_PEDIA
+    requires:
+      - STR_PULSE_WEAPONS
+  - id: STR_LINAC_WEAPONS
+    type_id: 8
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_WEAPONS_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_PISTOL
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_PISTOL_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_CARBINE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_CARBINE_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_RIFLE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_RIFLE_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_BATTLE_RIFLE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_BATTLE_RIFLE_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_BATTLE_RIFLE_COPY
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_LINAC_BATTLE_RIFLE_COPY_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_PISTOL_BATTERY
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_LINAC_PISTOL_BATTERY_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_STD_BATTERY
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_LINAC_STD_BATTERY_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_BATTLE_BATTERY
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_LINAC_BATTLE_BATTERY_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_FLARE
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_LINAC_FLARE_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+  - id: STR_LINAC_GRENADE
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    text: STR_LINAC_GRENADE_PEDIA
+    requires:
+      - STR_LINAC_WEAPONS
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      100: Resources/Bigobs/pulse_rifle.png
+      101: Resources/Bigobs/pulse_battle_rifle.png
+      102: Resources/Bigobs/pulse_carbine.png
+      103: Resources/Bigobs/pulse_spud.png
+      104: Resources/Bigobs/pulse_battery.png
+      105: Resources/Bigobs/pulse_battle_battery.png
+      106: Resources/Bigobs/pulse_flare.png
+      107: Resources/Bigobs/pulse_overcharged_flare.png
+      108: Resources/Bigobs/pulse_grenade.png
+      109: Resources/Bigobs/linac_pistol.png
+      110: Resources/Bigobs/linac_carbine.png
+      111: Resources/Bigobs/linac_rifle.png
+      112: Resources/Bigobs/linac_battle_rifle.png
+      113: Resources/Bigobs/linac_pistol_battery.png
+      114: Resources/Bigobs/linac_battery.png
+      115: Resources/Bigobs/linac_battle_battery.png
+      116: Resources/Bigobs/linac_flare.png
+      117: Resources/Bigobs/linac_grenade.png
+  - type: FLOOROB.PCK
+    files:
+      100: Resources/Floorobs/pulse_rifle.png
+      101: Resources/Floorobs/pulse_battle_rifle.png
+      102: Resources/Floorobs/pulse_carbine.png
+      103: Resources/Floorobs/pulse_spud.png
+      104: Resources/Floorobs/pulse_battery.png
+      105: Resources/Floorobs/pulse_battle_battery.png
+      106: Resources/Floorobs/pulse_flare.png
+      107: Resources/Floorobs/pulse_overcharged_flare.png
+      108: Resources/Floorobs/pulse_grenade.png
+      109: Resources/Floorobs/linac_pistol.png
+      110: Resources/Floorobs/linac_carbine.png
+      111: Resources/Floorobs/linac_rifle.png
+      112: Resources/Floorobs/linac_battle_rifle.png
+      113: Resources/Floorobs/linac_pistol_battery.png
+      114: Resources/Floorobs/linac_battery.png
+      115: Resources/Floorobs/linac_battle_battery.png
+      116: Resources/Floorobs/linac_flare.png
+      117: Resources/Floorobs/linac_grenade.png
+  - type: HANDOB.PCK
+    height: 40
+    width: 256
+    subX: 32
+    subY: 40
+    files:
+      136: Resources/Handobs/pulse_rifle.png
+      144: Resources/Handobs/pulse_battle_rifle.png
+      152: Resources/Handobs/pulse_carbine.png
+      160: Resources/Handobs/pulse_spud.png
+      168: Resources/Handobs/pulse_battery.png
+      176: Resources/Handobs/pulse_battle_battery.png
+      184: Resources/Handobs/pulse_flare.png
+      192: Resources/Handobs/pulse_overcharged_flare.png
+      200: Resources/Handobs/pulse_grenade.png
+      208: Resources/Handobs/linac_pistol.png
+      216: Resources/Handobs/linac_carbine.png
+      224: Resources/Handobs/linac_rifle.png
+      232: Resources/Handobs/linac_battle_rifle.png
+      240: Resources/Handobs/linac_pistol_battery.png
+      248: Resources/Handobs/linac_battery.png
+      256: Resources/Handobs/linac_battle_battery.png
+      264: Resources/Handobs/linac_flare.png
+      272: Resources/Handobs/linac_grenade.png
+  - type: Projectiles
+    width: 105
+    height: 3
+    subX: 3
+    subY: 3
+    files:
+      385: Resources/Bulletsprites/pulse_standard_2.png
+      420: Resources/Bulletsprites/pulse_flare.png
+      455: Resources/Bulletsprites/linac_standard.png
+extraStrings:
+  - type: en-US
+    strings:
+#Item Names
+      STR_PULSE_WEAPONS: "Pulse Delivery System Weapons"
+      STR_PULSE_RIFLE: "PDS Rifle"
+      STR_PULSE_BATTLE_RIFLE: "PDS Battle Rifle"
+      STR_PULSE_BATTLE_RIFLE_COPY: "PDS Battle Rifle, Con't"
+      STR_PULSE_CARBINE: "sPDS Carbine"
+      STR_PULSE_SPUD: "Spud Gun"
+      STR_PULSE_STD_BATTERY: "PDS Battery"
+      STR_PULSE_BATTLE_BATTERY: "PDS Battle Rifle Battery"
+      STR_PULSE_FLARE: "PDS Flare Charge"
+      STR_PULSE_OVERCHARGED_FLARE: "PDS Overcharged Flare"
+      STR_PULSE_GRENADE: "PDS Concussive Charge"
+      STR_LINAC_WEAPONS: "LINAC Weapons"
+      STR_LINAC_PISTOL: "LINAC Pistol"
+      STR_LINAC_CARBINE: "LINAC Carbine"
+      STR_LINAC_RIFLE: "LINAC Rifle"
+      STR_LINAC_BATTLE_RIFLE: "LINAC Battle Rifle"
+      STR_LINAC_BATTLE_RIFLE_COPY: "LINAC Battle Rifle, Con't"
+      STR_LINAC_PISTOL_BATTERY: "LINAC Pistol Battery"
+      STR_LINAC_STD_BATTERY: "LINAC Rifle Battery"
+      STR_LINAC_BATTLE_BATTERY: "LINAC Battle Rifle Battery"
+      STR_LINAC_FLARE: "LINAC Flare Charge"
+      STR_LINAC_GRENADE: "LINAC Concussive Charge"
+#Pedia Entries
+      STR_PULSE_WEAPONS_PEDIA: "Based on the breakthroughs in laser weapons technology, the contractor for our conventional weapons is prepared to supply us with upgraded versions of their small arms, called the Pulse Delivery System (PDS). While not as powerful as lasers, these weapons boast higher accuracy and the same unlimited ammunition, as well as being able to fire alternative grenade-like munitions."
+      STR_PULSE_RIFLE_PEDIA: "Designed as a specialized munitions launcher, the Pulse Delivery System Rifle entered service as standard-issue weapon after a battery was developed to fire bullet-sized energized particle streams in rapid pulses."
+      STR_PULSE_BATTLE_RIFLE_PEDIA: "The Pulse Delivery System Battle Rifle offers a longer linear particle accelerator than the standard rifle to increase the velocity of its projectiles, and the capacitors have been re-tuned to fire in accurate three-round bursts."
+      STR_PULSE_BATTLE_RIFLE_COPY_PEDIA: "(Continued from previous entry)"
+      STR_PULSE_BATTLE_BATTERY_PEDIA: "This is a modified PDS Battery, designed for specialized use in the PDS Battle Rifle. Retaining the longevity of the original device, the power source has been modified to transfer greater charge to the particle accelerator's capacitors, allowing them to cycle in a quick three-round burst before recharging. The particle streams themselves are somewhat smaller to allow for such burst firing, but the increased velocity translates to better performance against armored targets."
+      STR_PULSE_CARBINE_PEDIA: "Intended for military crews on reconaissance missions, the Pulse Delivery System Carbine is sold commercially as well with a 'survival' designation and without automatic fire capability."
+      STR_PULSE_SPUD_PEDIA: "Removing the stock and cutting out the receiver for the standard particle stream battery allows for extra capacitors to launch larger explosive charges for makeshift indirect fire from a handgun-sized package."
+      STR_PULSE_OVERCHARGED_FLARE_PEDIA: "With the capacitors overcharged beyond normal safety tolerances, the flare can discharge even after the relatively light impact of being thrown, turning it into an improvised grenade of sorts. It can also be fired out of a PDS weapon modified to prevent catastrophic overload of the particle accelerator."
+      STR_LINAC_WEAPONS_PEDIA: "Giving our weapons contractor access to the data we've gathered on UFO Power Sources has led to a line of improved particle-accelerator-based weapons, called LINAC after the high-power linear accelerators they employ. The new design for containment fields allows the projectiles to be completely ionized before firing, leading to an effect similar to the plasma weapons the invaders employ. Impacts against even solid armor plating will degrade its effectiveness, so sustained fire can defeat even the most hardened of targets. The trade-off is that the projectiles gradually return to a charge-neutral state, leading to a drop in power at long distances."
+      STR_LINAC_PISTOL_PEDIA: "The LINAC Pistol is a marvel of minaturization; capable of firing with only moderately reduced velocity compared to the rifles, the smaller accelerators require less cooling, leading to an increased capacity for rapid cycling."
+      STR_LINAC_CARBINE_PEDIA: "Little more than an extension of the compact design of the pistol with a longer accelerator, the LINAC Carbine is favored for lightweight and accurate deployment of the specialized charges at close- to mid-range."
+      STR_LINAC_RIFLE_PEDIA: "A powerful upgrade over our previous small arms, the LINAC Rifle is well-balanced between rate of fire, accuracy, and anti-armor capability."
+      STR_LINAC_BATTLE_RIFLE_PEDIA: "Lengthening the accelerator from the rifle design allows for three charges to propagate in rapid succession down the weapon, provided an appropriately-tuned battery. The higher velocity of the LINAC Battle Rifle rounds increase the range as well."
+      STR_LINAC_BATTLE_RIFLE_COPY_PEDIA: "(Continued from previous entry)"
+      STR_LINAC_PISTOL_BATTERY_PEDIA: "LINAC Pistol Battery"
+      STR_LINAC_STD_BATTERY_PEDIA: "LINAC Rifle Battery"
+      STR_LINAC_BATTLE_BATTERY_PEDIA: "LINAC Battle Rifle Battery"
+      STR_LINAC_FLARE_PEDIA: "LINAC Flare Charge"
+      STR_LINAC_GRENADE_PEDIA: "LINAC Concussive Charge"
