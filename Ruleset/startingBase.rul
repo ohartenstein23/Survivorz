@@ -1,0 +1,11 @@
+startingBase:
+  randomSoldiers: 0
+  items:
+    STR_LINAC_CARBINE: 2
+    STR_LINAC_PISTOL: 2
+    STR_LINAC_PISTOL_BATTERY: 6
+    STR_OFFICER_CRYOCHAMBER: 1
+    STR_ACTIVE_CRYOCHAMBER: 3
+  crafts:
+  scientists: 1
+  engineers: 1

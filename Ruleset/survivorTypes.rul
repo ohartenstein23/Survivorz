@@ -1,0 +1,427 @@
+soldiers:
+# all secondary stats cap at vanilla xcom levels, maybe slightly higher for tu/stamina (or give armor bonuses)
+  - delete: STR_SOLDIER
+#
+# *** Start of officers ***
+#
+  - type: STR_CHIEF_ENGINEER
+    costBuy: 0
+    costSalary: 20000
+# stats
+# average physical stats, somewhat higher cap in martial skills
+# good throwing skill
+    minStats:
+      tu: 65
+      stamina: 70
+      health: 40
+      bravery: 50
+      reactions: 50
+      firing: 50
+      throwing: 60
+      strength: 30
+      psiStrength: 55
+      psiSkill: 0
+      melee: 50
+    maxStats:
+      tu: 65
+      stamina: 70
+      health: 40
+      bravery: 50
+      reactions: 50
+      firing: 50
+      throwing: 60
+      strength: 30
+      psiStrength: 55
+      psiSkill: 16
+      melee: 50
+    statCaps:
+      tu: 80
+      stamina: 100
+      health: 60
+      bravery: 100
+      reactions: 100
+      firing: 120
+      throwing: 100
+      strength: 70
+      psiStrength: 70
+      psiSkill: 100
+      melee: 120
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+  - type: STR_HEAD_SCIENTIST
+# stats:
+# highest psi equivalent, gets item to train psi strength
+# lowest starting physical stats
+# poor martial skills, lower caps
+    minStats:
+      tu: 58
+      stamina: 64
+      health: 32
+      bravery: 30
+      reactions: 45
+      firing: 40
+      throwing: 40
+      strength: 22
+      psiStrength: 78
+      psiSkill: 0
+      melee: 30
+    maxStats:
+      tu: 58
+      stamina: 64
+      health: 32
+      bravery: 30
+      reactions: 45
+      firing: 40
+      throwing: 40
+      strength: 22
+      psiStrength: 78
+      psiSkill: 16
+      melee: 30
+    statCaps:
+      tu: 80
+      stamina: 100
+      health: 60
+      bravery: 100
+      reactions: 100
+      firing: 100
+      throwing: 90
+      strength: 60
+      psiStrength: 100
+      psiSkill: 100
+      melee: 80
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+  - type: STR_GARRISON_OFFICER
+    costBuy: 0
+    costSalary: 20000
+# stats:
+# high physical stats
+# best starting martial skills, high caps in firing/reactions/melee
+    minStats:
+      tu: 70
+      stamina: 85
+      health: 50
+      bravery: 70
+      reactions: 62
+      firing: 70
+      throwing: 50
+      strength: 40
+      psiStrength: 48
+      psiSkill: 0
+      melee: 50
+    maxStats:
+      tu: 70
+      stamina: 85
+      health: 50
+      bravery: 70
+      reactions: 62
+      firing: 70
+      throwing: 50
+      strength: 40
+      psiStrength: 48
+      psiSkill: 16
+      melee: 50
+    statCaps:
+      tu: 80
+      stamina: 120
+      health: 70
+      bravery: 100
+      reactions: 110
+      firing: 125
+      throwing: 90
+      strength: 70
+      psiStrength: 60
+      psiSkill: 100
+      melee: 125
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+#
+# *** Start of other survivors ***
+#
+  - type: STR_TECHNICIAN
+    costBuy: 0
+    costSalary: 20000
+# not great physical stats, but better throwing and firing accuracy than colonists
+    minStats:
+      tu: 50
+      stamina: 40
+      health: 25
+      bravery: 10
+      reactions: 30
+      firing: 45
+      throwing: 40
+      strength: 20
+      psiStrength: 30
+      psiSkill: 0
+      melee: 20
+    maxStats:
+      tu: 60
+      stamina: 60
+      health: 35
+      bravery: 60
+      reactions: 60
+      firing: 65
+      throwing: 65
+      strength: 40
+      psiStrength: 50
+      psiSkill: 16
+      melee: 40
+    statCaps:
+      tu: 80
+      stamina: 100
+      health: 60
+      bravery: 100
+      reactions: 100
+      firing: 120
+      throwing: 90
+      strength: 70
+      psiStrength: 70
+      psiSkill: 100
+      melee: 120
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+  - type: STR_COLONIST
+    costBuy: 0
+    costSalary: 20000
+# high starting hp, stamina, not as good martial skills
+# better psi-equivalent potential 
+    minStats:
+      tu: 50
+      stamina: 50
+      health: 32
+      bravery: 20
+      reactions: 30
+      firing: 40
+      throwing: 30
+      strength: 25
+      psiStrength: 40
+      psiSkill: 0
+      melee: 30
+    maxStats:
+      tu: 60
+      stamina: 70
+      health: 40
+      bravery: 60
+      reactions: 60
+      firing: 60
+      throwing: 60
+      strength: 40
+      psiStrength: 65
+      psiSkill: 16
+      melee: 50
+    statCaps:
+      tu: 80
+      stamina: 100
+      health: 60
+      bravery: 100
+      reactions: 100
+      firing: 120
+      throwing: 90
+      strength: 70
+      psiStrength: 80
+      psiSkill: 100
+      melee: 120
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+  - type: STR_SOLDIER
+    costBuy: 0
+    costSalary: 20000
+# good all-around, highest starting strength
+    minStats:
+      tu: 50
+      stamina: 50
+      health: 32
+      bravery: 20
+      reactions: 40
+      firing: 50
+      throwing: 30
+      strength: 30
+      psiStrength: 30
+      psiSkill: 0
+      melee: 50
+    maxStats:
+      tu: 60
+      stamina: 70
+      health: 40
+      bravery: 60
+      reactions: 60
+      firing: 65
+      throwing: 60
+      strength: 42
+      psiStrength: 50
+      psiSkill: 16
+      melee: 70
+    statCaps:
+      tu: 80
+      stamina: 100
+      health: 60
+      bravery: 100
+      reactions: 100
+      firing: 120
+      throwing: 90
+      strength: 70
+      psiStrength: 70
+      psiSkill: 100
+      melee: 120
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+#
+# *** Start of AI subroutines ***
+#
+  - type: STR_AI_SUBROUTINE
+    costBuy: 0
+    costSalary: 20000
+# fixed starting stats
+# everything done by armor (different chassis)
+    minStats:
+      tu: 60
+      stamina: 80
+      health: 20
+      bravery: 100
+      reactions: 50
+      firing: 50
+      throwing: 0
+      strength: 0
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+    maxStats:
+      tu: 60
+      stamina: 80
+      health: 20
+      bravery: 100
+      reactions: 50
+      firing: 50
+      throwing: 0
+      strength: 0
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+    statCaps:
+      tu: 60
+      stamina: 80
+      health: 20
+      bravery: 100
+      reactions: 50
+      firing: 50
+      throwing: 0
+      strength: 0
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+    armor: STR_NONE_UC
+    standHeight: 22
+    kneelHeight: 14
+    femaleFrequency: 50
+    soldierNames:
+      - SoldierName/
+    deathMale: [41, 42, 43]
+    deathFemale: [44, 45, 46]
+items:
+  - type: STR_OFFICER_CRYOCHAMBER
+    size: 1
+  - type: STR_ACTIVE_CRYOCHAMBER
+    size: 1
+  - type: STR_EMPTY_CRYOCHAMBER
+    size: 0.1
+manufacture:
+  - name: STR_CHIEF_ENGINEER_WAKEUP
+    category: STR_CRYOCHAMBERS
+    time: 1
+    requiredItems:
+      STR_OFFICER_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_CHIEF_ENGINEER
+  - name: STR_HEAD_SCIENTIST_WAKEUP
+    category: STR_CRYOCHAMBERS
+    size: 0
+    time: 1
+    cost: 0
+    requiredItems:
+      STR_OFFICER_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_HEAD_SCIENTIST
+  - name: STR_GARRISON_OFFICER_WAKEUP
+    category: STR_CRYOCHAMBERS
+    size: 0
+    time: 1
+    cost: 0
+    requiredItems:
+      STR_OFFICER_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_GARRISON_OFFICER
+  - name: STR_TECHNICIAN_WAKEUP
+    category: STR_CRYOCHAMBERS
+    size: 0
+    time: 1
+    cost: 0
+    requiredItems:
+      STR_ACTIVE_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_TECHNICIAN
+  - name: STR_COLONIST_WAKEUP
+    category: STR_CRYOCHAMBERS
+    size: 0
+    time: 1
+    cost: 0
+    requiredItems:
+      STR_ACTIVE_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_COLONIST
+  - name: STR_SOLDIER_WAKEUP
+    category: STR_CRYOCHAMBERS
+    size: 0
+    time: 1
+    cost: 0
+    requiredItems:
+      STR_ACTIVE_CRYOCHAMBER: 1
+    producedItems:
+      STR_EMPTY_CRYOCHAMBER: 1
+    spawnedPersonType: STR_SOLDIER
+extraStrings:
+  - type: en-US
+    strings:
+      STR_CRYOCHAMBERS: "Cryochamber Activation"
+      STR_PERSON_JOINING: "Person Joining"
+      STR_NOT_ENOUGH_LIVING_SPACE_AT_BASE: "Not enough living space to accomodate{NEWLINE}{0}{NEWLINE}at{NEWLINE}{1}"
