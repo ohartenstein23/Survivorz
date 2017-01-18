@@ -1,0 +1,80 @@
+research:
+# Starting research, the getOneFree opens up the world mission generation
+  - name: STR_POST
+    cost: 0
+    score: 0
+    unlocks:
+#      - STR_STORYSTARTSHERE
+    getOneFree:
+      - STR_WORLDGEN_FAMINE # Resources are harder to come by, fewer lucrative missions
+      - STR_WORLDGEN_PLAGUE # Environments are more dangerous, your soldiers spend more time off
+      - STR_WORLDGEN_WAR # Face harder enemies earlier, more anti-player missions
+  - name: STR_WORLDGEN_FAMINE
+    dependencies:
+      - STR_UNAVAILABLE
+    lookup:
+      - STR_PLANETARY_SCAN
+    cost: 0
+    score: 0
+  - name: STR_WORLDGEN_PLAGUE
+    dependencies:
+      - STR_UNAVAILABLE
+    lookup:
+      - STR_PLANETARY_SCAN
+    cost: 0
+    score: 0
+  - name: STR_WORLDGEN_WAR
+    dependencies:
+      - STR_UNAVAILABLE
+    lookup:
+      - STR_PLANETARY_SCAN
+    cost: 0
+    score: 0
+
+# Research pedia articles
+ufopaedia:
+  - id: STR_POST
+    type_id: 8
+#    section: STR_SOMETHING
+    text: STR_POST_PEDIA
+    requires:
+      - STR_POST
+  - id: STR_WORLDGEN_FAMINE
+    type_id: 8
+#    section: STR_SOMETHING
+    title: STR_PLANETARY_SCAN
+    text: STR_WORLDGEN_FAMINE_PEDIA
+    requires:
+      - STR_WORLDGEN_FAMINE
+      - STR_POST
+  - id: STR_WORLDGEN_PLAGUE
+    type_id: 8
+#    section: STR_SOMETHING
+    title: STR_PLANETARY_SCAN
+    text: STR_WORLDGEN_PLAGUE_PEDIA
+    requires:
+      - STR_WORLDGEN_PLAGUE
+      - STR_POST
+  - id: STR_WORLDGEN_WAR
+    type_id: 8
+#    section: STR_SOMETHING
+    title: STR_PLANETARY_SCAN
+    text: STR_WORLDGEN_WAR_PEDIA
+    requires:
+      - STR_WORLDGEN_WAR
+      - STR_POST
+
+# Pedia and research strings
+extraStrings:
+  - type: en-US
+    strings:
+      STR_POST: “Power-On Systems Test”
+      STR_POST_PEDIA: “Lorem Ipsum”
+      STR_PLANETARY_SCAN: “Initial Planetary Scan”
+      STR_WORLDGEN_FAMINE: “Famine World Generated”
+      STR_WORLDGEN_FAMINE_PEDIA: “Lorem Ipsum F”
+      STR_WORLDGEN_PLAGUE: “Plague World Generated”
+      STR_WORLDGEN_PLAGUE_PEDIA: “Lorem Ipsum P”
+      STR_WORLDGEN_WAR: “War World Generated”
+      STR_WORLDGEN_WAR_PEDIA: “Lorem Ipsum W”
+
