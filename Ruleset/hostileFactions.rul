@@ -1,0 +1,91 @@
+alienRaces:
+  - type: STR_MINING_CREW
+# Mostly unarmed, a few armed overseer types
+# Placeholders for now
+      - STR_MUTON_SOLDIER
+      - STR_SECTOID_SOLDIER
+  - type: STR_MILITARY_CREW
+# Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
+# Placeholders for now
+      - STR_ETHEREAL_COMMANDER
+      - STR_ETHEREAL_SOLDIER
+      - STR_FLOATER_NAVIGATOR
+      - STR_SNAKEMAN_ENGINEER
+      - STR_MUTON_SOLDIER
+      - STR_SECTOID_SOLDIER
+
+# Alien weapons
+items:
+  - type: STR_ALIEN_MININGTOOL
+# Filler weapon, mostly on mining crew
+    costSell: 0
+    costBuy: 0
+    size: 0.1
+    requires:
+      - STR_ALIEN_TOOL_USE
+    bigSprite: -1
+    handSprite: -1
+    floorSprite: -1
+    power: 40
+    damageType: 6
+    damageAlter:
+      RandomType: 2
+      ToHealth: 0.5
+    costMelee:
+      tu: 40
+      energy: 10
+    twoHanded: true
+    battleType: 3
+  - type: STR_ALIEN_CARBINE
+# Ranged weapon for overseers, footsoldiers 
+  - type: STR_ALIEN_LAUNCHER
+# Ranged stun and explosive weapon for overseers, stun on capture mission, mixed on mining and military crew
+# Accurate but slow snap fire, 3-6 clip size, aimed mode for player use
+    costBuy: 0
+    costSell: 0
+    size: 0.2
+    requires:
+      - STR_ALIEN_WEAPON_USE
+    bigSprite: -1
+    handSprite: -1
+    floorSprite: -1
+    compatibleAmmo:
+      - STR_ALIEN_LAUNCHER_STUNBOMB
+      - STR_ALIEN_LAUNCHER_GASBOMB
+    tuAimed: 65
+    tuSnap: 40
+    accuracyAimed: 90
+    accuracySnap: 65
+    twoHanded: true
+    battleType: 1
+  - type: STR_ALIEN_LAUNCHER_STUNBOMB
+    costBuy: 0
+    costSell: 0
+    size: 0.05
+    requires:
+      - STR_ALIEN_WEAPON_USE
+    bigSprite: -1
+    handSprite: -1
+    floorSprite: -1
+    power: 50
+    damageType: 6
+    clipSize: 5
+    battleType: 2
+  - type: STR_ALIEN_LAUNCHER_GASBOMB
+    costBuy: 0
+    costSell: 0
+    size: 0.05
+    requires:
+      - STR_ALIEN_WEAPON_USE
+    bigSprite: -1
+    handSprite: -1
+    floorSprite: -1
+    power: 40
+    damageType: 9
+    damageAlter:
+      ResistType: 8
+      RandomType: 6
+      ToHealth: 1.0
+      ToStun: 0.25
+    clipSize: 5
+    battleType: 2
