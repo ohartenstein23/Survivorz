@@ -1,6 +1,7 @@
 startingBase:
   randomSoldiers: 0
   items:
+    STR_POST_ITEM: 1
     STR_LINAC_CARBINE: 2
     STR_LINAC_PISTOL: 2
     STR_LINAC_PISTOL_BATTERY: 6

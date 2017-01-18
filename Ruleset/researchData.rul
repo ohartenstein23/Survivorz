@@ -1,8 +1,12 @@
 research:
 # Starting research, the getOneFree opens up the world mission generation
-  - name: STR_POST
+  - name: STR_POST_ITEM
+    lookup:
+      - STR_POST
     cost: 0
     score: 0
+    needItem: true
+    destroyItem: true
     unlocks:
 #      - STR_STORYSTARTSHERE
     getOneFree:
@@ -31,6 +35,12 @@ research:
     cost: 0
     score: 0
 
+items:
+# getOneFree w/o item is repeatable, need this to make initial research run only once
+  - type: STR_POST_ITEM
+    costBuy: 0
+    costSell: 0
+
 # Research pedia articles
 ufopaedia:
   - id: STR_POST
@@ -38,7 +48,7 @@ ufopaedia:
 #    section: STR_SOMETHING
     text: STR_POST_PEDIA
     requires:
-      - STR_POST
+      - STR_POST_ITEM
   - id: STR_WORLDGEN_FAMINE
     type_id: 8
 #    section: STR_SOMETHING
@@ -46,7 +56,7 @@ ufopaedia:
     text: STR_WORLDGEN_FAMINE_PEDIA
     requires:
       - STR_WORLDGEN_FAMINE
-      - STR_POST
+      - STR_POST_ITEM
   - id: STR_WORLDGEN_PLAGUE
     type_id: 8
 #    section: STR_SOMETHING
@@ -54,7 +64,7 @@ ufopaedia:
     text: STR_WORLDGEN_PLAGUE_PEDIA
     requires:
       - STR_WORLDGEN_PLAGUE
-      - STR_POST
+      - STR_POST_ITEM
   - id: STR_WORLDGEN_WAR
     type_id: 8
 #    section: STR_SOMETHING
@@ -62,19 +72,20 @@ ufopaedia:
     text: STR_WORLDGEN_WAR_PEDIA
     requires:
       - STR_WORLDGEN_WAR
-      - STR_POST
+      - STR_POST_ITEM
 
 # Pedia and research strings
 extraStrings:
   - type: en-US
     strings:
-      STR_POST: “Power-On Systems Test”
-      STR_POST_PEDIA: “Lorem Ipsum”
-      STR_PLANETARY_SCAN: “Initial Planetary Scan”
-      STR_WORLDGEN_FAMINE: “Famine World Generated”
-      STR_WORLDGEN_FAMINE_PEDIA: “Lorem Ipsum F”
-      STR_WORLDGEN_PLAGUE: “Plague World Generated”
-      STR_WORLDGEN_PLAGUE_PEDIA: “Lorem Ipsum P”
-      STR_WORLDGEN_WAR: “War World Generated”
-      STR_WORLDGEN_WAR_PEDIA: “Lorem Ipsum W”
+      STR_POST: "Power-On Systems Test"
+      STR_POST_ITEM: "Power-On Systems Test"
+      STR_POST_PEDIA: "Lorem Ipsum"
+      STR_PLANETARY_SCAN: "Initial Planetary Scan"
+      STR_WORLDGEN_FAMINE: "Famine World Generated"
+      STR_WORLDGEN_FAMINE_PEDIA: "Lorem Ipsum F"
+      STR_WORLDGEN_PLAGUE: "Plague World Generated"
+      STR_WORLDGEN_PLAGUE_PEDIA: "Lorem Ipsum P"
+      STR_WORLDGEN_WAR: "War World Generated"
+      STR_WORLDGEN_WAR_PEDIA: "Lorem Ipsum W"
 
