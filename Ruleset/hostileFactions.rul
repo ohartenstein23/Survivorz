@@ -1,12 +1,14 @@
 alienRaces:
-  - type: STR_MINING_CREW
+  - id: STR_MINING_CREW
+    members:
 # Mostly unarmed, a few armed overseer types
 # Placeholders for now
       - STR_MUTON_SOLDIER
       - STR_SECTOID_SOLDIER
-  - type: STR_MILITARY_CREW
+  - id: STR_MILITARY_CREW
 # Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
 # Placeholders for now
+    members:
       - STR_ETHEREAL_COMMANDER
       - STR_ETHEREAL_SOLDIER
       - STR_FLOATER_NAVIGATOR
@@ -21,11 +23,12 @@ items:
     costSell: 0
     costBuy: 0
     size: 0.1
-    requires:
-      - STR_ALIEN_TOOL_USE
-    bigSprite: -1
-    handSprite: -1
-    floorSprite: -1
+#    requires:
+#      - STR_ALIEN_TOOL_USE
+    weight: 10
+    bigSprite: 26
+    handSprite: 80
+    floorSprite: 26
     power: 40
     damageType: 6
     damageAlter:
@@ -36,6 +39,8 @@ items:
       energy: 10
     twoHanded: true
     battleType: 3
+    invWidth: 1
+    invHeight: 3
   - type: STR_ALIEN_CARBINE
 # Ranged weapon for overseers, footsoldiers 
   - type: STR_ALIEN_LAUNCHER
@@ -44,11 +49,12 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.2
-    requires:
-      - STR_ALIEN_WEAPON_USE
-    bigSprite: -1
-    handSprite: -1
-    floorSprite: -1
+#    requires:
+#      - STR_ALIEN_WEAPON_USE
+    weight: 8
+    bigSprite: 200
+    handSprite: 800
+    floorSprite: 200
     compatibleAmmo:
       - STR_ALIEN_LAUNCHER_STUNBOMB
       - STR_ALIEN_LAUNCHER_GASBOMB
@@ -58,34 +64,63 @@ items:
     accuracySnap: 65
     twoHanded: true
     battleType: 1
+    invWidth: 1
+    invHeight: 2
   - type: STR_ALIEN_LAUNCHER_STUNBOMB
     costBuy: 0
     costSell: 0
     size: 0.05
-    requires:
-      - STR_ALIEN_WEAPON_USE
-    bigSprite: -1
-    handSprite: -1
-    floorSprite: -1
+#    requires:
+#      - STR_ALIEN_WEAPON_USE
+    weight: 4
+    bigSprite: 201
+#    handSprite: -1
+    floorSprite: 201
     power: 50
     damageType: 6
-    clipSize: 5
+    clipSize: 6
     battleType: 2
+    invWidth: 2
+    invHeight: 1
   - type: STR_ALIEN_LAUNCHER_GASBOMB
     costBuy: 0
     costSell: 0
     size: 0.05
-    requires:
-      - STR_ALIEN_WEAPON_USE
-    bigSprite: -1
-    handSprite: -1
-    floorSprite: -1
+#    requires:
+#      - STR_ALIEN_WEAPON_USE
+    weight: 4
+    bigSprite: 202
+#    handSprite: -1
+    floorSprite: 202
     power: 40
     damageType: 9
     damageAlter:
       ResistType: 8
       RandomType: 6
       ToHealth: 1.0
-      ToStun: 0.25
-    clipSize: 5
+      ToStun: 0.34
+    clipSize: 6
     battleType: 2
+    invWidth: 2
+    invHeight: 1
+
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      200: Resources/XOps/Bigobs/SmallLauncher.gif
+      201: Resources/XOps/Bigobs/StunBomb.gif
+      202: Resources/XOps/Bigobs/StunBombAcid.gif
+      203: Resources/XOps/Bigobs/StunBombExplosive.gif
+  - type: FLOOROB.PCK
+    files:
+      200: Resources/XOps/Floorobs/floorob_SmallLauncher.gif
+      201: Resources/XOps/Floorobs/floorob_StunBomb.gif
+      202: Resources/XOps/Floorobs/floorob_StunBombAcid.gif
+      203: Resources/XOps/Floorobs/floorob_StunBombExplosive.gif
+  - type: HANDOB.PCK
+    height: 40
+    width: 256
+    subX: 32
+    subY: 40
+    files:
+      800: Resources/XOps/Handobs/ClusterLauncher.gif

@@ -7,3 +7,4 @@ Special Thanks to:
   - Solarius Scorch for letting me bounce ideas off of him, and for sprites to
     gank.
   - Meridian for OXCE+ and including my code in his repository
+  - XOps for the awesome sprites.
