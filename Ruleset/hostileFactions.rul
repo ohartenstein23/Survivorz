@@ -29,15 +29,21 @@ items:
     bigSprite: 26
     handSprite: 80
     floorSprite: 26
+    meleeHitSound: 54
+    meleeAnimation: 0
     power: 40
     damageType: 6
     damageAlter:
       RandomType: 2
       ToHealth: 0.5
     costMelee:
-      tu: 40
+      time: 40
       energy: 10
+    meleeMultiplier:
+      melee: 1.0
+    accuracyMelee: 100
     twoHanded: true
+    clipSize: -1
     battleType: 3
     invWidth: 1
     invHeight: 3

@@ -1,0 +1,11 @@
+missionScripts:
+  - delete: gameStart
+  - delete: recurringTerror
+  - delete: recon
+  - delete: invasion
+  - delete: researchRetaliation
+  - delete: beginnerRetaliation
+  - delete: experiencedRetaliation
+  - delete: veteranRetaliation
+  - delete: geniusRetaliation
+  - delete: superhumanRetaliation
