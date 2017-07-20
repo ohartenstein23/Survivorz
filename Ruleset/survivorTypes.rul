@@ -345,14 +345,15 @@ soldiers:
       psiStrength: 100
       psiSkill: 0
       melee: 0
-    armor: STR_NONE_UC
+    armor: STR_TREADED_ARMOR
+    armorForAvatar: STR_TREADED_ARMOR
     standHeight: 22
     kneelHeight: 14
-    femaleFrequency: 50
+    femaleFrequency: 0 # Don't worry about gender of AI for now
     soldierNames:
       - SoldierName/
     deathMale: [41, 42, 43]
-    deathFemale: [44, 45, 46]
+    #deathFemale: [44, 45, 46]
 items:
   - type: STR_OFFICER_CRYOCHAMBER
     size: 1

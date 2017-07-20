@@ -8,3 +8,5 @@ Special Thanks to:
     gank.
   - Meridian for OXCE+ and including my code in his repository
   - XOps for the awesome sprites.
+  - NeoWorm for the cool drone.
+  - The fractal world generator at https://donjon.bin.sh/world/
