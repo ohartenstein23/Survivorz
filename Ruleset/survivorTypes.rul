@@ -1,6 +1,7 @@
 soldiers:
 # all secondary stats cap at vanilla xcom levels, maybe slightly higher for tu/stamina (or give armor bonuses)
   - delete: STR_SOLDIER
+
 #
 # *** Start of officers ***
 #
@@ -54,6 +55,7 @@ soldiers:
       - SoldierName/
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
+
   - type: STR_HEAD_SCIENTIST
 # stats:
 # highest psi equivalent, gets item to train psi strength
@@ -103,6 +105,7 @@ soldiers:
       - SoldierName/
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
+
   - type: STR_GARRISON_OFFICER
     costBuy: 0
     costSalary: 20000
@@ -153,57 +156,10 @@ soldiers:
       - SoldierName/
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
+
 #
 # *** Start of other survivors ***
 #
-#  - type: STR_TECHNICIAN
-#    costBuy: 0
-#    costSalary: 20000
-# not great physical stats, but better throwing and firing accuracy than colonists
-#    minStats:
-#      tu: 50
-#      stamina: 40
-#      health: 25
-#      bravery: 10
-#      reactions: 30
-#      firing: 45
-#      throwing: 40
-#      strength: 20
-#      psiStrength: 30
-#      psiSkill: 0
-#      melee: 20
-#    maxStats:
-#      tu: 60
-#      stamina: 60
-#      health: 35
-#      bravery: 60
-#      reactions: 60
-#      firing: 65
-#      throwing: 65
-#      strength: 40
-#      psiStrength: 50
-#      psiSkill: 16
-#      melee: 40
-#    statCaps:
-#      tu: 80
-#      stamina: 100
-#      health: 60
-#      bravery: 100
-#      reactions: 100
-#      firing: 120
-#      throwing: 90
-#      strength: 70
-#      psiStrength: 70
-#      psiSkill: 100
-#      melee: 120
-#    armor: STR_NONE_UC
-#    standHeight: 22
-#    kneelHeight: 14
-#    femaleFrequency: 50
-#    soldierNames:
-#      - SoldierName/
-#    deathMale: [41, 42, 43]
-#    deathFemale: [44, 45, 46]
   - type: STR_COLONIST
     costBuy: 0
     costSalary: 20000
@@ -253,54 +209,7 @@ soldiers:
       - SoldierName/
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
-#  - type: STR_SOLDIER
-#    costBuy: 0
-#    costSalary: 20000
-# good all-around, highest starting strength
-#    minStats:
-#      tu: 50
-#      stamina: 50
-#      health: 32
-#      bravery: 20
-#      reactions: 40
-#      firing: 50
-#      throwing: 30
-#      strength: 30
-#      psiStrength: 30
-#      psiSkill: 0
-#      melee: 50
-#    maxStats:
-#      tu: 60
-#      stamina: 70
-#      health: 40
-#      bravery: 60
-#      reactions: 60
-#      firing: 65
-#      throwing: 60
-#      strength: 42
-#      psiStrength: 50
-#      psiSkill: 16
-#      melee: 70
-#    statCaps:
-#      tu: 80
-#      stamina: 100
-#      health: 60
-#      bravery: 100
-#      reactions: 100
-#      firing: 120
-#      throwing: 90
-#      strength: 70
-#      psiStrength: 70
-#      psiSkill: 100
-#      melee: 120
-#    armor: STR_NONE_UC
-#    standHeight: 22
-#    kneelHeight: 14
-#    femaleFrequency: 50
-#    soldierNames:
-#      - SoldierName/
-#    deathMale: [41, 42, 43]
-#    deathFemale: [44, 45, 46]
+
 #
 # *** Start of AI subroutines ***
 #
@@ -312,56 +221,64 @@ soldiers:
     minStats:
       tu: 60
       stamina: 80
-      health: 20
-      bravery: 100
+      health: 30
+      bravery: 0
       reactions: 50
       firing: 50
       throwing: 0
       strength: 0
-      psiStrength: 100
+      psiStrength: 0
       psiSkill: 0
       melee: 0
     maxStats:
       tu: 60
       stamina: 80
-      health: 20
-      bravery: 100
+      health: 30
+      bravery: 0
       reactions: 50
       firing: 50
       throwing: 0
       strength: 0
-      psiStrength: 100
+      psiStrength: 0
       psiSkill: 0
       melee: 0
     statCaps:
-      tu: 60
+      tu: 80
       stamina: 80
-      health: 20
-      bravery: 100
-      reactions: 50
-      firing: 50
+      health: 30
+      bravery: 0
+      reactions: 100
+      firing: 120
       throwing: 0
       strength: 0
-      psiStrength: 100
+      psiStrength: 0
       psiSkill: 0
       melee: 0
-    armor: STR_TREADED_ARMOR
-    armorForAvatar: STR_TREADED_ARMOR
+    trainingStatCaps:
+      psiStrength: 0
+      psiSkill: 0
+    armor: STR_FLYING_DRONE_ARMOR_UC
+    armorForAvatar: STR_FLYING_DRONE_ARMOR_UC
     standHeight: 22
-    kneelHeight: 14
-    femaleFrequency: 0 # Don't worry about gender of AI for now
+    kneelHeight: 22
+    femaleFrequency: 50
     soldierNames:
-      - SoldierName/
-    deathMale: [41, 42, 43]
-    #deathFemale: [44, 45, 46]
+      - delete
+      - Ruleset/AINames.nam
+    allowPromotion: false
+    deathMale: 23
+    deathFemale: 23
+
 items:
   - type: STR_OFFICER_CRYOCHAMBER
-    size: 1
+    size: 0.1
   - type: STR_ACTIVE_CRYOCHAMBER
-    size: 1
+    size: 0.1
   - type: STR_EMPTY_CRYOCHAMBER
     size: 0.1
+
 manufacture:
+
   - name: STR_CHIEF_ENGINEER_WAKEUP
     category: STR_CRYOCHAMBERS
     time: 1
@@ -390,16 +307,7 @@ manufacture:
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
     spawnedPersonType: STR_GARRISON_OFFICER
-#  - name: STR_TECHNICIAN_WAKEUP
-#    category: STR_CRYOCHAMBERS
-#    size: 0
-#    time: 1
-#    cost: 0
-#    requiredItems:
-#      STR_ACTIVE_CRYOCHAMBER: 1
-#    producedItems:
-#      STR_EMPTY_CRYOCHAMBER: 1
-#    spawnedPersonType: STR_TECHNICIAN
+
   - name: STR_COLONIST_WAKEUP
     category: STR_CRYOCHAMBERS
     size: 0
@@ -410,19 +318,25 @@ manufacture:
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
     spawnedPersonType: STR_COLONIST
-#  - name: STR_SOLDIER_WAKEUP
-#    category: STR_CRYOCHAMBERS
-#    size: 0
-#    time: 1
-#    cost: 0
-#    requiredItems:
-#      STR_ACTIVE_CRYOCHAMBER: 1
-#    producedItems:
-#      STR_EMPTY_CRYOCHAMBER: 1
-#    spawnedPersonType: STR_SOLDIER
+
 extraStrings:
   - type: en-US
     strings:
+      # *** Soldier Types ***
+      STR_CHIEF_ENGINEER: "Chief Engineer"
+      STR_HEAD_SCIENTIST: "Head Scientist"
+      STR_GARRISON_OFFICER: "Garrison Officer"
+      STR_COLONIST: "Colonist"
+      STR_AI_SUBROUTINE: "AI Subroutine"
+
+      # *** Items and Manufacture ***
+      STR_OFFICER_CRYOCHAMBER: "Officer's Cryochamber"
+      STR_ACTIVE_CRYOCHAMBER: "Active Cryochamber"
+      STR_EMPTY_CRYOCHAMBER: "Empty Cryochamber"
       STR_CRYOCHAMBERS: "Cryochamber Activation"
-      STR_PERSON_JOINING: "Person Joining"
-      STR_NOT_ENOUGH_LIVING_SPACE_AT_BASE: "Not enough living space to accomodate{NEWLINE}{0}{NEWLINE}at{NEWLINE}{1}"
+      STR_CHIEF_ENGINEER_WAKEUP: "Open Engineer's Cryochamber"
+      STR_HEAD_SCIENTIST_WAKEUP: "Open Scientist's Cryochamber"
+      STR_GARRISON_OFFICER_WAKEUP: "Open Officer's Cryochamber"
+      STR_COLONIST_WAKEUP: "Open Colonist's Cryochamber"
+      STR_PERSON_JOINING: "Entity Joining"
+      STR_NOT_ENOUGH_LIVING_SPACE_AT_BASE: "Not enough resource nodes to accomodate{NEWLINE}{0}{NEWLINE}at{NEWLINE}{1}"

@@ -1,43 +1,5 @@
 armors:
-  - type: STR_TREADED_ARMOR
-    spriteSheet: TANKS.PCK
-    spriteInv: DRONE_FLYING
-    #allowInv: false
-    corpseBattle:
-      - TANK_CORPSE_1
-      - TANK_CORPSE_2
-      - TANK_CORPSE_3
-      - TANK_CORPSE_4
-    #corpseGeo: STR_RECOVER_TREADED_ARMOR
-    storeItem: STR_NONE
-    fearImmune: true
-    bleedImmune: true
-    zombiImmune: true
-    weight: -100
-    builtInWeapons:
-      - STR_TANK_LASER_CANNON
-    frontArmor: 90
-    sideArmor: 75
-    rearArmor: 60
-    underArmor: 60
-    drawingRoutine: 2
-    size: 2
-    damageModifier:
-      - 1.0
-      - 1.0
-      - 0.4
-      - 0.75
-      - 1.0
-      - 1.0
-      - 0.0
-      - 0.9
-      - 0.4
-      - 0.0
-    units:
-      - STR_AI_SUBROUTINE
-    loftempsSet: [ 92, 89, 90, 91 ]
-
-  - type: STR_FLYING_DRONE_ARMOR
+  - type: STR_FLYING_DRONE_ARMOR_UC
     spriteSheet: DRONE_FLYING.PCK
     spriteInv: DRONE_FLYING
     corpseBattle:
@@ -48,10 +10,21 @@ armors:
     bleedImmune: true
     zombiImmune: true
     weight: 0
+    builtInWeapons:
+      - INV_NULL_RH
+      - INV_NULL_LH
+      - INV_NULL_2X1_LS
+      - INV_NULL_2X1_RS
+      - INV_NULL_2X1_LL
+      - INV_NULL_2X1_RL
+      - INV_NULL_4X2_B
+      - INV_NULL_3X3_BACK
     frontArmor: 20
     sideArmor: 20
     rearArmor: 20
     underArmor: 20
+    psiDefense:
+      flatHundred: 10.0
     drawingRoutine: 4
     movementType: 1
     scripts:
@@ -89,30 +62,6 @@ armors:
     loftempsSet: [ 4 ]
 
 items:
-  - type: STR_TANK_LASER_CANNON
-    size: 6
-    costSell: 594000
-    transferTime: 96
-    weight: 1
-    bigSprite: 54
-    floorSprite: 0
-    handSprite: 0
-    bulletSprite: 5
-    fireSound: 11
-    hitSound: 19
-    hitAnimation: 36
-    power: 110
-    damageType: 4
-    accuracySnap: 50
-    accuracyAimed: 85
-    tuSnap: 33
-    tuAimed: 75
-    battleType: 1
-    #fixedWeapon: true
-    clipSize: -1
-    invWidth: 2
-    invHeight: 3
-    turretType: 1
   - type: STR_RECOVER_FLYING_DRONE_ARMOR
     size: 1.0
     costSell: 10000
@@ -122,6 +71,90 @@ items:
     invWidth: 2
     invHeight: 2
 
+  - type: INV_NULL_LH
+    weight: 0
+    bigSprite: 299
+    invWidth: 2
+    invHeight: 3
+    fixedWeapon: true
+    defaultInventorySlot: STR_LEFT_HAND
+    recover: false
+  - type: INV_NULL_RH
+    weight: 0
+    bigSprite: 299
+    invWidth: 2
+    invHeight: 3
+    fixedWeapon: true
+    defaultInventorySlot: STR_RIGHT_HAND
+  - type: INV_NULL_2X1_LS
+    weight: 0
+    bigSprite: 297
+    invWidth: 2
+    invHeight: 1
+    fixedWeapon: true
+    defaultInventorySlot: STR_LEFT_SHOULDER
+    recover: false
+  - type: INV_NULL_2X1_RS
+    weight: 0
+    bigSprite: 297
+    invWidth: 2
+    invHeight: 1
+    fixedWeapon: true
+    defaultInventorySlot: STR_RIGHT_SHOULDER
+    recover: false
+  - type: INV_NULL_2X1_LL
+    weight: 0
+    bigSprite: 297
+    invWidth: 2
+    invHeight: 1
+    fixedWeapon: true
+    defaultInventorySlot: STR_LEFT_LEG
+    recover: false
+  - type: INV_NULL_2X1_RL
+    weight: 0
+    bigSprite: 297
+    invWidth: 2
+    invHeight: 1
+    fixedWeapon: true
+    defaultInventorySlot: STR_RIGHT_LEG
+    recover: false
+  - type: INV_NULL_2X1_B
+    weight: 0
+    bigSprite: 297
+    invWidth: 2
+    invHeight: 1
+    fixedWeapon: true
+    defaultInventorySlot: STR_BELT
+    recover: false
+  - type: INV_NULL_4X2_B
+    weight: 0
+    bigSprite: 298
+    invWidth: 4
+    invHeight: 2
+    fixedWeapon: true
+    defaultInventorySlot: STR_BELT
+    recover: false
+  - type: INV_NULL_3X3_BACK
+    weight: 0
+    bigSprite: 296
+    invWidth: 3
+    invHeight: 3
+    fixedWeapon: true
+    defaultInventorySlot: STR_BACK_PACK
+    recover: false
+
+manufacture:
+  - name: STR_REPAIR_FLYING_DRONE
+    category: STR_HEAVY_WEAPONS_PLATFORM
+    space: 0
+    time: 24
+    cost: 1000
+    requiredItems:
+      STR_RECOVER_FLYING_DRONE_ARMOR: 1
+    producedItems:
+      STR_ALIEN_ALLOYS: 1
+    spawnedPersonType: STR_AI_SUBROUTINE
+
 extraSprites:
   - type: DRONE_FLYING.PCK
     subX: 32
@@ -130,10 +163,26 @@ extraSprites:
     height: 400
     files:
       0: Resources/NeoWorm/Spritesheet/Drone_Battlescape_Sheet.png
+
   - type: DRONE_FLYING.SPK
     singleImage: true
     files:
       0: Resources/NeoWorm/Paperdoll/Drone_Inventory.png
+
   - type: FLOOROB.PCK
     files:
       200: Resources/NeoWorm/Spritesheet/Drone_Floorob.png
+
+  - type: BIGOBS.PCK
+    files:
+      296: Resources/Inventory/Null_Void_3x3.png
+      297: Resources/Inventory/Null_Void_2x1_l.png
+      298: Resources/Inventory/Null_Void_4x2.png
+      299: Resources/Inventory/Null_Void_2x3.png
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_FLYING_DRONE_ARMOR_UC: "DRONE"
+      STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
+      STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"

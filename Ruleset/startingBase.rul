@@ -1,5 +1,6 @@
 startingBase:
-  randomSoldiers: 0
+  randomSoldiers:
+    STR_AI_SUBROUTINE: 1
   items:
     STR_POST_ITEM: 1
     STR_LINAC_CARBINE: 2
