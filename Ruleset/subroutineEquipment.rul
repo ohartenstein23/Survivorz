@@ -41,8 +41,8 @@ armors:
     spriteSheet: DRONE_FLYING.PCK
     spriteInv: DRONE_FLYING
     corpseBattle:
-      - STR_NONE
-    #corpseGeo: STR_RECOVER_FLYING_DRONE_ARMOR
+      - STR_RECOVER_FLYING_DRONE_ARMOR
+    corpseGeo: STR_RECOVER_FLYING_DRONE_ARMOR
     storeItem: STR_NONE
     fearImmune: true
     bleedImmune: true
@@ -53,6 +53,26 @@ armors:
     rearArmor: 20
     underArmor: 20
     drawingRoutine: 4
+    movementType: 1
+    scripts:
+      selectUnitSprite:
+        # Choose walking sprite even while flying
+        var int flying;
+
+        unit.isFlying flying;
+
+        if neq flying 0;
+
+          unit.getDirection sprite_offset;
+          mul sprite_offset 8;
+          add sprite_offset 8;
+
+        end;
+
+        add sprite_index sprite_offset;
+
+        return sprite_index;
+
     damageModifier:
       - 1.0
       - 1.0
@@ -93,17 +113,27 @@ items:
     invWidth: 2
     invHeight: 3
     turretType: 1
+  - type: STR_RECOVER_FLYING_DRONE_ARMOR
+    size: 1.0
+    costSell: 10000
+    recover: true
+    weight: 10
+    floorSprite: 200
+    invWidth: 2
+    invHeight: 2
 
 extraSprites:
   - type: DRONE_FLYING.PCK
     subX: 32
     subY: 40
-    # TODO: For drawingRoutine 4, needs 8 directions then 8 frames/direction plus 3 for death animation, check palette too
     width: 256
-    height: 120
+    height: 400
     files:
-      0: Resources/NeoWorm/Spritesheet/Drone_Battlescape.png
+      0: Resources/NeoWorm/Spritesheet/Drone_Battlescape_Sheet.png
   - type: DRONE_FLYING.SPK
     singleImage: true
     files:
-      0: Resources/NeoWorm/Paperdoll/Drone_Paperdoll.png
+      0: Resources/NeoWorm/Paperdoll/Drone_Inventory.png
+  - type: FLOOROB.PCK
+    files:
+      200: Resources/NeoWorm/Spritesheet/Drone_Floorob.png
