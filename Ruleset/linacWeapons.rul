@@ -273,68 +273,68 @@ ufopaedia:
     type_id: 8
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_WEAPONS_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_PISTOL
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_PISTOL_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_CARBINE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_CARBINE_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_RIFLE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_RIFLE_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_BATTLE_RIFLE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_BATTLE_RIFLE_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_BATTLE_RIFLE_COPY
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_BATTLE_RIFLE_COPY_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_PISTOL_BATTERY
     type_id: 4
     section: STR_NOT_AVAILABLE
     text: STR_LINAC_PISTOL_BATTERY_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_STD_BATTERY
     type_id: 4
     section: STR_NOT_AVAILABLE
     text: STR_LINAC_STD_BATTERY_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_BATTLE_BATTERY
     type_id: 4
     section: STR_NOT_AVAILABLE
     text: STR_LINAC_BATTLE_BATTERY_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_FLARE
     type_id: 4
     section: STR_NOT_AVAILABLE
     text: STR_LINAC_FLARE_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
   - id: STR_LINAC_GRENADE
     type_id: 4
     section: STR_NOT_AVAILABLE
     text: STR_LINAC_GRENADE_PEDIA
-    requires:
-      - STR_POST
+    #requires:
+    #  - STR_POST_ITEM
 extraSprites:
   - type: BIGOBS.PCK
     files:
