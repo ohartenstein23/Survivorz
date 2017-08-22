@@ -1,0 +1,18 @@
+lighting:
+  enhanced: 7
+fixedUserOptions:
+  battleUFOExtenderAccuracy: true
+  canSellLiveAliens: true
+  battleExplosionHeight: 2
+  alienBleeding: true
+  showAllCommendations: false
+  battleInstantGrenade: false
+  weaponSelfDestruction: false
+  retainCorpses: false
+  allowPsiStrengthImprovement: false
+  allowPsionicCapture: true
+  bleedingIndicator: true
+  anytimePsiTraining: true
+  anytimeMartialTraining: true
+  customInitialBase: false
+  everyoneFightsNobodyQuits: true
