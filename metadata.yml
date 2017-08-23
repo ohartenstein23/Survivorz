@@ -1,6 +1,7 @@
 name: "Survivorz"
-version: 0.1.15
+version: 0.1.16
 author: "ohartenstein23"
 description: "Survive! Shoot your way out, build a robot army, or become the farmlord!"
 id: survivorz
 master: xcom1
+#isMaster: true

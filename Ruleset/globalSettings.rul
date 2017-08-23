@@ -16,3 +16,6 @@ fixedUserOptions:
   anytimeMartialTraining: true
   customInitialBase: false
   everyoneFightsNobodyQuits: true
+
+alienItemLevels:
+ - [0, 1, 2]

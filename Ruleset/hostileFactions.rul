@@ -1,13 +1,18 @@
 alienRaces:
   - id: STR_MINING_CREW
     members:
-# Mostly unarmed, a few armed overseer types
-# Placeholders for now
-      - STR_MUTON_SOLDIER
-      - STR_SECTOID_SOLDIER
+      - STR_HOSTILE_OVERSEER
+      - STR_HOSTILE_OVERSEER
+      - STR_HOSTILE_MECHANIZED
+      - STR_HOSTILE_OVERSEER
+      - STR_HOSTILE_OVERSEER
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+
   - id: STR_MILITARY_CREW
-# Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
-# Placeholders for now
+    # Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
+    # Placeholders for now
     members:
       - STR_ETHEREAL_COMMANDER
       - STR_ETHEREAL_SOLDIER
@@ -16,15 +21,94 @@ alienRaces:
       - STR_MUTON_SOLDIER
       - STR_SECTOID_SOLDIER
 
-# Alien weapons
+# *** Hostile units ***
+units:
+  - type: STR_HOSTILE_OVERSEER
+    # Overseer type always seen with enslaved units, coordinates other hostiles (spotter)
+    # Snakeman for placeholder sprite
+    race: STR_HOSTILES
+    rank: STR_LIVE_NAVIGATOR # Rank for mid-tier hostiles
+    stats:
+      tu: 56
+      stamina: 90
+      health: 45
+      bravery: 80
+      reactions: 45
+      firing: 58
+      throwing: 65
+      strength: 47
+      psiStrength: 40
+      psiSkill: 0
+      melee: 76
+    armor: SNAKEMAN_ARMOR0
+    standHeight: 18
+    kneelHeight: 18
+    value: 15
+    deathSound: 8
+    moveSound: 0
+    intelligence: 4
+    aggression: 1
+    energyRecovery: 40
+    spotter: -1
+
+  - type: STR_HOSTILE_MECHANIZED
+    # First-tier armored unit, can't do much unless an overseer is spotting (sniper, but low int)
+    race: STR_HOSTILES
+    rank: STR_LIVE_ENGINEER # Rank for hostile mechanized units
+    stats:
+      tu: 40
+      stamina: 80
+      health: 125
+      bravery: 80
+      reactions: 60
+      firing: 54
+      throwing: 62
+      strength: 70
+      psiStrength: 25
+      psiSkill: 0
+      melee: 76
+    armor: MUTON_ARMOR0
+    standHeight: 21
+    kneelHeight: 16
+    value: 20
+    deathSound: 23
+    intelligence: 1
+    aggression: 4
+    sniper: 75
+
+  - type: STR_ALIEN_SLAVE
+    # Enslaved alien soldier for mining crew, use sectoid sprite for now
+    race: STR_ALIENS
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 54
+      stamina: 90
+      health: 30
+      bravery: 80
+      reactions: 63
+      firing: 52
+      throwing: 58
+      strength: 30
+      psiStrength: 40
+      psiSkill: 0
+      melee: 76
+    armor: SECTOID_ARMOR0
+    standHeight: 16
+    kneelHeight: 12
+    value: 10
+    deathSound: 10
+    intelligence: 2
+    aggression: 0
+
+# *** Hostile weapons ***
 items:
-  - type: STR_ALIEN_MININGTOOL
-# Filler weapon, mostly on mining crew
+  - type: STR_HOSTILE_MININGTOOL
+    # Filler weapon, mostly on mining crew
     costSell: 0
     costBuy: 0
     size: 0.1
-#    requires:
-#      - STR_ALIEN_TOOL_USE
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
     weight: 10
     bigSprite: 26
     handSprite: 80
@@ -47,23 +131,62 @@ items:
     battleType: 3
     invWidth: 1
     invHeight: 3
-  - type: STR_ALIEN_CARBINE
-# Ranged weapon for overseers, footsoldiers 
-  - type: STR_ALIEN_LAUNCHER
-# Ranged stun and explosive weapon for overseers, stun on capture mission, mixed on mining and military crew
-# Accurate but slow snap fire, 3-6 clip size, aimed mode for player use
+
+  - type: STR_HOSTILE_CARBINE
+    # Ranged weapon for overseers, footsoldiers, and early mechanized
+    # Fast aimed shot for sniper use, relatively poor reactions
     costBuy: 0
     costSell: 0
     size: 0.2
-#    requires:
-#      - STR_ALIEN_WEAPON_USE
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
     weight: 8
-    bigSprite: 200
-    handSprite: 800
-    floorSprite: 200
+    bigSprite: 31 # Borrowing plasma rifle gfx for now
+    floorSprite: 30
+    handSprite: 48
+    bulletSprite: 8
+    fireSound: 18
     compatibleAmmo:
-      - STR_ALIEN_LAUNCHER_STUNBOMB
-      - STR_ALIEN_LAUNCHER_GASBOMB
+      - STR_HOSTILE_CARBINE_CLIP
+    tuAimed: 45
+    tuSnap: 30
+    accuracyAimed: 100
+    accuracySnap: 50
+    twoHanded: true
+    battleType: 1
+    invWidth: 1
+    invHeight: 3
+  - type: STR_HOSTILE_CARBINE_CLIP
+    costBuy: 0
+    costSell: 0
+    size: 0.05
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
+    weight: 3
+    bigSprite: 41
+    floorSprite: 33
+    hitSound: 19
+    hitAnimation: 46
+    power: 40
+    damageType: 5
+    clipSize: 18
+    battleType: 2
+
+  - type: STR_HOSTILE_LAUNCHER
+    # Ranged stun and explosive weapon for overseers, stun on capture mission, mixed on mining and military crew
+    # Accurate but slow snap fire, 3-6 clip size, aimed mode for player use
+    costBuy: 0
+    costSell: 0
+    size: 0.2
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
+    weight: 8
+    bigSprite: 500
+    handSprite: 500
+    floorSprite: 500
+    compatibleAmmo:
+      - STR_HOSTILE_LAUNCHER_STUNBOMB
+      - STR_HOSTILE_LAUNCHER_GASBOMB
     tuAimed: 65
     tuSnap: 40
     accuracyAimed: 90
@@ -72,32 +195,33 @@ items:
     battleType: 1
     invWidth: 1
     invHeight: 2
-  - type: STR_ALIEN_LAUNCHER_STUNBOMB
+  - type: STR_HOSTILE_LAUNCHER_STUNBOMB
     costBuy: 0
     costSell: 0
     size: 0.05
-#    requires:
-#      - STR_ALIEN_WEAPON_USE
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
     weight: 4
-    bigSprite: 201
-#    handSprite: -1
-    floorSprite: 201
+    bigSprite: 501
+    #handSprite: -1
+    floorSprite: 501
     power: 50
+    blastRadius: 2
     damageType: 6
     clipSize: 6
     battleType: 2
     invWidth: 2
     invHeight: 1
-  - type: STR_ALIEN_LAUNCHER_GASBOMB
+  - type: STR_HOSTILE_LAUNCHER_GASBOMB
     costBuy: 0
     costSell: 0
     size: 0.05
-#    requires:
-#      - STR_ALIEN_WEAPON_USE
+    #requires:
+    #  - STR_HOSTILE_WEAPON_USE
     weight: 4
-    bigSprite: 202
-#    handSprite: -1
-    floorSprite: 202
+    bigSprite: 502
+    #handSprite: -1
+    floorSprite: 502
     power: 40
     damageType: 9
     damageAlter:
@@ -113,20 +237,20 @@ items:
 extraSprites:
   - type: BIGOBS.PCK
     files:
-      200: Resources/XOps/Bigobs/SmallLauncher.gif
-      201: Resources/XOps/Bigobs/StunBomb.gif
-      202: Resources/XOps/Bigobs/StunBombAcid.gif
-      203: Resources/XOps/Bigobs/StunBombExplosive.gif
+      500: Resources/XOps/Bigobs/SmallLauncher.gif
+      501: Resources/XOps/Bigobs/StunBomb.gif
+      502: Resources/XOps/Bigobs/StunBombAcid.gif
+      503: Resources/XOps/Bigobs/StunBombExplosive.gif
   - type: FLOOROB.PCK
     files:
-      200: Resources/XOps/Floorobs/floorob_SmallLauncher.gif
-      201: Resources/XOps/Floorobs/floorob_StunBomb.gif
-      202: Resources/XOps/Floorobs/floorob_StunBombAcid.gif
-      203: Resources/XOps/Floorobs/floorob_StunBombExplosive.gif
+      500: Resources/XOps/Floorobs/floorob_SmallLauncher.gif
+      501: Resources/XOps/Floorobs/floorob_StunBomb.gif
+      502: Resources/XOps/Floorobs/floorob_StunBombAcid.gif
+      503: Resources/XOps/Floorobs/floorob_StunBombExplosive.gif
   - type: HANDOB.PCK
     height: 40
     width: 256
     subX: 32
     subY: 40
     files:
-      800: Resources/XOps/Handobs/ClusterLauncher.gif
+      500: Resources/XOps/Handobs/ClusterLauncher.gif
