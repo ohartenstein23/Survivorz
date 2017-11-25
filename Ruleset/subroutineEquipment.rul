@@ -27,6 +27,7 @@ armors:
       flatHundred: 10.0
     drawingRoutine: 4
     movementType: 1
+    moveSound: 15
     scripts:
       selectUnitSprite:
         # Choose walking sprite even while flying
@@ -155,6 +156,12 @@ manufacture:
       STR_ALIEN_ALLOYS: 1
     spawnedPersonType: STR_AI_SUBROUTINE
 
+ufopaedia:
+  - id: STR_FLYING_DRONE_ARMOR_UC
+    type_id: 5
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_FLYING_DRONE_ARMOR_UC_PEDIA
+
 extraSprites:
   - type: DRONE_FLYING.PCK
     subX: 32
@@ -184,5 +191,6 @@ extraStrings:
   - type: en-US
     strings:
       STR_FLYING_DRONE_ARMOR_UC: "DRONE"
+      STR_FLYING_DRONE_ARMOR_UC_PEDIA: "Lorem Ipsum"
       STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
       STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"

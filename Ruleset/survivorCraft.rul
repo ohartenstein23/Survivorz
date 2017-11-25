@@ -1,0 +1,23 @@
+crafts:
+  - type: STR_SKYRANGER
+    sprite: 0
+    fuelMax: 1500
+    damageMax: 150
+    speedMax: 760
+    accel: 2
+    soldiers: 8
+    vehicles: 1
+    costBuy: 500000
+    costRent: 500000
+    refuelRate: 50
+    transferTime: 72
+    score: 200
+    battlescapeTerrainData:
+      name: CRAFT_TEST
+      mapDataSets:
+        - BLANKS
+        - SURVIVORZ_CRAFT
+      mapBlocks:
+        - name: CRAFT_TEST
+          width: 10
+          length: 10
