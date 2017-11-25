@@ -9,6 +9,7 @@ armors:
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
+    painImmune: true
     weight: 0
     builtInWeapons:
       - INV_NULL_RH
@@ -61,6 +62,102 @@ armors:
     units:
       - STR_AI_SUBROUTINE
     loftempsSet: [ 4 ]
+    allowKneeling: false
+
+  - type: STR_WALKER_ARMOR_UC
+    spriteSheet: WALKER_JAEGERMKI.PCK
+    spriteInv: DRONE_FLYING
+    corpseBattle:
+      - SECTOPOD_CORPSE_1
+      - SECTOPOD_CORPSE_2
+      - SECTOPOD_CORPSE_3
+      - SECTOPOD_CORPSE_4
+    corpseGeo: STR_SECTOPOD_CORPSE
+    storeItem: STR_NONE
+    fearImmune: true
+    bleedImmune: true
+    zombiImmune: true
+    painImmune: true
+    weight: 0
+    builtInWeapons:
+      - INV_NULL_RH
+      - INV_NULL_LH
+      - INV_NULL_2X1_LS
+      - INV_NULL_2X1_RS
+      - INV_NULL_2X1_LL
+      - INV_NULL_2X1_RL
+      - INV_NULL_4X2_B
+      - INV_NULL_3X3_BACK
+    frontArmor: 145
+    sideArmor: 130
+    rearArmor: 100
+    underArmor: 90
+    drawingRoutine: 5
+    size: 2
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.8
+      - 1.5
+      - 0.8
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.0
+    loftempsSet: [ 92, 89, 90, 91 ]
+    units:
+      - STR_AI_SUBROUTINE
+    allowKneeling: false
+    allowSprinting: false
+
+  - type: STR_GUNSHIP_ARMOR_UC
+    spriteSheet: GUNSHIP.PCK
+    spriteInv: DRONE_FLYING
+    corpseBattle:
+      - SECTOPOD_CORPSE_1
+      - SECTOPOD_CORPSE_2
+      - SECTOPOD_CORPSE_3
+      - SECTOPOD_CORPSE_4
+    corpseGeo: STR_SECTOPOD_CORPSE
+    storeItem: STR_NONE
+    fearImmune: true
+    bleedImmune: true
+    zombiImmune: true
+    painImmune: true
+    weight: 0
+    builtInWeapons:
+      - INV_NULL_RH
+      - INV_NULL_LH
+      - INV_NULL_2X1_LS
+      - INV_NULL_2X1_RS
+      - INV_NULL_2X1_LL
+      - INV_NULL_2X1_RL
+      - INV_NULL_4X2_B
+      - INV_NULL_3X3_BACK
+    frontArmor: 145
+    sideArmor: 130
+    rearArmor: 100
+    underArmor: 90
+    drawingRoutine: 3
+    movementType: 1
+    size: 2
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.8
+      - 1.5
+      - 0.8
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.0
+    loftempsSet: [ 92, 89, 90, 91 ]
+    units:
+      - STR_AI_SUBROUTINE
+    allowKneeling: false
+    allowSprinting: false
 
 items:
   - type: STR_RECOVER_FLYING_DRONE_ARMOR
@@ -170,6 +267,22 @@ extraSprites:
     height: 400
     files:
       0: Resources/NeoWorm/Spritesheet/Drone_Battlescape_Sheet.png
+
+  - type: WALKER_JAEGERMKI.PCK
+    subX: 32
+    subY: 40
+    width: 256
+    height: 840
+    files:
+      0: Resources/jackstraw2323/Spritesheet/jaeger_mk_I.png
+
+  - type: GUNSHIP.PCK
+    subX: 32
+    subY: 40
+    width: 256
+    height: 320
+    files:
+      0: Resources/Unitsprites/split_hwp_gunship.png
 
   - type: DRONE_FLYING.SPK
     singleImage: true
