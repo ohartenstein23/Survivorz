@@ -127,7 +127,7 @@ armors:
     painImmune: true
     weight: 0
     builtInWeapons:
-      - INV_NULL_RH
+      - STR_LINAC_GUNSHIP_AUTOCANNON
       - INV_NULL_LH
       - INV_NULL_2X1_LS
       - INV_NULL_2X1_RS
@@ -139,7 +139,7 @@ armors:
     sideArmor: 130
     rearArmor: 100
     underArmor: 90
-    drawingRoutine: 3
+    drawingRoutine: 21
     movementType: 1
     size: 2
     damageModifier:
@@ -168,6 +168,32 @@ items:
     floorSprite: 200
     invWidth: 2
     invHeight: 2
+
+  - type: STR_LINAC_GUNSHIP_AUTOCANNON
+    recover: false
+    weight: 0
+    bigSprite: 120
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    power: 60
+    powerRangeReduction: 3.0
+    powerRangeThreshold: 30.0
+    damageType: 5
+    damageAlter:
+      ToArmorPre: 0.05      
+    clipSize: -1
+    accuracySnap: 85
+    tuSnap: 30
+    snapRange: 30
+    confSnap:
+      shots: 2
+      ammoSlot: 0
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+    fixedWeapon: true
 
   - type: INV_NULL_LH
     weight: 0
@@ -280,7 +306,7 @@ extraSprites:
     subX: 32
     subY: 40
     width: 256
-    height: 320
+    height: 680
     files:
       0: Resources/Unitsprites/split_hwp_gunship.png
 
@@ -295,6 +321,7 @@ extraSprites:
 
   - type: BIGOBS.PCK
     files:
+      120: Resources/Bigobs/linac_gunship_autocannon.png
       296: Resources/Inventory/Null_Void_3x3.png
       297: Resources/Inventory/Null_Void_2x1_l.png
       298: Resources/Inventory/Null_Void_4x2.png

@@ -1757,3 +1757,96 @@ globe:
       - -89.820
       - 330.167
       - -78.534
+
+  textures:
+    - id: 0
+      terrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+      baseTerrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+    - id: 1
+      terrain:
+        - name: CULTA
+      baseTerrain:
+        - name: CULTA
+    - id: 2
+      terrain:
+        - name: CULTA
+      baseTerrain:
+        - name: CULTA
+    - id: 3
+      terrain:
+        - name: CULTA
+      baseTerrain:
+        - name: CULTA
+    - id: 4
+      terrain:
+        - name: CULTA
+      baseTerrain:
+        - name: CULTA
+    - id: 5
+      terrain:
+        - name: MOUNT
+      baseTerrain:
+        - name: MOUNT
+    - id: 6
+      terrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+      baseTerrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+    - id: 7
+      terrain:
+        - name: DESERT
+      baseTerrain:
+        - name: DESERT
+    - id: 8
+      terrain:
+        - name: DESERT
+      baseTerrain:
+        - name: DESERT
+    - id: 9
+      terrain:
+        - name: POLAR
+      baseTerrain:
+        - name: POLAR
+    - id: 10
+      terrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+      baseTerrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+    - id: 11
+      terrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+      baseTerrain:
+        - name: FOREST
+          area: [0, 360, -90, 0]
+        - name: JUNGLE
+          area: [0, 360, 0, 90]
+    - id: 12
+      terrain:
+        - name: POLAR
+      baseTerrain:
+        - name: POLAR
+
+baseDefenseMapFromLocation: 1

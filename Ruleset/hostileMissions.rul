@@ -1,16 +1,21 @@
 alienMissions:
   - type: STR_CRASH_INVESTIGATION # First thing aliens do is check your crash site out
     points: 0
+    objective: 4
+    retaliationOdds: 0
+    missionWeights:
+      0: 0
+    spawnUfo: STR_LARGE_SCOUT
     raceWeights:
       0:
         STR_MINING_CREW: 100
     waves:
       - ufo: STR_MEDIUM_SCOUT
-        count: 1
+        count: 20
         trajectory: P2
         timer: 7800
       - ufo: STR_LARGE_SCOUT
-        count: 1
+        count: 20
         trajectory: P4
         timer: 9000
 
@@ -104,15 +109,81 @@ alienDeployments:
     length: 50
     height: 4
 
-alienItemLevels:
-  - [0, 0, 0, 0, 1, 1, 1, 2, 2, 2]
+  - type: STR_MINING_BASE_INVESTIGATION
+    data:
+      - alienRank: 2 # STR_ALIEN_SLAVE (soldier)
+        lowQty: 6
+        highQty: 9
+        dQty: 3
+        percentageOutsideUfo: 75
+        itemSets:
+          -
+            - STR_HOSTILE_MININGTOOL
+          -
+            - STR_HOSTILE_MININGTOOL
+          -
+            - STR_HOSTILE_MININGTOOL
+      - alienRank: 1 # STR_HOSTILE_MECHANIZED (engineer)
+        lowQty: 1
+        highQty: 2
+        dQty: 0
+        percentageOutsideUfo: 100
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+      - alienRank: 0 # STR_HOSTILE_OVERSEER (Navigator)
+        lowQty: 2
+        highQty: 3
+        dQty: 1
+        percentageOutsideUfo: 50
+        itemSets:
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_LAUNCHER_STUNBOMB
+            - STR_LAUNCHER_STUNBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_LAUNCHER_STUNBOMB
+            - STR_LAUNCHER_STUNBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_LAUNCHER_STUNBOMB
+            - STR_LAUNCHER_STUNBOMB
+    width: 60
+    length: 60
+    height: 4
+    terrains:
+      - XBASE
+    shade: -1
+    maxShade: 10
+
+  - type: STR_BASE_DEFENSE
+    shade: -1
+    maxShade: 10
+    height: 4
+
+ufos:
+  - type: STR_LARGE_SCOUT
+    raceBonus:
+      STR_MINING_CREW:
+        missionCustomDeploy: STR_MINING_BASE_INVESTIGATION
 
 missionScripts:
   - type: gameStart
     missionWeights:
       0:
         STR_CRASH_INVESTIGATION: 100
-    lastMonth: 0
+    lastMonth: -1 #0
     targetBaseOdds: 100
     raceWeights:
       0:
