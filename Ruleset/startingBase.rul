@@ -30,31 +30,31 @@ startingBase:
     - type: STR_BACK_CORRIDOR_LEFT
       x: 0
       y: 2
-    - type: STR_BACK_CORRIDOR_INTERIOR
+    - type: STR_CARGO_LEFT
       x: 1
       y: 2
-    - type: STR_BACK_CORRIDOR_INTERIOR
+    - type: STR_CARGO_RIGHT
       x: 2
       y: 2
     - type: STR_BACK_CORRIDOR_RIGHT
       x: 3
       y: 2
-    - type: STR_LIVING_QUARTERS
+    - type: STR_FRONT_CORRIDOR_LEFT
       x: 1
       y: 3
-    - type: STR_GENERAL_STORES
+    - type: STR_FRONT_QUARTERS_LEFT
       x: 2
       y: 3
-    - type: STR_LABORATORY
+    - type: STR_FRONT_QUARTERS_RIGHT
       x: 0
       y: 3
-    - type: STR_WORKSHOP
+    - type: STR_FRONT_CORRIDOR_LEFT
       x: 3
       y: 3
-    - type: STR_SMALL_RADAR_SYSTEM
+    - type: STR_COCKPIT_LEFT
       x: 1
       y: 4
-    - type: STR_SMALL_RADAR_SYSTEM
+    - type: STR_COCKPIT_RIGHT
       x: 2
       y: 4
 
@@ -104,18 +104,32 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 2
-  - type: STR_BACK_CORRIDOR_INTERIOR
+  - type: STR_CARGO_LEFT
     spriteShape: 3
     spriteFacility: 100
     buildCost: 75000
     buildTime: 12
     monthlyCost: 2000
+    storage: 50
     mapName: XBASS_24
     verticalLevels:
     - type: ground
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 3
+  - type: STR_CARGO_RIGHT
+    spriteShape: 3
+    spriteFacility: 100
+    buildCost: 75000
+    buildTime: 12
+    monthlyCost: 2000
+    storage: 50
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 4
   - type: STR_BACK_CORRIDOR_RIGHT
     spriteShape: 3
     spriteFacility: 100
@@ -127,7 +141,69 @@ facilities:
     - type: ground
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
-      blocks: 4
+      blocks: 5
+  - type: STR_FRONT_CORRIDOR_LEFT
+    spriteShape: 3
+    spriteFacility: 100
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 6
+  - type: STR_FRONT_QUARTERS_LEFT
+    spriteShape: 3
+    spriteFacility: 100
+    personnel: 12
+    workshops: 1
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 7
+  - type: STR_FRONT_QUARTERS_RIGHT
+    spriteShape: 3
+    spriteFacility: 100
+    personnel: 12
+    labs: 1
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 8
+  - type: STR_FRONT_CORRIDOR_RIGHT
+    spriteShape: 3
+    spriteFacility: 100
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 9
+  - type: STR_COCKPIT_LEFT
+    spriteShape: 3
+    spriteFacility: 100
+    radarRange: 1695
+    radarChance: 10
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 10
+  - type: STR_COCKPIT_RIGHT
+    spriteShape: 3
+    spriteFacility: 100
+    radarRange: 1695
+    radarChance: 10
+    mapName: XBASS_24
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 4]
+      terrain: CRASHED_SHIP
+      blocks: 11
 
 extraSprites:
   - type: BASEBITS.PCK
@@ -233,7 +309,28 @@ terrains:
       - name: Back_Interior_Corridor
         width: 10
         length: 10
+      - name: Back_Interior_Right
+        width: 10
+        length: 10
       - name: Back_Right_Corridor
+        width: 10
+        length: 10
+      - name: Front_Left_Corridor
+        width: 10
+        length: 10
+      - name: Front_Left_Interior
+        width: 10
+        length: 10
+      - name: Front_Right_Interior
+        width: 10
+        length: 10
+      - name: Front_Right_Corridor
+        width: 10
+        length: 10
+      - name: Cockpit_Left
+        width: 10
+        length: 10
+      - name: Cockpit_Right
         width: 10
         length: 10
 
@@ -243,5 +340,12 @@ extraStrings:
       STR_HANGAR_LEFT: "Starboard Hangar"
       STR_HANGAR_RIGHT: "Port Hangar"
       STR_BACK_CORRIDOR_LEFT: "Starboard Corridor"
-      STR_BACK_CORRIDOR_INTERIOR: "Interior Corridor"
-      STR_BACK_CORRIDOR_LEFT: "Port Corridor"
+      STR_CARGO_LEFT: "Starboard Cargo"
+      STR_CARGO_RIGHT: "Port Cargo"
+      STR_BACK_CORRIDOR_RIGHT: "Port Corridor"
+      STR_FRONT_CORRIDOR_LEFT: "Starboard Observation"
+      STR_FRONT_QUARTERS_LEFT: "Starboard Quarters"
+      STR_FRONT_QUARTERS_RIGHT: "Port Quarters"
+      STR_FRONT_CORRIDOR_RIGHT: "Port Observation"
+      STR_COCKPIT_LEFT: "Starboard Bridge"
+      STR_COCKPIT_RIGHT: "Port Bridge"

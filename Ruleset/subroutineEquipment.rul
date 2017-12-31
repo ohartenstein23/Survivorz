@@ -141,6 +141,7 @@ armors:
     underArmor: 90
     drawingRoutine: 21
     movementType: 1
+    moveSound: 15
     size: 2
     damageModifier:
       - 1.0
