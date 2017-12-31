@@ -3,9 +3,6 @@ startingBase:
     STR_AI_SUBROUTINE: 1
   items:
     STR_POST_ITEM: 1
-    STR_LINAC_CARBINE: 2
-    STR_LINAC_PISTOL: 2
-    STR_LINAC_PISTOL_BATTERY: 6
     STR_OFFICER_CRYOCHAMBER: 1
     STR_ACTIVE_CRYOCHAMBER: 3
   crafts:
@@ -39,16 +36,16 @@ startingBase:
     - type: STR_BACK_CORRIDOR_RIGHT
       x: 3
       y: 2
-    - type: STR_FRONT_CORRIDOR_LEFT
+    - type: STR_FRONT_QUARTERS_LEFT
       x: 1
       y: 3
-    - type: STR_FRONT_QUARTERS_LEFT
+    - type: STR_FRONT_QUARTERS_RIGHT
       x: 2
       y: 3
-    - type: STR_FRONT_QUARTERS_RIGHT
+    - type: STR_FRONT_CORRIDOR_LEFT
       x: 0
       y: 3
-    - type: STR_FRONT_CORRIDOR_LEFT
+    - type: STR_FRONT_CORRIDOR_RIGHT
       x: 3
       y: 3
     - type: STR_COCKPIT_LEFT
@@ -89,7 +86,7 @@ facilities:
     mapName: Hangar_Right
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 1
   - type: STR_BACK_CORRIDOR_LEFT
@@ -101,7 +98,7 @@ facilities:
     mapName: XBASS_24
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 2
   - type: STR_CARGO_LEFT

@@ -278,7 +278,7 @@ items:
     size: 0.1
 
 manufacture:
-
+# *** Opening up cryochambers ***
   - name: STR_CHIEF_ENGINEER_WAKEUP
     category: STR_CRYOCHAMBERS
     time: 1
@@ -286,6 +286,10 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
+      STR_LINAC_PISTOL: 2
+      STR_LINAC_CARBINE: 2
+      STR_LINAC_FLARE: 12
+      STR_LINAC_GRENADE: 12
     spawnedPersonType: STR_CHIEF_ENGINEER
   - name: STR_HEAD_SCIENTIST_WAKEUP
     category: STR_CRYOCHAMBERS
@@ -296,6 +300,8 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
+      STR_LINAC_PISTOL: 2
+      STR_LINAC_RIFLE: 2
     spawnedPersonType: STR_HEAD_SCIENTIST
   - name: STR_GARRISON_OFFICER_WAKEUP
     category: STR_CRYOCHAMBERS
@@ -306,6 +312,8 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
+      STR_LINAC_RIFLE: 4
+      STR_LINAC_BATTLE_RIFLE: 1
     spawnedPersonType: STR_GARRISON_OFFICER
 
   - name: STR_COLONIST_WAKEUP
@@ -338,5 +346,5 @@ extraStrings:
       STR_HEAD_SCIENTIST_WAKEUP: "Open Scientist's Cryochamber"
       STR_GARRISON_OFFICER_WAKEUP: "Open Officer's Cryochamber"
       STR_COLONIST_WAKEUP: "Open Colonist's Cryochamber"
-      STR_PERSON_JOINING: "Entity Joining"
+      STR_PERSON_JOINING: "New Unit(s)"
       STR_NOT_ENOUGH_LIVING_SPACE_AT_BASE: "Not enough resource nodes to accomodate{NEWLINE}{0}{NEWLINE}at{NEWLINE}{1}"

@@ -102,8 +102,8 @@ items:
     costSell: 0
     costBuy: 0
     size: 0.1
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 10
     bigSprite: 26
     handSprite: 80
@@ -133,8 +133,8 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.2
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 8
     bigSprite: 31 # Borrowing plasma rifle gfx for now
     floorSprite: 30
@@ -155,8 +155,8 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 3
     bigSprite: 41
     floorSprite: 33
@@ -173,8 +173,8 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.2
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 8
     bigSprite: 500
     handSprite: 500
@@ -194,8 +194,8 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 4
     bigSprite: 501
     #handSprite: -1
@@ -211,8 +211,8 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_WEAPON_USE
     weight: 4
     bigSprite: 502
     #handSprite: -1
@@ -249,3 +249,21 @@ extraSprites:
     subY: 40
     files:
       500: Resources/XOps/Handobs/ClusterLauncher.gif
+
+extraStrings:
+  - type: en-US
+    strings:
+# *** Units ***
+      STR_HOSTILES: "Hostiles"
+      STR_MINING_CREW: "Hostile Mining Crew"
+      STR_HOSTILE_OVERSEER: "Hostile"
+      STR_HOSTILE_MECHANIZED: "Hostile Mech"
+      STR_ALIEN_SLAVE: "Hostile"
+
+# *** Weapons ***
+      STR_HOSTILE_MININGTOOL: "Mining Tool"
+      STR_HOSTILE_CARBINE: "Hostile Carbine"
+      STR_HOSTILE_CARBINE_CLIP: "Hostile Carbine Clip"
+      STR_HOSTILE_LAUNCHER: "Hostile Launcher"
+      STR_HOSTILE_LAUNCHER_STUNBOMB: "Hostile Capture Bombs"
+      STR_HOSTILE_LAUNCHER_GASBOMB: "Hostile Lethal Bombs"

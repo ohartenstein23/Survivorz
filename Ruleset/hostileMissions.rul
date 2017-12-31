@@ -11,11 +11,11 @@ alienMissions:
         STR_MINING_CREW: 100
     waves:
       - ufo: STR_MEDIUM_SCOUT
-        count: 20
+        count: 2
         trajectory: P2
         timer: 7800
       - ufo: STR_LARGE_SCOUT
-        count: 20
+        count: 2
         trajectory: P4
         timer: 9000
 
@@ -42,16 +42,16 @@ alienDeployments:
         itemSets:
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 40
     length: 40
     height: 4
@@ -95,16 +95,16 @@ alienDeployments:
         itemSets:
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 50
     length: 50
     height: 4
@@ -149,16 +149,16 @@ alienDeployments:
         itemSets:
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
-            - STR_LAUNCHER_STUNBOMB
-            - STR_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 60
     length: 60
     height: 4
@@ -183,7 +183,7 @@ missionScripts:
     missionWeights:
       0:
         STR_CRASH_INVESTIGATION: 100
-    lastMonth: -1 #0
+    lastMonth: 0
     targetBaseOdds: 100
     raceWeights:
       0:

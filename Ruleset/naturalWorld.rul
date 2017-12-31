@@ -1,0 +1,33 @@
+terrains:
+  - name: CULTA
+    script: FARM
+    mapDataSets:
+      - BLANKS
+      - CULTIVAT
+      - BARN
+    mapBlocks:
+      - name: CULTA00
+        width: 10
+        length: 10
+        groups: 1
+      - name: CULTA06
+        width: 10
+        length: 10
+      - name: CULTA07
+        width: 10
+        length: 10
+        groups: 1
+      - name: CULTA11
+        width: 10
+        length: 10
+        groups: 1
+      - name: CULTA14
+        width: 10
+        length: 10
+
+mapScripts:
+  - type: FARM
+    commands:
+    - type: addCraft
+    - type: addUFO
+    - type: fillArea

@@ -1,3 +1,16 @@
+﻿turnAIUseGrenade: 1
+turnAIUseBlaster: 1
+maxViewDistance: 30
+noLOSAccuracyPenaltyCursor: true
+noLOSAccuracyPenaltyGlobal: 50
+startingTime:
+  second: 0
+  minute: 0
+  hour: 0
+  weekday: 1
+  day: 1
+  month: 1
+  year: 0
 lighting:
   enhanced: 7
 fixedUserOptions:
