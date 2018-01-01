@@ -1,3 +1,154 @@
+alienRaces:
+  - id: STR_NATURE
+    retaliation: false
+    members:
+      - STR_DUMMY
+
+units:
+  - type: STR_DUMMY
+    race: STR_NATURE
+    rank: STR_LIVE_TERRORIST
+    stats:
+      tu: 1
+      stamina: 1
+      health: 1000
+      bravery: 110
+      reactions: 0
+      firing: 0
+      throwing: 0
+      strength: 0
+      psiStrength: 1000
+      psiSkill: 0
+      melee: 0
+    armor: DUMMY_ARMOR
+    standHeight: 1
+    kneelHeight: 1
+    floatHeight: 0
+    value: 0
+    energyRecovery: 1
+
+armors:
+  - type: DUMMY_ARMOR
+    spriteSheet: SECTOID.PCK
+    corpseBattle:
+      - STR_DUMMY_CORPSE
+    storeItem: STR_NONE
+    fearImmune: true
+    bleedImmune: true
+    zombiImmune: true
+    painImmune: true
+    weight: 0
+    frontArmor: 1000
+    sideArmor: 1000
+    rearArmor: 1000
+    underArmor: 1000
+    damageModifier:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+    loftempsSet: [ 0 ]
+    camouflageAtDay: 1
+    camouflageAtNight: 1
+    movementType: 1
+
+items:
+  - type: STR_DUMMY_CORPSE
+    recover: false
+    battleType: 11
+  - type: STR_DUMMY
+    size: 0.0
+    recover: false
+    liveAlien: true
+
+alienDeployments:
+  - type: STR_ENVIRO_SCAN_EASY
+    width: 50
+    length: 50
+    height: 4
+    alert: STR_ENVIRO_SCAN_EASY
+    #alertBackground:
+    alertDescription: STR_ENVIRO_SCAN_EASY_DESCRIPTION
+    briefing:
+      showTarget: false
+      #palette:
+      #music:
+    markerName: STR_ENVIRO_SCAN_EASY
+    duration: [240, 480]
+    #music:
+    terrains:
+      #- FOREST_ENVIRO_SCAN
+      - FOREST
+      - DESERT
+      - CULTA
+    data:
+      - alienRank: 0
+        lowQty: 1
+        highQty: 1
+        dQty: 0
+        percentageOutsideUfo: 100
+        itemSets:
+          -
+            []
+          -
+            []
+          -
+            []
+    chronoTrigger: 2
+    turnLimit: 8
+
+alienMissions:
+  - type: STR_ENVIRO_SCAN_EASY
+    objective: 3
+    spawnZone: 0
+    raceWeights:
+      0:
+          STR_NATURE: 100
+    waves:
+      - ufo: STR_ENVIRO_SCAN_EASY #dummy
+        count: 1
+        trajectory: CA_SPAWN
+        timer: 2000
+        objective: true
+
+ufoTrajectories:
+  - id: CA_SPAWN
+    groundTimer: 0
+    waypoints:
+      - [0, 0, 0]
+
+missionScripts:
+  - type: enviroScanEasy
+    firstMonth: 0
+    executionOdds: 100
+    missionWeights:
+      0:
+        STR_ENVIRO_SCAN_EASY: 100
+    regionWeights:
+      0:
+        REGION_ENVIRO_SCAN_EASY: 100
+    useTable: false
+    startDelay: 20
+    randomDelay: 40300
+
+regions:
+  - type: REGION_ENVIRO_SCAN_EASY
+    missionZones:
+      -
+        - [176, 176, -6, -6, -2]
+
+globe:
+  textures:
+    - id: -2
+      deployments:
+        - STR_ENVIRO_SCAN_EASY: 100
+
 terrains:
   - name: CULTA
     script: FARM
@@ -31,3 +182,15 @@ mapScripts:
     - type: addCraft
     - type: addUFO
     - type: fillArea
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_DUMMY: "Dummy Unit"
+      STR_DUMMY_CORPSE: "Dummy Unit Corpse"
+      STR_NATURE: "Nature"
+
+#*** Environmental scan missions ***
+      STR_ENVIRO_SCAN_EASY: "Environmental Anomoly Detected"
+      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanEasyDescription "Anomoly detected at this location.{NEWLINE}Close-range scan required to obtain environmental information.{NEWLINE}   Scan Duration: 8 Turns{NEWLINE}   Identified recoverable materials may be extracted from terrain before scan finishes."
+      STR_ENVIRO_SCAN_EASY_BRIEFING: *enviroScanEasyDescription
