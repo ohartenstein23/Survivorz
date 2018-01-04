@@ -339,10 +339,30 @@ items:
     power: 50
     damageType: 3
     damageAlter:
-        toArmorPre: 0.05
-        toStun: 1.0
+        ToArmorPre: 0.05
+        ToStun: 1.0
+        ToTile: 0.8
     clipSize: 1
     battleType: 2
+
+manufacture:
+  - name: STR_LINAC_FLARE
+    category: STR_LINAC_CHARGES
+    cost: 800
+    space: 0
+    time: 2
+    producedItems:
+      STR_LINAC_FLARE: 1
+  - name: STR_LINAC_GRENADE
+    category: STR_LINAC_CHARGES
+    requires:
+      - STR_LINAC_GRENADE
+    cost: 1000
+    space: 0
+    time: 2
+    producedItems:
+      STR_LINAC_GRENADE: 1
+
 ufopaedia:
   - id: STR_LINAC_WEAPONS
     type_id: 8
@@ -402,8 +422,9 @@ ufopaedia:
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_GRENADE_PEDIA
-    #requires:
-    #  - STR_POST_ITEM
+    requires:
+      - STR_LINAC_GRENADE
+
 extraSprites:
   - type: BIGOBS.PCK
     files:
@@ -478,6 +499,7 @@ extraSprites:
       385: Resources/Bulletsprites/pulse_standard_2.png
       420: Resources/Bulletsprites/pulse_flare.png
       455: Resources/Bulletsprites/linac_standard.png
+
 extraStrings:
   - type: en-US
     strings:
@@ -503,7 +525,7 @@ extraStrings:
       STR_LINAC_STD_BATTERY_PEDIA: "LINAC Rifle Battery"
       STR_LINAC_BATTLE_BATTERY_PEDIA: "LINAC Battle Rifle Battery"
       STR_LINAC_FLARE_PEDIA: "This single-use capacitor provides the extra mass and energy to fire a larger bolt of high-temperature particles that will ignite a small region of terrain when the containment field is breached by impact with a solid object. It can be fired by any weapon in the LINAC series."
-      STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series."
+      STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}It is also effective for clearing natural terrain obstructions."
       STR_SHOT_TYPE_AUTO: "Auto (x{0})"
       STR_SHOT_TYPE_SNAP: "Snap (x{0})"
       STR_SHOT_TYPE_AIMED: "Aimed (x{0})"

@@ -57,6 +57,8 @@ armors:
     camouflageAtDay: 1
     camouflageAtNight: 1
     movementType: 1
+    units:
+      - STR_DUMMY_ALIEN
 
 items:
   - type: STR_DUMMY_CORPSE
@@ -66,13 +68,23 @@ items:
     size: 0.0
     recover: false
     liveAlien: true
+  - type: STR_ENVIRO_SCAN_EASY_ITEM
+    size: 0.0
+    costSell: 0
+    specialType: 20
+    recoveryPoints: 10
+  - type: STR_RECOVERED_MATERIALS
+    size: 0.1
+    costSell: 10000
+    specialType: 30
+    recoveryPoints: 10
 
 alienDeployments:
   - type: STR_ENVIRO_SCAN_EASY
     width: 50
     length: 50
     height: 4
-    alert: STR_ENVIRO_SCAN_EASY
+    alert: STR_ENVIRO_SCAN_ALERT
     #alertBackground:
     alertDescription: STR_ENVIRO_SCAN_EASY_DESCRIPTION
     briefing:
@@ -83,9 +95,7 @@ alienDeployments:
     duration: [240, 480]
     #music:
     terrains:
-      #- FOREST_ENVIRO_SCAN
       - FOREST
-      - DESERT
       - CULTA
     data:
       - alienRank: 0
@@ -102,6 +112,7 @@ alienDeployments:
             []
     chronoTrigger: 2
     turnLimit: 8
+    missionBountyItem: STR_ENVIRO_SCAN_EASY_ITEM
 
 alienMissions:
   - type: STR_ENVIRO_SCAN_EASY
@@ -150,6 +161,36 @@ globe:
         - STR_ENVIRO_SCAN_EASY: 100
 
 terrains:
+  - name: RESOURCES
+    mapDataSets:
+      - BLANKS
+      - SURVIVORZ_ENVIRO_RECOVERY
+    mapBlocks:
+      - name: Resources_00
+        width: 10
+        length: 10
+        height: 1
+        groups: 5
+      - name: Resources_01
+        width: 10
+        length: 10
+        height: 1
+        groups: 5
+      - name: Resources_02
+        width: 10
+        length: 10
+        height: 1
+        groups: 5
+      - name: Resources_03
+        width: 10
+        length: 10
+        height: 1
+        groups: 5
+      - name: Resources_04
+        width: 10
+        length: 10
+        height: 1
+        groups: 5
   - name: CULTA
     script: FARM
     mapDataSets:
@@ -181,7 +222,71 @@ mapScripts:
     commands:
     - type: addCraft
     - type: addUFO
+    - type: addBlock
+      executions: 2
+      size: [1, 1, 4]
+      verticalLevels:
+      - type: ground
+        size: [1, 1, 0]
+        groups: 1
+      - type: middle
+        size: [1, 1, 4]
+        terrain: RESOURCES
+        groups: 5
+    - type: addBlock
+      executions: 2
+      executionChances: 50
+      label: 1
+      executions: 2
+      size: [1, 1, 4]
+      verticalLevels:
+      - type: ground
+        size: [1, 1, 0]
+        groups: 1
+      - type: middle
+        size: [1, 1, 4]
+        terrain: RESOURCES
+        groups: 5
     - type: fillArea
+  - type: DEFAULT
+    commands:
+    - type: addCraft
+    - type: addUFO
+    - type: addBlock
+      executions: 2
+      size: 2
+    - type: addBlock
+      executions: 2
+      size: [1, 1, 4]
+      verticalLevels:
+      - type: ground
+        size: [1, 1, 0]
+        groups: 1
+      - type: middle
+        size: [1, 1, 4]
+        terrain: RESOURCES
+        groups: 5
+    - type: addBlock
+      executions: 2
+      executionChances: 50
+      label: 1
+      executions: 2
+      size: [1, 1, 4]
+      verticalLevels:
+      - type: ground
+        size: [1, 1, 0]
+        groups: 1
+      - type: middle
+        size: [1, 1, 4]
+        terrain: RESOURCES
+        groups: 5
+    - type: fillArea
+
+MCDPatches:
+  - type: SURVIVORZ_ENVIRO_RECOVERY
+    data:
+      - MCDIndex: 5
+        specialType: 30
 
 extraStrings:
   - type: en-US
@@ -191,6 +296,10 @@ extraStrings:
       STR_NATURE: "Nature"
 
 #*** Environmental scan missions ***
-      STR_ENVIRO_SCAN_EASY: "Environmental Anomoly Detected"
-      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanEasyDescription "Anomoly detected at this location.{NEWLINE}Close-range scan required to obtain environmental information.{NEWLINE}   Scan Duration: 8 Turns{NEWLINE}   Identified recoverable materials may be extracted from terrain before scan finishes."
+      STR_RECOVERED_MATERIALS: "Valuable Minerals"
+
+      STR_ENVIRO_SCAN_ALERT: "Environmental Anomaly Detected"
+      STR_ENVIRO_SCAN_EASY: "Environmental Anomaly"
+      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanEasyDescription "Environmental anomaly detected at this location.{NEWLINE}Close-range scan required to obtain detailed information.{NEWLINE}   Scan Duration: 8 Turns{NEWLINE}   Recoverable materials may be extracted from terrain before scan finishes."
       STR_ENVIRO_SCAN_EASY_BRIEFING: *enviroScanEasyDescription
+      STR_ENVIRO_SCAN_EASY_ITEM: "Environmental Scan Data"

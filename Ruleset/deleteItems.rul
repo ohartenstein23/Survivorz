@@ -1,4 +1,4 @@
-items:
+nopeitems:
   - delete: STR_STINGRAY_LAUNCHER
   - delete: STR_STINGRAY_MISSILES
   - delete: STR_AVALANCHE_LAUNCHER
@@ -45,9 +45,6 @@ items:
   - delete: STR_PSI_AMP
   - delete: STR_STUN_ROD
   - delete: STR_ELECTRO_FLARE
-  - delete: STR_CORPSE
-  - delete: STR_CORPSE_ARMOR
-  - delete: STR_CORPSE_SUIT
   - delete: STR_HEAVY_PLASMA
   - delete: STR_HEAVY_PLASMA_CLIP
   - delete: STR_PLASMA_RIFLE
@@ -62,6 +59,9 @@ items:
   - delete: STR_MIND_PROBE
 
 dontDeleteYet:
+  - delete: STR_CORPSE
+  - delete: STR_CORPSE_ARMOR
+  - delete: STR_CORPSE_SUIT
   - delete: STR_ELERIUM_115
   - delete: STR_SECTOID_CORPSE
   - delete: STR_SNAKEMAN_CORPSE

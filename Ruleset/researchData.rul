@@ -35,9 +35,64 @@ research:
     cost: 0
     score: 0
 
+# Research articles for items from waking up the officers
+  - name: STR_CHIEF_ENGINEER_ITEM
+    cost: 1
+    score: 0
+    needItem: true
+    destroyItem: true
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_LINAC_GRENADE
+  - name: STR_HEAD_SCIENTIST_ITEM
+    cost: 1
+    score: 0
+    needItem: true
+    destroyItem: true
+    dependencies:
+      - STR_POST_ITEM
+  - name: STR_GARRISON_OFFICER_ITEM
+    cost: 1
+    score: 0
+    needItem: true
+    destroyItem: true
+    dependencies:
+      - STR_POST_ITEM
+
+# Environmental scan data
+  - name: STR_ENVIRO_SCAN_EASY_ITEM
+    cost: 5
+    score: 50
+    needItem: true
+    destroyItem: true
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_LINAC_GRENADE
+
+# LINAC weapons
+  - name: STR_LINAC_GRENADE
+    cost: 0
+    score: 0
+    dependencies:
+      - STR_CHIEF_ENGINEER_ITEM
+      - STR_ENVIRO_SCAN_EASY_ITEM
+
 items:
 # getOneFree w/o item is repeatable, need this to make initial research run only once
   - type: STR_POST_ITEM
+    costBuy: 0
+    costSell: 0
+
+# Research items from the officers
+  - type: STR_CHIEF_ENGINEER_ITEM
+    costBuy: 0
+    costSell: 0
+  - type: STR_HEAD_SCIENTIST_ITEM
+    costBuy: 0
+    costSell: 0
+  - type: STR_GARRISON_OFFICER_ITEM
     costBuy: 0
     costSell: 0
 
@@ -89,3 +144,6 @@ extraStrings:
       STR_WORLDGEN_WAR: "War World Generated"
       STR_WORLDGEN_WAR_PEDIA: "Lorem Ipsum W"
 
+      STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
+      STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
+      STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Data"
