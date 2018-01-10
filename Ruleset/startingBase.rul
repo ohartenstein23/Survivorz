@@ -15,7 +15,7 @@ startingBase:
   scientists: 1
   engineers: 1
   facilities:
-    - type: STR_ACCESS_LIFT
+    - type: STR_TRANSPONDER
       x: 4
       y: 2
     - type: STR_HANGAR_LEFT
@@ -55,19 +55,32 @@ startingBase:
       x: 2
       y: 4
 
+initialFunding: 500
+
 facilities:
-  - type: STR_ACCESS_LIFT
+  - type: STR_TRANSPONDER
+    spriteShape: 2
+    spriteFacility: 17
+    lift: true
+    buildCost: 0
+    buildTime: 1
+    monthlyCost: 5000
     verticalLevels:
     - type: ground
       size: [1, 1, 4]
       terrain: baseTerrain
+
+#*** Crashed ship facilities ***
+
   - type: STR_HANGAR_LEFT
     spriteShape: 9
     spriteFacility: 9
     size: 2
-    buildCost: 200000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 25
-    monthlyCost: 25000
+    monthlyCost: 100000
     crafts: 1
     mapName: Hangar_Left
     verticalLevels:
@@ -75,13 +88,16 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 0
+
   - type: STR_HANGAR_RIGHT
     spriteShape: 9
     spriteFacility: 9
     size: 2
-    buildCost: 200000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 25
-    monthlyCost: 25000
+    monthlyCost: 100000
     crafts: 1
     mapName: Hangar_Right
     verticalLevels:
@@ -89,24 +105,30 @@ facilities:
       size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 1
+
   - type: STR_BACK_CORRIDOR_LEFT
     spriteShape: 3
     spriteFacility: 100
-    buildCost: 75000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 12
-    monthlyCost: 2000
+    monthlyCost: 5000
     mapName: XBASS_24
     verticalLevels:
     - type: ground
       size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 2
+
   - type: STR_CARGO_LEFT
     spriteShape: 3
     spriteFacility: 100
-    buildCost: 75000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 12
-    monthlyCost: 2000
+    monthlyCost: 10000
     storage: 50
     mapName: XBASS_24
     verticalLevels:
@@ -114,12 +136,15 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 3
+
   - type: STR_CARGO_RIGHT
     spriteShape: 3
     spriteFacility: 100
-    buildCost: 75000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 12
-    monthlyCost: 2000
+    monthlyCost: 10000
     storage: 50
     mapName: XBASS_24
     verticalLevels:
@@ -127,30 +152,45 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 4
+
   - type: STR_BACK_CORRIDOR_RIGHT
     spriteShape: 3
     spriteFacility: 100
-    buildCost: 75000
+    requires:
+      - STR_DISABLED
+    buildCost: 0
     buildTime: 12
-    monthlyCost: 2000
+    monthlyCost: 5000
     mapName: XBASS_24
     verticalLevels:
     - type: ground
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 5
+
   - type: STR_FRONT_CORRIDOR_LEFT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 5000
     mapName: XBASS_24
     verticalLevels:
     - type: ground
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 6
+
   - type: STR_FRONT_QUARTERS_LEFT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 25000
     personnel: 12
     workshops: 1
     mapName: XBASS_24
@@ -159,9 +199,15 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 7
+
   - type: STR_FRONT_QUARTERS_RIGHT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 25000
     personnel: 12
     labs: 1
     mapName: XBASS_24
@@ -170,18 +216,30 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 8
+
   - type: STR_FRONT_CORRIDOR_RIGHT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 5000
     mapName: XBASS_24
     verticalLevels:
     - type: ground
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 9
+
   - type: STR_COCKPIT_LEFT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 25000
     radarRange: 1695
     radarChance: 10
     mapName: XBASS_24
@@ -190,9 +248,15 @@ facilities:
       size: [1, 1, 4]
       terrain: CRASHED_SHIP
       blocks: 10
+
   - type: STR_COCKPIT_RIGHT
     spriteShape: 3
     spriteFacility: 100
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    monthlyCost: 25000
     radarRange: 1695
     radarChance: 10
     mapName: XBASS_24
@@ -334,6 +398,7 @@ terrains:
 extraStrings:
   - type: en-US
     strings:
+      STR_TRANSPONDER: "Transponder"
       STR_HANGAR_LEFT: "Starboard Hangar"
       STR_HANGAR_RIGHT: "Port Hangar"
       STR_BACK_CORRIDOR_LEFT: "Starboard Corridor"
