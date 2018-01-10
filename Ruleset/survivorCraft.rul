@@ -1,5 +1,5 @@
 crafts:
-  - type: STR_SKYRANGER
+  - type: STR_SHUTTLE
     sprite: 0
     fuelMax: 1500
     damageMax: 150
@@ -8,7 +8,7 @@ crafts:
     soldiers: 8
     vehicles: 1
     costBuy: 0
-    costRent: 500000
+    costRent: 10000
     refuelRate: 50
     transferTime: 72
     score: 200
@@ -31,5 +31,7 @@ crafts:
       - [6, 4, 1, 6]
       - [6, 5, 1, 6]
 
-  - type: STR_INTERCEPTOR
-    costBuy: 0
+extraStrings:
+  - type: en-US
+    strings:
+      STR_SHUTTLE: "SHUTTLE"

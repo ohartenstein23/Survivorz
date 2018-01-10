@@ -6,7 +6,7 @@ startingBase:
     STR_OFFICER_CRYOCHAMBER: 1
     STR_ACTIVE_CRYOCHAMBER: 3
   crafts:
-    - type: STR_SKYRANGER
+    - type: STR_SHUTTLE
       id: 1
       fuel: 1500
       damage: 0
