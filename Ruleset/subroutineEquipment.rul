@@ -6,6 +6,10 @@ armors:
       - STR_RECOVER_FLYING_DRONE_ARMOR
     corpseGeo: STR_RECOVER_FLYING_DRONE_ARMOR
     storeItem: STR_NONE
+    visibilityAtDay: 30
+    visibilityAtNight: 15
+    personalLight: 5
+    thermalVision: 50
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -120,6 +124,10 @@ armors:
       - SECTOPOD_CORPSE_3
       - SECTOPOD_CORPSE_4
     corpseGeo: STR_SECTOPOD_CORPSE
+    visibilityAtDay: 30
+    visibilityAtNight: 15
+    personalLight: 15
+    thermalVision: 50
     storeItem: STR_NONE
     fearImmune: true
     bleedImmune: true

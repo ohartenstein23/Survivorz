@@ -9,6 +9,8 @@ armors:
     corpseBattle:
       - STR_CORPSE_ARMOR
     storeItem: STR_PERSONAL_ARMOR
+    visibilityAtDay: 30
+    personalLight: 5
     frontArmor: 30
     sideArmor: 25
     rearArmor: 20

@@ -95,8 +95,21 @@ units:
     intelligence: 2
     aggression: 0
 
-# *** Hostile weapons ***
 items:
+# *** Hostile Live Units ***
+  - type: STR_HOSTILE_OVERSEER
+    liveAlien: true
+    recover: false
+
+  - type: STR_HOSTILE_MECHANIZED
+    liveAlien: true
+    recover: false
+
+  - type: STR_ALIEN_SLAVE
+    liveAlien: true
+    recover: false
+
+# *** Hostile weapons ***
   - type: STR_HOSTILE_MININGTOOL
     # Filler weapon, mostly on mining crew
     costSell: 0

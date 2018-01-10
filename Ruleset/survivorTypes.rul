@@ -52,7 +52,8 @@ soldiers:
     kneelHeight: 14
     femaleFrequency: 50
     soldierNames:
-      - SoldierName/
+      - delete
+      - Ruleset/SoldierNames/EngineerName.nam
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
 
@@ -102,7 +103,8 @@ soldiers:
     kneelHeight: 14
     femaleFrequency: 50
     soldierNames:
-      - SoldierName/
+      - delete
+      - Ruleset/SoldierNames/ScientistName.nam
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
 
@@ -153,7 +155,8 @@ soldiers:
     kneelHeight: 14
     femaleFrequency: 50
     soldierNames:
-      - SoldierName/
+      - delete
+      - Ruleset/SoldierNames/OfficerName.nam
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
 
@@ -207,6 +210,8 @@ soldiers:
     femaleFrequency: 50
     soldierNames:
       - SoldierName/
+      #- delete
+      #- Ruleset/SoldierNames/ColonistName.nam
     deathMale: [41, 42, 43]
     deathFemale: [44, 45, 46]
 
@@ -264,7 +269,7 @@ soldiers:
     femaleFrequency: 50
     soldierNames:
       - delete
-      - Ruleset/AINames.nam
+      - Ruleset/SoldierNames/AINames.nam
     allowPromotion: false
     deathMale: 23
     deathFemale: 23

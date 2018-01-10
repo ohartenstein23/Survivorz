@@ -52,8 +52,8 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
-    width: 40
-    length: 40
+    width: 50
+    length: 50
     height: 4
   - type: STR_LARGE_SCOUT
     data:
@@ -163,7 +163,7 @@ alienDeployments:
     length: 60
     height: 4
     terrains:
-      - XBASE
+      - CRASHED_SHIP
     shade: -1
     maxShade: 10
 
@@ -171,6 +171,8 @@ alienDeployments:
     shade: -1
     maxShade: 10
     height: 4
+    terrains:
+      - CRASHED_SHIP
 
 ufos:
   - type: STR_LARGE_SCOUT

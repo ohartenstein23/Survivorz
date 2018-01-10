@@ -32,15 +32,16 @@ items:
     confAimed:
       ammoSlot: 0
       shots: 2
+      name: STR_SHORT_BURST
     confSnap:
       ammoSlot: 0
-      shots: 2
+      shots: 1
     confAuto:
       shots: 1
       name: STR_CHARGE_SHOT
       ammoSlot: 1
-    accuracyAimed: 65
-    accuracySnap: 40
+    accuracyAimed: 25
+    accuracySnap: 60
     accuracyAuto: 45
     tuAimed: 33
     tuSnap: 22
@@ -138,17 +139,16 @@ items:
           - STR_LINAC_GRENADE
     confAimed:
       ammoSlot: 0
-      shots: 4
-      name: STR_AUTO_SHOT
+      shots: 3
+      name: STR_SHORT_BURST
     confSnap:
       ammoSlot: 0
-      shots: 2
     confAuto:
       shots: 1
       name: STR_CHARGE_SHOT
       ammoSlot: 1
-    accuracyAimed: 55
-    accuracySnap: 80
+    accuracyAimed: 50
+    accuracySnap: 100
     accuracyAuto: 75
     tuAimed: 35
     tuSnap: 30
@@ -205,8 +205,8 @@ items:
       shots: 1
       name: STR_CHARGE_SHOT
       ammoSlot: 1
-    accuracyAimed: 135
-    accuracySnap: 90
+    accuracyAimed: 130
+    accuracySnap: 70
     accuracyAuto: 75
     tuAimed: 70
     tuSnap: 35
@@ -243,7 +243,9 @@ items:
 #        RandomType: 2
 #        ToArmorPre: 0.05
     clipSize: 1
-    battleType: 2
+    fuseType: 0
+    isExplodingInHands: true
+    battleType: 4
 
   - type: STR_LINAC_GRENADE
 #    requires:
@@ -267,7 +269,9 @@ items:
         ToStun: 1.0
         ToTile: 0.8
     clipSize: 1
-    battleType: 2
+    fuseType: 0
+    isExplodingInHands: true
+    battleType: 4
 
 manufacture:
   - name: STR_LINAC_FLARE
@@ -430,10 +434,12 @@ extraStrings:
       STR_LINAC_RIFLE_PEDIA: "A powerful upgrade over previous lines of small arms, the LINAC Rifle is well-balanced between rate of fire, accuracy, and anti-armor capability."
       STR_LINAC_BATTLE_RIFLE_PEDIA: "Lengthening the accelerator from the rifle design allows for three charges to propagate in rapid succession down the weapon. The higher velocity of the LINAC Battle Rifle rounds increase the range as well; combined with an ehnaced optical package, the Battle Rifle is the most effective marksman's weapon of the series."
       STR_LINAC_PISTOL_BATTERY_PEDIA: "LINAC Pistol Battery"
-      STR_LINAC_FLARE_PEDIA: "This single-use capacitor provides the extra mass and energy to fire a larger bolt of high-temperature particles that will ignite a small region of terrain when the containment field is breached by impact with a solid object. It can be fired by any weapon in the LINAC series."
-      STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}It is also effective for clearing natural terrain obstructions."
+      STR_LINAC_FLARE_PEDIA: "This single-use capacitor provides the extra mass and energy to fire a larger bolt of high-temperature particles that will ignite a small region of terrain when the containment field is breached by impact with a solid object. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}The charge can also be used as an improvised thrown explosive, but without any timing control, it will explode in the user's hands if held too long."
+      STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}It is also effective for clearing natural terrain obstructions.{NEWLINE}{NEWLINE}The charge can also be used as an improvised thrown explosive, but without any timing control, it will explode in the user's hands if held too long."
       STR_SHOT_TYPE_AUTO: "Alt   (x{0})"
       STR_SHOT_TYPE_SNAP: "Snap (x{0})"
       STR_SHOT_TYPE_AIMED: "Main (x{0})"
+      STR_SHORT_BURST: "Short Burst"
+      STR_LONG_BURST: "Long Burst"
       STR_CHARGE_SHOT: "Fire Charge"
       STR_DAMAGE_ARMOR_PIERCING: "KINETIC"
