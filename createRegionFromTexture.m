@@ -1,4 +1,4 @@
-function createRegionFromTexture(globeFile, textures, outputTexture)
+function createRegionFromTexture(globeFile, textures, region, outputTexture)
   
 fileToRead = fopen(globeFile);
 intersections = {};
@@ -35,7 +35,7 @@ fclose(fileToRead);
 fileToWrite = fopen("./createdRegion.txt", "w");
 for (m = 1:length(intersections))
   currentIntersection = intersections{m};
-  if (!any(currentIntersection(1) == textures))
+  if (!any(currentIntersection(1) == textures) && length(textures) != 0)
     continue;
   else
     lon = currentIntersection(2:2:end-1);
@@ -43,7 +43,13 @@ for (m = 1:length(intersections))
     if (any(lon < 90) && any(lon > 270) && (length(find((lon > 270) || (lon < 90))) == length(lon)))
       lon(find(lon<90)) = lon(find(lon<90))+360;
     endif
-    fdisp(fileToWrite, ["        - [", num2str(mod(mean(lon), 360)), ", ", num2str(mod(mean(lon), 360)), ", ", num2str(mean(lat)), ", ", num2str(mean(lat)), ", ", num2str(outputTexture), "]"]);
+    meanLon = mod(mean(lon), 360);
+    meanLat = mean(lat);
+    if ((length(region) == 4) && (meanLon >= region(1)) && (meanLon <= region(2)) && (meanLat >= region(3)) && (meanLat<=region(4)));
+      fdisp(fileToWrite, ["        - [", num2str(meanLon), ", ", num2str(meanLon), ", ", num2str(meanLat), ", ", num2str(meanLat), ", ", num2str(outputTexture), "]"]);
+    elseif (length(region) == 0)
+      fdisp(fileToWrite, ["        - [", num2str(meanLon), ", ", num2str(meanLon), ", ", num2str(meanLat), ", ", num2str(meanLat), ", ", num2str(outputTexture), "]"]);
+    endif
   endif
 endfor
 

@@ -1,4 +1,5 @@
 globe:
+  polylines: ~
   polygons:
     - - 0
       - 24.852
