@@ -14,7 +14,7 @@ startingTime:
 lighting:
   enhanced: 7
 fixedUserOptions:
-  battleUFOExtenderAccuracy: true
+  #battleUFOExtenderAccuracy: false
   canSellLiveAliens: true
   battleExplosionHeight: 2
   alienBleeding: true

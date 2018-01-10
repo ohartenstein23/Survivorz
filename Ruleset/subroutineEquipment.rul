@@ -179,18 +179,25 @@ items:
     hitSound: 19
     hitAnimation: 26
     power: 60
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 30.0
-    damageType: 5
+    damageType: 1
     damageAlter:
       ToArmorPre: 0.05      
     clipSize: -1
-    accuracySnap: 85
-    tuSnap: 30
-    snapRange: 30
     confSnap:
       shots: 2
       ammoSlot: 0
+      name: STR_SHORT_BURST
+    confAuto:
+      shots: 4
+      ammoSlot: 0
+      name: STR_LONG_BURST
+    accuracySnap: 85
+    accuracyAuto: 50
+    tuSnap: 30
+    tuAuto: 45
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     battleType: 1
     invWidth: 2
     invHeight: 3

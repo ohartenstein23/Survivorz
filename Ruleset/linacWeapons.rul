@@ -16,9 +16,7 @@ items:
     hitSound: 19
     hitAnimation: 26
     power: 30
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 15.0
-    damageType: 5
+    damageType: 1
     damageAlter:
       ToArmorPre: 0.04      
     clipSize: -1
@@ -32,25 +30,28 @@ items:
           - STR_LINAC_FLARE
           - STR_LINAC_GRENADE
     confAimed:
+      ammoSlot: 0
+      shots: 2
+    confSnap:
+      ammoSlot: 0
+      shots: 2
+    confAuto:
       shots: 1
       name: STR_CHARGE_SHOT
       ammoSlot: 1
-    confSnap:
-      ammoSlot: 0
-    confAuto:
-      ammoSlot: 0
     accuracyAimed: 65
-    accuracySnap: 65
+    accuracySnap: 40
     accuracyAuto: 45
-    tuAimed: 40
-    tuSnap: 16
-    tuAuto: 22
-    aimRange: 20
-    snapRange: 15
-    autoRange: 9
+    tuAimed: 33
+    tuSnap: 22
+    tuAuto: 40
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     battleType: 1
     invWidth: 1
     invHeight: 2
+
   - type: STR_LINAC_CARBINE
 #    requires:
 #      - STR_LINAC_WEAPONS
@@ -68,9 +69,7 @@ items:
     hitSound: 19
     hitAnimation: 26
     power: 30
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 15.0
-    damageType: 5
+    damageType: 1
     damageAlter:
       ToArmorPre: 0.04      
     clipSize: -1
@@ -84,30 +83,28 @@ items:
           - STR_LINAC_FLARE
           - STR_LINAC_GRENADE
     confAimed:
-      shots: 1
-      name: STR_CHARGE_SHOT
-      ammoSlot: 1
+      ammoSlot: 0
     confSnap:
       ammoSlot: 0
     confAuto:
       shots: 1
-      name: STR_AIMED_SHOT
-      ammoSlot: 0
-    accuracyAimed: 90
-    accuracySnap: 80
-    accuracyAuto: 120
-    tuAimed: 30
+      name: STR_CHARGE_SHOT
+      ammoSlot: 1
+    accuracyAimed: 95
+    accuracySnap: 70
+    accuracyAuto: 90
+    tuAimed: 40
     tuSnap: 22
-    tuAuto: 65
-    aimRange: 25
-    snapRange: 12
-    autoRange: 22
-    dropoff: 3
+    tuAuto: 30
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     battleType: 1
     twoHanded: true
     oneHandedPenalty: 90
     invWidth: 1
     invHeight: 3
+
   - type: STR_LINAC_RIFLE
 #    requires:
 #      - STR_LINAC_WEAPONS
@@ -125,10 +122,8 @@ items:
     bulletSpeed: 10
     hitSound: 19
     hitAnimation: 26
-    power: 45
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 20.0
-    damageType: 5
+    power: 40
+    damageType: 1
     damageAlter:
       ToArmorPre: 0.05      
     clipSize: -1
@@ -142,27 +137,32 @@ items:
           - STR_LINAC_FLARE
           - STR_LINAC_GRENADE
     confAimed:
+      ammoSlot: 0
+      shots: 4
+      name: STR_AUTO_SHOT
+    confSnap:
+      ammoSlot: 0
+      shots: 2
+    confAuto:
       shots: 1
       name: STR_CHARGE_SHOT
       ammoSlot: 1
-    confSnap:
-      ammoSlot: 0
-    confAuto:
-      ammoSlot: 0
-    accuracyAimed: 95
+    accuracyAimed: 55
     accuracySnap: 80
-    accuracyAuto: 55
-    tuAimed: 40
+    accuracyAuto: 75
+    tuAimed: 35
     tuSnap: 30
-    tuAuto: 35
-    aimRange: 30
-    snapRange: 30
-    autoRange: 12
+    tuAuto: 55
+    noLOSAccuracyPenalty: 65
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     battleType: 1
     twoHanded: true
     oneHandedPenalty: 85
     invWidth: 1
     invHeight: 3
+
   - type: STR_LINAC_BATTLE_RIFLE
 #    requires:
 #      - STR_LINAC_WEAPONS
@@ -183,12 +183,10 @@ items:
     shotgunBehavior: 1
     shotgunSpread: 5
     shotgunPellets: 3
-    power: 25
-    powerRangeReduction: 2.0
-    powerRangeThreshold: 30.0
-    damageType: 5
+    power: 40
+    damageType: 1
     damageAlter:
-      ToArmorPre: 0.06      
+      ToArmorPre: 0.05      
     clipSize: -1
     ammo:
       0:
@@ -200,104 +198,29 @@ items:
           - STR_LINAC_FLARE
           - STR_LINAC_GRENADE
     confAimed:
-      shots: 1
-      name: STR_CHARGE_SHOT
-      ammoSlot: 1
+      ammoSlot: 0
     confSnap:
       ammoSlot: 0
     confAuto:
       shots: 1
-      name: STR_AIMED_SHOT
-      ammoSlot: 0
-    accuracyAimed: 95
-    accuracySnap: 65
-    accuracyAuto: 135
-    tuAimed: 40
-    tuSnap: 22
+      name: STR_CHARGE_SHOT
+      ammoSlot: 1
+    accuracyAimed: 135
+    accuracySnap: 90
+    accuracyAuto: 75
+    tuAimed: 70
+    tuSnap: 35
     tuAuto: 55
-    aimRange: 35
-    snapRange: 35
+    noLOSAccuracyPenalty: 80
+    aimRange: 200
+    snapRange: 200
     autoRange: 200
     shotgunChoke: 100
     battleType: 1
     twoHanded: true
     invWidth: 1
     invHeight: 3
-  - type: STR_LINAC_PISTOL_BATTERY
-#    requires:
-#      - STR_LINAC_WEAPONS
-    requiresBuy:
-      - STR_NOT_AVAILABLE
-    size: 0.1
-    costBuy: 4000
-    costSell: 1000
-    weight: 3
-    bigSprite: 113
-    floorSprite: 113
-    handSprite: 240
-    bulletSprite: 13
-    bulletSpeed: 10
-    hitSound: 19
-    hitAnimation: 26
-    power: 30
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 15.0
-    damageType: 5
-    damageAlter:
-      ToArmorPre: 0.04      
-    clipSize: -1
-    battleType: 2
-  - type: STR_LINAC_STD_BATTERY
-#    requires:
-#      - STR_LINAC_WEAPONS
-    requiresBuy:
-      - STR_NOT_AVAILABLE
-    size: 0.1
-    costBuy: 5000
-    costSell: 1250
-    weight: 3
-    bigSprite: 114
-    floorSprite: 114
-    handSprite: 248
-    bulletSprite: 13
-    bulletSpeed: 10
-    hitSound: 19
-    hitAnimation: 26
-    power: 45
-    powerRangeReduction: 3.0
-    powerRangeThreshold: 20.0
-    damageType: 5
-    damageAlter:
-      ToArmorPre: 0.05      
-    clipSize: -1
-    battleType: 2
-  - type: STR_LINAC_BATTLE_BATTERY
-#    requires:
-#      - STR_LINAC_WEAPONS
-    requiresBuy:
-      - STR_NOT_AVAILABLE
-    size: 0.1
-    costBuy: 8000
-    costSell: 2000
-    weight: 3
-    bigSprite: 115
-    floorSprite: 115
-    handSprite: 256
-    bulletSprite: 13
-    bulletSpeed: 10
-    hitSound: 19
-    hitAnimation: 26
-    shotgunBehavior: 1
-    shotgunSpread: 5
-    shotgunPellets: 3
-    power: 25
-    powerRangeReduction: 2.0
-    powerRangeThreshold: 30.0
-    damageType: 5
-    damageAlter:
-      ToArmorPre: 0.06      
-    clipSize: -1
-    battleType: 2
+
   - type: STR_LINAC_FLARE
 #    requires:
 #      - STR_LINAC_WEAPONS
@@ -321,6 +244,7 @@ items:
 #        ToArmorPre: 0.05
     clipSize: 1
     battleType: 2
+
   - type: STR_LINAC_GRENADE
 #    requires:
 #      - STR_LINAC_WEAPONS
@@ -370,54 +294,42 @@ ufopaedia:
     text: STR_LINAC_WEAPONS_PEDIA
     #requires:
     #  - STR_POST_ITEM
+
   - id: STR_LINAC_PISTOL
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_PISTOL_PEDIA
     #requires:
     #  - STR_POST_ITEM
+
   - id: STR_LINAC_CARBINE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_CARBINE_PEDIA
     #requires:
     #  - STR_POST_ITEM
+
   - id: STR_LINAC_RIFLE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_RIFLE_PEDIA
     #requires:
     #  - STR_POST_ITEM
+
   - id: STR_LINAC_BATTLE_RIFLE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_BATTLE_RIFLE_PEDIA
     #requires:
     #  - STR_POST_ITEM
-  - id: STR_LINAC_PISTOL_BATTERY
-    type_id: 4
-    section: STR_NOT_AVAILABLE
-    text: STR_LINAC_PISTOL_BATTERY_PEDIA
-    #requires:
-    #  - STR_POST_ITEM
-  - id: STR_LINAC_STD_BATTERY
-    type_id: 4
-    section: STR_NOT_AVAILABLE
-    text: STR_LINAC_STD_BATTERY_PEDIA
-    #requires:
-    #  - STR_POST_ITEM
-  - id: STR_LINAC_BATTLE_BATTERY
-    type_id: 4
-    section: STR_NOT_AVAILABLE
-    text: STR_LINAC_BATTLE_BATTERY_PEDIA
-    #requires:
-    #  - STR_POST_ITEM
+
   - id: STR_LINAC_FLARE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_LINAC_FLARE_PEDIA
     #requires:
     #  - STR_POST_ITEM
+
   - id: STR_LINAC_GRENADE
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -509,10 +421,6 @@ extraStrings:
       STR_LINAC_CARBINE: "LINAC Carbine"
       STR_LINAC_RIFLE: "LINAC Rifle"
       STR_LINAC_BATTLE_RIFLE: "LINAC Battle Rifle"
-      STR_LINAC_BATTLE_RIFLE_COPY: "LINAC Battle Rifle, Con't"
-      STR_LINAC_PISTOL_BATTERY: "LINAC Pistol Battery"
-      STR_LINAC_STD_BATTERY: "LINAC Rifle Battery"
-      STR_LINAC_BATTLE_BATTERY: "LINAC Battle Rifle Battery"
       STR_LINAC_FLARE: "LINAC Flare Charge"
       STR_LINAC_GRENADE: "LINAC Concussive Charge"
 #Pedia Entries
@@ -520,13 +428,12 @@ extraStrings:
       STR_LINAC_PISTOL_PEDIA: "The LINAC Pistol is a marvel of minaturization; capable of firing with only moderately reduced velocity compared to the rifles, the smaller accelerators require less cooling, leading to an increased capacity for rapid cycling."
       STR_LINAC_CARBINE_PEDIA: "Little more than an extension of the compact design of the pistol with a longer accelerator, the LINAC Carbine is favored for lightweight and accurate deployment of the specialized charges at close- to mid-range."
       STR_LINAC_RIFLE_PEDIA: "A powerful upgrade over previous lines of small arms, the LINAC Rifle is well-balanced between rate of fire, accuracy, and anti-armor capability."
-      STR_LINAC_BATTLE_RIFLE_PEDIA: "Lengthening the accelerator from the rifle design allows for three charges to propagate in rapid succession down the weapon, provided an appropriately-tuned battery. The higher velocity of the LINAC Battle Rifle rounds increase the range as well."
+      STR_LINAC_BATTLE_RIFLE_PEDIA: "Lengthening the accelerator from the rifle design allows for three charges to propagate in rapid succession down the weapon. The higher velocity of the LINAC Battle Rifle rounds increase the range as well; combined with an ehnaced optical package, the Battle Rifle is the most effective marksman's weapon of the series."
       STR_LINAC_PISTOL_BATTERY_PEDIA: "LINAC Pistol Battery"
-      STR_LINAC_STD_BATTERY_PEDIA: "LINAC Rifle Battery"
-      STR_LINAC_BATTLE_BATTERY_PEDIA: "LINAC Battle Rifle Battery"
       STR_LINAC_FLARE_PEDIA: "This single-use capacitor provides the extra mass and energy to fire a larger bolt of high-temperature particles that will ignite a small region of terrain when the containment field is breached by impact with a solid object. It can be fired by any weapon in the LINAC series."
       STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}It is also effective for clearing natural terrain obstructions."
-      STR_SHOT_TYPE_AUTO: "Auto (x{0})"
+      STR_SHOT_TYPE_AUTO: "Alt   (x{0})"
       STR_SHOT_TYPE_SNAP: "Snap (x{0})"
-      STR_SHOT_TYPE_AIMED: "Aimed (x{0})"
+      STR_SHOT_TYPE_AIMED: "Main (x{0})"
       STR_CHARGE_SHOT: "Fire Charge"
+      STR_DAMAGE_ARMOR_PIERCING: "KINETIC"
