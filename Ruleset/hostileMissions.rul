@@ -12,12 +12,39 @@ alienMissions:
     waves:
       - ufo: STR_MEDIUM_SCOUT
         count: 2
-        trajectory: P2
-        timer: 7800
+        trajectory: CRASH_CHECKOUT
+        timer: 2880
       - ufo: STR_LARGE_SCOUT
         count: 2
-        trajectory: P4
-        timer: 9000
+        trajectory: CRASH_CHECKOUT
+        timer: 2880
+
+ufoTrajectories:
+  - id: __RETALIATION_ASSAULT_RUN
+    groundTimer: 1000
+    waypoints:
+      - [5, 1, 100] #This should always be 5, 4, 100
+      - [5, 0, 100] #only the 0 altitude matters
+
+  - id: CRASH_CHECKOUT
+    groundTimer: 3600
+    waypoints:
+      - [5, 3, 100] # Start at base
+      - [0, 2, 60] # Move to region
+      - [8, 1, 25] # Move to sub-region
+      - [8, 0, 30] # Land in sub-region
+      - [8, 1, 25] # Move in sub-region
+      - [8, 0, 30] # Land in sub-region
+      - [7, 1, 25] # Move to sub-region
+      - [7, 0, 30] # Land in sub-region
+      - [7, 1, 25] # Move in sub-region
+      - [7, 0, 30] # Land in sub-region
+      - [6, 1, 25] # Move to sub-region
+      - [6, 0, 30] # Land in sub-region
+      - [6, 1, 25] # Move in sub-region
+      - [6, 0, 30] # Land in sub-region
+      - [0, 3, 60] # Take off
+      - [5, 0, 100] # Land at base
 
 alienDeployments:
   - type: STR_MEDIUM_SCOUT

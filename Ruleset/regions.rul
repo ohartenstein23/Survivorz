@@ -1,9 +1,9 @@
 # *** organization for regions ***
-# missionZone 0 will be the enter/exit point for UFOs - the location of the hostile alien main base
-# missionZone 1 will be for terror type missions, or 'cities' on the map
-# missionZone 2 will be for the entire region, to be randomly over all the region
-# missionZones 3 and above will split the region into smaller sections for more specific UFO patrols
-# try splitting into 3 sections, lat 45 to pole and two equator to lat 45 sections
+# missionZone 5 needs to be the enter/exit point for UFOs - the location of the hostile alien main base
+# missionZone 3 will be for terror type missions, or 'cities' on the map
+# missionZone 0 will be for the entire region, to be randomly over all the region
+# missionZones 1, 2, and 4 are reserved for zones of interest
+# missionZones 6 and above will split the region into smaller sections for more specific UFO patrols
 
 regions:
   - type: QUADRANT_SE
@@ -13,9 +13,6 @@ regions:
     regionWeight: 25
     missionWeights: ~
     missionZones:
-      -
-        - [0, 359.875, -90, -80]
-      - []
       - &textureCenters1
         - [30.6463, 30.6463, 77.2907, 77.2907]
         - [80.4917, 80.4917, 71.668, 71.668]
@@ -81,6 +78,12 @@ regions:
         - [149.7143, 149.7143, 11.1503, 11.1503]
         - [148.2363, 148.2363, 7.5507, 7.5507]
         - [161.1203, 161.1203, 3.4463, 3.4463]
+      - []
+      - []
+      - [] # Cities
+      - []
+      -
+        - [0, 359.875, -90, -80]
       - 
         - [30.6463, 30.6463, 77.2907, 77.2907]
         - [80.4917, 80.4917, 71.668, 71.668]
@@ -156,9 +159,6 @@ regions:
     regionWeight: 25
     missionWeights: ~
     missionZones:
-      -
-        - [0, 359.875, -90, -80]
-      - []
       - &textureCenters2
         - [214.7747, 214.7747, 60.303, 60.303]
         - [216.9503, 216.9503, 64.559, 64.559]
@@ -207,6 +207,12 @@ regions:
         - [219.9497, 219.9497, 3.2297, 3.2297]
         - [231.5713, 231.5713, 3.6543, 3.6543]
         - [247.4283, 247.4283, 2.809, 2.809]
+      - []
+      - []
+      - [] # Cities
+      - []
+      -
+        - [0, 359.875, -90, -80]
       - 
         - [214.7747, 214.7747, 60.303, 60.303]
         - [216.9503, 216.9503, 64.559, 64.559]
@@ -265,9 +271,6 @@ regions:
     regionWeight: 25
     missionWeights: ~
     missionZones:
-      -
-        - [0, 359.875, 80, 90]
-      - []
       - &textureCenters3
         - [89.529, 89.529, -1.1113, -1.1113]
         - [97.9807, 97.9807, -2.177, -2.177]
@@ -348,6 +351,12 @@ regions:
         - [142.0467, 142.0467, -78.7163, -78.7163]
         - [154.3723, 154.3723, -84.5543, -84.5543]
         - [169.5063, 169.5063, -74.8233, -74.8233]
+      - []
+      - []
+      - [] # Cities
+      - []
+      -
+        - [0, 359.875, 80, 90]
       - 
         - [172.5023, 172.5023, -45.2893, -45.2893]
         - [85.6913, 85.6913, -56.7487, -56.7487]
@@ -438,9 +447,6 @@ regions:
     regionWeight: 25
     missionWeights: ~
     missionZones:
-      -
-        - [0, 359.875, 80, 90]
-      - []
       - &textureCenters4
         - [186.335, 186.335, -1.3657, -1.3657]
         - [223.1413, 223.1413, -0.038, -0.038]
@@ -503,6 +509,12 @@ regions:
         - [277.352, 277.352, -84.4343, -84.4343]
         - [290.3783, 290.3783, -79.251, -79.251]
         - [328.6127, 328.6127, -86.058, -86.058]
+      - []
+      - []
+      - [] # Cities
+      - []
+      -
+        - [0, 359.875, 80, 90]
       - 
         - [332.5183, 332.5183, -45.0933, -45.0933]
         - [213.463, 213.463, -51.186, -51.186]
