@@ -13,11 +13,15 @@ alienMissions:
       - ufo: STR_MEDIUM_SCOUT
         count: 2
         trajectory: CRASH_CHECKOUT
-        timer: 2880
+        timer: 60 # Spawn first two ufos within an hour of each other
       - ufo: STR_LARGE_SCOUT
-        count: 2
+        count: 1
         trajectory: CRASH_CHECKOUT
-        timer: 2880
+        timer: 5760 # Give the first wave 2-6 days to finish patrol
+      - ufo: STR_LARGE_SCOUT
+        count: 1
+        trajectory: CRASH_CHECKOUT
+        timer: 60 # Flies along with the previous one
 
 ufoTrajectories:
   - id: __RETALIATION_ASSAULT_RUN
