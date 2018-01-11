@@ -240,8 +240,8 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 25000
-    radarRange: 1695
-    radarChance: 10
+    radarRange: 2000
+    radarChance: 30
     mapName: XBASS_24
     verticalLevels:
     - type: ground
@@ -257,8 +257,8 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 25000
-    radarRange: 1695
-    radarChance: 10
+    radarRange: 2000
+    radarChance: 0
     mapName: XBASS_24
     verticalLevels:
     - type: ground
