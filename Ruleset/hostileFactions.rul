@@ -7,6 +7,7 @@ alienRaces:
 
   - id: STR_MILITARY_CREW
     # Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
+    members:
       - STR_HOSTILE_MECHANIZED
       - STR_HOSTILE_OVERSEER
 
@@ -214,6 +215,7 @@ items:
     power: 50
     blastRadius: 2
     damageType: 6
+    damageAlter:
       ResistType: 8
     clipSize: 6
     battleType: 2
