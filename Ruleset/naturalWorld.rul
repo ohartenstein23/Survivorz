@@ -26,6 +26,7 @@ units:
     floatHeight: 0
     value: 0
     energyRecovery: 1
+    canSurrender: false
 
 armors:
   - type: DUMMY_ARMOR
@@ -63,11 +64,12 @@ armors:
 items:
   - type: STR_DUMMY_CORPSE
     recover: false
+    recoverCorpse: false
     battleType: 11
   - type: STR_DUMMY
     size: 0.0
-    recover: false
-    liveAlien: true
+    prisonType: 9
+    #recover: false
   - type: STR_ENVIRO_SCAN_EASY_ITEM
     size: 0.0
     costSell: 0
@@ -504,11 +506,15 @@ MCDPatches:
 extraStrings:
   - type: en-US
     strings:
-      STR_DUMMY: "Dummy Unit"
-      STR_DUMMY_CORPSE: "Dummy Unit Corpse"
       STR_NATURE: "Nature"
 
 #*** Environmental scan missions ***
+      STR_DUMMY: "Dummy Unit"
+      STR_DUMMY_CORPSE: "Dummy Unit Corpse"
+      STR_ALIEN_DIES_NO_ALIEN_CONTAINMENT_FACILITY_9: "Environmental Scan Complete{NEWLINE}{NEWLINE}Assign data to research for further analysis."
+
+      STR_BOUNTY: "RECOVERY"
+
       STR_RECOVERED_MATERIALS: "Valuable Minerals"
 
       STR_ENVIRO_SCAN_ALERT: "Environmental Anomaly Detected"
