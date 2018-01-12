@@ -176,6 +176,7 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 5000
+    rightClickActionType: 6
     mapName: XBASS_24
     verticalLevels:
     - type: ground
@@ -193,6 +194,7 @@ facilities:
     monthlyCost: 25000
     personnel: 12
     workshops: 1
+    rightClickActionType: 2
     mapName: XBASS_24
     verticalLevels:
     - type: ground
@@ -210,6 +212,7 @@ facilities:
     monthlyCost: 25000
     personnel: 12
     labs: 1
+    rightClickActionType: 3
     mapName: XBASS_24
     verticalLevels:
     - type: ground
@@ -225,6 +228,7 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 5000
+    rightClickActionType: 6
     mapName: XBASS_24
     verticalLevels:
     - type: ground
