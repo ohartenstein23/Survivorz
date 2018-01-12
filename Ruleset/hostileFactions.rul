@@ -7,14 +7,8 @@ alienRaces:
 
   - id: STR_MILITARY_CREW
     # Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
-    # Placeholders for now
-    members:
-      - STR_ETHEREAL_COMMANDER
-      - STR_ETHEREAL_SOLDIER
-      - STR_FLOATER_NAVIGATOR
-      - STR_SNAKEMAN_ENGINEER
-      - STR_MUTON_SOLDIER
-      - STR_SECTOID_SOLDIER
+      - STR_HOSTILE_MECHANIZED
+      - STR_HOSTILE_OVERSEER
 
 # *** Hostile units ***
 units:
@@ -158,8 +152,11 @@ items:
       - STR_HOSTILE_CARBINE_CLIP
     tuAimed: 45
     tuSnap: 30
-    accuracyAimed: 100
-    accuracySnap: 50
+    accuracyAimed: 120
+    accuracySnap: 80
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     twoHanded: true
     battleType: 1
     invWidth: 1
@@ -175,7 +172,7 @@ items:
     floorSprite: 33
     hitSound: 19
     hitAnimation: 46
-    power: 40
+    power: 60
     damageType: 5
     clipSize: 18
     battleType: 2
@@ -195,10 +192,11 @@ items:
     compatibleAmmo:
       - STR_HOSTILE_LAUNCHER_STUNBOMB
       - STR_HOSTILE_LAUNCHER_GASBOMB
-    tuAimed: 65
     tuSnap: 40
-    accuracyAimed: 90
-    accuracySnap: 65
+    accuracySnap: 90
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
     twoHanded: true
     battleType: 1
     invWidth: 1
@@ -216,6 +214,7 @@ items:
     power: 50
     blastRadius: 2
     damageType: 6
+      ResistType: 8
     clipSize: 6
     battleType: 2
     invWidth: 2
