@@ -273,6 +273,8 @@ facilities:
 extraSprites:
   - type: BASEBITS.PCK
     files:
+      7: Resources/Facilities/empty_basebit.png # Connector between facilities
+      8: Resources/Facilities/empty_basebit.png
       100: Resources/Facilities/Corridor.png
 
 mapScripts:
