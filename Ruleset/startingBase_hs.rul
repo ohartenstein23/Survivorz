@@ -1,0 +1,10 @@
+# These definitions need to be in separate files if I don't want to split the image into 20
+extraSprites:
+  - type: BASEBITS.PCK
+    width: 64
+    height: 64
+    subX: 32
+    subY: 32
+    files:
+      64: Resources/Facilities/crashed_ship_lefthangar.png
+      68: Resources/Facilities/crashed_ship_righthangar.png

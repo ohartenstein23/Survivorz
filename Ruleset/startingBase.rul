@@ -59,8 +59,8 @@ initialFunding: 500
 
 facilities:
   - type: STR_TRANSPONDER
-    spriteShape: 2
-    spriteFacility: 17
+    spriteShape: 0
+    spriteFacility: 0
     lift: true
     buildCost: 0
     buildTime: 1
@@ -73,8 +73,8 @@ facilities:
 #*** Crashed ship facilities ***
 
   - type: STR_HANGAR_LEFT
-    spriteShape: 9
-    spriteFacility: 9
+    spriteShape: 64
+    spriteFacility: 64
     size: 2
     requires:
       - STR_DISABLED
@@ -90,15 +90,14 @@ facilities:
       blocks: 0
 
   - type: STR_HANGAR_RIGHT
-    spriteShape: 9
-    spriteFacility: 9
+    spriteShape: 68
+    spriteFacility: 68
     size: 2
     requires:
       - STR_DISABLED
     buildCost: 0
     buildTime: 25
     monthlyCost: 100000
-    crafts: 1
     mapName: Hangar_Right
     verticalLevels:
     - type: ground
@@ -107,8 +106,8 @@ facilities:
       blocks: 1
 
   - type: STR_BACK_CORRIDOR_LEFT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 72
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -122,8 +121,8 @@ facilities:
       blocks: 2
 
   - type: STR_CARGO_LEFT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 73
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -138,8 +137,8 @@ facilities:
       blocks: 3
 
   - type: STR_CARGO_RIGHT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 74
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -154,8 +153,8 @@ facilities:
       blocks: 4
 
   - type: STR_BACK_CORRIDOR_RIGHT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 75
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -169,8 +168,8 @@ facilities:
       blocks: 5
 
   - type: STR_FRONT_CORRIDOR_LEFT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 76
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -185,8 +184,8 @@ facilities:
       blocks: 6
 
   - type: STR_FRONT_QUARTERS_LEFT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 77
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -203,8 +202,8 @@ facilities:
       blocks: 7
 
   - type: STR_FRONT_QUARTERS_RIGHT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 78
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -221,8 +220,8 @@ facilities:
       blocks: 8
 
   - type: STR_FRONT_CORRIDOR_RIGHT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 79
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -237,8 +236,8 @@ facilities:
       blocks: 9
 
   - type: STR_COCKPIT_LEFT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 81
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -254,8 +253,8 @@ facilities:
       blocks: 10
 
   - type: STR_COCKPIT_RIGHT
-    spriteShape: 3
-    spriteFacility: 100
+    spriteShape: 7
+    spriteFacility: 82
     requires:
       - STR_DISABLED
     buildCost: 0
@@ -273,9 +272,11 @@ facilities:
 extraSprites:
   - type: BASEBITS.PCK
     files:
+      #1: Resources/Facilities/empty_basebit.png # Outer shapes
+      #2: Resources/Facilities/empty_basebit.png
+      #3: Resources/Facilities/empty_basebit.png
       7: Resources/Facilities/empty_basebit.png # Connector between facilities
       8: Resources/Facilities/empty_basebit.png
-      100: Resources/Facilities/Corridor.png
 
 mapScripts:
   - type: XBASE

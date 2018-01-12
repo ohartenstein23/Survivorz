@@ -31,6 +31,11 @@ crafts:
       - [6, 4, 1, 6]
       - [6, 5, 1, 6]
 
+extraSprites:
+  - type: BASEBITS.PCK
+    files:
+      33: Resources/Facilities/shuttle_basebit.png # Should be 84, but we're replacing skyranger for now
+
 extraStrings:
   - type: en-US
     strings:
