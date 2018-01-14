@@ -74,7 +74,6 @@ facilities:
 
   - type: STR_HANGAR_LEFT
     spriteShape: 64
-    spriteFacility: 64
     size: 2
     requires:
       - STR_DISABLED
@@ -91,7 +90,6 @@ facilities:
 
   - type: STR_HANGAR_RIGHT
     spriteShape: 68
-    spriteFacility: 68
     size: 2
     requires:
       - STR_DISABLED
@@ -272,9 +270,9 @@ facilities:
 extraSprites:
   - type: BASEBITS.PCK
     files:
-      #1: Resources/Facilities/empty_basebit.png # Outer shapes
-      #2: Resources/Facilities/empty_basebit.png
-      #3: Resources/Facilities/empty_basebit.png
+      1: Resources/Facilities/empty_basebit.png # Outer shapes
+      2: Resources/Facilities/empty_basebit.png
+      3: Resources/Facilities/empty_basebit.png
       7: Resources/Facilities/empty_basebit.png # Connector between facilities
       8: Resources/Facilities/empty_basebit.png
 
