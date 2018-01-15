@@ -359,7 +359,7 @@ extraSprites:
       502: Resources/Bigobs/hostile_small_lethal_gas.png
   - type: FLOOROB.PCK
     files:
-      500: Resources/XOps/Floorobs/floorob_SmallLauncher.gif
+      500: Resources/Floorobs/hostile_small_launcher.png
       501: Resources/XOps/Floorobs/floorob_StunBomb.gif
       502: Resources/XOps/Floorobs/floorob_StunBombAcid.gif
       503: Resources/XOps/Floorobs/floorob_StunBombExplosive.gif
