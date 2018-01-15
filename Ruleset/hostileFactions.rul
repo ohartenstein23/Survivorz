@@ -54,7 +54,7 @@ units:
       firing: 54
       throwing: 62
       strength: 70
-      psiStrength: 25
+      psiStrength: 100
       psiSkill: 0
       melee: 76
     armor: MUTON_ARMOR0
@@ -65,6 +65,37 @@ units:
     intelligence: 1
     aggression: 4
     sniper: 75
+
+  - type: STR_HOSTILE_MECHANIZED_HOVER
+    # Step up from the first tier, 2x2 flying unit with less sniper chance, but higher intelligence to set up ambushes
+    race: STR_HOSTILES
+    rank: STR_LIVE_ENGINEER
+    stats:
+      tu: 62
+      stamina: 90
+      health: 160
+      bravery: 110
+      reactions: 64
+      firing: 60
+      throwing: 0
+      strength: 90
+      psiStrength: 100
+      psiSkill: 0
+      melee: 0
+    armor: CYBERDISC_ARMOR
+    standHeight: 15
+    kneelHeight: 15
+    floatHeight: 2
+    value: 20
+    deathSound: 23
+    moveSound: 40
+    intelligence: 5
+    aggression: 1
+    energyRecovery: 90
+    sniper: 50
+    livingWeapon: true
+    builtInWeapons:
+      - STR_HOSTILE_FIRE_SUPPORT
 
   - type: STR_ALIEN_SLAVE
     # Enslaved alien soldier for mining crew, use sectoid sprite for now
@@ -242,6 +273,8 @@ items:
     battleType: 2
     invWidth: 2
     invHeight: 1
+
+#*** Hostile built-in weapons ***
 
 extraSprites:
   - type: BIGOBS.PCK
