@@ -283,6 +283,7 @@ items:
     damageType: 6
     damageAlter:
       ResistType: 8
+      SmokeThreshold: 60
     clipSize: 6
     battleType: 2
     invWidth: 1
@@ -307,6 +308,7 @@ items:
       RandomType: 6
       ToHealth: 1.0
       ToStun: 0.34
+      SmokeThreshold: 50
     clipSize: 6
     battleType: 2
     invWidth: 1
