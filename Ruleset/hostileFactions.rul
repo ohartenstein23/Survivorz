@@ -222,6 +222,8 @@ items:
     bigSprite: 500
     handSprite: 500
     floorSprite: 500
+    bulletSprite: 9
+    fireSound: 53
     compatibleAmmo:
       - STR_HOSTILE_LAUNCHER_STUNBOMB
       - STR_HOSTILE_LAUNCHER_GASBOMB
@@ -386,5 +388,5 @@ extraStrings:
       STR_HOSTILE_CARBINE: "Hostile Carbine"
       STR_HOSTILE_CARBINE_CLIP: "Hostile Carbine Clip"
       STR_HOSTILE_LAUNCHER: "Hostile Launcher"
-      STR_HOSTILE_LAUNCHER_STUNBOMB: "Hostile Capture Bombs"
-      STR_HOSTILE_LAUNCHER_GASBOMB: "Hostile Lethal Bombs"
+      STR_HOSTILE_LAUNCHER_STUNBOMB: "Capture Gas Canister"
+      STR_HOSTILE_LAUNCHER_GASBOMB: "Lethal Gas Canister"
