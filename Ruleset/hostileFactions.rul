@@ -369,7 +369,7 @@ extraSprites:
     subX: 32
     subY: 40
     files:
-      500: Resources/XOps/Handobs/ClusterLauncher.gif
+      500: Resources/Handobs/hostile_small_launcher.png
 
 extraStrings:
   - type: en-US
