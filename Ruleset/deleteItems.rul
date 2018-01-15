@@ -1,4 +1,4 @@
-nopeitems:
+items:
   - delete: STR_STINGRAY_LAUNCHER
   - delete: STR_STINGRAY_MISSILES
   - delete: STR_AVALANCHE_LAUNCHER
