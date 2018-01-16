@@ -79,6 +79,65 @@ research:
       - STR_CHIEF_ENGINEER_ITEM
       - STR_ENVIRO_SCAN_EASY_ITEM
 
+# Hostile weapons articles and usage
+  - name: STR_HOSTILE_WEAPONS
+    cost: 0
+    score: 10
+    dependencies:
+      - STR_UNAVAILABLE
+      - STR_HOSTILE_CARBINE
+      - STR_HOSTILE_CARBINE_CLIP
+      - STR_HOSTILE_LAUNCHER
+      - STR_HOSTILE_LAUNCHER_STUNBOMB
+      - STR_HOSTILE_LAUNCHER_GASBOMB
+
+  - name: STR_HOSTILE_CARBINE
+    cost: 5
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_CARBINE_CLIP
+    cost: 3
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_LAUNCHER
+    cost: 5
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_LAUNCHER_STUNBOMB
+    cost: 3
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_LAUNCHER_GASBOMB
+    cost: 3
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+# Hostile weapons manufacturing?
+
 items:
 # getOneFree w/o item is repeatable, need this to make initial research run only once
   - type: STR_POST_ITEM
@@ -104,6 +163,7 @@ ufopaedia:
     text: STR_POST_PEDIA
     requires:
       - STR_POST_ITEM
+
   - id: STR_WORLDGEN_FAMINE
     type_id: 8
 #    section: STR_SOMETHING
@@ -112,6 +172,7 @@ ufopaedia:
     requires:
       - STR_WORLDGEN_FAMINE
       - STR_POST_ITEM
+
   - id: STR_WORLDGEN_PLAGUE
     type_id: 8
 #    section: STR_SOMETHING
@@ -120,6 +181,7 @@ ufopaedia:
     requires:
       - STR_WORLDGEN_PLAGUE
       - STR_POST_ITEM
+
   - id: STR_WORLDGEN_WAR
     type_id: 8
 #    section: STR_SOMETHING

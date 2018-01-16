@@ -173,16 +173,48 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.2
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
-    weight: 8
-    bigSprite: 31 # Borrowing plasma rifle gfx for now
-    floorSprite: 30
+    requires:
+      - STR_HOSTILE_CARBINE
+    weight: 16
+    bigSprite: 500
+    floorSprite: 30 # Borrowing plasma rifle gfx for now
     handSprite: 48
     bulletSprite: 8
     fireSound: 18
     compatibleAmmo:
       - STR_HOSTILE_CARBINE_CLIP
+    scripts:
+      recolorItemSprite: |
+        var ptr BattleItem ammoItem;
+        var ptr RuleItem ammoRuleset;
+        var int oldColorGroup;
+        var int newColorGroup;
+        var int ammoQuantity;
+
+        item.getAmmoItem ammoItem;
+        ammoItem.getAmmoQuantity ammoQuantity;
+        get_color oldColorGroup new_pixel;
+
+        if eq ammoQuantity 0;
+          if eq oldColorGroup COLOR_X1_RED;
+            set_shade new_pixel 13;
+          end;
+          return new_pixel;
+        end;
+
+        ammoItem.getRuleItem ammoRuleset;
+        ammoRuleset.getTag newColorGroup Tag.ITEM_AMMO_RECOLOR_GROUP;
+        if eq newColorGroup 0;
+          return new_pixel;
+        end;
+
+        limit newColorGroup 1 14;
+
+        if eq oldColorGroup COLOR_X1_RED;
+          set_color new_pixel newColorGroup;
+        end;
+
+        return new_pixel;
     tuAimed: 45
     tuSnap: 30
     accuracyAimed: 120
@@ -194,14 +226,17 @@ items:
     battleType: 1
     invWidth: 1
     invHeight: 3
+
   - type: STR_HOSTILE_CARBINE_CLIP
+    tags:
+      ITEM_AMMO_RECOLOR_GROUP: 2 #COLOR_X1_RED
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_CARBINE
     weight: 3
-    bigSprite: 41
+    bigSprite: 501
     floorSprite: 33
     hitSound: 19
     hitAnimation: 46
@@ -216,12 +251,12 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.2
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
-    weight: 8
-    bigSprite: 500
-    handSprite: 500
-    floorSprite: 500
+    requires:
+      - STR_HOSTILE_LAUNCHER
+    weight: 12
+    bigSprite: 510
+    handSprite: 564
+    floorSprite: 510
     bulletSprite: 9
     fireSound: 53
     compatibleAmmo:
@@ -275,17 +310,16 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_LAUNCHER
     weight: 4
-    bigSprite: 501
-    handSprite: 508
-    floorSprite: 501
+    bigSprite: 511
+    handSprite: 572
+    floorSprite: 511
     power: 50
     blastRadius: 2
     damageType: 6
     damageAlter:
-      ResistType: 8
       SmokeThreshold: 60
     clipSize: 6
     battleType: 2
@@ -298,16 +332,15 @@ items:
     costBuy: 0
     costSell: 0
     size: 0.05
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_LAUNCHER
     weight: 4
-    bigSprite: 502
-    handSprite: 516
-    floorSprite: 502
+    bigSprite: 512
+    handSprite: 580
+    floorSprite: 512
     power: 40
-    damageType: 9
+    damageType: 8
     damageAlter:
-      ResistType: 8
       RandomType: 6
       ToHealth: 1.0
       ToStun: 0.34
@@ -351,26 +384,69 @@ extended:
     RuleItem:
       ITEM_AMMO_RECOLOR_GROUP: int
 
+ufopaedia:
+#*** Weapons ***
+  - id: STR_HOSTILE_WEAPONS
+    type_id: 8
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_HOSTILE_WEAPONS_PEDIA
+    requires:
+      - STR_HOSTILE_WEAPONS
+
+  - id: STR_HOSTILE_CARBINE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_HOSTILE_CARBINE_PEDIA
+    requires:
+      - STR_HOSTILE_CARBINE
+
+  - id: STR_HOSTILE_CARBINE_CLIP
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_HOSTILE_CARBINE_CLIP
+
+  - id: STR_HOSTILE_LAUNCHER
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_HOSTILE_LAUNCHER_PEDIA
+    requires:
+      - STR_HOSTILE_LAUNCHER
+
+  - id: STR_HOSTILE_LAUNCHER_STUNBOMB
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_HOSTILE_LAUNCHER_STUNBOMB
+
+  - id: STR_HOSTILE_LAUNCHER_GASBOMB
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_HOSTILE_LAUNCHER_GASBOMB
+
 extraSprites:
   - type: BIGOBS.PCK
     files:
-      500: Resources/Bigobs/hostile_small_launcher.png
-      501: Resources/Bigobs/hostile_small_stun_gas.png
-      502: Resources/Bigobs/hostile_small_lethal_gas.png
+      500: Resources/Bigobs/hostile_carbine.png
+      501: Resources/Bigobs/hostile_carbine_clip.png
+      510: Resources/Bigobs/hostile_small_launcher.png
+      511: Resources/Bigobs/hostile_small_stun_gas.png
+      512: Resources/Bigobs/hostile_small_lethal_gas.png
   - type: FLOOROB.PCK
     files:
-      500: Resources/Floorobs/hostile_small_launcher.png
-      501: Resources/Floorobs/hostile_small_stun_gas.png
-      502: Resources/Floorobs/hostile_small_lethal_gas.png
+      510: Resources/Floorobs/hostile_small_launcher.png
+      511: Resources/Floorobs/hostile_small_stun_gas.png
+      512: Resources/Floorobs/hostile_small_lethal_gas.png
   - type: HANDOB.PCK
     height: 40
     width: 256
     subX: 32
     subY: 40
     files:
-      500: Resources/Handobs/hostile_small_launcher.png
-      508: Resources/Bigobs/hostile_small_stun_gas.png
-      516: Resources/Bigobs/hostile_small_lethal_gas.png
+      564: Resources/Handobs/hostile_small_launcher.png
+      572: Resources/Bigobs/hostile_small_stun_gas.png
+      580: Resources/Bigobs/hostile_small_lethal_gas.png
 
 extraStrings:
   - type: en-US
@@ -385,9 +461,19 @@ extraStrings:
       STR_ALIEN_SLAVE: "Hostile"
 
 # *** Weapons ***
-      STR_HOSTILE_MININGTOOL: "Mining Tool"
+      STR_HOSTILE_WEAPONS: "Hostile Weapons"
       STR_HOSTILE_CARBINE: "Hostile Carbine"
       STR_HOSTILE_CARBINE_CLIP: "Hostile Carbine Clip"
       STR_HOSTILE_LAUNCHER: "Hostile Launcher"
       STR_HOSTILE_LAUNCHER_STUNBOMB: "Capture Gas Canister"
       STR_HOSTILE_LAUNCHER_GASBOMB: "Lethal Gas Canister"
+      STR_HOSTILE_MININGTOOL: "Mining Tool"
+
+      STR_HOSTILE_WEAPONS_PEDIA: "The hostile faction's weapons are based around a paradigm of injecting a near-superfluid gas into a reaction vessel that rapidly ionizes the gas before expelling it. The gas accelerates along a series of protrusions of conductive material that shape the local electromagnetic field, creating a confined state that is explosively disrupted upon contact with solid matter."
+      STR_HOSTILE_CARBINE_PEDIA: "Seemingly used as a standard-issue firearm, this weapon is common on hostile miliary crews. The pressurized gas used as ammunition is stored in small canisters that are depleted at a moderate rate by firing."
+      STR_HOSTILE_LAUNCHER_PEDIA: "This compact yet dense weapon is tuned to fire larger projectiles of gases. The payloads are specialized depending on the mission, between disrupting neural functions for live capture and destroying biologic tissue. The gases do not need to be inhaled to take effect; skin contact is sufficient. The volume of gas required for ammunition is large, depleting ammunition canisters quickly. Neither gas is replicable in the ship's current facilities."
+
+      STR_DAMAGE_PLASMA_BEAM: "IONIZED"
+      STR_DAMAGE_STUN: "DISRUPTIVE"
+      STR_DAMAGE_ACID: "REACTIVE"
+      STR_DAMAGE_SMOKE: "GASEOUS"
