@@ -7,6 +7,5 @@ Special Thanks to:
   - Solarius Scorch for letting me bounce ideas off of him, for sprites to
     gank, and naming the AI units.
   - Meridian for OXCE+ and including my code in his repository
-  - XOps for the awesome sprites.
   - NeoWorm for the cool drone.
   - The fractal world generator at https://donjon.bin.sh/world/

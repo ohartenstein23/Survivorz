@@ -279,7 +279,7 @@ items:
     #  - STR_HOSTILE_WEAPON_USE
     weight: 4
     bigSprite: 501
-    #handSprite: -1
+    handSprite: 508
     floorSprite: 501
     power: 50
     blastRadius: 2
@@ -302,7 +302,7 @@ items:
     #  - STR_HOSTILE_WEAPON_USE
     weight: 4
     bigSprite: 502
-    #handSprite: -1
+    handSprite: 516
     floorSprite: 502
     power: 40
     damageType: 9
@@ -360,9 +360,8 @@ extraSprites:
   - type: FLOOROB.PCK
     files:
       500: Resources/Floorobs/hostile_small_launcher.png
-      501: Resources/XOps/Floorobs/floorob_StunBomb.gif
-      502: Resources/XOps/Floorobs/floorob_StunBombAcid.gif
-      503: Resources/XOps/Floorobs/floorob_StunBombExplosive.gif
+      501: Resources/Floorobs/hostile_small_stun_gas.png
+      502: Resources/Floorobs/hostile_small_lethal_gas.png
   - type: HANDOB.PCK
     height: 40
     width: 256
@@ -370,6 +369,8 @@ extraSprites:
     subY: 40
     files:
       500: Resources/Handobs/hostile_small_launcher.png
+      508: Resources/Bigobs/hostile_small_stun_gas.png
+      516: Resources/Bigobs/hostile_small_lethal_gas.png
 
 extraStrings:
   - type: en-US
