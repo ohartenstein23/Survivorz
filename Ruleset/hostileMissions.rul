@@ -51,6 +51,7 @@ ufoTrajectories:
       - [5, 0, 100] # Land at base
 
 alienDeployments:
+#*** Deployments for the mining crews ***
   - type: STR_MEDIUM_SCOUT
     data:
       - alienRank: 2 # STR_ALIEN_SLAVE (soldier)
@@ -86,6 +87,7 @@ alienDeployments:
     width: 50
     length: 50
     height: 4
+
   - type: STR_LARGE_SCOUT
     data:
       - alienRank: 2 # STR_ALIEN_SLAVE (soldier)
@@ -197,6 +199,138 @@ alienDeployments:
       - CRASHED_SHIP
     shade: -1
     maxShade: 10
+
+#*** Deployments for the military crews ***
+  - type: STR_ABDUCTOR # Medium ship, mainly military
+    data:
+      - alienRank: 2 # STR_HOSTILE_OVERSEER, replace with engineer-type later
+        lowQty: 2
+        highQty: 3
+        dQty: 1
+        percentageOutsideUfo: 30
+        itemSets:
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+      - alienRank: 2 # STR_HOSTILE_OVERSEER, acting as a foot soldier
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 60
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+      - alienRank: 1 # STR_HOSTILE_MECHANIZED
+        lowQty: 2
+        highQty: 3
+        dQty: 1
+        percentageOutsideUfo: 60
+        # Needs more weapon types here, show off the aliens' power!
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+    width: 60
+    length: 60
+    height: 4
+
+  - type: STR_TERROR_SHIP # Larger military ship
+    data:
+      - alienRank: 2 # STR_HOSTILE_OVERSEER, replace with engineer-type later
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 30
+        itemSets:
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+      - alienRank: 2 # STR_HOSTILE_OVERSEER, acting as a foot soldier
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 60
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+      - alienRank: 1 # STR_HOSTILE_MECHANIZED
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 60
+        # Needs more weapon types here, show off the aliens' power!
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+      - alienRank: 0 # STR_HOSTILE_MECHANIZED_HOVER
+        lowQty: 2
+        highQty: 3
+        dQty: 1
+        percentageOutsideUfo: 50
+        itemSets:
+          - []
+          - []
+          - []
+    width: 60
+    length: 60
+    height: 4
 
   - type: STR_BASE_DEFENSE
     shade: -1
