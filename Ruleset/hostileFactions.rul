@@ -177,8 +177,8 @@ items:
       - STR_HOSTILE_CARBINE
     weight: 16
     bigSprite: 500
-    floorSprite: 30 # Borrowing plasma rifle gfx for now
-    handSprite: 48
+    floorSprite: 500
+    handSprite: 500
     bulletSprite: 8
     fireSound: 18
     compatibleAmmo:
@@ -237,7 +237,8 @@ items:
       - STR_HOSTILE_CARBINE
     weight: 3
     bigSprite: 501
-    floorSprite: 33
+    handSprite: 508
+    floorSprite: 501
     hitSound: 19
     hitAnimation: 46
     power: 60
@@ -435,6 +436,8 @@ extraSprites:
       512: Resources/Bigobs/hostile_small_lethal_gas.png
   - type: FLOOROB.PCK
     files:
+      500: Resources/Floorobs/hostile_carbine.png
+      501: Resources/Floorobs/hostile_carbine_clip.png
       510: Resources/Floorobs/hostile_small_launcher.png
       511: Resources/Floorobs/hostile_small_stun_gas.png
       512: Resources/Floorobs/hostile_small_lethal_gas.png
@@ -444,6 +447,8 @@ extraSprites:
     subX: 32
     subY: 40
     files:
+      500: Resources/Handobs/hostile_carbine.png
+      508: Resources/Handobs/hostile_carbine_clip.png
       564: Resources/Handobs/hostile_small_launcher.png
       572: Resources/Bigobs/hostile_small_stun_gas.png
       580: Resources/Bigobs/hostile_small_lethal_gas.png
