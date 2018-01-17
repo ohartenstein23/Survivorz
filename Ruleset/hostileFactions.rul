@@ -139,20 +139,47 @@ items:
 # *** Hostile weapons ***
   - type: STR_HOSTILE_MININGTOOL
     # Filler weapon, mostly on mining crew
+    # AI still doesn't like using weapons with limited range
+    # But this counts as a feature! The alien slaves will tend
+    # to stand and stare until you come too close.
     costSell: 0
     costBuy: 0
     size: 0.1
-    #requires:
-    #  - STR_HOSTILE_WEAPON_USE
+    requires:
+      - STR_HOSTILE_MININGTOOL
     weight: 10
     bigSprite: 26
     handSprite: 80
     floorSprite: 26
+    # 'Ranged' attack stats
+    hitSound: 54
+    hitAnimation: -1
+    power: 40
+    damageType: 3
+    blastRadius: 0
+    damageAlter:
+      RandomType: 2
+      ToTile: 1.5
+      ToArmorPre: 0.125
+    costAuto: # AI is more likely to move close with auto shot
+      time: 40
+      energy: 10
+    accuracyAuto: 100
+    accuracyMultiplier:
+      melee: 0.5
+      flatHundred: 0.5
+    confAuto:
+      name: STR_USE_MINING_TOOL
+      shots: 1
+    powerRangeReduction: 10
+    powerRangeThreshold: 1
+    maxRange: 4
+    # Melee stats
     meleeHitSound: 54
     meleeAnimation: 0
-    power: 40
-    damageType: 6
-    damageAlter:
+    meleePower: 40
+    meleeType: 6
+    meleeAlter:
       RandomType: 2
       ToHealth: 0.5
     costMelee:
@@ -163,7 +190,7 @@ items:
     accuracyMelee: 100
     twoHanded: true
     clipSize: -1
-    battleType: 3
+    battleType: 1
     invWidth: 1
     invHeight: 3
 
@@ -426,6 +453,13 @@ ufopaedia:
     requires:
       - STR_HOSTILE_LAUNCHER_GASBOMB
 
+  - id: STR_HOSTILE_MININGTOOL
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_HOSTILE_MININGTOOL_PEDIA
+    requires:
+      - STR_HOSTILE_MININGTOOL
+
 extraSprites:
   - type: BIGOBS.PCK
     files:
@@ -477,8 +511,12 @@ extraStrings:
       STR_HOSTILE_WEAPONS_PEDIA: "The hostile faction's weapons are based around a paradigm of injecting a near-superfluid gas into a reaction vessel that rapidly ionizes the gas before expelling it. The gas accelerates along a series of protrusions of conductive material that shape the local electromagnetic field, creating a confined state that is explosively disrupted upon contact with solid matter."
       STR_HOSTILE_CARBINE_PEDIA: "Seemingly used as a standard-issue firearm, this weapon is common on hostile miliary crews. The pressurized gas used as ammunition is stored in small canisters that are depleted at a moderate rate by firing."
       STR_HOSTILE_LAUNCHER_PEDIA: "This compact yet dense weapon is tuned to fire larger projectiles of gases. The payloads are specialized depending on the mission, between disrupting neural functions for live capture and destroying biologic tissue. The gases do not need to be inhaled to take effect; skin contact is sufficient. The volume of gas required for ammunition is large, depleting ammunition canisters quickly. Neither gas is replicable in the ship's current facilities."
+      STR_HOSTILE_MININGTOOL_PEDIA: "This mining tool is not only effective at clearing heavy terrain, but also for damaging armor on targets, though the efficacy drops off quickly beyond 1 meter. Its sturdy construction makes it useful as an improvised melee weapon."
 
+      STR_DAMAGE_HIGH_EXPLOSIVE: "CONCUSSIVE"
       STR_DAMAGE_PLASMA_BEAM: "IONIZED"
       STR_DAMAGE_STUN: "DISRUPTIVE"
       STR_DAMAGE_ACID: "REACTIVE"
       STR_DAMAGE_SMOKE: "GASEOUS"
+
+      STR_USE_MINING_TOOL: "Mine"

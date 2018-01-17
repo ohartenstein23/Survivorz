@@ -136,6 +136,13 @@ research:
     unlocks:
       - STR_HOSTILE_WEAPONS
 
+  - name: STR_HOSTILE_MININGTOOL
+    cost: 5
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+
 # Hostile weapons manufacturing?
 
 items:
