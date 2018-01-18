@@ -23,6 +23,136 @@ alienMissions:
         trajectory: CRASH_CHECKOUT
         timer: 60 # Flies along with the previous one
 
+  - type: STR_MINING_ACTIVITY_FAMINE # Monthly activity, meant to be a source of player income and points
+    points: 25
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    waves:
+      - ufo: STR_MEDIUM_SCOUT
+        count: 1
+        trajectory: MINING_SCOUT
+        timer: 0
+      #- ufo: STR_MEDIUM_SCOUT
+      #  count: 2
+      #  trajectory: MINING_LANDING
+      #  timer: 1440
+      - ufo: STR_LARGE_SCOUT
+        count: 1
+        trajectory: MINING_LANDING
+        timer: 1440
+
+  - type: STR_MINING_ESCORT_FAMINE # Mostly for flavor to escort the mining ships, but can be shot down later for more points
+    points: 25
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 0
+      - ufo: STR_ABDUCTOR
+        count: 2 # 4
+        trajectory: MINING_ESCORT
+        timer: 1440
+
+  - type: STR_MINING_ACTIVITY_PLAGUE
+    points: 25
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    waves:
+      - ufo: STR_MEDIUM_SCOUT
+        count: 1
+        trajectory: MINING_SCOUT
+        timer: 0
+      - ufo: STR_MEDIUM_SCOUT
+        count: 2
+        trajectory: MINING_LANDING
+        timer: 1440
+      - ufo: STR_LARGE_SCOUT
+        count: 1
+        trajectory: MINING_LANDING
+        timer: 1440
+
+  - type: STR_MINING_ESCORT_PLAGUE
+    points: 25
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 0
+      - ufo: STR_ABDUCTOR
+        count: 4
+        trajectory: MINING_ESCORT
+        timer: 1440
+
+  - type: STR_MINING_ACTIVITY_WAR
+    points: 25
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    waves:
+      - ufo: STR_MEDIUM_SCOUT
+        count: 1
+        trajectory: MINING_SCOUT
+        timer: 0
+      - ufo: STR_MEDIUM_SCOUT
+        count: 2
+        trajectory: MINING_LANDING
+        timer: 1440
+      - ufo: STR_LARGE_SCOUT
+        count: 1
+        trajectory: MINING_LANDING
+        timer: 1440
+
+  - type: STR_MINING_ESCORT_WAR
+    points: 25
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 0
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 1440
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 60
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 1440
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 60
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 1440
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 60
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 1440
+      - ufo: STR_ABDUCTOR
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 60
+
 ufoTrajectories:
   - id: __RETALIATION_ASSAULT_RUN
     groundTimer: 1000
@@ -48,6 +178,62 @@ ufoTrajectories:
       - [6, 1, 25] # Move in sub-region
       - [6, 0, 30] # Land in sub-region
       - [0, 3, 60] # Take off
+      - [5, 0, 100] # Land at base
+
+  - id: MINING_SCOUT
+    groundTimer: 60
+    waypoints:
+      - [5, 3, 100] # Start at base
+      - [0, 2, 60] # Move to region
+      - [8, 1, 30] # Move to sub-region
+      - [8, 1, 25] # Scout within region
+      - [8, 0, 30] # Land once
+      - [8, 1, 30] # Check out another site
+      - [8, 1, 25]
+      - [8, 0, 30]
+      - [8, 1, 30] # Check out one more site
+      - [8, 1, 25]
+      - [8, 0, 30]
+      - [0, 3, 60] # Take off again
+      - [5, 0, 100] # Land at base
+
+  - id: MINING_LANDING
+    groundTimer: 3000
+    waypoints:
+      - [5, 3, 100] # Start at base
+      - [0, 2, 60] # Move to region
+      - [8, 1, 25] # Move to sub-region
+      - [8, 0, 30] # Land once
+      - [8, 1, 25] # Try another spot
+      - [8, 0, 30]
+      - [0, 3, 60] # Take off again
+      - [5, 0, 100] # Land at base
+
+  - id: MINING_LANDING_FAMINE
+    groundTimer: 6000 # Needs to stay longer to get more materials, makes up for smaller waves
+    waypoints:
+      - [5, 3, 100] # Start at base
+      - [0, 2, 60] # Move to region
+      - [8, 1, 25] # Move to sub-region
+      - [8, 0, 30] # Land once
+      - [8, 1, 25] # Try another spot
+      - [8, 0, 30]
+      - [0, 3, 60] # Take off again
+      - [5, 0, 100] # Land at base
+
+  - id: MINING_ESCORT
+    waypoints:
+      - [5, 3, 100] # Start at base
+      - [0, 2, 60] # Move to region
+      - [8, 2, 45] # Just fly around the sub-region for a while
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [8, 2, 45]
+      - [0, 3, 60] # Get ready to head out
       - [5, 0, 100] # Land at base
 
 alienDeployments:
@@ -358,3 +544,464 @@ missionScripts:
     startDelay: 1800
     randomDelay: 2520
 
+#*** Worldgen: Famine, Labels 1-100 ***
+# Monthly mining activity, split into 4 scripts to coordinate with military flyover
+  - type: miningActivityFamine_Quadrant0
+    label: 1
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    executionOdds: 25
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityFamine_Quadrant1
+    label: 2
+    conditionals: [-1]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    executionOdds: 33
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityFamine_Quadrant2
+    label: 3
+    conditionals: [-1, -2]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    executionOdds: 50
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityFamine_Quadrant3
+    label: 4
+    conditionals: [-1, -2, -3]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    executionOdds: 100
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+# Military ship flyovers to coordinate with mining activity
+  - type: miningEscortFamine_Quadrant0
+    conditionals: [1]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortFamine_Quadrant1
+    conditionals: [2]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortFamine_Quadrant2
+    conditionals: [3]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortFamine_Quadrant3
+    conditionals: [4]
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_FAMINE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+#*** Worldgen: Plague, Labels 101-200 ***
+# Monthly mining activity, split into 4 scripts to coordinate with military flyover
+  - type: miningActivityPlague_Quadrant0
+    label: 101
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    executionOdds: 25
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityPlague_Quadrant1
+    label: 102
+    conditionals: [-101]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    executionOdds: 33
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityPlague_Quadrant2
+    label: 103
+    conditionals: [-101, -102]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    executionOdds: 50
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityPlague_Quadrant3
+    label: 104
+    conditionals: [-101, -102, -103]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    executionOdds: 100
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+# Military ship flyovers to coordinate with mining activity
+  - type: miningEscortPlague_Quadrant0
+    conditionals: [101]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortPlague_Quadrant1
+    conditionals: [102]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortPlague_Quadrant2
+    conditionals: [103]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortPlague_Quadrant3
+    conditionals: [104]
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_PLAGUE: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+#*** Worldgen: War, Labels 201-300 ***
+# Monthly mining activity, split into 4 scripts to coordinate with military flyover
+  - type: miningActivityWar_Quadrant0
+    label: 201
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    executionOdds: 25
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_WAR: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityWar_Quadrant1
+    label: 202
+    conditionals: [-201]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    executionOdds: 33
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_WAR: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityWar_Quadrant2
+    label: 203
+    conditionals: [-201, -202]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    executionOdds: 50
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_WAR: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+  - type: miningActivityWar_Quadrant3
+    label: 204
+    conditionals: [-201, -202, -203]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    executionOdds: 100
+    missionWeights:
+      0:
+        STR_MINING_ACTIVITY_WAR: 100
+    raceWeights:
+      0:
+        STR_MINING_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 5670 # 4*60*24
+    useTable: false
+
+# Military ship flyovers to coordinate with mining activity
+  - type: miningEscortWar_Quadrant0
+    conditionals: [201]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_WAR: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortWar_Quadrant1
+    conditionals: [202]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_WAR: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortWar_Quadrant2
+    conditionals: [203]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_WAR: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
+
+  - type: miningEscortWar_Quadrant3
+    conditionals: [204]
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_MINING_ESCORT_WAR: 100
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: -1
+    startDelay: 4320 # 3*60*24
+    useTable: false
