@@ -1,16 +1,30 @@
 alienRaces:
   - id: STR_MINING_CREW
     members:
-      - STR_HOSTILE_OVERSEER
-      - STR_HOSTILE_MECHANIZED
-      - STR_ALIEN_SLAVE
+      - STR_HOSTILE_OVERSEER # Head honcho
+      - STR_HOSTILE_OVERSEER # Officer
+      - STR_HOSTILE_OVERSEER # Squad Leader
+      - STR_HOSTILE_OVERSEER # Technical
+      - STR_HOSTILE_OVERSEER # Mechanic
+      - STR_HOSTILE_OVERSEER # Foot soldier
+      - STR_ALIEN_SLAVE # Start Aux units
+      - STR_HOSTILE_MECHANIZED # Light mech
+      - STR_HOSTILE_MECHANIZED_HOVER # Medium mech
+      - STR_HOSTILE_MECHANIZED_HOVER # Heavy mech
 
   - id: STR_MILITARY_CREW
     # Arm a few of the basic units, overseer types as footsoldiers, specialized units, then leaders
     members:
-      - STR_HOSTILE_MECHANIZED_HOVER
-      - STR_HOSTILE_MECHANIZED
-      - STR_HOSTILE_OVERSEER
+      - STR_HOSTILE_OVERSEER # Head honcho
+      - STR_HOSTILE_OVERSEER # Officer
+      - STR_HOSTILE_OVERSEER # Squad Leader
+      - STR_HOSTILE_OVERSEER # Technical
+      - STR_HOSTILE_OVERSEER # Mechanic
+      - STR_HOSTILE_OVERSEER # Foot soldier
+      - STR_ALIEN_SLAVE # Start Aux units
+      - STR_HOSTILE_MECHANIZED # Light mech
+      - STR_HOSTILE_MECHANIZED_HOVER # Medium mech
+      - STR_HOSTILE_MECHANIZED_HOVER # Heavy mech
 
 # *** Hostile units ***
 units:
