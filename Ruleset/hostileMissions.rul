@@ -536,7 +536,7 @@ missionScripts:
     executionOdds: 100
     missionWeights:
       0:
-        STR_MINING_ACTIVITY_WAR: 100
+        STR_MINING_ACTIVITY_FAMINE: 100
     raceWeights:
       0:
         STR_MINING_CREW: 100
