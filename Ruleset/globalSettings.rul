@@ -11,6 +11,7 @@ startingTime:
   day: 1
   month: 1
   year: 0
+defeatScore: -100000
 lighting:
   enhanced: 7
 fixedUserOptions:
