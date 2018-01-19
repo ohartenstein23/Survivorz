@@ -2,6 +2,7 @@ armors:
   - type: STR_NONE_UC
     spriteSheet: XCOM_1.PCK
     spriteInv: MAN_1
+    customArmorPreviewIndex: 0
     spriteFaceGroup: 6
     spriteFaceColor: [96, 96, 96, 96, 160, 160, 163, 163]
     spriteHairGroup: 9
@@ -48,6 +49,15 @@ ufopaedia:
     type_id: 5
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_NONE_UC_PEDIA
+
+extraSprites:
+  - type: CustomArmorPreviews
+    width: 36
+    height: 20
+    subX: 12
+    subY: 20
+    files:
+      0: Resources/Unitsprites/custom_armor_previews.png
 
 extraStrings:
   - type: en-US
