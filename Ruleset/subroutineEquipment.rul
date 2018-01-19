@@ -119,11 +119,11 @@ armors:
     spriteSheet: GUNSHIP.PCK
     spriteInv: DRONE_FLYING
     corpseBattle:
-      - SECTOPOD_CORPSE_1
-      - SECTOPOD_CORPSE_2
-      - SECTOPOD_CORPSE_3
-      - SECTOPOD_CORPSE_4
-    corpseGeo: STR_SECTOPOD_CORPSE
+      - GUNSHIP_CORPSE_1
+      - GUNSHIP_CORPSE_2
+      - GUNSHIP_CORPSE_3
+      - GUNSHIP_CORPSE_4
+    corpseGeo: STR_RECOVER_GUNSHIP_ARMOR
     visibilityAtDay: 30
     visibilityAtNight: 15
     personalLight: 15
@@ -210,6 +210,39 @@ items:
     invWidth: 2
     invHeight: 3
     fixedWeapon: true
+
+  - type: STR_RECOVER_GUNSHIP_ARMOR
+    recover: true
+    size: 6.0
+    costSell: 100000
+    battleType: 11
+
+  - type: GUNSHIP_CORPSE_1
+    name: STR_RECOVER_GUNSHIP_ARMOR
+    recover: true
+    weight: 100
+    floorSprite: 201
+    battleType: 11
+    invWidth: 0
+    invHeight: 0
+  - type: GUNSHIP_CORPSE_2
+    recover: false
+    floorSprite: 202
+    battleType: 11
+    invWidth: 0
+    invHeight: 0
+  - type: GUNSHIP_CORPSE_3
+    recover: false
+    floorSprite: 203
+    battleType: 11
+    invWidth: 0
+    invHeight: 0
+  - type: GUNSHIP_CORPSE_4
+    recover: false
+    floorSprite: 204
+    battleType: 11
+    invWidth: 0
+    invHeight: 0
 
   - type: INV_NULL_LH
     weight: 0
@@ -334,6 +367,10 @@ extraSprites:
   - type: FLOOROB.PCK
     files:
       200: Resources/NeoWorm/Spritesheet/Drone_Floorob.png
+      201: Resources/Floorobs/hwp_gunship_corpse_n.png
+      202: Resources/Floorobs/hwp_gunship_corpse_e.png
+      203: Resources/Floorobs/hwp_gunship_corpse_w.png
+      204: Resources/Floorobs/hwp_gunship_corpse_s.png
 
   - type: BIGOBS.PCK
     files:
@@ -347,6 +384,9 @@ extraStrings:
   - type: en-US
     strings:
       STR_FLYING_DRONE_ARMOR_UC: "DRONE"
+      STR_GUNSHIP_ARMOR_UC: "GUNSHIP"
       STR_FLYING_DRONE_ARMOR_UC_PEDIA: "Lorem Ipsum"
       STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
       STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"
+      GUNSHIP_CORPSE_1: "Damaged AI/Gunship"
+      STR_RECOVER_GUNSHIP_ARMOR: "Damaged AI/Gunship"
