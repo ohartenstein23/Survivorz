@@ -217,6 +217,8 @@ items:
   - type: STR_HOSTILE_CARBINE
     # Ranged weapon for overseers, footsoldiers, and early mechanized
     # Fast aimed shot for sniper use, relatively poor reactions
+    tags:
+      ITEM_RECOLORED_BY_AMMO_GROUP: 2 # COLOR_X1_RED
     costBuy: 0
     costSell: 0
     size: 0.2
@@ -230,6 +232,55 @@ items:
     fireSound: 18
     compatibleAmmo:
       - STR_HOSTILE_CARBINE_CLIP
+    tuAimed: 45
+    tuSnap: 30
+    accuracyAimed: 120
+    accuracySnap: 80
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
+    twoHanded: true
+    battleType: 1
+    invWidth: 1
+    invHeight: 3
+
+  - type: STR_HOSTILE_CARBINE_CLIP
+    tags:
+      ITEM_AMMO_RECOLOR_GROUP: 2 #COLOR_X1_RED
+    costBuy: 0
+    costSell: 0
+    size: 0.05
+    requires:
+      - STR_HOSTILE_CARBINE
+    weight: 3
+    bigSprite: 501
+    handSprite: 508
+    floorSprite: 501
+    hitSound: 19
+    hitAnimation: 46
+    power: 60
+    damageType: 5
+    clipSize: 18
+    battleType: 2
+
+
+  - type: STR_HOSTILE_AUTOCANNON
+    # First of the 'real' guns for the mechanized units, lays down much more fire at range
+    tags:
+      ITEM_RECOLORED_BY_AMMO_GROUP: 2 # COLOR_X1_RED
+    costBuy: 0
+    costSell: 0
+    size: 0.2
+    #requires:
+    #  - STR_HOSTILE_AUTOCANNON
+    weight: 22
+    bigSprite: 502
+    floorSprite: 500 # Use carbine until I make a handob
+    handSprite: 500 # Use carbine until I make a floorob
+    bulletSprite: 8
+    fireSound: 18
+    compatibleAmmo:
+      - STR_HOSTILE_AUTOCANNON_CLIP
     scripts:
       recolorItemSprite: |
         var ptr BattleItem ammoItem;
@@ -271,31 +322,34 @@ items:
     autoRange: 200
     twoHanded: true
     battleType: 1
-    invWidth: 1
+    invWidth: 2
     invHeight: 3
 
-  - type: STR_HOSTILE_CARBINE_CLIP
+  - type: STR_HOSTILE_AUTOCANNON_CLIP
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 2 #COLOR_X1_RED
     costBuy: 0
     costSell: 0
-    size: 0.05
-    requires:
-      - STR_HOSTILE_CARBINE
-    weight: 3
-    bigSprite: 501
-    handSprite: 508
-    floorSprite: 501
+    size: 0.1
+    #requires:
+    #  - STR_HOSTILE_AUTOCANNON
+    weight: 4
+    bigSprite: 501 # carbine clip until later
+    handSprite: 508 # carbine clip until later
+    floorSprite: 501 # carbine clip until later
     hitSound: 19
     hitAnimation: 46
     power: 60
     damageType: 5
-    clipSize: 18
+    clipSize: 36
     battleType: 2
+
 
   - type: STR_HOSTILE_LAUNCHER
     # Ranged stun and explosive weapon for overseers, stun on capture mission, mixed on mining and military crew
     # Accurate but slow snap fire, 3-6 clip size, aimed mode for player use
+    tags:
+      ITEM_RECOLORED_BY_AMMO_GROUP: 4 #COLOR_X1_GREEN1
     costBuy: 0
     costSell: 0
     size: 0.2
@@ -310,38 +364,6 @@ items:
     compatibleAmmo:
       - STR_HOSTILE_LAUNCHER_STUNBOMB
       - STR_HOSTILE_LAUNCHER_GASBOMB
-    scripts:
-      recolorItemSprite: |
-        var ptr BattleItem ammoItem;
-        var ptr RuleItem ammoRuleset;
-        var int oldColorGroup;
-        var int newColorGroup;
-        var int ammoQuantity;
-
-        item.getAmmoItem ammoItem;
-        ammoItem.getAmmoQuantity ammoQuantity;
-        get_color oldColorGroup new_pixel;
-
-        if eq ammoQuantity 0;
-          if eq oldColorGroup COLOR_X1_GREEN1;
-            set_shade new_pixel 13;
-          end;
-          return new_pixel;
-        end;
-
-        ammoItem.getRuleItem ammoRuleset;
-        ammoRuleset.getTag newColorGroup Tag.ITEM_AMMO_RECOLOR_GROUP;
-        if eq newColorGroup 0;
-          return new_pixel;
-        end;
-
-        limit newColorGroup 1 14;
-
-        if eq oldColorGroup COLOR_X1_GREEN1;
-          set_color new_pixel newColorGroup;
-        end;
-
-        return new_pixel;
     tuSnap: 40
     accuracySnap: 90
     aimRange: 200
@@ -404,7 +426,7 @@ items:
     weight: 0
     fixedWeapon: true
     recover: false
-    bigSprite: 500 # stand-in until better bigob
+    bigSprite: 502 # stand-in until better bigob
     bulletSprite: 8
     fireSound: 18
     hitSound: 19
@@ -431,6 +453,50 @@ extended:
   tags:
     RuleItem:
       ITEM_AMMO_RECOLOR_GROUP: int
+      ITEM_RECOLORED_BY_AMMO_GROUP: int
+
+  scripts:
+    recolorItemSprite:
+      - offset: 1
+        code: |
+          var ptr BattleItem ammoItem;
+          var ptr RuleItem itemRuleset;
+          var ptr RuleItem ammoRuleset;
+          var int oldColorGroup;
+          var int newColorGroup;
+          var int pixelColor;
+          var int ammoQuantity;
+
+          item.getRuleItem itemRuleset;
+          item.getTag oldColorGroup Tag.ITEM_RECOLORED_BY_AMMO_GROUP;
+          if eq oldColorGroup 0;
+            return new_pixel;
+          end;
+
+          item.getAmmoItem ammoItem;
+          ammoItem.getAmmoQuantity ammoQuantity;
+          get_color pixelColor new_pixel;
+
+          if eq ammoQuantity 0;
+            if eq oldColorGroup pixelColor;
+              set_shade new_pixel 13;
+            end;
+            return new_pixel;
+          end;
+
+          ammoItem.getRuleItem ammoRuleset;
+          ammoRuleset.getTag newColorGroup Tag.ITEM_AMMO_RECOLOR_GROUP;
+          if eq newColorGroup 0;
+            return new_pixel;
+          end;
+
+          limit newColorGroup 1 14;
+
+          if eq oldColorGroup pixelColor;
+            set_color new_pixel newColorGroup;
+          end;
+
+          return new_pixel;
 
 ufopaedia:
 #*** Weapons ***
@@ -485,6 +551,7 @@ extraSprites:
     files:
       500: Resources/Bigobs/hostile_carbine.png
       501: Resources/Bigobs/hostile_carbine_clip.png
+      502: Resources/Bigobs/hostile_autocannon.png
       510: Resources/Bigobs/hostile_small_launcher.png
       511: Resources/Bigobs/hostile_small_stun_gas.png
       512: Resources/Bigobs/hostile_small_lethal_gas.png
