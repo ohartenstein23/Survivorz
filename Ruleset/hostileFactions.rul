@@ -137,6 +137,12 @@ units:
     aggression: 0
 
 items:
+  - type: STR_RECYCLED_MATERIALS
+    size: 0.1
+    specialType: 10
+    costSell: 1000
+    #recoveryPoints: 1
+
 # *** Hostile Live Units ***
   - type: STR_HOSTILE_OVERSEER
     liveAlien: true
@@ -504,6 +510,9 @@ extraSprites:
 extraStrings:
   - type: en-US
     strings:
+# *** Recovered materials ***
+      STR_RECYCLED_MATERIALS: "Recycled Materials"
+
 # *** Units ***
       STR_HOSTILES: "Hostiles"
       STR_MINING_CREW: "Hostile Mining Crew"

@@ -1,0 +1,63 @@
+MCDPatches:
+# All UFO components recovered as special type 10
+  - type: U_WALL02
+    data:
+      - MCDIndex: 33
+        specialType: 10
+      - MCDIndex: 34
+        specialType: 10
+      - MCDIndex: 35
+        specialType: 10
+      - MCDIndex: 36
+        specialType: 10
+      - MCDIndex: 37
+        specialType: 10
+      - MCDIndex: 38
+        specialType: 10
+      - MCDIndex: 45
+        specialType: 10
+
+  - type: U_DISEC2
+    data:
+      - MCDIndex: 0
+        specialType: 10
+      - MCDIndex: 1
+        specialType: 10
+      - MCDIndex: 2
+        specialType: 10
+      - MCDIndex: 3
+        specialType: 10
+      - MCDIndex: 6
+        specialType: 10
+      - MCDIndex: 7
+        specialType: 10
+      - MCDIndex: 8
+        specialType: 10
+      - MCDIndex: 9
+        specialType: 10
+      - MCDIndex: 15
+        specialType: 10
+      - MCDIndex: 16
+        specialType: 10
+
+  - type: U_OPER2
+    data:
+      - MCDIndex: 8
+        specialType: 10
+      - MCDIndex: 9
+        specialType: 10
+      - MCDIndex: 10
+        specialType: 10
+      - MCDIndex: 11
+        specialType: 10
+
+  - type: U_PODS
+    data:
+      - MCDIndex: 3
+        specialType: 10
+      - MCDIndex: 4
+        specialType: 10
+      - MCDIndex: 7
+        specialType: 10
+      - MCDIndex: 8
+        specialType: 10
