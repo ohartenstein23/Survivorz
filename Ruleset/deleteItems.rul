@@ -58,6 +58,15 @@ items:
   - delete: STR_ALIEN_GRENADE
   - delete: STR_MIND_PROBE
   - delete: STR_ALIEN_ALLOYS
+  - delete: STR_UFO_POWER_SOURCE
+  - delete: STR_UFO_NAVIGATION
+  - delete: STR_UFO_CONSTRUCTION
+  - delete: STR_ALIEN_FOOD
+  - delete: STR_ALIEN_REPRODUCTION
+  - delete: STR_ALIEN_ENTERTAINMENT
+  - delete: STR_ALIEN_SURGERY
+  - delete: STR_EXAMINATION_ROOM
+  - delete: STR_ALIEN_HABITAT
 
 dontDeleteYet:
   - delete: STR_CORPSE
@@ -97,15 +106,6 @@ dontDeleteYet:
   - delete: TANK_CORPSE_4
   - delete: CIVM_CORPSE
   - delete: CIVF_CORPSE
-  - delete: STR_UFO_POWER_SOURCE
-  - delete: STR_UFO_NAVIGATION
-  - delete: STR_UFO_CONSTRUCTION
-  - delete: STR_ALIEN_FOOD
-  - delete: STR_ALIEN_REPRODUCTION
-  - delete: STR_ALIEN_ENTERTAINMENT
-  - delete: STR_ALIEN_SURGERY
-  - delete: STR_EXAMINATION_ROOM
-  - delete: STR_ALIEN_HABITAT
   - delete: STR_PERSONAL_ARMOR
   - delete: STR_POWER_SUIT
   - delete: STR_FLYING_SUIT

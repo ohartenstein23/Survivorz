@@ -275,44 +275,12 @@ items:
     #  - STR_HOSTILE_AUTOCANNON
     weight: 22
     bigSprite: 502
-    floorSprite: 500 # Use carbine until I make a handob
-    handSprite: 500 # Use carbine until I make a floorob
+    floorSprite: 502
+    handSprite: 516
     bulletSprite: 8
     fireSound: 18
     compatibleAmmo:
       - STR_HOSTILE_AUTOCANNON_CLIP
-    scripts:
-      recolorItemSprite: |
-        var ptr BattleItem ammoItem;
-        var ptr RuleItem ammoRuleset;
-        var int oldColorGroup;
-        var int newColorGroup;
-        var int ammoQuantity;
-
-        item.getAmmoItem ammoItem;
-        ammoItem.getAmmoQuantity ammoQuantity;
-        get_color oldColorGroup new_pixel;
-
-        if eq ammoQuantity 0;
-          if eq oldColorGroup COLOR_X1_RED;
-            set_shade new_pixel 13;
-          end;
-          return new_pixel;
-        end;
-
-        ammoItem.getRuleItem ammoRuleset;
-        ammoRuleset.getTag newColorGroup Tag.ITEM_AMMO_RECOLOR_GROUP;
-        if eq newColorGroup 0;
-          return new_pixel;
-        end;
-
-        limit newColorGroup 1 14;
-
-        if eq oldColorGroup COLOR_X1_RED;
-          set_color new_pixel newColorGroup;
-        end;
-
-        return new_pixel;
     tuAimed: 45
     tuSnap: 30
     accuracyAimed: 120
@@ -334,9 +302,9 @@ items:
     #requires:
     #  - STR_HOSTILE_AUTOCANNON
     weight: 4
-    bigSprite: 501 # carbine clip until later
-    handSprite: 508 # carbine clip until later
-    floorSprite: 501 # carbine clip until later
+    bigSprite: 503
+    handSprite: 524
+    floorSprite: 503
     hitSound: 19
     hitAnimation: 46
     power: 60
@@ -468,7 +436,7 @@ extended:
           var int ammoQuantity;
 
           item.getRuleItem itemRuleset;
-          item.getTag oldColorGroup Tag.ITEM_RECOLORED_BY_AMMO_GROUP;
+          itemRuleset.getTag oldColorGroup Tag.ITEM_RECOLORED_BY_AMMO_GROUP;
           if eq oldColorGroup 0;
             return new_pixel;
           end;
@@ -552,6 +520,7 @@ extraSprites:
       500: Resources/Bigobs/hostile_carbine.png
       501: Resources/Bigobs/hostile_carbine_clip.png
       502: Resources/Bigobs/hostile_autocannon.png
+      503: Resources/Bigobs/hostile_autocannon_clip.png
       510: Resources/Bigobs/hostile_small_launcher.png
       511: Resources/Bigobs/hostile_small_stun_gas.png
       512: Resources/Bigobs/hostile_small_lethal_gas.png
@@ -559,6 +528,8 @@ extraSprites:
     files:
       500: Resources/Floorobs/hostile_carbine.png
       501: Resources/Floorobs/hostile_carbine_clip.png
+      502: Resources/Floorobs/hostile_autocannon.png
+      503: Resources/Floorobs/hostile_autocannon_clip.png
       510: Resources/Floorobs/hostile_small_launcher.png
       511: Resources/Floorobs/hostile_small_stun_gas.png
       512: Resources/Floorobs/hostile_small_lethal_gas.png
@@ -570,6 +541,8 @@ extraSprites:
     files:
       500: Resources/Handobs/hostile_carbine.png
       508: Resources/Handobs/hostile_carbine_clip.png
+      516: Resources/Handobs/hostile_autocannon.png
+      524: Resources/Handobs/hostile_autocannon_clip.png
       564: Resources/Handobs/hostile_small_launcher.png
       572: Resources/Bigobs/hostile_small_stun_gas.png
       580: Resources/Bigobs/hostile_small_lethal_gas.png
