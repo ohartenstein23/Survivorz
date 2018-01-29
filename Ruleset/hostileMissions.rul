@@ -244,13 +244,16 @@ alienDeployments:
           -
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
-            - STR_HOSTILE_LAUNCHER_GASBOMB
-          -
-            - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 50
@@ -298,13 +301,16 @@ alienDeployments:
           -
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
-            - STR_HOSTILE_LAUNCHER_GASBOMB
-          -
-            - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 50
@@ -352,13 +358,16 @@ alienDeployments:
           -
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
-            - STR_HOSTILE_LAUNCHER_GASBOMB
-          -
-            - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
           -
             - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 60
@@ -382,8 +391,10 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_GASBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
           -
             - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
           -
@@ -408,25 +419,25 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_GASBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
       - alienRank: 7 # STR_HOSTILE_MECHANIZED
         lowQty: 2
         highQty: 3
         dQty: 1
         percentageOutsideUfo: 60
-        # Needs more weapon types here, show off the aliens' power!
         itemSets:
           -
             - STR_HOSTILE_CARBINE
             - STR_HOSTILE_CARBINE_CLIP
             - STR_HOSTILE_CARBINE_CLIP
           -
-            - STR_HOSTILE_CARBINE
-            - STR_HOSTILE_CARBINE_CLIP
-            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_AUTOCANNON
+            - STR_HOSTILE_AUTOCANNON_CLIP
+            - STR_HOSTILE_AUTOCANNON_CLIP
           -
-            - STR_HOSTILE_CARBINE
-            - STR_HOSTILE_CARBINE_CLIP
-            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_AUTOCANNON
+            - STR_HOSTILE_AUTOCANNON_CLIP
+            - STR_HOSTILE_AUTOCANNON_CLIP
     width: 60
     length: 60
     height: 4
@@ -443,8 +454,10 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_GASBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
           -
             - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_STUNBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
           -
@@ -469,6 +482,7 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER
             - STR_HOSTILE_LAUNCHER_GASBOMB
             - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
       - alienRank: 7 # STR_HOSTILE_MECHANIZED
         lowQty: 4
         highQty: 6
@@ -477,17 +491,17 @@ alienDeployments:
         # Needs more weapon types here, show off the aliens' power!
         itemSets:
           -
-            - STR_HOSTILE_CARBINE
-            - STR_HOSTILE_CARBINE_CLIP
-            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_HEAVY_CANNON
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
           -
-            - STR_HOSTILE_CARBINE
-            - STR_HOSTILE_CARBINE_CLIP
-            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_HEAVY_CANNON
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
           -
-            - STR_HOSTILE_CARBINE
-            - STR_HOSTILE_CARBINE_CLIP
-            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_AUTOCANNON
+            - STR_HOSTILE_AUTOCANNON_CLIP
+            - STR_HOSTILE_AUTOCANNON_CLIP
       - alienRank: 8 # STR_HOSTILE_MECHANIZED_HOVER
         lowQty: 2
         highQty: 3

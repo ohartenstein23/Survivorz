@@ -438,7 +438,7 @@ items:
     damageType: 6
     damageAlter:
       SmokeThreshold: 60
-    clipSize: 6
+    clipSize: 4
     battleType: 2
     invWidth: 1
     invHeight: 1
@@ -462,7 +462,7 @@ items:
       ToHealth: 1.0
       ToStun: 0.34
       SmokeThreshold: 50
-    clipSize: 6
+    clipSize: 4
     battleType: 2
     invWidth: 1
     invHeight: 1
