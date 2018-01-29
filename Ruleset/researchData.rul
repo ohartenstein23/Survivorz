@@ -109,6 +109,42 @@ research:
     unlocks:
       - STR_HOSTILE_WEAPONS
 
+  - name: STR_HOSTILE_AUTOCANNON
+    cost: 10
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_AUTOCANNON_CLIP
+    cost: 4
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_HEAVY_CANNON
+    cost: 10
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
+  - name: STR_HOSTILE_HEAVY_CANNON_CLIP
+    cost: 4
+    needItem: true
+    destroyItem: false
+    dependencies:
+      - STR_POST_ITEM
+    unlocks:
+      - STR_HOSTILE_WEAPONS
+
   - name: STR_HOSTILE_LAUNCHER
     cost: 5
     needItem: true
