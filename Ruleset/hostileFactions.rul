@@ -72,7 +72,7 @@ units:
       psiStrength: 100
       psiSkill: 0
       melee: 76
-    armor: MUTON_ARMOR0
+    armor: MUTON_ARMOR0 #HOSTILE_WALKER_MECH (not anywhere near complete)
     standHeight: 21
     kneelHeight: 16
     value: 20
@@ -135,6 +135,29 @@ units:
     deathSound: 10
     intelligence: 2
     aggression: 0
+
+armors:
+  - type: HOSTILE_WALKER_MECH
+    spriteSheet: HOSTILE_WALKER_MECH.PCK
+    #corpseBattle:
+    weight: 0
+    frontArmor: 40
+    sideArmor: 40
+    rearArmor: 40
+    underArmor: 40
+    damageModifier:
+      - 1.0
+      - 0.6
+      - 0.4
+      - 0.8
+      - 1.2
+      - 1.0
+      - 0.0
+      - 1.0
+      - 1.0
+      - 0.0
+    loftempSet: 4
+    
 
 items:
   - type: STR_RECYCLED_MATERIALS
@@ -281,10 +304,16 @@ items:
     fireSound: 18
     compatibleAmmo:
       - STR_HOSTILE_AUTOCANNON_CLIP
-    tuAimed: 45
-    tuSnap: 30
-    accuracyAimed: 120
-    accuracySnap: 80
+    tuAimed: 35
+    tuSnap: 28
+    accuracyAimed: 40
+    accuracySnap: 70
+    confAimed:
+      name: STR_LONG_BURST
+      shots: 4
+    confSnap:
+      name: STR_SHORT_BURST
+      shots: 2
     aimRange: 200
     snapRange: 200
     autoRange: 200
@@ -312,6 +341,56 @@ items:
     clipSize: 36
     battleType: 2
 
+  - type: STR_HOSTILE_HEAVY_CANNON
+    # The larger of the walker mech's weapons, powerful anti-tank small-radius AoE
+    tags:
+      ITEM_RECOLORED_BY_AMMO_GROUP: 9 #COLOR_X1_BROWN1
+    costBuy: 0
+    costSell: 0
+    size: 0.2
+    #requires:
+    #  - STR_HOSTILE_HEAVY_CANNON
+    weight: 22
+    bigSprite: 504
+    floorSprite: 500 # Carbine until I make floorob
+    handSprite: 500 # Carbine until I make handob
+    bulletSprite: 8
+    fireSound: 18
+    compatibleAmmo:
+      - STR_HOSTILE_HEAVY_CANNON_CLIP
+    tuAimed: 70
+    tuSnap: 35
+    accuracyAimed: 90
+    accuracySnap: 60
+    aimRange: 200
+    snapRange: 200
+    autoRange: 200
+    twoHanded: true
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+
+  - type: STR_HOSTILE_HEAVY_CANNON_CLIP
+    tags:
+      ITEM_AMMO_RECOLOR_GROUP: 9 #COLOR_X1_BROWN1
+    costBuy: 0
+    costSell: 0
+    size: 0.1
+    #requires:
+    #  - STR_HOSTILE_HEAVY_CANNON
+    weight: 4
+    bigSprite: 505
+    handSprite: 508 # Carbine until I make handobs
+    floorSprite: 501 # Carbine until I make floorobs
+    #hitSound: 19 # need different ones for explosives
+    #hitAnimation: 46 # need different ones for explosives
+    power: 90
+    blastRadius: 2
+    damageType: 3
+    clipSize: 7
+    battleType: 2
+    invWidth: 2
+    invHeight: 1
 
   - type: STR_HOSTILE_LAUNCHER
     # Ranged stun and explosive weapon for overseers, stun on capture mission, mixed on mining and military crew
@@ -521,9 +600,12 @@ extraSprites:
       501: Resources/Bigobs/hostile_carbine_clip.png
       502: Resources/Bigobs/hostile_autocannon.png
       503: Resources/Bigobs/hostile_autocannon_clip.png
+      504: Resources/Bigobs/hostile_heavy_cannon.png
+      505: Resources/Bigobs/hostile_heavy_cannon_clip.png
       510: Resources/Bigobs/hostile_small_launcher.png
       511: Resources/Bigobs/hostile_small_stun_gas.png
       512: Resources/Bigobs/hostile_small_lethal_gas.png
+
   - type: FLOOROB.PCK
     files:
       500: Resources/Floorobs/hostile_carbine.png
@@ -533,6 +615,7 @@ extraSprites:
       510: Resources/Floorobs/hostile_small_launcher.png
       511: Resources/Floorobs/hostile_small_stun_gas.png
       512: Resources/Floorobs/hostile_small_lethal_gas.png
+
   - type: HANDOB.PCK
     height: 40
     width: 256
@@ -546,6 +629,14 @@ extraSprites:
       564: Resources/Handobs/hostile_small_launcher.png
       572: Resources/Bigobs/hostile_small_stun_gas.png
       580: Resources/Bigobs/hostile_small_lethal_gas.png
+
+  - type: HOSTILE_WALKER_MECH.PCK
+    height: 320
+    width: 1024
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/Unitsprites/hostile_walker_mech.png
 
 extraStrings:
   - type: en-US
