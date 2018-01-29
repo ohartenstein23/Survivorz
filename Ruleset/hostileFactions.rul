@@ -627,8 +627,8 @@ extraSprites:
       516: Resources/Handobs/hostile_autocannon.png
       524: Resources/Handobs/hostile_autocannon_clip.png
       564: Resources/Handobs/hostile_small_launcher.png
-      572: Resources/Bigobs/hostile_small_stun_gas.png
-      580: Resources/Bigobs/hostile_small_lethal_gas.png
+      572: Resources/Handobs/hostile_small_stun_gas.png
+      580: Resources/Handobs/hostile_small_lethal_gas.png
 
   - type: HOSTILE_WALKER_MECH.PCK
     height: 320
