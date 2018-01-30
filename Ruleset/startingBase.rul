@@ -67,7 +67,7 @@ facilities:
     monthlyCost: 5000
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: baseTerrain
 
 #*** Crashed ship facilities ***
@@ -84,7 +84,7 @@ facilities:
     mapName: Hangar_Left
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 0
 
@@ -130,7 +130,7 @@ facilities:
     mapName: Back_Left_Interior
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 3
 
@@ -146,7 +146,7 @@ facilities:
     mapName: Back_Right_Interior
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 4
 
@@ -161,7 +161,7 @@ facilities:
     mapName: Back_Right_Corridor
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 5
 
@@ -177,7 +177,7 @@ facilities:
     mapName: Front_Left_Corridor
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 6
 
@@ -195,7 +195,7 @@ facilities:
     mapName: Front_Left_Interior
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 7
 
@@ -213,7 +213,7 @@ facilities:
     mapName: Front_Right_Interior
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 8
 
@@ -229,7 +229,7 @@ facilities:
     mapName: Front_Right_Corridor
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 9
 
@@ -246,7 +246,7 @@ facilities:
     mapName: Cockpit_Left
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 10
 
@@ -263,7 +263,7 @@ facilities:
     mapName: Cockpit_Right
     verticalLevels:
     - type: ground
-      size: [1, 1, 4]
+      size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 11
 
