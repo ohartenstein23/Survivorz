@@ -518,7 +518,9 @@ alienDeployments:
   - type: STR_BASE_DEFENSE
     shade: -1
     maxShade: 10
-    height: 4
+    width: 60
+    length: 60
+    height: 8
     terrains:
       - CRASHED_SHIP
 
