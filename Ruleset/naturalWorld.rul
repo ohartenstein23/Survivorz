@@ -717,6 +717,7 @@ mapScripts:
       groups: 3
       executionChances: 50
     - type: addBlock
+      executions: 2
       size: [2, 2, 6]
       verticalLevels:
       - type: ground
