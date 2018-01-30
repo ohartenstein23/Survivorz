@@ -258,7 +258,7 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 50
     length: 50
-    height: 4
+    height: 8
 
   - type: STR_LARGE_SCOUT
     data:
@@ -315,7 +315,7 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 50
     length: 50
-    height: 4
+    height: 8
 
   - type: STR_MINING_BASE_INVESTIGATION
     data:
@@ -440,7 +440,7 @@ alienDeployments:
             - STR_HOSTILE_AUTOCANNON_CLIP
     width: 60
     length: 60
-    height: 4
+    height: 8
 
   - type: STR_TERROR_SHIP # Larger military ship
     data:
@@ -513,7 +513,7 @@ alienDeployments:
           - []
     width: 60
     length: 60
-    height: 4
+    height: 8
 
   - type: STR_BASE_DEFENSE
     shade: -1

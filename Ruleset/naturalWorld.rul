@@ -85,7 +85,7 @@ alienDeployments:
   - type: STR_ENVIRO_SCAN_EASY
     width: 50
     length: 50
-    height: 4
+    height: 8
     alert: STR_ENVIRO_SCAN_ALERT
     #alertBackground:
     alertDescription: STR_ENVIRO_SCAN_EASY_DESCRIPTION
@@ -406,6 +406,7 @@ terrains:
         length: 10
         height: 1
         groups: 5
+
   - name: CULTA
     script: FARM
     mapDataSets:
@@ -431,6 +432,75 @@ terrains:
       - name: CULTA14
         width: 10
         length: 10
+
+  - name: MOUNT
+    mapDataSets:
+      - BLANKS
+      - MOUNT
+    script: MOUNT_CAVES
+    mapBlocks:
+      - name: MOUNT00
+        width: 10
+        length: 10
+        groups: 1
+      - name: MOUNT01
+        width: 10
+        length: 10
+        groups: 1
+      - name: MOUNT02
+        width: 10
+        length: 10
+        groups: 1
+      - name: MOUNT03
+        width: 10
+        length: 10
+      - name: MOUNT04
+        width: 10
+        length: 10
+      - name: MOUNT05
+        width: 10
+        length: 10
+      - name: MOUNT06
+        width: 10
+        length: 10
+      - name: MOUNT07
+        width: 10
+        length: 10
+      - name: MOUNT08
+        width: 10
+        length: 10
+      - name: MOUNT09
+        width: 10
+        length: 10
+      - name: MOUNT10
+        width: 10
+        length: 10
+      - name: MOUNT11
+        width: 20
+        length: 20
+      - name: MOUNT12
+        width: 20
+        length: 20
+      - name: MOUNT_SURVIVORZ_ENTRANCE
+        width: 10
+        length: 10
+        height: 3
+        groups: 3
+      - name: MOUNT_SURVIVORZ_CAVE_SMALL_00
+        width: 10
+        length: 10
+        height: 2
+        groups: 4
+      - name: MOUNT_SURVIVORZ_CAVE_SMALL_01
+        width: 10
+        length: 10
+        height: 2
+        groups: 4
+      - name: MOUNT_SURVIVORZ_CAVE_LARGE_00
+        width: 20
+        length: 20
+        height: 2
+        groups: 4
 
 mapScripts:
   - type: FARM
@@ -463,6 +533,7 @@ mapScripts:
         terrain: RESOURCES
         groups: 5
     - type: fillArea
+
   - type: DEFAULT
     commands:
     - type: addCraft
@@ -496,6 +567,52 @@ mapScripts:
         terrain: RESOURCES
         groups: 5
     - type: fillArea
+
+  - type: MOUNT_CAVES
+    commands:
+    - type: addCraft
+      size: [1, 1, 6]
+      verticalLevels:
+      - type: ground
+        groups: 4
+        size: [1, 1, 2]
+      - type: middle
+        groups: 1
+        size: [1, 1, 0]
+      - type: craft
+        size: [1, 1, 4]
+    - type: addUFO
+      size: [1, 1, 6]
+      verticalLevels:
+      - type: ground
+        groups: 4
+        size: [1, 1, 2]
+      - type: middle
+        groups: 1
+        size: [1, 1, 0]
+      - type: craft
+        size: [1, 1, 4]
+    - type: addBlock
+      groups: 3
+    - type: addBlock
+      groups: 3
+      executionChances: 50
+    - type: addBlock
+      size: [2, 2, 6]
+      verticalLevels:
+      - type: ground
+        size: [2, 2, 2]
+        groups: 4
+      - type: ceiling
+        size: [2, 2, 4]
+    - type: fillArea
+      size: [1, 1, 6]
+      verticalLevels:
+      - type: ground
+        size: [1, 1, 2]
+        groups: 4
+      - type: ceiling
+        size: [1, 1, 4]
 
 MCDPatches:
   - type: SURVIVORZ_ENVIRO_RECOVERY
