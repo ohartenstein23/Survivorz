@@ -1,0 +1,51 @@
+alienRaces:
+  - id: STR_ALIENS
+    retaliation: false
+    members:
+      - STR_ALIEN_SLAVE # Defined in hostileFactions.rul, until I can make real native units
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SLAVE
+
+items:
+  - type: STR_ALIEN_MININGTOOL
+    costSell: 0
+    costBuy: 0
+    size: 0.1
+    #requires:
+    #  - STR_ALIEN_MININGTOOL
+    weight: 8
+    bigSprite: 26
+    handSprite: 80
+    floorSprite: 26
+    meleeHitSound: 54
+    meleeAnimation: 0
+    meleePower: 40
+    meleeType: 6
+    meleeAlter:
+      RandomType: 2
+      ToHealth: 0.5
+    costMelee:
+      time: 30
+      energy: 5
+    meleeMultiplier:
+      melee: 1.0
+    accuracyMelee: 120
+    twoHanded: true
+    clipSize: -1
+    battleType: 3
+    invWidth: 1
+    invHeight: 3
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_ALIENS: "Natives"
+
+      STR_ALIEN_MININGTOOL: "Alien Mining Tool"

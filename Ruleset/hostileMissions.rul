@@ -372,7 +372,7 @@ alienDeployments:
             - STR_HOSTILE_LAUNCHER_GASBOMB
     width: 60
     length: 60
-    height: 4
+    height: 8
     terrains:
       - CRASHED_SHIP
     shade: -1
