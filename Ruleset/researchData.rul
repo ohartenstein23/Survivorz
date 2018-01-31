@@ -202,14 +202,21 @@ items:
 ufopaedia:
   - id: STR_POST
     type_id: 8
-#    section: STR_SOMETHING
+    section: STR_SYSTEM_REPORTS
     text: STR_POST_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_SHIP_INITIAL_STATUS
+    type_id: 8
+    section: STR_SYSTEM_REPORTS
+    text: STR_SHIP_INITIAL_STATUS_PEDIA
     requires:
       - STR_POST_ITEM
 
   - id: STR_WORLDGEN_FAMINE
     type_id: 8
-#    section: STR_SOMETHING
+    section: STR_SYSTEM_REPORTS
     title: STR_PLANETARY_SCAN
     text: STR_WORLDGEN_FAMINE_PEDIA
     requires:
@@ -218,7 +225,7 @@ ufopaedia:
 
   - id: STR_WORLDGEN_PLAGUE
     type_id: 8
-#    section: STR_SOMETHING
+    section: STR_SYSTEM_REPORTS
     title: STR_PLANETARY_SCAN
     text: STR_WORLDGEN_PLAGUE_PEDIA
     requires:
@@ -227,7 +234,7 @@ ufopaedia:
 
   - id: STR_WORLDGEN_WAR
     type_id: 8
-#    section: STR_SOMETHING
+    section: STR_SYSTEM_REPORTS
     title: STR_PLANETARY_SCAN
     text: STR_WORLDGEN_WAR_PEDIA
     requires:
@@ -238,16 +245,22 @@ ufopaedia:
 extraStrings:
   - type: en-US
     strings:
+      STR_SYSTEM_REPORTS: "SYSTEM REPORTS"
+
       STR_POST: "Power-On Systems Test"
       STR_POST_ITEM: "Power-On Systems Test"
-      STR_POST_PEDIA: "Lorem Ipsum"
+      STR_POST_PEDIA: "ESCSBIOS v.0.3.4{NEWLINE}BIOS Date: 0000.00.00 00:00:00 (System Hard Reset){NEWLINE}{NEWLINE}BIOS System Hard Reset Recovery:{NEWLINE}>:: Primary processor banks: Online{NEWLINE}>:: Initializing auxiliary processor banks: Complete{NEWLINE}>:: Initializing primary storage units: Failed - Corrupted sectors{NEWLINE}>:: Initializing auxiliary storage units: Complete{NEWLINE}>:: Scanning shipboard systems: Complete{NEWLINE}>::    Extensive damage to multiple systems logged{NEWLINE}>:: Scanning environmental surroundings: Complete{NEWLINE}>::    Scan data logged."
+
+      STR_SHIP_INITIAL_STATUS: "Ship Systems Scan"
+      STR_SHIP_INITIAL_STATUS_PEDIA: "Shipboard Systems Scan Report: {NEWLINE}>:: Primary Generators: Offline - Damaged{NEWLINE}>:: Auxiliary Generators: Online{NEWLINE}>:: Port Engine: Offline - Damaged{NEWLINE}>:: Starboard Engine: Online - At 67% Capacity{NEWLINE}>:: Thrusters: Online - At 45% Capacity{NEWLINE}>:: Port Hangar: Offline - Shuttle Damaged{NEWLINE}>:: Starboard Hangar: Available - Shuttle Functional{NEWLINE}>:: Drone Control: Online{NEWLINE}>:: Life Support: Online{NEWLINE}>:: Crew Cryogenics: Online - At 24% Capacity{NEWLINE}>:: Officer Cryogenics: Low-Power State - Damaged{NEWLINE}>:: Manufacturing Systems: Online{NEWLINE}>:: Materials Recycling: Online{NEWLINE}>:: Long-Range Scanners: Offline - Damaged{NEWLINE}>:: Short-Range Scanners: Online{NEWLINE}"
+
       STR_PLANETARY_SCAN: "Initial Planetary Scan"
       STR_WORLDGEN_FAMINE: "Famine World Generated"
-      STR_WORLDGEN_FAMINE_PEDIA: "Lorem Ipsum F"
+      STR_WORLDGEN_FAMINE_PEDIA: &worldgenScan "Environmental Scan Summary Report:{NEWLINE}>:: Detailed logs saved to auxiliary storage units. {NEWLINE}>:: Planetary Classification: Rocky - Terran{NEWLINE}>:: Atmosphere: Nitrogenous, non-toxic - suitable for human life.{NEWLINE}>:: Hydrosphere: Significant planetary coverage with polar{NEWLINE}>::    cryosphere{NEWLINE}>:: Lithosphere: Ferrous, (unknown minerals),{NEWLINE}>::    (unknown metal deposits){NEWLINE}>:: Climate: Varied based on proximity to water, significant{NEWLINE}>::    electromagnetic activity in upper atmosphere{NEWLINE}>::{NEWLINE}>:: Anomalous electromagnetic activity detected, sporadic{NEWLINE}>:: occurance, varied duration, location indeterminate{NEWLINE}>:: Further scanning of environment: In Progress."
       STR_WORLDGEN_PLAGUE: "Plague World Generated"
-      STR_WORLDGEN_PLAGUE_PEDIA: "Lorem Ipsum P"
+      STR_WORLDGEN_PLAGUE_PEDIA: *worldgenScan
       STR_WORLDGEN_WAR: "War World Generated"
-      STR_WORLDGEN_WAR_PEDIA: "Lorem Ipsum W"
+      STR_WORLDGEN_WAR_PEDIA: *worldgenScan
 
       STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
       STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
