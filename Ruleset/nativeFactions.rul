@@ -1,29 +1,70 @@
 alienRaces:
-  - id: STR_ALIENS
+  - id: STR_NATIVES # STR_ALIENS is used for new turn screen
     retaliation: false
     members:
-      - STR_ALIEN_SLAVE # Defined in hostileFactions.rul, until I can make real native units
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
-      - STR_ALIEN_SLAVE
+      - STR_ALIEN_SOLDIER # Defined in hostileFactions.rul, until I can make real native units
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+      - STR_ALIEN_SOLDIER
+
+units:
+  - type: STR_ALIEN_SOLDIER
+    race: STR_NATIVES
+    rank: STR_LIVE_SOLDIER
+    stats:
+      tu: 54
+      stamina: 90
+      health: 30
+      bravery: 80
+      reactions: 63
+      firing: 52
+      throwing: 58
+      strength: 30
+      psiStrength: 40
+      psiSkill: 0
+      melee: 76
+    armor: SECTOID_ARMOR0
+    standHeight: 16
+    kneelHeight: 12
+    value: 10
+    deathSound: 10
+    intelligence: 3
+    aggression: 4
 
 items:
+  - type: STR_ALIEN_SOLDIER
+    liveAlien: true
+    recover: false
+
+  - type: STR_NATIVE_CORPSE
+    size: 0.5
+    costSell: 1000
+    weight: 45 # sectoid corpse sprite
+    bigSprite: 46 # sectoid corpse sprite
+    floorSprite: 42
+    invWidth: 2
+    invHeight: 3
+    recoveryPoints: 0
+    battleType: 11
+    armor: 30
+
+#*** Tools and weapons ***
   - type: STR_ALIEN_MININGTOOL
-    costSell: 0
+    costSell: 1000
     costBuy: 0
     size: 0.1
     #requires:
     #  - STR_ALIEN_MININGTOOL
     weight: 8
-    bigSprite: 26
-    handSprite: 80
-    floorSprite: 26
+    bigSprite: 514 # using hostile tool sprites for now
+    handSprite: 596 # using hostile tool sprites for now
+    floorSprite: 514 # using hostile tool sprites for now
     meleeHitSound: 54
     meleeAnimation: 0
     meleePower: 40
@@ -46,6 +87,8 @@ items:
 extraStrings:
   - type: en-US
     strings:
-      STR_ALIENS: "Natives"
+      STR_NATIVES: "Natives"
+      STR_NATIVE_CORPSE: "Alien Corpse"
+      STR_ALIEN_SOLDIER: "Native"
 
       STR_ALIEN_MININGTOOL: "Alien Mining Tool"

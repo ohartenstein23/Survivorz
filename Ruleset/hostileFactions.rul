@@ -114,7 +114,7 @@ units:
 
   - type: STR_ALIEN_SLAVE
     # Enslaved alien soldier for mining crew, use sectoid sprite for now
-    race: STR_ALIENS
+    race: STR_NATIVES
     rank: STR_LIVE_SOLDIER
     stats:
       tu: 54
@@ -157,7 +157,10 @@ armors:
       - 1.0
       - 0.0
     loftempSet: 4
-    
+
+  - type: SECTOID_ARMOR0
+    corpseBattle:
+      - STR_NATIVE_CORPSE
 
 items:
   - type: STR_RECYCLED_MATERIALS
@@ -185,7 +188,7 @@ items:
     # AI still doesn't like using weapons with limited range
     # But this counts as a feature! The alien slaves will tend
     # to stand and stare until you come too close.
-    costSell: 0
+    costSell: 1000
     costBuy: 0
     size: 0.1
     requires:
@@ -243,7 +246,7 @@ items:
     tags:
       ITEM_RECOLORED_BY_AMMO_GROUP: 2 # COLOR_X1_RED
     costBuy: 0
-    costSell: 0
+    costSell: 2000
     size: 0.2
     requires:
       - STR_HOSTILE_CARBINE
@@ -271,7 +274,7 @@ items:
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 2 #COLOR_X1_RED
     costBuy: 0
-    costSell: 0
+    costSell: 100
     size: 0.05
     requires:
       - STR_HOSTILE_CARBINE
@@ -292,7 +295,7 @@ items:
     tags:
       ITEM_RECOLORED_BY_AMMO_GROUP: 2 # COLOR_X1_RED
     costBuy: 0
-    costSell: 0
+    costSell: 3000
     size: 0.4
     requires:
       - STR_HOSTILE_AUTOCANNON
@@ -326,7 +329,7 @@ items:
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 2 #COLOR_X1_RED
     costBuy: 0
-    costSell: 0
+    costSell: 200
     size: 0.1
     requires:
       - STR_HOSTILE_AUTOCANNON
@@ -346,7 +349,7 @@ items:
     tags:
       ITEM_RECOLORED_BY_AMMO_GROUP: 9 #COLOR_X1_BROWN1
     costBuy: 0
-    costSell: 0
+    costSell: 3000
     size: 0.4
     requires:
       - STR_HOSTILE_HEAVY_CANNON
@@ -374,7 +377,7 @@ items:
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 9 #COLOR_X1_BROWN1
     costBuy: 0
-    costSell: 0
+    costSell: 200
     size: 0.1
     requires:
       - STR_HOSTILE_HEAVY_CANNON
@@ -398,7 +401,7 @@ items:
     tags:
       ITEM_RECOLORED_BY_AMMO_GROUP: 4 #COLOR_X1_GREEN1
     costBuy: 0
-    costSell: 0
+    costSell: 2000
     size: 0.2
     requires:
       - STR_HOSTILE_LAUNCHER
@@ -425,7 +428,7 @@ items:
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 4 #COLOR_X1_GREEN1
     costBuy: 0
-    costSell: 0
+    costSell: 100
     size: 0.05
     requires:
       - STR_HOSTILE_LAUNCHER
@@ -447,7 +450,7 @@ items:
     tags:
       ITEM_AMMO_RECOLOR_GROUP: 9 #COLOR_X1_BROWN1
     costBuy: 0
-    costSell: 0
+    costSell: 100
     size: 0.05
     requires:
       - STR_HOSTILE_LAUNCHER

@@ -87,8 +87,13 @@ items:
   - type: STR_RECOVERED_MATERIALS
     size: 0.1
     costSell: 10000
+    weight: 5
+    bigSprite: 56 # From E115
+    floorSprite: 37 # From E115
     specialType: 30
     recoveryPoints: 10
+    invWidth: 1
+    invHeight: 1
 
   - type: STR_ENVIRO_SCAN_MOUNT_ITEM
     size: 0.0
@@ -131,7 +136,7 @@ alienDeployments:
     turnLimit: 8
     missionBountyItem: STR_ENVIRO_SCAN_EASY_ITEM
 
-  - type: STR_ENVIRO_SCAN_MOUNT
+  - type: STR_ENVIRO_SCAN_MOUNT_WAR
     width: 50
     length: 50
     height: 8
@@ -156,6 +161,7 @@ alienDeployments:
         itemSets:
           -
             - STR_ALIEN_MININGTOOL
+            - STR_RECOVERED_MATERIALS
           -
             - STR_ALIEN_MININGTOOL
           -
@@ -176,14 +182,14 @@ alienMissions:
         timer: 2000
         objective: true
 
-  - type: STR_ENVIRO_SCAN_MOUNT
+  - type: STR_ENVIRO_SCAN_MOUNT_WAR
     objective: 3
     spawnZone: 0
     raceWeights:
       0:
-          STR_ALIENS: 100
+          STR_NATIVES: 100
     waves:
-      - ufo: STR_ENVIRO_SCAN_MOUNT #dummy
+      - ufo: STR_ENVIRO_SCAN_MOUNT_WAR #dummy
         count: 1
         trajectory: CA_SPAWN
         timer: 2000
@@ -209,17 +215,18 @@ missionScripts:
     startDelay: 20
     randomDelay: 40300
 
-  - type: enviroScanMount
+  - type: enviroScanMountWar
     firstMonth: 1
     executionOdds: 100
     researchTriggers:
       STR_POST_ITEM: true
+      STR_WORLDGEN_WAR: true
     missionWeights:
       0:
-        STR_ENVIRO_SCAN_MOUNT: 100
+        STR_ENVIRO_SCAN_MOUNT_WAR: 100
     regionWeights:
       0:
-        REGION_ENVIRO_SCAN_MOUNT: 100
+        REGION_ENVIRO_SCAN_MOUNT_WAR: 100
     useTable: false
     startDelay: 20
     randomDelay: 40300
@@ -443,46 +450,46 @@ regions:
         - [290.3783, 290.3783, -79.251, -79.251, -2]
         - [328.6127, 328.6127, -86.058, -86.058, -2]
 
-  - type: REGION_ENVIRO_SCAN_MOUNT
+  - type: REGION_ENVIRO_SCAN_MOUNT_WAR
     missionZones:
       -
-        - [135.021, 135.021, 1.5643, 1.5643, -3]
-        - [136.467, 136.467, 3.916, 3.916, -3]
-        - [111.7353, 111.7353, 4.4927, 4.4927, -3]
-        - [121.2417, 121.2417, 1.578, 1.578, -3]
-        - [132.2857, 132.2857, -0.39933, -0.39933, -3]
-        - [116.3717, 116.3717, -4.2153, -4.2153, -3]
-        - [107.7453, 107.7453, -15.9017, -15.9017, -3]
-        - [120.0833, 120.0833, -11.833, -11.833, -3]
-        - [149.3483, 149.3483, -1.2307, -1.2307, -3]
-        - [136.3773, 136.3773, -21.2653, -21.2653, -3]
-        - [133.6473, 133.6473, -10.8823, -10.8823, -3]
-        - [126.315, 126.315, -16.5227, -16.5227, -3]
-        - [125.8327, 125.8327, -29.2993, -29.2993, -3]
-        - [134.3547, 134.3547, -34.5283, -34.5283, -3]
-        - [142.0117, 142.0117, -6.8783, -6.8783, -3]
-        - [142.0063, 142.0063, -19.225, -19.225, -3]
-        - [118.934, 118.934, -31.8903, -31.8903, -3]
-        - [107.0783, 107.0783, -23.1823, -23.1823, -3]
-        - [124.074, 124.074, -39.8127, -39.8127, -3]
-        - [157.143, 157.143, -29.7773, -29.7773, -3]
-        - [149.466, 149.466, -35.517, -35.517, -3]
-        - [160.9187, 160.9187, -40.422, -40.422, -3]
-        - [172.5023, 172.5023, -45.2893, -45.2893, -3]
-        - [175.057, 175.057, -39.8993, -39.8993, -3]
-        - [112.0747, 112.0747, -44.7657, -44.7657, -3]
-        - [110.1677, 110.1677, -58.047, -58.047, -3]
-        - [123.5163, 123.5163, -52.8177, -52.8177, -3]
-        - [154.253, 154.253, -46.8753, -46.8753, -3]
-        - [139.588, 139.588, -44.364, -44.364, -3]
-        - [136.206, 136.206, -47.0573, -47.0573, -3]
-        - [135.462, 135.462, -53.427, -53.427, -3]
-        - [200.7143, 200.7143, -44.1163, -44.1163, -3]
-        - [185.8983, 185.8983, -46.0553, -46.0553, -3]
-        - [184.9557, 184.9557, -54.6493, -54.6493, -3]
-        - [197.582, 197.582, -60.816, -60.816, -3]
-        - [171.2753, 171.2753, -61.8927, -61.8927, -3]
-        - [169.6633, 169.6633, -58.6887, -58.6887, -3]
+        - [135.021, 135.021, 1.5643, 1.5643, -5]
+        - [136.467, 136.467, 3.916, 3.916, -5]
+        - [111.7353, 111.7353, 4.4927, 4.4927, -5]
+        - [121.2417, 121.2417, 1.578, 1.578, -5]
+        - [132.2857, 132.2857, -0.39933, -0.39933, -5]
+        - [116.3717, 116.3717, -4.2153, -4.2153, -5]
+        - [107.7453, 107.7453, -15.9017, -15.9017, -5]
+        - [120.0833, 120.0833, -11.833, -11.833, -5]
+        - [149.3483, 149.3483, -1.2307, -1.2307, -5]
+        - [136.3773, 136.3773, -21.2653, -21.2653, -5]
+        - [133.6473, 133.6473, -10.8823, -10.8823, -5]
+        - [126.315, 126.315, -16.5227, -16.5227, -5]
+        - [125.8327, 125.8327, -29.2993, -29.2993, -5]
+        - [134.3547, 134.3547, -34.5283, -34.5283, -5]
+        - [142.0117, 142.0117, -6.8783, -6.8783, -5]
+        - [142.0063, 142.0063, -19.225, -19.225, -5]
+        - [118.934, 118.934, -31.8903, -31.8903, -5]
+        - [107.0783, 107.0783, -23.1823, -23.1823, -5]
+        - [124.074, 124.074, -39.8127, -39.8127, -5]
+        - [157.143, 157.143, -29.7773, -29.7773, -5]
+        - [149.466, 149.466, -35.517, -35.517, -5]
+        - [160.9187, 160.9187, -40.422, -40.422, -5]
+        - [172.5023, 172.5023, -45.2893, -45.2893, -5]
+        - [175.057, 175.057, -39.8993, -39.8993, -5]
+        - [112.0747, 112.0747, -44.7657, -44.7657, -5]
+        - [110.1677, 110.1677, -58.047, -58.047, -5]
+        - [123.5163, 123.5163, -52.8177, -52.8177, -5]
+        - [154.253, 154.253, -46.8753, -46.8753, -5]
+        - [139.588, 139.588, -44.364, -44.364, -5]
+        - [136.206, 136.206, -47.0573, -47.0573, -5]
+        - [135.462, 135.462, -53.427, -53.427, -5]
+        - [200.7143, 200.7143, -44.1163, -44.1163, -5]
+        - [185.8983, 185.8983, -46.0553, -46.0553, -5]
+        - [184.9557, 184.9557, -54.6493, -54.6493, -5]
+        - [197.582, 197.582, -60.816, -60.816, -5]
+        - [171.2753, 171.2753, -61.8927, -61.8927, -5]
+        - [169.6633, 169.6633, -58.6887, -58.6887, -5]
 
 globe:
   textures:
@@ -490,9 +497,9 @@ globe:
       deployments:
         - STR_ENVIRO_SCAN_EASY: 100
 
-    - id: -3
+    - id: -5
       deployments:
-        - STR_ENVIRO_SCAN_MOUNT: 100
+        - STR_ENVIRO_SCAN_MOUNT_WAR: 100
 
 terrains:
   - name: RESOURCES
@@ -760,7 +767,10 @@ extraStrings:
       STR_ENVIRO_SCAN_EASY_BRIEFING: *enviroScanEasyDescription
       STR_ENVIRO_SCAN_EASY_ITEM: "Environmental Scan Data"
 
-      STR_ENVIRO_SCAN_MOUNT: *enviroScanString
-      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanMountDescription "Environmental anomaly detected at this location.{NEWLINE}Close-range scan required to obtain detailed information.{NEWLINE}   Scan Duration: Indeterminate{NEWLINE}   Terrain features inhibit remote scanning. Direct visual of source of anomalous signal required."
+      STR_ENVIRO_SCAN_MOUNT: &enviroScanMountString "Environmental Anomaly - Mountainous"
+      STR_ENVIRO_SCAN_MOUNT_DESCRIPTION: &enviroScanMountDescription "Environmental anomaly detected at this location.{NEWLINE}Close-range scan required to obtain detailed information.{NEWLINE}   Scan Duration: Indeterminate{NEWLINE}   Terrain features inhibit remote scanning. Direct visual of source of anomalous signal required."
       STR_ENVIRO_SCAN_MOUNT_BRIEFING: *enviroScanMountDescription
       STR_ENVIRO_SCAN_MOUNT_ITEM: "Mountain Scan Data"
+
+      STR_ENVIRO_SCAN_MOUNT_WAR: *enviroScanMountString
+      STR_ENVIRO_SCAN_MOUNT_WAR_BRIEFING: *enviroScanMountDescription
