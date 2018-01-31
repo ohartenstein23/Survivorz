@@ -191,9 +191,9 @@ items:
     requires:
       - STR_HOSTILE_MININGTOOL
     weight: 10
-    bigSprite: 26
-    handSprite: 80
-    floorSprite: 26
+    bigSprite: 514
+    handSprite: 596
+    floorSprite: 514
     # 'Ranged' attack stats
     hitSound: 54
     hitAnimation: -1
@@ -631,6 +631,7 @@ extraSprites:
       510: Resources/Bigobs/hostile_small_launcher.png
       511: Resources/Bigobs/hostile_small_stun_gas.png
       512: Resources/Bigobs/hostile_small_lethal_gas.png
+      514: Resources/Bigobs/hostile_mining_tool.png
 
   - type: FLOOROB.PCK
     files:
@@ -643,6 +644,7 @@ extraSprites:
       510: Resources/Floorobs/hostile_small_launcher.png
       511: Resources/Floorobs/hostile_small_stun_gas.png
       512: Resources/Floorobs/hostile_small_lethal_gas.png
+      514: Resources/Floorobs/hostile_mining_tool.png
 
   - type: HANDOB.PCK
     height: 40
@@ -659,6 +661,7 @@ extraSprites:
       564: Resources/Handobs/hostile_small_launcher.png
       572: Resources/Handobs/hostile_small_stun_gas.png
       580: Resources/Handobs/hostile_small_lethal_gas.png
+      596: Resources/Handobs/hostile_mining_tool.png
 
   - type: HOSTILE_WALKER_MECH.PCK
     height: 320
