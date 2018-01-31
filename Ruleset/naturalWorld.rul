@@ -763,12 +763,12 @@ extraStrings:
 
       STR_ENVIRO_SCAN_ALERT: "Environmental Anomaly Detected"
       STR_ENVIRO_SCAN_EASY: &enviroScanString "Environmental Anomaly"
-      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanEasyDescription "Environmental anomaly detected at this location.{NEWLINE}Close-range scan required to obtain detailed information.{NEWLINE}   Scan Duration: 8 Turns{NEWLINE}   Recoverable materials may be extracted from terrain before scan finishes."
+      STR_ENVIRO_SCAN_EASY_DESCRIPTION: &enviroScanEasyDescription ">:: Environmental anomaly detected at this location.{NEWLINE}>:: Close-range scan required to obtain detailed information.{NEWLINE}>::    Scan Duration: 8 Turns{NEWLINE}>::    Recoverable materials may be extracted from terrain before scan finishes."
       STR_ENVIRO_SCAN_EASY_BRIEFING: *enviroScanEasyDescription
       STR_ENVIRO_SCAN_EASY_ITEM: "Environmental Scan Data"
 
       STR_ENVIRO_SCAN_MOUNT: &enviroScanMountString "Environmental Anomaly - Mountainous"
-      STR_ENVIRO_SCAN_MOUNT_DESCRIPTION: &enviroScanMountDescription "Environmental anomaly detected at this location.{NEWLINE}Close-range scan required to obtain detailed information.{NEWLINE}   Scan Duration: Indeterminate{NEWLINE}   Terrain features inhibit remote scanning. Direct visual of source of anomalous signal required."
+      STR_ENVIRO_SCAN_MOUNT_DESCRIPTION: &enviroScanMountDescription ">:: Environmental anomaly detected at this location.{NEWLINE}>:: Close-range scan required to obtain detailed information.{NEWLINE}>::    Scan Duration: Indeterminate{NEWLINE}>::    Terrain features inhibit remote scanning. Direct visual of source of anomalous signal required."
       STR_ENVIRO_SCAN_MOUNT_BRIEFING: *enviroScanMountDescription
       STR_ENVIRO_SCAN_MOUNT_ITEM: "Mountain Scan Data"
 
