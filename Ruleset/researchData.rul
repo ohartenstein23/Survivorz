@@ -7,12 +7,11 @@ research:
     score: 0
     needItem: true
     destroyItem: true
-    unlocks:
-#      - STR_STORYSTARTSHERE
     getOneFree:
       - STR_WORLDGEN_FAMINE # Resources are harder to come by, fewer lucrative missions
       - STR_WORLDGEN_PLAGUE # Environments are more dangerous, your soldiers spend more time off
       - STR_WORLDGEN_WAR # Face harder enemies earlier, more anti-player missions
+
   - name: STR_WORLDGEN_FAMINE
     dependencies:
       - STR_UNAVAILABLE
@@ -20,6 +19,7 @@ research:
       - STR_PLANETARY_SCAN
     cost: 0
     score: 0
+
   - name: STR_WORLDGEN_PLAGUE
     dependencies:
       - STR_UNAVAILABLE
@@ -27,6 +27,7 @@ research:
       - STR_PLANETARY_SCAN
     cost: 0
     score: 0
+
   - name: STR_WORLDGEN_WAR
     dependencies:
       - STR_UNAVAILABLE
@@ -217,8 +218,8 @@ ufopaedia:
   - id: STR_WORLDGEN_FAMINE
     type_id: 8
     section: STR_SYSTEM_REPORTS
-    title: STR_PLANETARY_SCAN
-    text: STR_WORLDGEN_FAMINE_PEDIA
+    title: STR_REASON_TO_EXIST
+    text: STR_REASON_TO_EXIST_PEDIA
     requires:
       - STR_WORLDGEN_FAMINE
       - STR_POST_ITEM
@@ -226,8 +227,8 @@ ufopaedia:
   - id: STR_WORLDGEN_PLAGUE
     type_id: 8
     section: STR_SYSTEM_REPORTS
-    title: STR_PLANETARY_SCAN
-    text: STR_WORLDGEN_PLAGUE_PEDIA
+    title: STR_REASON_TO_EXIST
+    text: STR_REASON_TO_EXIST_PEDIA
     requires:
       - STR_WORLDGEN_PLAGUE
       - STR_POST_ITEM
@@ -235,10 +236,24 @@ ufopaedia:
   - id: STR_WORLDGEN_WAR
     type_id: 8
     section: STR_SYSTEM_REPORTS
-    title: STR_PLANETARY_SCAN
-    text: STR_WORLDGEN_WAR_PEDIA
+    title: STR_REASON_TO_EXIST
+    text: STR_REASON_TO_EXIST_PEDIA
     requires:
       - STR_WORLDGEN_WAR
+      - STR_POST_ITEM
+
+  - id: STR_PLANETARY_SCAN
+    type_id: 8
+    section: STR_SYSTEM_REPORTS
+    text: STR_PLANETARY_SCAN_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_ECONOMY_HOWTO
+    type_id: 8
+    section: STR_SYSTEM_REPORTS
+    text: STR_ECONOMY_HOWTO_PEDIA
+    requires:
       - STR_POST_ITEM
 
 # Pedia and research strings
@@ -254,13 +269,17 @@ extraStrings:
       STR_SHIP_INITIAL_STATUS: "Ship Systems Scan"
       STR_SHIP_INITIAL_STATUS_PEDIA: "Shipboard Systems Scan Report: {NEWLINE}>:: Primary Generators: Offline - Damaged{NEWLINE}>:: Auxiliary Generators: Online{NEWLINE}>:: Port Engine: Offline - Damaged{NEWLINE}>:: Starboard Engine: Online - At 67% Capacity{NEWLINE}>:: Thrusters: Online - At 45% Capacity{NEWLINE}>:: Port Hangar: Offline - Shuttle Damaged{NEWLINE}>:: Starboard Hangar: Available - Shuttle Functional{NEWLINE}>:: Drone Control: Online{NEWLINE}>:: Life Support: Online{NEWLINE}>:: Crew Cryogenics: Online - At 24% Capacity{NEWLINE}>:: Officer Cryogenics: Low-Power State - Damaged{NEWLINE}>:: Manufacturing Systems: Online{NEWLINE}>:: Materials Recycling: Online{NEWLINE}>:: Long-Range Scanners: Offline - Damaged{NEWLINE}>:: Short-Range Scanners: Online{NEWLINE}"
 
+      STR_REASON_TO_EXIST: "Crew Status Report"
+      STR_REASON_TO_EXIST_PEDIA: ">:: Primary goal of ESCS (corrupted data sector) ship-borne AI: survival of crew.{NEWLINE}>:: {NEWLINE}>:: Crew cryochambers remain intact, minimal fluctuation in vital signs from normal stasis levels. Damaged communications systems prevent SOS signal broadcast for recovery of crew from crash. Protocol dictates revival of officers and crew from cryochambers to enact repairs. Damaged power supply nodes prevent revival of entire crew. Only a limited number of cryochambers will be activated until repairs on damaged power supply node are completed. Activation process will be routed through manufacturing subroutines.{NEWLINE}>:: {NEWLINE}>:: Further system reports available in log files."
+
       STR_PLANETARY_SCAN: "Initial Planetary Scan"
+      STR_PLANETARY_SCAN_PEDIA: "Environmental Scan Summary Report:{NEWLINE}>:: Detailed logs saved to auxiliary storage units. {NEWLINE}>:: Planetary Classification: Rocky - Terran{NEWLINE}>:: Atmosphere: Nitrogenous, non-toxic - suitable for human life.{NEWLINE}>:: Hydrosphere: Significant planetary coverage with polar{NEWLINE}>::    cryosphere{NEWLINE}>:: Lithosphere: Ferrous, (unknown minerals),{NEWLINE}>::    (unknown metal deposits){NEWLINE}>:: Climate: Varied based on proximity to water, significant{NEWLINE}>::    electromagnetic activity in upper atmosphere{NEWLINE}>::{NEWLINE}>:: Anomalous electromagnetic activity detected, sporadic{NEWLINE}>:: occurance, varied duration, location indeterminate{NEWLINE}>:: Further scanning of environment: In Progress."
       STR_WORLDGEN_FAMINE: "Famine World Generated"
-      STR_WORLDGEN_FAMINE_PEDIA: &worldgenScan "Environmental Scan Summary Report:{NEWLINE}>:: Detailed logs saved to auxiliary storage units. {NEWLINE}>:: Planetary Classification: Rocky - Terran{NEWLINE}>:: Atmosphere: Nitrogenous, non-toxic - suitable for human life.{NEWLINE}>:: Hydrosphere: Significant planetary coverage with polar{NEWLINE}>::    cryosphere{NEWLINE}>:: Lithosphere: Ferrous, (unknown minerals),{NEWLINE}>::    (unknown metal deposits){NEWLINE}>:: Climate: Varied based on proximity to water, significant{NEWLINE}>::    electromagnetic activity in upper atmosphere{NEWLINE}>::{NEWLINE}>:: Anomalous electromagnetic activity detected, sporadic{NEWLINE}>:: occurance, varied duration, location indeterminate{NEWLINE}>:: Further scanning of environment: In Progress."
       STR_WORLDGEN_PLAGUE: "Plague World Generated"
-      STR_WORLDGEN_PLAGUE_PEDIA: *worldgenScan
       STR_WORLDGEN_WAR: "War World Generated"
-      STR_WORLDGEN_WAR_PEDIA: *worldgenScan
+
+      STR_ECONOMY_HOWTO: "Supplying the Auxiliary Generator"
+      STR_ECONOMY_HOWTO_PEDIA: ">:: Primary generators offline due to damage. Systems running on auxiliary power.{NEWLINE}>:: {NEWLINE}>:: In order to keep auxiliary generators functional, a constant source of material supplies for fuel is necessary. The ship's recycling system has suffered minimal loss of capacity from the crash, and thus can convert scavenged materials to fuel as needed. The amount of material available for fuel, energy, and manufacturing is represented by 'Supply Income,' and maintenance expenditure will be tracked monthly.{NEWLINE}>:: {NEWLINE}>:: Furthermore, the complement of scout drones is intact; they have been deployed to form autonomous supply routes across the planet. The supply income from the drones will also be tabulated monthly. Protecting these routes is a priority. Hostile activity will reduce the drones' effectiveness, but this can be countered by sending excursions to deal with detected activity."
 
       STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
       STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
