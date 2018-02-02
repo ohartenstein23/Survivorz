@@ -72,6 +72,13 @@ research:
     unlocks:
       - STR_LINAC_GRENADE
 
+# AI Subroutine Equipment
+  - name: STR_AI_SUBROUTINE_BUY
+    cost: 3
+    score: 0
+    dependencies:
+      - STR_HOSTILE_WEAPONS
+
 # LINAC weapons
   - name: STR_LINAC_GRENADE
     cost: 0
@@ -201,6 +208,7 @@ items:
 
 # Research pedia articles
 ufopaedia:
+# *** Starting articles and worldgen ***
   - id: STR_POST
     type_id: 8
     section: STR_SYSTEM_REPORTS
@@ -256,6 +264,14 @@ ufopaedia:
     requires:
       - STR_POST_ITEM
 
+# *** AI subroutine unlocks ***
+  - id: STR_AI_SUBROUTINE_BUY
+    type_id: 8
+    section: STR_HEAVY_WEAPONS_PLATFORMS
+    text: STR_AI_SUBROUTINE_BUY_PEDIA
+    requires:
+      - STR_AI_SUBROUTINE_BUY
+
 # Pedia and research strings
 extraStrings:
   - type: en-US
@@ -284,3 +300,6 @@ extraStrings:
       STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
       STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
       STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Data"
+
+      STR_AI_SUBROUTINE_BUY: "AI Subroutine Fabrication"
+      STR_AI_SUBROUTINE_BUY_PEDIA: ">:: The schematics for autonomous scout drones have been added to the ships' nanofabrication facilities. Each of these units will be created with a copy of an AI subroutine to control it during excursions with the crew. While unarmed, it should prove useful in relaying information to the crew and drawing the attention of hostile units."

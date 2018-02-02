@@ -219,8 +219,10 @@ soldiers:
 # *** Start of AI subroutines ***
 #
   - type: STR_AI_SUBROUTINE
-    costBuy: 0
-    costSalary: 20000
+    costBuy: 10000
+    requires:
+      - STR_AI_SUBROUTINE_BUY
+    costSalary: 5000
 # fixed starting stats
 # everything done by armor (different chassis)
     minStats:

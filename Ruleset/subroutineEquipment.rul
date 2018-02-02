@@ -8,7 +8,7 @@ armors:
     corpseGeo: STR_RECOVER_FLYING_DRONE_ARMOR
     storeItem: STR_NONE
     visibilityAtDay: 30
-    visibilityAtNight: 15
+    visibilityAtDark: 15
     personalLight: 5
     thermalVision: 50
     fearImmune: true
@@ -68,6 +68,9 @@ armors:
       - STR_AI_SUBROUTINE
     loftempsSet: [ 4 ]
     allowKneeling: false
+    recovery:
+      energy:
+        flatHundred: 0.8
 
   - type: STR_HOVER_ARMOR_UC
     spriteSheet: HOVER.PCK
@@ -400,7 +403,7 @@ extraStrings:
     strings:
       STR_FLYING_DRONE_ARMOR_UC: "DRONE"
       STR_GUNSHIP_ARMOR_UC: "GUNSHIP"
-      STR_FLYING_DRONE_ARMOR_UC_PEDIA: "Lorem Ipsum"
+      STR_FLYING_DRONE_ARMOR_UC_PEDIA: "This scout drone was designed to supplement colonists' exploration of new environments. Lightly armored and fast, it can relay infomation of surrounding terrain quickly to other units. Though unarmed, the onboard sensors are capable of detection in the near-infrared for otherwise low-visiblity conditions."
       STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
       STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"
       GUNSHIP_CORPSE_1: "Damaged AI/Gunship"
