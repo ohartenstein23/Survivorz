@@ -86,7 +86,6 @@ armors:
     visibilityAtDay: 30
     personalLight: 15
     thermalVision: 20
-    storeItem: STR_NONE
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -140,7 +139,6 @@ armors:
     visibilityAtNight: 15
     personalLight: 15
     thermalVision: 50
-    storeItem: STR_NONE
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -181,6 +179,14 @@ armors:
     allowSprinting: false
 
 items:
+  - type: STR_GUNSHIP_ARMOR
+    size: 6.0
+    costSell: 12500
+
+  - type: STR_HOVER_ARMOR
+    size: 6.0
+    costSell: 12500
+
   - type: STR_RECOVER_FLYING_DRONE_ARMOR
     size: 1.0
     costSell: 10000
@@ -404,9 +410,14 @@ extraStrings:
   - type: en-US
     strings:
       STR_FLYING_DRONE_ARMOR_UC: "DRONE"
-      STR_GUNSHIP_ARMOR_UC: "GUNSHIP"
       STR_FLYING_DRONE_ARMOR_UC_PEDIA: "This scout drone was designed to supplement colonists' exploration of new environments. Lightly armored and fast, it can relay infomation of surrounding terrain quickly to other units. Though unarmed, the onboard sensors are capable of detection in the near-infrared for otherwise low-visiblity conditions."
       STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
       STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"
+
+      STR_GUNSHIP_ARMOR_UC: "GUNSHIP"
+      STR_GUNSHIP_ARMOR: "AI Gunship Chassis"
       GUNSHIP_CORPSE_1: "Damaged AI/Gunship"
       STR_RECOVER_GUNSHIP_ARMOR: "Damaged AI/Gunship"
+
+      STR_HOVER_ARMOR_UC: "HOVER"
+      STR_HOVER_ARMOR: "AI Hover Chassis"
