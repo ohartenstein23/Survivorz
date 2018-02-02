@@ -82,6 +82,7 @@ armors:
       - GUNSHIP_CORPSE_3
       - GUNSHIP_CORPSE_4
     corpseGeo: STR_RECOVER_GUNSHIP_ARMOR
+    storeItem: STR_HOVER_ARMOR
     visibilityAtDay: 30
     personalLight: 15
     thermalVision: 20
@@ -134,6 +135,7 @@ armors:
       - GUNSHIP_CORPSE_3
       - GUNSHIP_CORPSE_4
     corpseGeo: STR_RECOVER_GUNSHIP_ARMOR
+    storeItem: STR_GUNSHIP_ARMOR
     visibilityAtDay: 30
     visibilityAtNight: 15
     personalLight: 15
