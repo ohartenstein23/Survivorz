@@ -1,3 +1,5 @@
+fontName: Font.dat
+
 ﻿turnAIUseGrenade: 1
 turnAIUseBlaster: 1
 maxViewDistance: 30
@@ -12,6 +14,7 @@ startingTime:
   month: 1
   year: 0
 defeatScore: -100000
+defeatFunds: -100000
 lighting:
   enhanced: 7
 fixedUserOptions:

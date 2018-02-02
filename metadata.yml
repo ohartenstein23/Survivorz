@@ -3,5 +3,6 @@ version: 0.3.4
 author: "ohartenstein23"
 description: "Survive! Shoot your way out, build a robot army, or become the farmlord!"
 id: survivorz
-master: xcom1
+loadResources:
+  - UFO
 isMaster: true

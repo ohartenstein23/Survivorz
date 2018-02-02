@@ -1,4 +1,0 @@
-armors:
-  - delete: STR_PERSONAL_ARMOR_UC
-  - delete: STR_POWER_SUIT_UC
-  - delete: STR_FLYING_SUIT_UC
