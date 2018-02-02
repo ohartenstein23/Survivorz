@@ -241,8 +241,8 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 25000
-    radarRange: 2000
-    radarChance: 30
+    radarRange: 3000
+    radarChance: 65
     mapName: Cockpit_Left
     verticalLevels:
     - type: ground
@@ -258,8 +258,9 @@ facilities:
     buildCost: 0
     buildTime: 12
     monthlyCost: 25000
-    radarRange: 2000
-    radarChance: 0
+    #radarRange: 13000
+    #radarChance: 100
+    #hyper: true
     mapName: Cockpit_Right
     verticalLevels:
     - type: ground
