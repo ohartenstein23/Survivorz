@@ -264,6 +264,13 @@ ufopaedia:
     requires:
       - STR_POST_ITEM
 
+  - id: STR_GRAPHS_HOWTO
+    type_id: 8
+    section: STR_SYSTEM_REPORTS
+    text: STR_GRAPHS_HOWTO_PEDIA
+    requires:
+      - STR_POST_ITEM
+
 # *** AI subroutine unlocks ***
   - id: STR_AI_SUBROUTINE_BUY
     type_id: 8
@@ -296,6 +303,9 @@ extraStrings:
 
       STR_ECONOMY_HOWTO: "Supplying the Auxiliary Generator"
       STR_ECONOMY_HOWTO_PEDIA: ">:: Primary generators offline due to damage. Systems running on auxiliary power.{NEWLINE}>:: {NEWLINE}>:: In order to keep auxiliary generators functional, a constant source of material supplies for fuel is necessary. The ship's recycling system has suffered minimal loss of capacity from the crash, and thus can convert scavenged materials to fuel as needed. The amount of material available for fuel, energy, and manufacturing is represented by 'Supply Income,' and maintenance expenditure will be tracked monthly.{NEWLINE}>:: {NEWLINE}>:: Furthermore, the complement of mining drones is intact; they have been deployed to form autonomous supply routes across the planet. The supply income from the drones will also be tabulated monthly. Protecting these routes is a priority. Hostile activity will reduce the drones' effectiveness, but this can be countered by sending excursions to deal with detected activity."
+
+      STR_GRAPHS_HOWTO: "Detecting Unidentified Craft"
+      STR_GRAPHS_HOWTO_PEDIA: ">:: Long-range scanners offline due to damage.{NEWLINE}>:: Detection of unidentified craft will be limited to short-range scanners and those on shuttle craft.{NEWLINE}>:: {NEWLINE}>:: The compliment of mining drones are equipped with basic short-range scanners as well. They are not powerful enough to pinpoint a signal, but they will automatically log any activity detected. This activity is available on the Graphs screen, broken down by the quadrant of the planet on which it was detected. Close monitoring of this information should reveal approximate locations of craft outside higher-fidelity detection radius - it is recommended to send the ship's shuttle to investigate those regions."
 
       STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
       STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
