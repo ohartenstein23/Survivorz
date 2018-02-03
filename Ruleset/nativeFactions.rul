@@ -2,7 +2,7 @@ alienRaces:
   - id: STR_NATIVES # STR_ALIENS is used for new turn screen
     retaliation: false
     members:
-      - STR_ALIEN_SOLDIER # Defined in hostileFactions.rul, until I can make real native units
+      - STR_ALIEN_SOLDIER
       - STR_ALIEN_SOLDIER
       - STR_ALIEN_SOLDIER
       - STR_ALIEN_SOLDIER
