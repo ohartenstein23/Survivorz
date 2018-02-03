@@ -24,7 +24,7 @@ startingBase:
     - type: STR_HANGAR_LEFT
       x: 0
       y: 0
-    - type: STR_HANGAR_RIGHT
+    - type: STR_HANGAR_RIGHT_DAMAGED
       x: 2
       y: 0
     - type: STR_BACK_CORRIDOR_LEFT
@@ -72,16 +72,20 @@ facilities:
     - type: ground
       size: [1, 1, 8]
       terrain: baseTerrain
+    providesBaseFunc:
+      - SMALL_GENERATOR
 
 #*** Crashed ship facilities ***
 
   - type: STR_HANGAR_LEFT
-    spriteShape: 64
+    spriteShape: 56
     size: 2
     requires:
       - STR_DISABLED
     buildCost: 0
     buildTime: 25
+    leavesBehindOnSell:
+      - STR_HANGAR_LEFT
     monthlyCost: 100000
     crafts: 1
     mapName: Hangar_Left
@@ -90,13 +94,43 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 0
+    providesBaseFunc:
+      - LARGE_GENERATOR
 
   - type: STR_HANGAR_RIGHT
-    spriteShape: 68
+    spriteShape: 64
     size: 2
     requires:
       - STR_DISABLED
     buildCost: 0
+    buildTime: 25
+    leavesBehindOnSell:
+      - STR_HANGAR_RIGHT
+    monthlyCost: 100000
+    mapName: Hangar_Right
+    verticalLevels:
+    - type: ground
+      size: [2, 2, 4]
+      terrain: CRASHED_SHIP
+      blocks: 1
+    providesBaseFunc:
+      - LARGE_GENERATOR
+      - CRAFT_SPACE
+
+  - type: STR_HANGAR_RIGHT_DAMAGED
+    spriteShape: 64
+    size: 2
+    requires:
+      - STR_DISABLED
+    buildCost: 200000
+    buildCostItems:
+      STR_DAMAGED_SHUTTLE:
+        build: 1
+        refund: 1
+    refundValue: -50000
+    leavesBehindOnSell:
+      - STR_HANGAR_RIGHT
+    removalTime: 25
     buildTime: 25
     monthlyCost: 100000
     mapName: Hangar_Right
@@ -105,6 +139,8 @@ facilities:
       size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 1
+    providesBaseFunc:
+      - LARGE_GENERATOR
 
   - type: STR_BACK_CORRIDOR_LEFT
     spriteShape: 7
@@ -113,6 +149,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_BACK_CORRIDOR_LEFT
     monthlyCost: 5000
     mapName: Back_Left_Corridor
     verticalLevels:
@@ -128,6 +166,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_CARGO_LEFT
     monthlyCost: 10000
     storage: 50
     mapName: Back_Left_Interior
@@ -136,6 +176,10 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 3
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    providesBaseFunc:
+      - MINING_DRONES
 
   - type: STR_CARGO_RIGHT
     spriteShape: 7
@@ -144,6 +188,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_CARGO_RIGHT
     monthlyCost: 10000
     storage: 50
     mapName: Back_Right_Interior
@@ -152,6 +198,10 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 4
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    providesBaseFunc:
+      - MINING_DRONES
 
   - type: STR_BACK_CORRIDOR_RIGHT
     spriteShape: 7
@@ -160,6 +210,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_BACK_CORRIDOR_RIGHT
     monthlyCost: 5000
     mapName: Back_Right_Corridor
     verticalLevels:
@@ -175,6 +227,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_FRONT_CORRIDOR_LEFT
     monthlyCost: 5000
     rightClickActionType: 6
     mapName: Front_Left_Corridor
@@ -191,6 +245,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_FRONT_QUARTERS_LEFT
     monthlyCost: 25000
     personnel: 12
     workshops: 1
@@ -201,6 +257,10 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 7
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    providesBaseFunc:
+      - MANUFACTURING
 
   - type: STR_FRONT_QUARTERS_RIGHT
     spriteShape: 7
@@ -209,6 +269,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_FRONT_QUARTERS_RIGHT
     monthlyCost: 25000
     personnel: 12
     labs: 1
@@ -219,6 +281,10 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 8
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    providesBaseFunc:
+      - ANALYTICS
 
   - type: STR_FRONT_CORRIDOR_RIGHT
     spriteShape: 7
@@ -227,6 +293,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_FRONT_CORRIDOR_RIGHT
     monthlyCost: 5000
     rightClickActionType: 6
     mapName: Front_Right_Corridor
@@ -243,6 +311,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_COCKPIT_LEFT
     monthlyCost: 25000
     radarRange: 3000
     radarChance: 65
@@ -252,6 +322,8 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 10
+    requiresBaseFunc:
+      - LARGE_GENERATOR
 
   - type: STR_COCKPIT_RIGHT
     spriteShape: 7
@@ -260,6 +332,8 @@ facilities:
       - STR_DISABLED
     buildCost: 0
     buildTime: 12
+    leavesBehindOnSell:
+      - STR_COCKPIT_RIGHT
     monthlyCost: 25000
     #radarRange: 13000
     #radarChance: 100
@@ -270,6 +344,8 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 11
+    requiresBaseFunc:
+      - LARGE_GENERATOR
 
 extraSprites:
   - type: BASEBITS.PCK
@@ -336,6 +412,7 @@ extraStrings:
       STR_TRANSPONDER: "Transponder"
       STR_HANGAR_LEFT: "Starboard Hangar"
       STR_HANGAR_RIGHT: "Port Hangar"
+      STR_HANGAR_RIGHT_DAMAGED: "Port Hangar (Damaged Shuttle)"
       STR_BACK_CORRIDOR_LEFT: "Starboard Corridor"
       STR_CARGO_LEFT: "Starboard Cargo"
       STR_CARGO_RIGHT: "Port Cargo"
@@ -346,3 +423,11 @@ extraStrings:
       STR_FRONT_CORRIDOR_RIGHT: "Port Observation"
       STR_COCKPIT_LEFT: "Starboard Bridge"
       STR_COCKPIT_RIGHT: "Port Bridge"
+
+# Base functions
+      SMALL_GENERATOR: "Small Generator"
+      LARGE_GENERATOR: "Large Generator"
+      CRAFT_SPACE: "Extra Workspace"
+      MINING_DRONES: "Drone Facility"
+      MANUFACTURING: "Manufacturing"
+      ANALYTICS: "Analytics"
