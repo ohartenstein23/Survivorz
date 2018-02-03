@@ -7,6 +7,7 @@ crafts:
     accel: 6
     soldiers: 8
     vehicles: 1
+    weapons: 1
     costBuy: 0
     costRent: 10000
     refuelRate: 50
@@ -33,15 +34,42 @@ crafts:
       - [6, 5, 1, 6]
 
 craftWeapons:
-  - type: STR_MINING_BEAM # Starting shuttle weapon, made to eventually down a gunship
-    sprite: 5
+  - type: STR_TRACTOR_BEAM
+    launcher: STR_TRACTOR_BEAM_ITEM
+    sprite: 5 # plasma beam icons
+    range: 8 # minimum range
+    reloadCautious: 1
+    reloadStandard: 1
+    reloadAggressive: 1
+    tractorBeamPower: 900
+
+items:
+  - type: STR_TRACTOR_BEAM_ITEM
+    size: 4.0
+    costBuy: 0
+    costSell: 50000
 
 extraSprites:
   - type: BASEBITS.PCK
     files:
       33: Resources/Facilities/shuttle_basebit.png # Should be 84, but we're replacing skyranger for now
 
+ufopaedia:
+  - id: STR_TRACTOR_BEAM
+    type_id: 8 # 2 once we have an image_id
+    section: STR_CRAFT_AND_WEAPONS
+    text: STR_TRACTOR_BEAM_PEDIA
+    #image_id:
+    requires:
+      - STR_POST_ITEM
+
 extraStrings:
   - type: en-US
     strings:
       STR_SHUTTLE: "SHUTTLE"
+
+      STR_TRACTOR_BEAM: "TRACTOR BEAM"
+      STR_TRACTOR_BEAM_ITEM: "Tractor Beam"
+      STR_TRACTOR_BEAM_PEDIA: "Mounted on the ship’s shuttles for manipulation of objects in space, the tractor beam is capable of interfering with atmospheric crafts’ propulsion, slowing medium-sized craft by up to 900 knots."
+      STR_TRACTOR_BEAM_ENGAGED: "TRACTOR BEAM ENGAGED"
+      STR_TRACTOR_BEAM_DISENGAGED: "DISENGAGING TRACTOR BEAM"

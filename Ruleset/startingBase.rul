@@ -11,6 +11,8 @@ startingBase:
       fuel: 1500
       damage: 0
       items: ~
+      weapons:
+        - type: STR_TRACTOR_BEAM
       status: STR_READY
   scientists: 1
   engineers: 1
