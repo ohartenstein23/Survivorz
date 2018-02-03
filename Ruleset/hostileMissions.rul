@@ -184,6 +184,9 @@ ufos:
         - name: UFO_120
           width: 20
           length: 20
+    raceBonus:
+      STR_MINING_CREW:
+        missionCustomDeploy: STR_MINING_BASE_INVESTIGATION
 
 # *** Military craft ***
   - type: STR_MILITARY_GUNSHIP
@@ -622,12 +625,6 @@ alienDeployments:
     height: 8
     terrains:
       - CRASHED_SHIP
-
-ufos:
-  - type: STR_MINING_CRAFT
-    raceBonus:
-      STR_MINING_CREW:
-        missionCustomDeploy: STR_MINING_BASE_INVESTIGATION
 
 missionScripts:
   - type: gameStart
