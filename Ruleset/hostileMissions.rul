@@ -2,7 +2,7 @@ alienMissions:
   - type: STR_CRASH_INVESTIGATION # First thing aliens do is check your crash site out
     points: 0
     objective: 4
-    retaliationOdds: 0
+    retaliationOdds: 0 # Until we have a retal mission
     missionWeights:
       0: 0
     spawnUfo: STR_MINING_CRAFT
@@ -25,6 +25,7 @@ alienMissions:
 
   - type: STR_MINING_ACTIVITY_FAMINE # Monthly activity, meant to be a source of player income and points
     points: 25
+    retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
         STR_MINING_CREW: 100
@@ -41,6 +42,7 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0 # ... with its escort
+        hunterKillerPercentage: 100 # defend mining craft from attack
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
@@ -49,9 +51,11 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
 
   - type: STR_MINING_ACTIVITY_PLAGUE
     points: 25
+    retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
         STR_MINING_CREW: 100
@@ -68,6 +72,7 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
@@ -76,6 +81,7 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
@@ -84,6 +90,7 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
@@ -92,9 +99,11 @@ alienMissions:
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
 
   - type: STR_MINING_ACTIVITY_WAR
     points: 25
+    retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
         STR_MINING_CREW: 100
@@ -111,6 +120,7 @@ alienMissions:
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 75 # defend mining craft from attack
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
@@ -119,6 +129,7 @@ alienMissions:
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 75 # defend mining craft from attack
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
@@ -127,6 +138,7 @@ alienMissions:
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 75 # defend mining craft from attack
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
@@ -135,6 +147,7 @@ alienMissions:
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
+        hunterKillerPercentage: 75 # defend mining craft from attack
 
 ufos:
 # *** Mining craft ***
@@ -195,6 +208,7 @@ ufos:
     damageMax: 500
     speedMax: 3500
     accel: 5
+    radarRange: 750
     power: 40
     range: 20
     score: 75
@@ -212,6 +226,7 @@ ufos:
           width: 10
           length: 10
     missionScore: 2
+    hitBonus: 20
 
   - type: STR_MILITARY_TRANSPORT
     size: STR_LARGE

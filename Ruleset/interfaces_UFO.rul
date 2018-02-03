@@ -558,6 +558,8 @@ interfaces:
         color: 133   # minty green
   - type: dogfight
     elements:
+      - id: minimizeButtonDummy
+        color: 80
       - id: standoffButton
         color: 81
       - id: cautiousButton
@@ -1843,20 +1845,3 @@ interfaces:
         color2: 244  # light blue
       - id: ammoColor
         color: 32    # red
-  - type: geoGeneratorMenu
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: heading
-        color: 239   # bright green
-      - id: text
-        color: 138   # yellow
-        color2: 167   # grey for disabled
-      - id: frames
-        color: 239   # bright green
-      - id: button1
-        color: 239   # bright green
-      - id: button2
-        color: 133   # minty green
