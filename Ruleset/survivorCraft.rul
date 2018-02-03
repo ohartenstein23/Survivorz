@@ -34,20 +34,33 @@ crafts:
       - [6, 5, 1, 6]
 
 craftWeapons:
-  - type: STR_TRACTOR_BEAM
-    launcher: STR_TRACTOR_BEAM_ITEM
+  - type: STR_LINAC_MASS_DRIVER
+    launcher: STR_LINAC_MASS_DRIVER_ITEM
     sprite: 5 # plasma beam icons
-    range: 8 # minimum range
-    reloadCautious: 1
-    reloadStandard: 1
-    reloadAggressive: 1
-    tractorBeamPower: 900
+    sound: 9
+    projectileType: 5
+    range: 20
+    damage: 25
+    accuracy: 50
+    ammoMax: 100
+    rearmRate: 5
+    reloadCautious: 16
+    reloadStandard: 16
+    reloadAggressive: 16
 
 items:
-  - type: STR_TRACTOR_BEAM_ITEM
+  - type: STR_LINAC_MASS_DRIVER_ITEM
     size: 4.0
     costBuy: 0
     costSell: 50000
+
+  - type: STR_LINAC_MASS_DRIVER_AMMO
+    size: 0.2
+    costBuy: 5000
+    costSell: 3750
+    requiresBuy:
+      - STR_POST_ITEM
+    clipSize: 10
 
 extraSprites:
   - type: BASEBITS.PCK
@@ -55,11 +68,11 @@ extraSprites:
       33: Resources/Facilities/shuttle_basebit.png # Should be 84, but we're replacing skyranger for now
 
 ufopaedia:
-  - id: STR_TRACTOR_BEAM
-    type_id: 8 # 2 once we have an image_id
+  - id: STR_LINAC_MASS_DRIVER
+    type_id: 2
     section: STR_CRAFT_AND_WEAPONS
-    text: STR_TRACTOR_BEAM_PEDIA
-    #image_id:
+    text: STR_LINAC_MASS_DRIVER_PEDIA
+    image_id: UP008.SPK # Cannon for now
     requires:
       - STR_POST_ITEM
 
@@ -68,8 +81,7 @@ extraStrings:
     strings:
       STR_SHUTTLE: "SHUTTLE"
 
-      STR_TRACTOR_BEAM: "TRACTOR BEAM"
-      STR_TRACTOR_BEAM_ITEM: "Tractor Beam"
-      STR_TRACTOR_BEAM_PEDIA: "Mounted on the ship’s shuttles for manipulation of objects in space, the tractor beam is capable of interfering with atmospheric crafts’ propulsion, slowing medium-sized craft by up to 900 knots."
-      STR_TRACTOR_BEAM_ENGAGED: "TRACTOR BEAM ENGAGED"
-      STR_TRACTOR_BEAM_DISENGAGED: "DISENGAGING TRACTOR BEAM"
+      STR_LINAC_MASS_DRIVER: "LINAC MASS DRIVER"
+      STR_LINAC_MASS_DRIVER_ITEM: "LINAC Mass Driver"
+      STR_LINAC_MASS_DRIVER_PEDIA: "Although protocol dictates evasion as the response to aggresive spacecraft, the ship's shuttles are equiped with this mass driver weapon for basic defense."
+      STR_LINAC_MASS_DRIVER_AMMO: "LINAC Mass Driver Ammo (10x)"

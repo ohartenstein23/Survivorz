@@ -12,7 +12,8 @@ startingBase:
       damage: 0
       items: ~
       weapons:
-        - type: STR_TRACTOR_BEAM
+        - type: STR_LINAC_MASS_DRIVER
+          ammo: 57
       status: STR_READY
   scientists: 1
   engineers: 1
