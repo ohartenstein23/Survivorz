@@ -67,6 +67,20 @@ items:
     costBuy: 0
     costSell: 100000
 
+manufacture:
+  - name: STR_REPAIR_SHUTTLE
+    category: STR_CRAFT
+    requiresBaseFunc:
+      - CRAFT_SPACE
+    cost: 50000
+    space: 0
+    time: 120
+    requiredItems:
+      STR_DAMAGED_SHUTTLE: 1
+    producedItems:
+      STR_SHUTTLE: 1
+    
+
 extraSprites:
   - type: BASEBITS.PCK
     files:
@@ -86,6 +100,7 @@ extraStrings:
     strings:
       STR_SHUTTLE: "SHUTTLE"
       STR_DAMAGED_SHUTTLE: "Damaged Shuttle"
+      STR_REPAIR_SHUTTLE: "Repair Damaged Shuttle"
 
       STR_LINAC_MASS_DRIVER: "LINAC MASS DRIVER"
       STR_LINAC_MASS_DRIVER_ITEM: "LINAC Mass Driver"

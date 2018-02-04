@@ -72,7 +72,7 @@ facilities:
     - type: ground
       size: [1, 1, 8]
       terrain: baseTerrain
-    providesBaseFunc:
+    provideBaseFunc:
       - SMALL_GENERATOR
 
 #*** Crashed ship facilities ***
@@ -94,7 +94,7 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 0
-    providesBaseFunc:
+    provideBaseFunc:
       - LARGE_GENERATOR
 
   - type: STR_HANGAR_RIGHT
@@ -113,7 +113,7 @@ facilities:
       size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 1
-    providesBaseFunc:
+    provideBaseFunc:
       - LARGE_GENERATOR
       - CRAFT_SPACE
 
@@ -125,6 +125,9 @@ facilities:
     buildCost: 200000
     buildCostItems:
       STR_DAMAGED_SHUTTLE:
+        build: 1
+        refund: 1
+      STR_LINAC_MASS_DRIVER_ITEM:
         build: 1
         refund: 1
     refundValue: -50000
@@ -139,7 +142,7 @@ facilities:
       size: [2, 2, 4]
       terrain: CRASHED_SHIP
       blocks: 1
-    providesBaseFunc:
+    provideBaseFunc:
       - LARGE_GENERATOR
 
   - type: STR_BACK_CORRIDOR_LEFT
@@ -178,7 +181,7 @@ facilities:
       blocks: 3
     requiresBaseFunc:
       - LARGE_GENERATOR
-    providesBaseFunc:
+    provideBaseFunc:
       - MINING_DRONES
 
   - type: STR_CARGO_RIGHT
@@ -200,7 +203,7 @@ facilities:
       blocks: 4
     requiresBaseFunc:
       - LARGE_GENERATOR
-    providesBaseFunc:
+    provideBaseFunc:
       - MINING_DRONES
 
   - type: STR_BACK_CORRIDOR_RIGHT
@@ -259,7 +262,7 @@ facilities:
       blocks: 7
     requiresBaseFunc:
       - LARGE_GENERATOR
-    providesBaseFunc:
+    provideBaseFunc:
       - MANUFACTURING
 
   - type: STR_FRONT_QUARTERS_RIGHT
@@ -283,7 +286,7 @@ facilities:
       blocks: 8
     requiresBaseFunc:
       - LARGE_GENERATOR
-    providesBaseFunc:
+    provideBaseFunc:
       - ANALYTICS
 
   - type: STR_FRONT_CORRIDOR_RIGHT
@@ -427,7 +430,7 @@ extraStrings:
 # Base functions
       SMALL_GENERATOR: "Small Generator"
       LARGE_GENERATOR: "Large Generator"
-      CRAFT_SPACE: "Extra Workspace"
+      CRAFT_SPACE: "Hangar Workspace"
       MINING_DRONES: "Drone Facility"
       MANUFACTURING: "Manufacturing"
       ANALYTICS: "Analytics"
