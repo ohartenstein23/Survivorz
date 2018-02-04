@@ -122,7 +122,7 @@ facilities:
     size: 2
     requires:
       - STR_DISABLED
-    buildCost: 200000
+    buildCost: 0
     buildCostItems:
       STR_DAMAGED_SHUTTLE:
         build: 1
@@ -409,23 +409,119 @@ terrains:
         width: 10
         length: 10
 
+ufopaedia:
+  - id: STR_TRANSPONDER
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_TRANSPONDER_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_HANGAR_LEFT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_HANGAR_LEFT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_HANGAR_RIGHT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_HANGAR_RIGHT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_HANGAR_RIGHT_DAMAGED
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_HANGAR_RIGHT_DAMAGED_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_CARGO_LEFT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_CARGO_LEFT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_CARGO_RIGHT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_CARGO_RIGHT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_FRONT_QUARTERS_LEFT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_FRONT_QUARTERS_LEFT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_FRONT_QUARTERS_RIGHT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_FRONT_QUARTERS_RIGHT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_COCKPIT_LEFT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_COCKPIT_LEFT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_COCKPIT_RIGHT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_COCKPIT_RIGHT_PEDIA
+    requires:
+      - STR_POST_ITEM
+
 extraStrings:
   - type: en-US
     strings:
+      STR_SHIP_FACILITIES: "SHIP'S FACILITIES"
+
       STR_TRANSPONDER: "Transponder"
+      STR_TRANSPONDER_PEDIA: "Transponders are placed to mark the location of colony outposts and facilities. There is a small generator to run the short-range communications equipment and facilities that require only a light power draw. There is also digital storage and computational power enough to run the ship's AI as a backup in case the primary computational facilities are damaged or out of communication range."
+
       STR_HANGAR_LEFT: "Starboard Hangar"
+      STR_HANGAR_LEFT_PEDIA: "Relatively undamaged in the crash, the starboard hangar section also contains primary and auxiliary generators for powering the ship."
+
       STR_HANGAR_RIGHT: "Port Hangar"
+      STR_HANGAR_RIGHT_PEDIA: "With the damaged shuttle removed and the hangar door forced shut, the port hangar acts as a maintenance facility for shuttle-sized craft and drones."
+
       STR_HANGAR_RIGHT_DAMAGED: "Port Hangar (Damaged Shuttle)"
+      STR_HANGAR_RIGHT_DAMAGED_PEDIA: "Significant damage to the port hangar section has rendered the primary generators of the ship nonfunctional. The shuttle stored here became unanchored during the crash, striking the hangar doors before impacting the deck; while the shuttle can be removed and repaired, repairs on the hangar door are not possible with the ship's facilities. However, it can be forced closed, providing a sheltered space for enacting maintenance on functional shuttles.{NEWLINE}{NEWLINE}To remove the damaged shuttle, left-click the facility from the base view to dismantle it."
+
       STR_BACK_CORRIDOR_LEFT: "Starboard Corridor"
+
       STR_CARGO_LEFT: "Starboard Cargo"
+      STR_CARGO_LEFT_PEDIA: "The starboard cargo section of the ship is situated down the drone lift from the hangars, providing space to store supplies and maintain/repair the ship's complement of mining drones."
+
       STR_CARGO_RIGHT: "Port Cargo"
+      STR_CARGO_RIGHT_PEDIA: "The port cargo section of the ship is situated down the drone lift from the hangars, providing space to store supplies and maintain/repair the ship's complement of mining drones."
+
       STR_BACK_CORRIDOR_RIGHT: "Port Corridor"
+
       STR_FRONT_CORRIDOR_LEFT: "Starboard Observation"
+
       STR_FRONT_QUARTERS_LEFT: "Starboard Quarters"
+      STR_FRONT_QUARTERS_LEFT_PEDIA: "The upper deck of the starboard quarters section contains living space for the crew when they're active on the ship, the middle deck, cryochamber storage for keeping the crew in suspended animation during long-distance spaceflight. On the bottom deck, adjacent to the starboard cargo bay, are the specialized manufacturing facilities for the ship."
+
       STR_FRONT_QUARTERS_RIGHT: "Port Quarters"
+      STR_FRONT_QUARTERS_RIGHT_PEDIA: "The upper deck of the port quarters section contains living space for the crew when they're active on the ship, the middle deck, cryochamber storage for keeping the crew in suspended animation during long-distance spaceflight. The ship's laboratory and sick bay are on the lower deck adjacent to the port cargo bay, providing specialized analytical and research tools to the crew."
+
       STR_FRONT_CORRIDOR_RIGHT: "Port Observation"
+
       STR_COCKPIT_LEFT: "Starboard Bridge"
+      STR_COCKPIT_LEFT_PEDIA: "Having sustained less damage during the crash than the port section of the bridge, the starboard section contains the functional short-range scanners for detecting planetside activity. The bottom deck contains half of the small armory for the ship's crew."
+
       STR_COCKPIT_RIGHT: "Port Bridge"
+      STR_COCKPIT_RIGHT_PEDIA: "Bearing the brunt of the initial impact on the planet's surface, very little of the equipment in the port section of the bridge remains functional."
 
 # Base functions
       SMALL_GENERATOR: "Small Generator"
