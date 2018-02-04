@@ -87,6 +87,22 @@ extraSprites:
       33: Resources/Facilities/shuttle_basebit.png # Should be 84, but we're replacing skyranger for now
 
 ufopaedia:
+  - id: STR_SHUTTLE
+    type_id: 1
+    section: STR_CRAFT_AND_WEAPONS
+    image_id: UP004.SPK # skyranger for now
+    rect_stats:
+      x: 160
+      y: 5
+      width: 160
+      height: 60
+    rect_text:
+      x: 5
+      y: 40
+      width: 140
+      height: 100
+    text: STR_SHUTTLE_PEDIA
+
   - id: STR_LINAC_MASS_DRIVER
     type_id: 2
     section: STR_CRAFT_AND_WEAPONS
@@ -98,7 +114,10 @@ ufopaedia:
 extraStrings:
   - type: en-US
     strings:
+      STR_CRAFT_AND_WEAPONS: "CRAFT AND AERIAL EQUIPMENT"
+
       STR_SHUTTLE: "SHUTTLE"
+      STR_SHUTTLE_PEDIA: "The ship's shuttles were designed as all-purpose craft, durable enough for transatmospheric operations and light combat, powerful enough to carry cargo, and small enough to fit in the limited hangar space available."
       STR_DAMAGED_SHUTTLE: "Damaged Shuttle"
       STR_REPAIR_SHUTTLE: "Repair Damaged Shuttle"
 
