@@ -90,6 +90,7 @@ ufopaedia:
   - id: STR_SHUTTLE
     type_id: 1
     section: STR_CRAFT_AND_WEAPONS
+    text: STR_SHUTTLE_PEDIA
     image_id: UP004.SPK # skyranger for now
     rect_stats:
       x: 160
@@ -101,7 +102,8 @@ ufopaedia:
       y: 40
       width: 140
       height: 100
-    text: STR_SHUTTLE_PEDIA
+    requires:
+      - STR_POST_ITEM
 
   - id: STR_LINAC_MASS_DRIVER
     type_id: 2

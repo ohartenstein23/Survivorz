@@ -9,4 +9,5 @@ extraSprites:
       56: Resources/Facilities/crashed_ship_lefthangar.png
       60: Resources/Facilities/crashed_ship_lefthangar.png
       64: Resources/Facilities/crashed_ship_righthangar.png
-      68: Resources/Facilities/crashed_ship_righthangar.png
+      68: Resources/Facilities/crashed_ship_righthangar_inprogress.png
+      84: Resources/Facilities/crashed_ship_righthangar_damaged.png

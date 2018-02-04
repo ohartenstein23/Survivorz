@@ -61,6 +61,15 @@ research:
     dependencies:
       - STR_POST_ITEM
 
+# *** Fixing ship facilities ***
+  - name: STR_PORT_HANGAR_REPORT
+    cost: 0
+    score: 0
+    dependencies:
+      - STR_POST_ITEM
+    requiresBaseFunc:
+      - CRAFT_SPACE
+
 # Environmental scan data
   - name: STR_ENVIRO_SCAN_EASY_ITEM
     cost: 5
@@ -310,6 +319,8 @@ extraStrings:
       STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
       STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
       STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Data"
+
+      STR_PORT_HANGAR_REPORT: "Port Hangar Report"
 
       STR_AI_SUBROUTINE_BUY: "AI Subroutine Fabrication"
       STR_AI_SUBROUTINE_BUY_PEDIA: ">:: The schematics for autonomous scout drones have been added to the ships' nanofabrication facilities. Each of these units will be created with a copy of an AI subroutine to control it during excursions with the crew. While unarmed, it should prove useful in relaying information to the crew and drawing the attention of hostile units."

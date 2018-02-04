@@ -118,7 +118,7 @@ facilities:
       - CRAFT_SPACE
 
   - type: STR_HANGAR_RIGHT_DAMAGED
-    spriteShape: 64
+    spriteShape: 84
     size: 2
     requires:
       - STR_DISABLED
@@ -429,7 +429,7 @@ ufopaedia:
     section: STR_SHIP_FACILITIES
     text: STR_HANGAR_RIGHT_PEDIA
     requires:
-      - STR_POST_ITEM
+      - STR_PORT_HANGAR_REPORT
 
   - id: STR_HANGAR_RIGHT_DAMAGED
     type_id: 6
