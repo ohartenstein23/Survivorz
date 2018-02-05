@@ -4,7 +4,9 @@ startingBase:
   items:
     STR_POST_ITEM: 1
     STR_OFFICER_CRYOCHAMBER: 1
+    STR_INACTIVE_OFFICER_CRYOCHAMBER: 2
     STR_ACTIVE_CRYOCHAMBER: 3
+    STR_INACTIVE_CRYOCHAMBER: 15
   crafts:
     - type: STR_SHUTTLE
       id: 1
@@ -48,7 +50,7 @@ startingBase:
     - type: STR_FRONT_CORRIDOR_LEFT
       x: 0
       y: 3
-    - type: STR_FRONT_CORRIDOR_RIGHT
+    - type: STR_FRONT_CORRIDOR_RIGHT_DAMAGED
       x: 3
       y: 3
     - type: STR_COCKPIT_LEFT
@@ -240,6 +242,10 @@ facilities:
       size: [1, 1, 8]
       terrain: CRASHED_SHIP
       blocks: 6
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    provideBaseFunc:
+      - POWER_NODE_LEFT
 
   - type: STR_FRONT_QUARTERS_LEFT
     spriteShape: 7
@@ -298,6 +304,30 @@ facilities:
     buildTime: 12
     leavesBehindOnSell:
       - STR_FRONT_CORRIDOR_RIGHT
+    monthlyCost: 5000
+    rightClickActionType: 6
+    mapName: Front_Right_Corridor
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 8]
+      terrain: CRASHED_SHIP
+      blocks: 9
+    requiresBaseFunc:
+      - LARGE_GENERATOR
+    provideBaseFunc:
+      - POWER_NODE_RIGHT
+
+  - type: STR_FRONT_CORRIDOR_RIGHT_DAMAGED
+    spriteShape: 7
+    spriteFacility: 79
+    requires:
+      - STR_DISABLED
+    buildCost: 0
+    buildTime: 12
+    leavesBehindOnSell:
+      - STR_FRONT_CORRIDOR_RIGHT
+    refund: -20000
+    removalTime: 12
     monthlyCost: 5000
     rightClickActionType: 6
     mapName: Front_Right_Corridor
@@ -466,6 +496,20 @@ ufopaedia:
     requires:
       - STR_POST_ITEM
 
+  - id: STR_FRONT_CORRIDOR_RIGHT
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_FRONT_CORRIDOR_RIGHT_PEDIA
+    requires:
+      - STR_POWER_NODE_REPORT
+
+  - id: STR_FRONT_CORRIDOR_RIGHT_DAMAGED
+    type_id: 6
+    section: STR_SHIP_FACILITIES
+    text: STR_FRONT_CORRIDOR_RIGHT_DAMAGED_PEDIA
+    requires:
+      - STR_POWER_NODE_INVESTIGATION
+
   - id: STR_COCKPIT_LEFT
     type_id: 6
     section: STR_SHIP_FACILITIES
@@ -516,6 +560,10 @@ extraStrings:
       STR_FRONT_QUARTERS_RIGHT_PEDIA: "The upper deck of the port quarters section contains living space for the crew when they're active on the ship, the middle deck, cryochamber storage for keeping the crew in suspended animation during long-distance spaceflight. The ship's laboratory and sick bay are on the lower deck adjacent to the port cargo bay, providing specialized analytical and research tools to the crew."
 
       STR_FRONT_CORRIDOR_RIGHT: "Port Observation"
+      STR_FRONT_CORRIDOR_RIGHT_PEDIA: "With the power node underneath the observation deck reconnected to the generator, the remaining crew's cryochambers can be activated."
+
+      STR_FRONT_CORRIDOR_RIGHT_DAMAGED: "Port Observation (Severed Node)"
+      STR_FRONT_CORRIDOR_RIGHT_DAMAGED_PEDIA: "The port observation section contains a power node on the bottom deck that was severed from the power grid during the crash. This node is necessary to safely cycle cryochambers out of the inactive state and must be repaired before more chambers can be activated.{NEWLINE}{NEWLINE}To begin repairs, left-click the facility from the base view."
 
       STR_COCKPIT_LEFT: "Starboard Bridge"
       STR_COCKPIT_LEFT_PEDIA: "Having sustained less damage during the crash than the port section of the bridge, the starboard section contains the functional short-range scanners for detecting planetside activity. The bottom deck contains half of the small armory for the ship's crew."
@@ -530,3 +578,5 @@ extraStrings:
       MINING_DRONES: "Drone Facility"
       MANUFACTURING: "Manufacturing"
       ANALYTICS: "Analytics"
+      POWER_NODE_LEFT: "Starboard Power Node"
+      POWER_NODE_RIGHT: "Port Power Node"

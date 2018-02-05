@@ -278,17 +278,23 @@ soldiers:
 
 items:
   - type: STR_OFFICER_CRYOCHAMBER
-    size: 0.1
+    size: 1.0
+  - type: STR_INACTIVE_OFFICER_CRYOCHAMBER
+    size: 1.0
   - type: STR_ACTIVE_CRYOCHAMBER
-    size: 0.1
+    size: 1.0
+  - type: STR_INACTIVE_CRYOCHAMBER
+    size: 1.0
   - type: STR_EMPTY_CRYOCHAMBER
-    size: 0.1
+    size: 1.0
 
 manufacture:
 # *** Opening up cryochambers ***
   - name: STR_CHIEF_ENGINEER_WAKEUP
     category: STR_CRYOCHAMBERS
+    space: 0
     time: 1
+    cost: 0
     requiredItems:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
@@ -299,9 +305,10 @@ manufacture:
       STR_LINAC_GRENADE: 12
       STR_CHIEF_ENGINEER_ITEM: 1
     spawnedPersonType: STR_CHIEF_ENGINEER
+
   - name: STR_HEAD_SCIENTIST_WAKEUP
     category: STR_CRYOCHAMBERS
-    size: 0
+    space: 0
     time: 1
     cost: 0
     requiredItems:
@@ -313,9 +320,10 @@ manufacture:
       STR_LINAC_FLARE: 12
       STR_HEAD_SCIENTIST_ITEM: 1
     spawnedPersonType: STR_HEAD_SCIENTIST
+
   - name: STR_GARRISON_OFFICER_WAKEUP
     category: STR_CRYOCHAMBERS
-    size: 0
+    space: 0
     time: 1
     cost: 0
     requiredItems:
@@ -330,7 +338,7 @@ manufacture:
 
   - name: STR_COLONIST_WAKEUP
     category: STR_CRYOCHAMBERS
-    size: 0
+    space: 0
     time: 1
     cost: 0
     requiredItems:
@@ -338,6 +346,21 @@ manufacture:
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
     spawnedPersonType: STR_COLONIST
+
+  - name: STR_ACTIVATE_CRYOCHAMBER
+    category: STR_CRYOCHAMBERS
+    requires:
+      - STR_POWER_NODE_REPORT
+    requiresBaseFunc:
+      - POWER_NODE_LEFT
+      - POWER_NODE_RIGHT
+    space: 0
+    time: 20
+    cost: 10000
+    requiredItems:
+      STR_INACTIVE_CRYOCHAMBER: 1
+    producedItems:
+      STR_ACTIVE_CRYOCHAMBER: 1
 
 extraStrings:
   - type: en-US
@@ -351,12 +374,15 @@ extraStrings:
 
       # *** Items and Manufacture ***
       STR_OFFICER_CRYOCHAMBER: "Officer's Cryochamber"
+      STR_INACTIVE_OFFICER_CRYOCHAMBER: "Inactive Officer's Cryochamber"
       STR_ACTIVE_CRYOCHAMBER: "Active Cryochamber"
+      STR_INACTIVE_CRYOCHAMBER: "Inactive Cryochamber"
       STR_EMPTY_CRYOCHAMBER: "Empty Cryochamber"
-      STR_CRYOCHAMBERS: "Cryochamber Activation"
+      STR_CRYOCHAMBERS: "Cryochambers"
       STR_CHIEF_ENGINEER_WAKEUP: "Open Engineer's Cryochamber"
       STR_HEAD_SCIENTIST_WAKEUP: "Open Scientist's Cryochamber"
       STR_GARRISON_OFFICER_WAKEUP: "Open Officer's Cryochamber"
       STR_COLONIST_WAKEUP: "Open Colonist's Cryochamber"
+      STR_ACTIVATE_CRYOCHAMBER: "Power Inactive Cryochamber"
       STR_PERSON_JOINING: "New Unit(s)"
       STR_NOT_ENOUGH_LIVING_SPACE_AT_BASE: "Not enough resource nodes to accomodate{NEWLINE}{0}{NEWLINE}at{NEWLINE}{1}"

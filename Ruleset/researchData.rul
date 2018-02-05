@@ -70,6 +70,20 @@ research:
     requiresBaseFunc:
       - CRAFT_SPACE
 
+  - name: STR_POWER_NODE_INVESTIGATION
+    cost: 1
+    score: 0
+    dependencies:
+      - STR_POST_ITEM
+
+  - name: STR_POWER_NODE_REPORT
+    cost: 0
+    score: 0
+    dependencies:
+      - STR_POST_ITEM
+    requiresBaseFunc:
+      - POWER_NODE_RIGHT
+
 # Environmental scan data
   - name: STR_ENVIRO_SCAN_EASY_ITEM
     cost: 5
@@ -321,6 +335,9 @@ extraStrings:
       STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Data"
 
       STR_PORT_HANGAR_REPORT: "Port Hangar Report"
+
+      STR_POWER_NODE_INVESTIGATION: "Diagnose Damaged Power Node"
+      STR_POWER_NODE_REPORT: "Power Node Report"
 
       STR_AI_SUBROUTINE_BUY: "AI Subroutine Fabrication"
       STR_AI_SUBROUTINE_BUY_PEDIA: ">:: The schematics for autonomous scout drones have been added to the ships' nanofabrication facilities. Each of these units will be created with a copy of an AI subroutine to control it during excursions with the crew. While unarmed, it should prove useful in relaying information to the crew and drawing the attention of hostile units."
