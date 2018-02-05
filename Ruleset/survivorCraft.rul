@@ -43,7 +43,7 @@ craftWeapons:
     damage: 25
     accuracy: 50
     ammoMax: 100
-    rearmRate: 5
+    rearmRate: 20
     reloadCautious: 16
     reloadStandard: 16
     reloadAggressive: 16
