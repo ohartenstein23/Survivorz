@@ -329,7 +329,7 @@ facilities:
     buildTime: 12
     leavesBehindOnSell:
       - STR_FRONT_CORRIDOR_RIGHT
-    refund: -20000
+    refundValue: -20000
     removalTime: 12
     monthlyCost: 5000
     rightClickActionType: 6
