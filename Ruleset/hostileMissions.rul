@@ -324,16 +324,45 @@ ufoTrajectories:
   - id: MINING_ESCORT # High-altitude monitoring, will be replaced with patrol HK behavior eventually
     waypoints:
       - [5, 3, 100] # Start at base
-      - [0, 3, 50] # Move to region
-      - [8, 3, 8] # Just fly around the sub-region for a while
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [8, 3, 8]
-      - [0, 3, 50] # Get ready to head out
+      - [0, 3, 70] # Move to region
+      - [0, 3, 60] # Just fly around the region for a while
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 60]
+      - [0, 3, 70] # Get ready to head out
       - [5, 0, 100] # Land at base
 
 alienDeployments:
