@@ -281,6 +281,7 @@ manufacture:
     time: 2
     producedItems:
       STR_LINAC_FLARE: 1
+
   - name: STR_LINAC_GRENADE
     category: STR_LINAC_CHARGES
     requires:
@@ -290,6 +291,31 @@ manufacture:
     time: 2
     producedItems:
       STR_LINAC_GRENADE: 1
+
+  - name: STR_ARMORY_ITEMS_SCIENTIST
+    category: STR_MISCELLANEOUS
+    requires:
+      - STR_HEAD_SCIENTIST_ITEM
+    cost: 0
+    space: 0
+    time: 1
+    requiredItems:
+      STR_ARMORY_ITEMS_SCIENTIST: 1
+    producedItems:
+      STR_LINAC_RIFLE: 2
+
+  - name: STR_ARMORY_ITEMS_OFFICER
+    category: STR_MISCELLANEOUS
+    requires:
+      - STR_GARRISON_OFFICER_ITEM
+    cost: 0
+    space: 0
+    time: 1
+    requiredItems:
+      STR_ARMORY_ITEMS_OFFICER: 1
+    producedItems:
+      STR_LINAC_RIFLE: 4
+      STR_LINAC_BATTLE_RIFLE: 1
 
 ufopaedia:
   - id: STR_LINAC_WEAPONS
@@ -419,7 +445,7 @@ extraSprites:
 extraStrings:
   - type: en-US
     strings:
-#Item Names
+#*** Item Names ***
       STR_LINAC_WEAPONS: "LINAC Weapons"
       STR_LINAC_PISTOL: "LINAC Pistol"
       STR_LINAC_CARBINE: "LINAC Carbine"
@@ -427,7 +453,8 @@ extraStrings:
       STR_LINAC_BATTLE_RIFLE: "LINAC Battle Rifle"
       STR_LINAC_FLARE: "LINAC Flare Charge"
       STR_LINAC_GRENADE: "LINAC Concussive Charge"
-#Pedia Entries
+
+#*** Pedia Entries ****
       STR_LINAC_WEAPONS_PEDIA: "Called LINAC after the high-power linear particle accelerators they employ, this standard-issue line of small arms was originally deployed as a series of lightweight special munition delivery systems. The design for the containment fields allows the projectiles to be completely ionized before firing, leading to the development of an armor-piercing battery that soon found use replacing service firearms. Impacts against solid armor plating will degrade its effectiveness, so sustained fire can defeat even the most hardened of targets." #The trade-off is that the projectiles gradually return to a charge-neutral state, leading to a drop in power at long distances."
       STR_LINAC_PISTOL_PEDIA: "The LINAC Pistol is a marvel of minaturization; capable of firing with only moderately reduced velocity compared to the rifles, the smaller accelerators require less cooling, leading to an increased capacity for rapid cycling."
       STR_LINAC_CARBINE_PEDIA: "Little more than an extension of the compact design of the pistol with a longer accelerator, the LINAC Carbine is favored for lightweight and accurate deployment of the specialized charges at close- to mid-range."
@@ -436,6 +463,12 @@ extraStrings:
       STR_LINAC_PISTOL_BATTERY_PEDIA: "LINAC Pistol Battery"
       STR_LINAC_FLARE_PEDIA: "This single-use capacitor provides the extra mass and energy to fire a larger bolt of high-temperature particles that will ignite a small region of terrain when the containment field is breached by impact with a solid object. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}The charge can also be used as an improvised thrown explosive, but without any timing control, it will explode in the user's hands if held too long."
       STR_LINAC_GRENADE_PEDIA: "The original intent of the LINAC system was to deliver these single-use charges for area supression of infantry targets; the blast created by the high-velocity charged particle stream impact damages units and armor in a small radius as well as stunning humanoids. It can be fired by any weapon in the LINAC series.{NEWLINE}{NEWLINE}It is also effective for clearing natural terrain obstructions.{NEWLINE}{NEWLINE}The charge can also be used as an improvised thrown explosive, but without any timing control, it will explode in the user's hands if held too long."
+
+#*** Manufacturing categories ***
+      STR_MISCELLANEOUS: "Miscellaneous"
+      STR_LINAC_CHARGES: "LINAC Charges"
+
+#*** Shot and damage types ***
       STR_SHOT_TYPE_AUTO: "Alt   (x{0})"
       STR_SHOT_TYPE_SNAP: "Snap (x{0})"
       STR_SHOT_TYPE_AIMED: "Main (x{0})"

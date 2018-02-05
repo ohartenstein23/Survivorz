@@ -46,6 +46,7 @@ research:
       - STR_POST_ITEM
     unlocks:
       - STR_LINAC_GRENADE
+
   - name: STR_HEAD_SCIENTIST_ITEM
     cost: 1
     score: 0
@@ -53,6 +54,8 @@ research:
     destroyItem: true
     dependencies:
       - STR_POST_ITEM
+    spawnedItem: STR_ARMORY_ITEMS_SCIENTIST
+
   - name: STR_GARRISON_OFFICER_ITEM
     cost: 1
     score: 0
@@ -60,6 +63,7 @@ research:
     destroyItem: true
     dependencies:
       - STR_POST_ITEM
+    spawnedItem: STR_ARMORY_ITEMS_OFFICER
 
 # *** Fixing ship facilities ***
   - name: STR_PORT_HANGAR_REPORT
@@ -229,6 +233,16 @@ items:
     costBuy: 0
     costSell: 0
 
+  - type: STR_ARMORY_ITEMS_SCIENTIST
+    size: 0.4
+    costBuy: 0
+    costSell: 0
+
+  - type: STR_ARMORY_ITEMS_OFFICER
+    size: 1.0
+    costBuy: 0
+    costSell: 0
+
 # Research pedia articles
 ufopaedia:
 # *** Starting articles and worldgen ***
@@ -294,6 +308,28 @@ ufopaedia:
     requires:
       - STR_POST_ITEM
 
+# *** Crew logs ***
+  - id: STR_CHIEF_ENGINEER_ITEM
+    type_id: 8
+    section: STR_CREW_LOGS
+    text: STR_CHIEF_ENGINEER_ITEM_PEDIA
+    requires:
+      - STR_CHIEF_ENGINEER_ITEM
+
+  - id: STR_HEAD_SCIENTIST_ITEM
+    type_id: 8
+    section: STR_CREW_LOGS
+    text: STR_HEAD_SCIENTIST_ITEM_PEDIA
+    requires:
+      - STR_HEAD_SCIENTIST_ITEM
+
+  - id: STR_GARRISON_OFFICER_ITEM
+    type_id: 8
+    section: STR_CREW_LOGS
+    text: STR_GARRISON_OFFICER_ITEM_PEDIA
+    requires:
+      - STR_GARRISON_OFFICER_ITEM
+
 # *** AI subroutine unlocks ***
   - id: STR_AI_SUBROUTINE_BUY
     type_id: 8
@@ -307,6 +343,7 @@ extraStrings:
   - type: en-US
     strings:
       STR_SYSTEM_REPORTS: "SYSTEM REPORTS"
+      STR_CREW_LOGS: "CREW LOGS"
 
       STR_POST: "Power-On Systems Test"
       STR_POST_ITEM: "Power-On Systems Test"
@@ -330,9 +367,15 @@ extraStrings:
       STR_GRAPHS_HOWTO: "Detecting Unidentified Craft"
       STR_GRAPHS_HOWTO_PEDIA: ">:: Long-range scanners offline due to damage.{NEWLINE}>:: Detection of unidentified craft will be limited to short-range scanners and those on shuttle craft.{NEWLINE}>:: {NEWLINE}>:: The compliment of mining drones are equipped with basic short-range scanners as well. They are not powerful enough to pinpoint a signal, but they will automatically log any activity detected. This activity is available on the Graphs screen, broken down by the quadrant of the planet on which it was detected. Close monitoring of this information should reveal approximate locations of craft outside higher-fidelity detection radius - it is recommended to send the ship's shuttle to investigate those regions."
 
-      STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Data"
-      STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Data"
-      STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Data"
+      STR_CHIEF_ENGINEER_ITEM: "Chief Engineer's Log Entry 001"
+      STR_HEAD_SCIENTIST_ITEM: "Head Scientist's Log Entry 001"
+      STR_GARRISON_OFFICER_ITEM: "Garrison Officier's Log Entry 001"
+      STR_CHIEF_ENGINEER_ITEM_PEDIA: ">:: (BEGIN CREW LOG){NEWLINE}>:: Lorem Ipsum{NEWLINE}>:: (END CREW LOG)"
+      STR_HEAD_SCIENTIST_ITEM_PEDIA: ">:: (BEGIN CREW LOG){NEWLINE}>:: Lorem Ipsum - Decrypted lock on armory.{NEWLINE}>:: (END CREW LOG)"
+      STR_GARRISON_OFFICER_ITEM_PEDIA: ">:: (BEGIN CREW LOG){NEWLINE}>:: Lorem Ipsum - Opened armory.{NEWLINE}>:: (END CREW LOG)"
+
+      STR_ARMORY_ITEMS_SCIENTIST: "Weapons From Armory"
+      STR_ARMORY_ITEMS_OFFICER: "Weapons From Armory"
 
       STR_PORT_HANGAR_REPORT: "Port Hangar Report"
 

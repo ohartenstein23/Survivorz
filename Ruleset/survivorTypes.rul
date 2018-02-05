@@ -299,10 +299,6 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
-      STR_LINAC_PISTOL: 2
-      STR_LINAC_CARBINE: 2
-      STR_LINAC_FLARE: 12
-      STR_LINAC_GRENADE: 12
       STR_CHIEF_ENGINEER_ITEM: 1
     spawnedPersonType: STR_CHIEF_ENGINEER
 
@@ -315,9 +311,6 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
-      STR_LINAC_PISTOL: 2
-      STR_LINAC_RIFLE: 2
-      STR_LINAC_FLARE: 12
       STR_HEAD_SCIENTIST_ITEM: 1
     spawnedPersonType: STR_HEAD_SCIENTIST
 
@@ -330,9 +323,6 @@ manufacture:
       STR_OFFICER_CRYOCHAMBER: 1
     producedItems:
       STR_EMPTY_CRYOCHAMBER: 1
-      STR_LINAC_RIFLE: 4
-      STR_LINAC_BATTLE_RIFLE: 1
-      STR_LINAC_FLARE: 12
       STR_GARRISON_OFFICER_ITEM: 1
     spawnedPersonType: STR_GARRISON_OFFICER
 
