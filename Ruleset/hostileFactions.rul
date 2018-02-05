@@ -185,9 +185,6 @@ items:
 # *** Hostile weapons ***
   - type: STR_HOSTILE_MININGTOOL
     # Filler weapon, mostly on mining crew
-    # AI still doesn't like using weapons with limited range
-    # But this counts as a feature! The alien slaves will tend
-    # to stand and stare until you come too close.
     costSell: 1000
     costBuy: 0
     size: 0.1
