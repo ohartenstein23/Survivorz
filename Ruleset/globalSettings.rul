@@ -36,6 +36,7 @@ fixedUserOptions:
   customInitialBase: false
   everyoneFightsNobodyQuits: true
 
+timePersonnel: 24
 costEngineer: 25000
 costScientist: 30000
 
