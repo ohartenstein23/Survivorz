@@ -162,6 +162,22 @@ armors:
     corpseBattle:
       - STR_NATIVE_CORPSE
 
+  - type: SNAKEMAN_ARMOR0
+    corpseBattle:
+      - STR_HOSTILE_CORPSE
+
+  - type: MUTON_ARMOR0
+    corpseBattle:
+      - STR_HOSTILE_MECH_CORPSE
+
+  - type: CYBERDISC_ARMOR
+    corpseBattle:
+      - HOSTILE_MECH_HOVER_CORPSE_1
+      - HOSTILE_MECH_HOVER_CORPSE_2
+      - HOSTILE_MECH_HOVER_CORPSE_3
+      - HOSTILE_MECH_HOVER_CORPSE_4
+    corpseGeo: STR_HOSTILE_MECH_HOVER_CORPSE
+
 items:
   - type: STR_RECYCLED_MATERIALS
     size: 0.1
@@ -180,6 +196,66 @@ items:
 
   - type: STR_ALIEN_SLAVE
     liveAlien: true
+    recover: false
+
+# *** Hostile Corpses *** (copied from xcom1 for now)
+  - type: STR_HOSTILE_CORPSE #snakeman
+    size: 0.4
+    costSell: 1000
+    weight: 40
+    bigSprite: 50
+    floorSprite: 46
+    invWidth: 2
+    invHeight: 3
+    recoveryPoints: 0
+    battleType: 11
+    armor: 26
+
+  - type: STR_HOSTILE_MECH_CORPSE #muton
+    size: 0.4
+    costSell: 2500
+    weight: 40
+    bigSprite: 48
+    floorSprite: 44
+    invWidth: 2
+    invHeight: 3
+    recoveryPoints: 0
+    battleType: 11
+    armor: 26
+
+  - type: STR_HOSTILE_MECH_HOVER_CORPSE #cyberdisc
+    size: 1
+    costSell: 5000
+    battleType: 11
+    power: 120
+    blastRadius: 6
+  - type: HOSTILE_MECH_HOVER_CORPSE_1
+    name: STR_HOSTILE_MECH_HOVER_CORPSE
+    floorSprite: 56
+    invWidth: 0
+    invHeight: 0
+    battleType: 11
+    recoveryPoints: 0
+  - type: HOSTILE_MECH_HOVER_CORPSE_2
+    name: STR_HOSTILE_MECH_HOVER_CORPSE
+    floorSprite: 57
+    invWidth: 0
+    invHeight: 0
+    battleType: 11
+    recover: false
+  - type: HOSTILE_MECH_HOVER_CORPSE_3
+    name: STR_HOSTILE_MECH_HOVER_CORPSE
+    floorSprite: 58
+    invWidth: 0
+    invHeight: 0
+    battleType: 11
+    recover: false
+  - type: HOSTILE_MECH_HOVER_CORPSE_4
+    name: STR_HOSTILE_MECH_HOVER_CORPSE
+    floorSprite: 59
+    invWidth: 0
+    invHeight: 0
+    battleType: 11
     recover: false
 
 # *** Hostile weapons ***
@@ -685,6 +761,10 @@ extraStrings:
       STR_HOSTILE_MECHANIZED: "Hostile Mech"
       STR_HOSTILE_MECHANIZED_HOVER: "Hostile Mech"
       STR_ALIEN_SLAVE: "Hostile"
+
+      STR_HOSTILE_CORPSE: "Hostile Corpse"
+      STR_HOSTILE_MECH_CORPSE: "Damaged Hostile Mech"
+      STR_HOSTILE_MECHANIZED_HOVER_CORPSE: "Damaged Hostile Mech/Hover"
 
 # *** Weapons ***
       STR_HOSTILE_WEAPONS: "Hostile Weapons"

@@ -44,6 +44,17 @@ invs:
       - [0, 1]
       - [1, 1]
 
+items:
+  - type: STR_CORPSE_ARMOR #personal armor
+    name: STR_CORPSE
+    weight: 24
+    bigSprite: 28
+    floorSprite: 40
+    invWidth: 2
+    invHeight: 3
+    armor: 30
+    recover: false
+
 ufopaedia:
   - id: STR_NONE_UC
     type_id: 5
