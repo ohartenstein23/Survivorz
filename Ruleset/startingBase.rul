@@ -67,8 +67,8 @@ initialFunding: 500
 
 facilities:
   - type: STR_TRANSPONDER
-    spriteShape: 0
-    spriteFacility: 0
+    spriteShape: 3
+    spriteFacility: 9
     lift: true
     buildCost: 0
     buildTime: 1
@@ -151,7 +151,7 @@ facilities:
       - LARGE_GENERATOR
 
   - type: STR_BACK_CORRIDOR_LEFT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 72
     requires:
       - STR_DISABLED
@@ -168,7 +168,7 @@ facilities:
       blocks: 2
 
   - type: STR_CARGO_LEFT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 73
     requires:
       - STR_DISABLED
@@ -190,7 +190,7 @@ facilities:
       - MINING_DRONES
 
   - type: STR_CARGO_RIGHT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 74
     requires:
       - STR_DISABLED
@@ -212,7 +212,7 @@ facilities:
       - MINING_DRONES
 
   - type: STR_BACK_CORRIDOR_RIGHT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 75
     requires:
       - STR_DISABLED
@@ -229,7 +229,7 @@ facilities:
       blocks: 5
 
   - type: STR_FRONT_CORRIDOR_LEFT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 76
     requires:
       - STR_DISABLED
@@ -251,7 +251,7 @@ facilities:
       - POWER_NODE_LEFT
 
   - type: STR_FRONT_QUARTERS_LEFT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 77
     requires:
       - STR_DISABLED
@@ -275,7 +275,7 @@ facilities:
       - MANUFACTURING
 
   - type: STR_FRONT_QUARTERS_RIGHT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 78
     requires:
       - STR_DISABLED
@@ -299,7 +299,7 @@ facilities:
       - ANALYTICS
 
   - type: STR_FRONT_CORRIDOR_RIGHT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 79
     requires:
       - STR_DISABLED
@@ -321,7 +321,7 @@ facilities:
       - POWER_NODE_RIGHT
 
   - type: STR_FRONT_CORRIDOR_RIGHT_DAMAGED
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 79
     requires:
       - STR_DISABLED
@@ -341,7 +341,7 @@ facilities:
       blocks: 9
 
   - type: STR_COCKPIT_LEFT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 81
     requires:
       - STR_DISABLED
@@ -362,7 +362,7 @@ facilities:
       - LARGE_GENERATOR
 
   - type: STR_COCKPIT_RIGHT
-    spriteShape: 7
+    spriteShape: 3
     spriteFacility: 82
     requires:
       - STR_DISABLED
@@ -383,14 +383,44 @@ facilities:
     requiresBaseFunc:
       - LARGE_GENERATOR
 
+  - type: STR_CLEARING
+    spriteShape: 3
+    spriteFacility: 3
+    buildCost: 5000
+    buildTime: 3
+    monthlyCost: 0
+    canBeBuiltOver: true
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 8]
+      terrain: baseTerrain
+
+  - type: STR_LANDING_PAD
+    spriteShape: 3
+    spriteFacility: 10
+    buildCost: 30000
+    buildTime: 12
+    monthlyCost: 5000
+    crafts: 1
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 8]
+      terrain: baseTerrain
+
 extraSprites:
   - type: BASEBITS.PCK
     files:
-      1: Resources/Facilities/empty_basebit.png # Outer shapes
+      0: Resources/Facilities/terrain_basebit.png
+      1: Resources/Facilities/empty_basebit.png
       2: Resources/Facilities/empty_basebit.png
-      3: Resources/Facilities/empty_basebit.png
+      3: Resources/Facilities/clearing_basebit.png
+      4: Resources/Facilities/empty_basebit.png
+      5: Resources/Facilities/empty_basebit.png
+      6: Resources/Facilities/inprogress_basebit.png
       7: Resources/Facilities/empty_basebit.png # Connector between facilities
-      8: Resources/Facilities/empty_basebit.png
+      8: Resources/Facilities/empty_basebit.png # Connector between facilities
+      9: Resources/Facilities/clearing_basebit.png
+      10: Resources/Facilities/landing_pad.png
 
 mapScripts:
   - type: XBASE
@@ -573,6 +603,10 @@ extraStrings:
 
       STR_COCKPIT_RIGHT: "Port Bridge"
       STR_COCKPIT_RIGHT_PEDIA: "Bearing the brunt of the initial impact on the planet's surface, very little of the equipment in the port section of the bridge remains functional."
+
+      STR_CLEARING: "Clearing"
+
+      STR_LANDING_PAD: "Landing Pad"
 
 # Base functions
       SMALL_GENERATOR: "Small Generator"
