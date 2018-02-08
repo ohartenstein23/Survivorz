@@ -383,30 +383,6 @@ facilities:
     requiresBaseFunc:
       - LARGE_GENERATOR
 
-  - type: STR_CLEARING
-    spriteShape: 3
-    spriteFacility: 3
-    buildCost: 5000
-    buildTime: 3
-    monthlyCost: 0
-    canBeBuiltOver: true
-    verticalLevels:
-    - type: ground
-      size: [1, 1, 8]
-      terrain: baseTerrain
-
-  - type: STR_LANDING_PAD
-    spriteShape: 3
-    spriteFacility: 10
-    buildCost: 30000
-    buildTime: 12
-    monthlyCost: 5000
-    crafts: 1
-    verticalLevels:
-    - type: ground
-      size: [1, 1, 8]
-      terrain: baseTerrain
-
 extraSprites:
   - type: BASEBITS.PCK
     files:
@@ -419,8 +395,6 @@ extraSprites:
       6: Resources/Facilities/inprogress_basebit.png
       7: Resources/Facilities/empty_basebit.png # Connector between facilities
       8: Resources/Facilities/empty_basebit.png # Connector between facilities
-      9: Resources/Facilities/clearing_basebit.png
-      10: Resources/Facilities/landing_pad.png
 
 mapScripts:
   - type: XBASE
@@ -603,10 +577,6 @@ extraStrings:
 
       STR_COCKPIT_RIGHT: "Port Bridge"
       STR_COCKPIT_RIGHT_PEDIA: "Bearing the brunt of the initial impact on the planet's surface, very little of the equipment in the port section of the bridge remains functional."
-
-      STR_CLEARING: "Clearing"
-
-      STR_LANDING_PAD: "Landing Pad"
 
 # Base functions
       SMALL_GENERATOR: "Small Generator"

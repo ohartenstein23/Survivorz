@@ -1,0 +1,76 @@
+facilities:
+  - type: STR_CLEARING
+    spriteShape: 3
+    spriteFacility: 3
+    requires:
+      - STR_POST_ITEM
+    buildCost: 5000
+    buildTime: 3
+    leavesBehindOnSell:
+      - STR_CLEARING
+    monthlyCost: 0
+    canBeBuiltOver: true
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 8]
+      terrain: baseTerrain
+
+  - type: STR_LANDING_PAD
+    spriteShape: 3
+    spriteFacility: 10
+    requires:
+      - STR_POST_ITEM
+    buildCost: 30000
+    buildTime: 12
+    leavesBehindOnSell:
+      - STR_CLEARING
+    monthlyCost: 5000
+    crafts: 1
+    verticalLevels:
+    - type: ground
+      size: [1, 1, 8]
+      terrain: baseTerrain
+    requiresBaseFunc:
+      - SMALL_GENERATOR
+
+ufopaedia:
+  - id: STR_BUILDING_FACILITIES_HOWTO
+    type_id: 8
+    section: STR_COLONY_FACILITIES
+    text: STR_BUILDING_FACILITIES_HOWTO_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_CLEARING
+    type_id: 6
+    section: STR_COLONY_FACILITIES
+    text: STR_CLEARING_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+  - id: STR_LANDING_PAD
+    type_id: 6
+    section: STR_COLONY_FACILITIES
+    text: STR_LANDING_PAD_PEDIA
+    requires:
+      - STR_POST_ITEM
+
+extraSprites:
+  - type: BASEBITS.PCK
+    files:
+      9: Resources/Facilities/clearing_basebit.png
+      10: Resources/Facilities/landing_pad.png
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_COLONY_FACILITIES: "COLONY FACILITIES"
+
+      STR_BUILDING_FACILITIES_HOWTO: "Deploying Prefabricated Structures"
+      STR_BUILDING_FACILITIES_HOWTO_PEDIA: ">:: The fabrication facilities of the ship are designed to process raw materials mined from a planet into the infrastructure required to support the colonization effort. The blueprints for the constructed facilities use prefabricated components in order to reduce construction time and maintenance costs. The ship is outfitted with a number of these components in cargo upon embarking on its mission for the deployment of the initial base of operations, but further facilities must first have their parts manufactured and then delivered to the site.{NEWLINE}>:: {NEWLINE}>:: The modular nature of this construction allows certain facilities to be interconverted by 'building' over each other; the simplest upgrade being constructing on top of pre-cleared terrain instead of clearing at time of construction. This paradigm can save time and will recycle the supplies and components cost of the facility being built over to the base's stores.{NEWLINE}"
+
+      STR_CLEARING: "Clearing"
+      STR_CLEARING_PEDIA: "All prefabricated structures require clearing of the surrounding terrain in order to be constructed - this can be done ahead of time in order to make sure all buildings are accessible to each other and the transponder for the base of operations."
+
+      STR_LANDING_PAD: "Landing Pad"
+      STR_LANDING_PAD_PEDIA: "Intended to be the waypoint for sending supplies from the ship in orbit to colony bases of operation planetside, the landing pad can be constructed quickly due to its small footprint on the terrain. Shuttles landing here will be repaired, refueled, and rearmed by a specialized drone deployed with this facility."
