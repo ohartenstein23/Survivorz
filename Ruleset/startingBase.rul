@@ -73,6 +73,7 @@ facilities:
     buildCost: 0
     buildTime: 1
     monthlyCost: 5000
+    storage: 10
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
@@ -537,7 +538,7 @@ extraStrings:
       STR_SHIP_FACILITIES: "SHIP'S FACILITIES"
 
       STR_TRANSPONDER: "Transponder"
-      STR_TRANSPONDER_PEDIA: "Transponders are placed to mark the location of colony outposts and facilities. There is a small generator to run the short-range communications equipment and facilities that require only a light power draw. There is also digital storage and computational power enough to run the ship's AI as a backup in case the primary computational facilities are damaged or out of communication range."
+      STR_TRANSPONDER_PEDIA: "Transponders are placed to mark the location of colony outposts and facilities. There is a small generator to run the short-range communications equipment and facilities that require only a light power draw. There is also digital storage and computational power enough to run the ship's AI as a backup in case the primary computational facilities are damaged or out of communication range. Temporary storage space for prefabricated structure components is included as well."
 
       STR_HANGAR_LEFT: "Starboard Hangar"
       STR_HANGAR_LEFT_PEDIA: "Relatively undamaged in the crash, the starboard hangar section also contains primary and auxiliary generators for powering the ship."
