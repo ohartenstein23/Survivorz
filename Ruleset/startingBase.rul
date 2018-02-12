@@ -10,6 +10,9 @@ startingBase:
     STR_LINAC_PISTOL: 12
     STR_LINAC_CARBINE: 4
     STR_LINAC_FLARE: 20
+    STR_PREFAB_FOUNDATION: 4
+    STR_PREFAB_WALLS: 30
+    STR_PREFAB_TECHNICAL:  8
   crafts:
     - type: STR_SHUTTLE
       id: 1
@@ -396,6 +399,7 @@ extraSprites:
       6: Resources/Facilities/inprogress_basebit.png
       7: Resources/Facilities/empty_basebit.png # Connector between facilities
       8: Resources/Facilities/empty_basebit.png # Connector between facilities
+      9: Resources/Facilities/transponder.png
 
 mapScripts:
   - type: XBASE
