@@ -13,6 +13,7 @@ startingBase:
     STR_PREFAB_FOUNDATION: 4
     STR_PREFAB_WALLS: 30
     STR_PREFAB_TECHNICAL:  8
+    STR_CROP_SEEDS: 12
   crafts:
     - type: STR_SHUTTLE
       id: 1

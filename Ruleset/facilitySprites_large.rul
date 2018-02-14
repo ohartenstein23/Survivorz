@@ -11,3 +11,10 @@ extraSprites:
       64: Resources/Facilities/crashed_ship_righthangar.png
       68: Resources/Facilities/crashed_ship_righthangar_inprogress.png
       84: Resources/Facilities/crashed_ship_righthangar_damaged.png
+#*** Agriculture gets its own section ***
+      100: Resources/Facilities/agriculture_center.png
+      104: Resources/Facilities/agriculture_center_inprogress.png
+      108: Resources/Facilities/agriculture_center_seeds.png
+      112: Resources/Facilities/agriculture_center_seeds_inprogress.png
+      116: Resources/Facilities/agriculture_center_crops.png
+      120: Resources/Facilities/agriculture_center_crops_inprogress.png

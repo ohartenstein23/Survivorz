@@ -21,7 +21,7 @@ facilities:
     requires:
       - STR_POST_ITEM
     buildCost: 8000
-    builtCostItems:
+    buildCostItems:
       STR_PREFAB_FOUNDATION:
         build: 1
         refund: 0
@@ -32,6 +32,8 @@ facilities:
         build: 3
         refund: 3
     buildTime: 12
+    buildOverFacilities:
+      - STR_CLEARING
     leavesBehindOnSell:
       - STR_CLEARING
     monthlyCost: 5000
@@ -60,7 +62,7 @@ facilities:
         build: 1
         refund: 1
     buildTime: 8
-    canBeBuiltOver:
+    buildOverFacilities:
       - STR_CLEARING
     leavesBehindOnSell:
       - STR_CLEARING
@@ -69,6 +71,90 @@ facilities:
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
+      terrain: baseTerrain
+    requiresBaseFunc:
+      - SMALL_GENERATOR
+
+  - type: STR_FARM
+    spriteShape: 100
+    size: 2
+    requires:
+      - STR_POST_ITEM
+    buildCost: 25000
+    buildCostItems:
+      STR_PREFAB_WALLS:
+        build: 10
+        refund: 10
+      STR_PREFAB_TECHNICAL:
+        build: 1
+        refund: 1
+    buildTime: 4
+    refundValue: 20000
+    canBeBuiltOver: true
+    buildOverFacilities:
+      - STR_CLEARING
+    leavesBehindOnSell:
+      - STR_CLEARING
+    storage: 10
+    removalTime: -1
+    monthlyCost: 5000
+    verticalLevels:
+    - type: ground
+      size: [2, 2, 8]
+      terrain: baseTerrain
+    requiresBaseFunc:
+      - SMALL_GENERATOR
+
+  - type: STR_FARM_CROPS
+    spriteShape: 108
+    size: 2
+    requires:
+      - STR_POST_ITEM
+    buildCost: 25000
+    buildCostItems:
+      STR_PREFAB_WALLS:
+        build: 10
+        refund: 0
+      STR_PREFAB_TECHNICAL:
+        build: 1
+        refund: 0
+      STR_CROP_SEEDS:
+        build: 4
+        refund: 0
+    buildTime: 5
+    buildOverFacilities:
+      - STR_CLEARING
+      - STR_FARM
+    leavesBehindOnSell:
+      - STR_FARM_CROPS_HARVEST
+    storage: 10
+    removalTime: 32
+    monthlyCost: 5000
+    verticalLevels:
+    - type: ground
+      size: [2, 2, 8]
+      terrain: baseTerrain
+    requiresBaseFunc:
+      - SMALL_GENERATOR
+
+  - type: STR_FARM_CROPS_HARVEST
+    spriteShape: 116
+    size: 2
+    requires:
+      - STR_DISABLED
+    buildCostItems:
+      STR_CROP_SEEDS:
+        build: 0
+        refund: 80
+    buildTime: 32
+    leavesBehindOnSell:
+      - STR_FARM
+    storage: 10
+    removalTime: 1
+    monthlyCost: 5000
+    verticalLevels:
+    - type: ground
+      size: [2, 2, 8]
       terrain: baseTerrain
     requiresBaseFunc:
       - SMALL_GENERATOR
@@ -88,6 +174,11 @@ items:
     size: 0.2
     costBuy: 0
     costSell: 500
+
+  - type: STR_CROP_SEEDS
+    size: 0.3
+    costBuy: 0
+    costSell: 1250
 
 manufacture:
   - name: STR_PREFAB_FOUNDATION
@@ -143,6 +234,27 @@ ufopaedia:
     requires:
       - STR_DATABASE
 
+  - id: STR_FARM
+    type_id: 6
+    section: STR_COLONY_FACILITIES
+    text: STR_FARM_PEDIA
+    requires:
+      - STR_DATABASE
+
+  - id: STR_FARM_CROPS
+    type_id: 6
+    section: STR_COLONY_FACILITIES
+    text: STR_FARM_CROPS_PEDIA
+    requires:
+      - STR_DATABASE
+
+  - id: STR_FARM_CROPS_HARVEST
+    type_id: 6
+    section: STR_COLONY_FACILITIES
+    text: STR_FARM_CROPS_HARVEST_PEDIA
+    requires:
+      - STR_DATABASE
+
 extraSprites:
   - type: BASEBITS.PCK
     files:
@@ -159,6 +271,7 @@ extraStrings:
       STR_PREFAB_FOUNDATION: "Prefab Foundation"
       STR_PREFAB_WALLS: "Prefab Wall"
       STR_PREFAB_TECHNICAL: "Prefab Technical"
+      STR_CROP_SEEDS: "Earth Crops"
 
       STR_PREFAB_FACILITIES_HOWTO: "Deploying Prefabricated Structures"
       STR_PREFAB_FACILITIES_HOWTO_PEDIA: ">:: The fabrication facilities of the ship are designed to process raw materials mined from a planet into the infrastructure required to support the colonization effort. The blueprints for the constructed facilities use prefabricated components in order to reduce construction time and maintenance costs. The ship is outfitted with a number of these components in cargo upon embarking on its mission for the deployment of the initial base of operations, but further facilities must first have their parts manufactured and then delivered to the site.{NEWLINE}>:: {NEWLINE}>:: The modular nature of this construction allows certain facilities to be interconverted by 'building' over each other; the simplest upgrade being constructing on top of pre-cleared terrain instead of clearing at time of construction. This paradigm can save time and will recycle the supplies and components cost of the facility being built over to the base's stores.{NEWLINE}"
@@ -171,3 +284,12 @@ extraStrings:
 
       STR_GUARD_TOWER: "Guard Tower"
       STR_GUARD_TOWER_PEDIA: "The vantage point provided by the guard tower affords the colonists a strong defensive position in case of hostile activity planetside."
+
+      STR_FARM: "Agritorium (Empty)"
+      STR_FARM_PEDIA: "The first goal of the colonization procedures is to provide a steady source of nutrients for the colonists. This facility contains not only all the tools to grow crops from Earth in alien environments, but also to cultivate and adapt new planets' flora for agricultural use.{NEWLINE}{NEWLINE}To start growing crops here, select the variant of this facility with the desired crops from the build menu and place directly over this facility."
+
+      STR_FARM_CROPS: "Agritorium (Plant Earth Crops)"
+      STR_FARM_CROPS_PEDIA: "The hardiest and most nutritient-rich crops from Earth were chosen to send with the colony ships, cultivated to grow quickly in the controlled environment of this facility.{NEWLINE}{NEWLINE}To start the growing cycle in this facility, click on it from the base view screen to 'remove' it."
+
+      STR_FARM_CROPS_HARVEST: "Agritorium (Harvest Earth Crops)"
+      STR_FARM_CROPS_HARVEST_PEDIA: "The hardiest and most nutritient-rich crops from Earth were chosen to send with the colony ships, cultivated to grow quickly in the controlled environment of this facility.{NEWLINE}{NEWLINE}To harvest the crops from this facility, click on it from the base view screen to 'remove' it."
