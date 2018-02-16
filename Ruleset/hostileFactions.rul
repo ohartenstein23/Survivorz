@@ -72,7 +72,7 @@ units:
       psiStrength: 100
       psiSkill: 0
       melee: 76
-    armor: MUTON_ARMOR0 #HOSTILE_WALKER_MECH (not anywhere near complete)
+    armor: HOSTILE_WALKER_MECH #MUTON_ARMOR0 (not anywhere near complete)
     standHeight: 21
     kneelHeight: 16
     value: 20
@@ -139,7 +139,8 @@ units:
 armors:
   - type: HOSTILE_WALKER_MECH
     spriteSheet: HOSTILE_WALKER_MECH.PCK
-    #corpseBattle:
+    corpseBattle:
+      - STR_HOSTILE_MECH_CORPSE
     weight: 0
     frontArmor: 40
     sideArmor: 40
