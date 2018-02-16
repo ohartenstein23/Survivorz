@@ -166,14 +166,11 @@ ufos:
       name: UFO_140 # Using abductor
       mapDataSets:
         - BLANKS
-        - U_EXT02
-        - U_WALL02
-        - U_OPER2
-        - U_BITS
+        - SURVIVORZ_HOSTILE_CRAFT
       mapBlocks:
-        - name: UFO_140
+        - name: Mining_Scout
           width: 20
-          length: 20
+          length: 10
 
   - type: STR_MINING_CRAFT
     size: STR_LARGE
