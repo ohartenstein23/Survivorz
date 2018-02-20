@@ -37,21 +37,23 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_SCOUT
-        timer: 1440 # A day later, small mining ship takes a look around...
+        timer: 2880 # Two days later, small mining ship takes a look around...
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0 # ... with its escort
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320 # Follow up waves arrive in ~3 day increments
+        timer: 5760 # Follow up waves arrive in ~3 day increments
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
 
   - type: STR_MINING_ACTIVITY_PLAGUE
     points: 25
@@ -67,39 +69,43 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_SCOUT
-        timer: 1440
+        timer: 2880
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 5760
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 7200
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 7200
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
 
   - type: STR_MINING_ACTIVITY_WAR
     points: 25
@@ -115,39 +121,43 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_SCOUT
-        timer: 1440
+        timer: 2880
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 75 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 7200
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 75 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 7200
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
-        timer: 0
+        timer: 10
         hunterKillerPercentage: 75 # defend mining craft from attack
+        escort: true
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 4320
+        timer: 7200
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
         timer: 0
         hunterKillerPercentage: 75 # defend mining craft from attack
+        escort: true
 
 ufos:
 # *** Mining craft ***
@@ -258,7 +268,7 @@ ufoTrajectories:
       - [5, 0, 100] #only the 0 altitude matters
 
   - id: CRASH_CHECKOUT # Will be run by hovercraft, so stays low
-    groundTimer: 3600
+    groundTimer: 7200
     waypoints:
       - [5, 2, 100] # Start at base
       - [0, 2, 60] # Move to region
@@ -278,89 +288,43 @@ ufoTrajectories:
       - [5, 0, 100] # Land at base
 
   - id: MINING_SCOUT # Will be run by hovercraft, so stays low
-    groundTimer: 720 # 60 * 12 - number of 5s intervals
+    groundTimer: 3600 # number of seconds
     waypoints:
       - [5, 2, 100] # Start at base
-      - [0, 2, 60] # Move to region
-      - [8, 1, 30] # Move to sub-region
-      - [8, 1, 25] # Scout within region
+      - [0, 1, 60] # Move to region
+      - [8, 1, 30] # Scout within region
       - [8, 0, 30] # Land once
       - [8, 1, 30] # Check out another site
-      - [8, 1, 25]
       - [8, 0, 30]
       - [8, 1, 30] # Check out one more site
-      - [8, 1, 25]
       - [8, 0, 30]
-      - [0, 2, 60] # Take off again
-      - [5, 0, 100] # Land at base
+      - [0, 1, 60] # Take off again
+      - [5, 2, 100] # Land at base
 
-  - id: MINING_LANDING # Will be run by hovercraft, so stays low
-    groundTimer: 3000 # a little over 4 hours each landing
+  - id: MINING_LANDING # Will be run by hovercraft, so stays low1
+    groundTimer: 14400 # ~4 hours each landing
     waypoints:
       - [5, 2, 100] # Start at base
-      - [0, 2, 60] # Move to region
-      - [8, 1, 25] # Move to sub-region
-      - [8, 0, 30] # Land once
-      - [8, 1, 25] # Try another spot
-      - [8, 0, 30]
-      - [0, 2, 60] # Take off again
-      - [5, 0, 100] # Land at base
+      - [0, 1, 60] # Move to region
+      - [8, 0, 25] # Land once
+      - [8, 0, 25] # Try another spot
+      - [0, 1, 60] # Take off again
+      - [5, 2, 100] # Land at base
 
   - id: MINING_LANDING_FAMINE # Will be run by hovercraft, so stays low
-    groundTimer: 6000 # Needs to stay longer to get more materials, makes up for smaller waves
+    groundTimer: 28800 # Needs to stay longer to get more materials, makes up for smaller waves
     waypoints:
       - [5, 2, 100] # Start at base
-      - [0, 2, 60] # Move to region
-      - [8, 1, 25] # Move to sub-region
-      - [8, 0, 30] # Land once
-      - [8, 1, 25] # Try another spot
-      - [8, 0, 30]
-      - [0, 2, 60] # Take off again
-      - [5, 0, 100] # Land at base
+      - [0, 1, 60] # Move to region
+      - [8, 0, 25] # Land once
+      - [8, 0, 25] # Try another spot
+      - [0, 1, 60] # Take off again
+      - [5, 2, 100] # Land at base
 
-  - id: MINING_ESCORT # High-altitude monitoring, will be replaced with patrol HK behavior eventually
+  - id: MINING_ESCORT # The escorts follow the other craft, so no need for waypoints
     waypoints:
       - [5, 3, 100] # Start at base
-      - [0, 3, 70] # Move to region
-      - [0, 3, 60] # Just fly around the region for a while
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 60]
-      - [0, 3, 70] # Get ready to head out
-      - [5, 0, 100] # Land at base
+      - [5, 3, 100] # Land at base
 
 alienDeployments:
 #*** Deployments for the mining crews ***
@@ -701,8 +665,8 @@ missionScripts:
         QUADRANT_NW: 25
     firstMonth: 1
     lastMonth: -1
-    startDelay: 5670 # 3*60*24
-    randomDelay: 5670
+    startDelay: 5760 # 3*60*24
+    randomDelay: 5760
     useTable: false
 
 #*** Worldgen: Plague, Labels 101-200 ***
@@ -726,8 +690,8 @@ missionScripts:
         QUADRANT_NW: 25
     firstMonth: 1
     lastMonth: -1
-    startDelay: 5670 # 3*60*24
-    randomDelay: 5670
+    startDelay: 5760 # 3*60*24
+    randomDelay: 5760
     useTable: false
 
 #*** Worldgen: War, Labels 201-300 ***
@@ -751,6 +715,6 @@ missionScripts:
         QUADRANT_NW: 25
     firstMonth: 1
     lastMonth: -1
-    startDelay: 5670 # 3*60*24
-    randomDelay: 5670
+    startDelay: 5760 # 3*60*24
+    randomDelay: 5760
     useTable: false
