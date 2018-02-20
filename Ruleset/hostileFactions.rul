@@ -157,7 +157,7 @@ armors:
       - 1.0
       - 1.0
       - 0.0
-    loftempSet: 4
+    loftempsSet: [ 3 ]
 
   - type: SECTOID_ARMOR0
     corpseBattle:
@@ -741,7 +741,7 @@ extraSprites:
       596: Resources/Handobs/hostile_mining_tool.png
 
   - type: HOSTILE_WALKER_MECH.PCK
-    height: 320
+    height: 360
     width: 1024
     subX: 32
     subY: 40
