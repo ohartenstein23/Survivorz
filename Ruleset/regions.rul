@@ -1,8 +1,9 @@
 # *** organization for regions ***
-# missionZone 5 needs to be the enter/exit point for UFOs - the location of the hostile alien main base
+# missionZone 5 needs to be the enter/exit point for UFOs - set at poles for atmospheric entry/exit
 # missionZone 3 will be for terror type missions, or 'cities' on the map
 # missionZone 0 will be for the entire region, to be randomly over all the region
-# missionZones 1, 2, and 4 are reserved for zones of interest
+# missionZone 1 will be for hostile main bases
+# missionZones 2 and 4 are reserved for zones of interest (2 for outposts?)
 # missionZones 6 and above will split the region into smaller sections for more specific UFO patrols
 
 regions:
@@ -11,7 +12,7 @@ regions:
     areas: &quadrantSE
       - [0, 179.875, 0, 90]
     regionWeight: 25
-    missionWeights: ~
+    #missionWeights: ~
     missionZones:
       - &textureCenters1
         - [30.6463, 30.6463, 77.2907, 77.2907]
@@ -78,7 +79,8 @@ regions:
         - [149.7143, 149.7143, 11.1503, 11.1503]
         - [148.2363, 148.2363, 7.5507, 7.5507]
         - [161.1203, 161.1203, 3.4463, 3.4463]
-      - []
+      - # Main base
+        - [69.085, 69.085, 31.043, 31.043]
       - []
       - [] # Cities
       - []
@@ -157,7 +159,7 @@ regions:
     areas: &quadrantSW
       - [180, 359.875, 0, 90]
     regionWeight: 25
-    missionWeights: ~
+    #missionWeights: ~
     missionZones:
       - &textureCenters2
         - [214.7747, 214.7747, 60.303, 60.303]
@@ -207,7 +209,8 @@ regions:
         - [219.9497, 219.9497, 3.2297, 3.2297]
         - [231.5713, 231.5713, 3.6543, 3.6543]
         - [247.4283, 247.4283, 2.809, 2.809]
-      - []
+      - #Main base
+        - [213.503, 213.503, 60.081, 60.081]
       - []
       - [] # Cities
       - []
@@ -269,7 +272,7 @@ regions:
     areas: &quadrantNE
       - [0, 179.875, -90, 0]
     regionWeight: 25
-    missionWeights: ~
+    #missionWeights: ~
     missionZones:
       - &textureCenters3
         - [89.529, 89.529, -1.1113, -1.1113]
@@ -351,7 +354,8 @@ regions:
         - [142.0467, 142.0467, -78.7163, -78.7163]
         - [154.3723, 154.3723, -84.5543, -84.5543]
         - [169.5063, 169.5063, -74.8233, -74.8233]
-      - []
+      - # Main base
+        - [78.5103, 78.5103, -57.562, -57.562]
       - []
       - [] # Cities
       - []
@@ -445,7 +449,7 @@ regions:
     areas: &quadrantNW
       - [180, 359.875, -90, 0]
     regionWeight: 25
-    missionWeights: ~
+    #missionWeights: ~
     missionZones:
       - &textureCenters4
         - [186.335, 186.335, -1.3657, -1.3657]
@@ -509,7 +513,8 @@ regions:
         - [277.352, 277.352, -84.4343, -84.4343]
         - [290.3783, 290.3783, -79.251, -79.251]
         - [328.6127, 328.6127, -86.058, -86.058]
-      - []
+      - # Main base
+        - [238.5613, 238.5613, -28.748, -28.748]
       - []
       - [] # Cities
       - []

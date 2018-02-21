@@ -1,4 +1,15 @@
 alienMissions:
+#*** Missions spawned by player triggers and modding utility stuff ***
+  - type: STR_DUMMY_MISSION
+    raceWeights:
+      0:
+        STR_NATURE: 100
+    waves:
+      - ufo: dummy
+        count: 1
+        trajectory: CA_SPAWN
+        timer: 0
+
   - type: STR_CRASH_INVESTIGATION # First thing aliens do is check your crash site out
     points: 0
     objective: 4
@@ -23,8 +34,55 @@ alienMissions:
         trajectory: CRASH_CHECKOUT
         timer: 60 # Flies along with the previous one
 
-  - type: STR_MINING_ACTIVITY_FAMINE # Monthly activity, meant to be a source of player income and points
-    points: 25
+#*** Missions that create bases/outposts ***
+  - type: STR_BASE_CREATION_FAMINE # Bases should be created instantly at the beginning of month 1 based on worldgen
+    points: 0
+    objective: 2 # objective for creating a base
+    siteType: STR_HOSTILE_BASE_FAMINE # deployment for base
+    spawnZone: 1 # Mission zone for the sites
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: dummy
+        count: 1
+        trajectory: CA_SPAWN
+        timer: 0
+        objective: true
+
+  - type: STR_BASE_CREATION_PLAGUE # Bases should be created instantly at the beginning of month 1 based on worldgen
+    points: 0
+    objective: 2 # objective for creating a base
+    siteType: STR_HOSTILE_BASE_PLAGUE # deployment for base
+    spawnZone: 1 # Mission zone for the sites
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: dummy
+        count: 1
+        trajectory: CA_SPAWN
+        timer: 0
+        objective: true
+
+  - type: STR_BASE_CREATION_WAR
+    points: 0
+    objective: 2 # objective for creating a base
+    siteType: STR_HOSTILE_BASE_WAR # deployment for base
+    spawnZone: 1 # Mission zone for the sites
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    waves:
+      - ufo: dummy
+        count: 1
+        trajectory: CA_SPAWN
+        timer: 0
+        objective: true
+
+#*** Missions that spawn from bases/outposts ***
+  - type: STR_MINING_ACTIVITY_FAMINE
+    points: 300
     retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
@@ -37,7 +95,7 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_SCOUT
-        timer: 2880 # Two days later, small mining ship takes a look around...
+        timer: 2880 # 1-3 days later, small mining ship takes a look around...
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
@@ -47,7 +105,27 @@ alienMissions:
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 5760 # Follow up waves arrive in ~3 day increments
+        timer: 5760 # First mining wave appears 2-6 days later
+      - ufo: STR_MILITARY_GUNSHIP
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
+      - ufo: STR_MINING_CRAFT
+        count: 1
+        trajectory: MINING_LANDING
+        timer: 14400 # Follow up waves arrive in 5-15 day increments
+      - ufo: STR_MILITARY_GUNSHIP
+        count: 1
+        trajectory: MINING_ESCORT
+        timer: 0
+        hunterKillerPercentage: 100 # defend mining craft from attack
+        escort: true
+      - ufo: STR_MINING_CRAFT
+        count: 1
+        trajectory: MINING_LANDING
+        timer: 14400 # Follow up waves arrive in 5-15 day increments
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
@@ -56,7 +134,7 @@ alienMissions:
         escort: true
 
   - type: STR_MINING_ACTIVITY_PLAGUE
-    points: 25
+    points: 300
     retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
@@ -89,7 +167,7 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 7200
+        timer: 14400
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
@@ -99,7 +177,7 @@ alienMissions:
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 7200
+        timer: 14400
       - ufo: STR_MILITARY_GUNSHIP
         count: 1
         trajectory: MINING_ESCORT
@@ -108,7 +186,7 @@ alienMissions:
         escort: true
 
   - type: STR_MINING_ACTIVITY_WAR
-    points: 25
+    points: 300
     retaliationOdds: 0 # Until we have a retal mission
     raceWeights:
       0:
@@ -131,7 +209,7 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 7200
+        timer: 5760
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
@@ -141,7 +219,7 @@ alienMissions:
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: MINING_LANDING
-        timer: 7200
+        timer: 14400
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
@@ -151,7 +229,7 @@ alienMissions:
       - ufo: STR_MINING_CRAFT
         count: 1
         trajectory: MINING_LANDING
-        timer: 7200
+        timer: 14400
       - ufo: STR_MILITARY_GUNSHIP
         count: 2
         trajectory: MINING_ESCORT
@@ -181,6 +259,7 @@ ufos:
         - name: Mining_Scout
           width: 20
           length: 10
+    missionScore: 0
 
   - type: STR_MINING_CRAFT
     size: STR_LARGE
@@ -207,6 +286,7 @@ ufos:
     raceBonus:
       STR_MINING_CREW:
         missionCustomDeploy: STR_MINING_BASE_INVESTIGATION
+    missionScore: 0
 
 # *** Military craft ***
   - type: STR_MILITARY_GUNSHIP
@@ -232,8 +312,9 @@ ufos:
         - name: UFO_110
           width: 10
           length: 10
-    missionScore: 2
+    missionScore: 1
     hitBonus: 20
+    huntSpeed: 80
 
   - type: STR_MILITARY_TRANSPORT
     size: STR_LARGE
@@ -258,7 +339,7 @@ ufos:
         - name: UFO_150
           width: 30
           length: 20
-    missionScore: 2
+    missionScore: 1
 
 ufoTrajectories:
   - id: __RETALIATION_ASSAULT_RUN
@@ -270,7 +351,7 @@ ufoTrajectories:
   - id: CRASH_CHECKOUT # Will be run by hovercraft, so stays low
     groundTimer: 7200
     waypoints:
-      - [5, 2, 100] # Start at base
+      - [5, 2, 100]
       - [0, 2, 60] # Move to region
       - [8, 2, 25] # Move to sub-region
       - [8, 0, 30] # Land in sub-region
@@ -285,46 +366,41 @@ ufoTrajectories:
       - [6, 2, 25] # Move in sub-region
       - [6, 0, 30] # Land in sub-region
       - [0, 2, 60] # Take off
-      - [5, 0, 100] # Land at base
+      - [5, 2, 100]
 
   - id: MINING_SCOUT # Will be run by hovercraft, so stays low
-    groundTimer: 3600 # number of seconds
+    groundTimer: 1
     waypoints:
-      - [5, 2, 100] # Start at base
+      - [1, 2, 100] # Start at base
       - [0, 1, 60] # Move to region
-      - [8, 1, 30] # Scout within region
-      - [8, 0, 30] # Land once
-      - [8, 1, 30] # Check out another site
-      - [8, 0, 30]
-      - [8, 1, 30] # Check out one more site
-      - [8, 0, 30]
-      - [0, 1, 60] # Take off again
-      - [5, 2, 100] # Land at base
+      - [8, 1, 25] # Scout a few spots
+      - [8, 1, 25]
+      - [8, 1, 25]
+      - [8, 1, 25]
+      - [0, 2, 60] # Start to head out
+      - [1, 2, 100] # Land at base
 
-  - id: MINING_LANDING # Will be run by hovercraft, so stays low1
-    groundTimer: 14400 # ~4 hours each landing
+  - id: MINING_LANDING # Will be run by hovercraft, so stays low
+    groundTimer: 69120 # ~4 days
     waypoints:
-      - [5, 2, 100] # Start at base
-      - [0, 1, 60] # Move to region
-      - [8, 0, 25] # Land once
-      - [8, 0, 25] # Try another spot
-      - [0, 1, 60] # Take off again
-      - [5, 2, 100] # Land at base
+      - [1, 1, 100] # Start at base
+      - [0, 1, 100] # Move to region
+      - [8, 0, 100] # Land once
+      - [1, 1, 100] # Land at base
 
   - id: MINING_LANDING_FAMINE # Will be run by hovercraft, so stays low
-    groundTimer: 28800 # Needs to stay longer to get more materials, makes up for smaller waves
+    groundTimer: 34560 # Stays a shorter amount of time since not many resources, but tries two places
     waypoints:
-      - [5, 2, 100] # Start at base
-      - [0, 1, 60] # Move to region
-      - [8, 0, 25] # Land once
-      - [8, 0, 25] # Try another spot
-      - [0, 1, 60] # Take off again
-      - [5, 2, 100] # Land at base
+      - [1, 1, 100] # Start at base
+      - [0, 1, 100] # Move to region
+      - [8, 0, 100] # Land once
+      - [8, 0, 100] # Try another spot
+      - [1, 1, 100] # Land at base
 
   - id: MINING_ESCORT # The escorts follow the other craft, so no need for waypoints
     waypoints:
-      - [5, 3, 100] # Start at base
-      - [5, 3, 100] # Land at base
+      - [1, 3, 100] # Start at base
+      - [1, 3, 100] # Land at base
 
 alienDeployments:
 #*** Deployments for the mining crews ***
@@ -595,7 +671,6 @@ alienDeployments:
         highQty: 6
         dQty: 2
         percentageOutsideUfo: 60
-        # Needs more weapon types here, show off the aliens' power!
         itemSets:
           -
             - STR_HOSTILE_HEAVY_CANNON
@@ -622,6 +697,145 @@ alienDeployments:
     length: 60
     height: 8
 
+#*** Base/Outpost deployments ***
+  - type: STR_HOSTILE_BASE_FAMINE
+    data: &mainBaseDeploymentData
+      - alienRank: 4 # STR_HOSTILE_OVERSEER, replace with engineer-type later
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 0
+        itemSets:
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+      - alienRank: 5 # STR_HOSTILE_OVERSEER, acting as a foot soldier
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 0
+        itemSets:
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_CARBINE
+            - STR_HOSTILE_CARBINE_CLIP
+            - STR_HOSTILE_CARBINE_CLIP
+          -
+            - STR_HOSTILE_LAUNCHER
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_GASBOMB
+            - STR_HOSTILE_LAUNCHER_STUNBOMB
+      - alienRank: 7 # STR_HOSTILE_MECHANIZED
+        lowQty: 4
+        highQty: 6
+        dQty: 2
+        percentageOutsideUfo: 0
+        itemSets:
+          -
+            - STR_HOSTILE_HEAVY_CANNON
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+          -
+            - STR_HOSTILE_HEAVY_CANNON
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+            - STR_HOSTILE_HEAVY_CANNON_CLIP
+          -
+            - STR_HOSTILE_AUTOCANNON
+            - STR_HOSTILE_AUTOCANNON_CLIP
+            - STR_HOSTILE_AUTOCANNON_CLIP
+      - alienRank: 8 # STR_HOSTILE_MECHANIZED_HOVER
+        lowQty: 2
+        highQty: 3
+        dQty: 1
+        percentageOutsideUfo: 0
+        itemSets:
+          - []
+          - []
+          - []
+    width: 60
+    length: 60
+    height: 8
+    #terrains:
+    #  - UBASE
+    #shade: 15
+    #script: ALIENBASE
+    #briefing:
+    #  textOffset: -16
+    #  background: BACK01.SCR
+    #  showTarget: false
+    #objectiveType: 3
+    markerName: STR_HOSTILE_BASE
+    markerIcon: 7
+    genMission:
+      STR_MINING_ACTIVITY_FAMINE: 100
+    genMissionFreq: 1
+    alienBase: true    # this is only to tell new battle mode what to do with this deployment
+    objectiveComplete: [STR_ALIEN_BASE_CONTROL_DESTROYED, 500]
+    objectivePopup: STR_CONTROL_CENTER_DESTROYED
+    points: 0 # Daily points for bases
+
+  - type: STR_HOSTILE_BASE_PLAGUE
+    data: *mainBaseDeploymentData
+    width: 60
+    length: 60
+    height: 8
+    #terrains:
+    #  - UBASE
+    #shade: 15
+    #script: ALIENBASE
+    #briefing:
+    #  textOffset: -16
+    #  background: BACK01.SCR
+    #  showTarget: false
+    #objectiveType: 3
+    markerName: STR_HOSTILE_BASE
+    markerIcon: 7
+    genMission:
+      STR_MINING_ACTIVITY_PLAGUE: 100
+    genMissionFreq: 1
+    alienBase: true    # this is only to tell new battle mode what to do with this deployment
+    objectiveComplete: [STR_ALIEN_BASE_CONTROL_DESTROYED, 500]
+    objectivePopup: STR_CONTROL_CENTER_DESTROYED
+    points: 0 # Daily points for bases
+
+  - type: STR_HOSTILE_BASE_WAR
+    data: *mainBaseDeploymentData
+    width: 60
+    length: 60
+    height: 8
+    #terrains:
+    #  - UBASE
+    #shade: 15
+    #script: ALIENBASE
+    #briefing:
+    #  textOffset: -16
+    #  background: BACK01.SCR
+    #  showTarget: false
+    #objectiveType: 3
+    markerName: STR_HOSTILE_BASE
+    markerIcon: 7
+    genMission:
+      STR_MINING_ACTIVITY_WAR: 100
+    genMissionFreq: 1
+    alienBase: true    # this is only to tell new battle mode what to do with this deployment
+    objectiveComplete: [STR_ALIEN_BASE_CONTROL_DESTROYED, 500]
+    objectivePopup: STR_CONTROL_CENTER_DESTROYED
+    points: 0 # Daily points for bases
+
   - type: STR_BASE_DEFENSE
     shade: -1
     maxShade: 10
@@ -644,77 +858,225 @@ missionScripts:
     startDelay: 1800
     randomDelay: 2520
 
-#*** Worldgen: Famine, Labels 1-100 ***
-# Monthly mining activity
-  - type: miningActivityFamine
+  - type: baseCreationLimiter
     label: 1
+    executionOdds: 0 #80
+    firstMonth: 2
+    missionWeights:
+      0:
+        STR_DUMMY_MISSION: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 25
+        QUADRANT_SW: 25
+        QUADRANT_NE: 25
+        QUADRANT_NW: 25
+    startDelay: 10000
+    useTable: true
+
+#*** Worldgen: Famine, Labels 100-199 ***
+  - type: initialBaseDeploymentFamineSE
+    label: 100
     researchTriggers:
       STR_WORLDGEN_FAMINE: true
-    executionOdds: 100
     missionWeights:
       0:
-        STR_MINING_ACTIVITY_FAMINE: 100
-    raceWeights:
-      0:
-        STR_MINING_CREW: 100
+        STR_BASE_CREATION_FAMINE: 100
     regionWeights:
       0:
-        QUADRANT_SE: 25
-        QUADRANT_SW: 25
-        QUADRANT_NE: 25
-        QUADRANT_NW: 25
+        QUADRANT_SE: 100
     firstMonth: 1
-    lastMonth: -1
-    startDelay: 5760 # 3*60*24
-    randomDelay: 5760
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
     useTable: false
 
-#*** Worldgen: Plague, Labels 101-200 ***
-# Monthly mining activity
-  - type: miningActivityPlague
+  - type: initialBaseDeploymentFamineSW
     label: 101
     researchTriggers:
-      STR_WORLDGEN_PLAGUE: true
-    executionOdds: 100
+      STR_WORLDGEN_FAMINE: true
     missionWeights:
       0:
-        STR_MINING_ACTIVITY_PLAGUE: 100
-    raceWeights:
-      0:
-        STR_MINING_CREW: 100
+        STR_BASE_CREATION_FAMINE: 100
     regionWeights:
       0:
-        QUADRANT_SE: 25
-        QUADRANT_SW: 25
-        QUADRANT_NE: 25
-        QUADRANT_NW: 25
+        QUADRANT_SW: 100
     firstMonth: 1
-    lastMonth: -1
-    startDelay: 5760 # 3*60*24
-    randomDelay: 5760
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
     useTable: false
 
-#*** Worldgen: War, Labels 201-300 ***
-# Monthly mining activity
-  - type: miningActivityWar
-    label: 201
+  - type: initialBaseDeploymentFamineNE
+    label: 102
     researchTriggers:
-      STR_WORLDGEN_WAR: true
-    executionOdds: 100
+      STR_WORLDGEN_FAMINE: true
     missionWeights:
       0:
-        STR_MINING_ACTIVITY_WAR: 100
-    raceWeights:
-      0:
-        STR_MINING_CREW: 100
+        STR_BASE_CREATION_FAMINE: 100
     regionWeights:
       0:
-        QUADRANT_SE: 25
-        QUADRANT_SW: 25
-        QUADRANT_NE: 25
-        QUADRANT_NW: 25
+        QUADRANT_NE: 100
     firstMonth: 1
-    lastMonth: -1
-    startDelay: 5760 # 3*60*24
-    randomDelay: 5760
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentFamineNW
+    label: 103
+    researchTriggers:
+      STR_WORLDGEN_FAMINE: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_FAMINE: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+#*** Worldgen: Plague, Labels 200-299 ***
+  - type: initialBaseDeploymentPlagueSE
+    label: 200
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_PLAGUE: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentPlagueSW
+    label: 201
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_PLAGUE: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentPlagueNE
+    label: 202
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_PLAGUE: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentPlagueNW
+    label: 203
+    researchTriggers:
+      STR_WORLDGEN_PLAGUE: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_PLAGUE: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+#*** Worldgen: War, Labels 300-399 ***
+  - type: initialBaseDeploymentWarSE
+    label: 300
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_WAR: 100
+    regionWeights:
+      0:
+        QUADRANT_SE: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentWarSW
+    label: 301
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_WAR: 100
+    regionWeights:
+      0:
+        QUADRANT_SW: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentWarNE
+    label: 302
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_WAR: 100
+    regionWeights:
+      0:
+        QUADRANT_NE: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
+    useTable: false
+
+  - type: initialBaseDeploymentWarNW
+    label: 303
+    researchTriggers:
+      STR_WORLDGEN_WAR: true
+    missionWeights:
+      0:
+        STR_BASE_CREATION_WAR: 100
+    regionWeights:
+      0:
+        QUADRANT_NW: 100
+    firstMonth: 1
+    lastMonth: 1
+    raceWeights:
+      0:
+        STR_MILITARY_CREW: 100
     useTable: false

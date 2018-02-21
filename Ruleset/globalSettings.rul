@@ -16,7 +16,7 @@ startingTime:
   month: 1
   year: 0
 defeatScore: -100000
-defeatFunds: -100000
+defeatFunds: -1
 lighting:
   enhanced: 7
 fixedUserOptions:
