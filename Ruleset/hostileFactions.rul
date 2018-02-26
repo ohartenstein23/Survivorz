@@ -141,7 +141,7 @@ armors:
     spriteSheet: HOSTILE_WALKER_MECH.PCK
     corpseBattle:
       - STR_HOSTILE_MECH_CORPSE
-    weight: 0
+    weight: -100 #0
     frontArmor: 40
     sideArmor: 40
     rearArmor: 40
@@ -158,6 +158,25 @@ armors:
       - 1.0
       - 0.0
     loftempsSet: [ 3 ]
+    scripts:
+      selectUnitSprite: |
+        var int temp;
+
+        unit.isAiming temp;
+        if and neq temp 0 eq blit_part blit_legs;
+
+          unit.isKneeled temp;
+          if eq temp 0;
+            add sprite_index 8; # from standing legs to 'kneeling' legs
+          end;
+        end;
+
+        add sprite_index sprite_offset;
+        return sprite_index;
+    allowsKneeling: false
+    storeItem: STR_NONE
+    spriteInv: DRONE_FLYING
+    forcedTorso: 1
 
   - type: SECTOID_ARMOR0
     corpseBattle:
