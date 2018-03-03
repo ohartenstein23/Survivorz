@@ -159,6 +159,18 @@ facilities:
     requiresBaseFunc:
       - SMALL_GENERATOR
 
+terrains:
+  - name: COLONY_FACILITIES
+    mapDataSets:
+      - BLANKS
+      - SURVIVORZ_CRAFT
+    script: XBASE
+    mapBlocks:
+      - name: Transponder
+        width: 10
+        length: 10
+        height: 5
+
 items:
   - type: STR_PREFAB_FOUNDATION
     size: 2.0
