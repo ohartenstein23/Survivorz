@@ -300,16 +300,14 @@ ufos:
     reload: 32
     breakOffTime: 500 # Keeps tailing for a while
     battlescapeTerrainData:
-      name: UFO_110 # Using medium scout for now, needs new, larger map
+      name: Gunship
       mapDataSets:
         - BLANKS
-        - U_EXT02
-        - U_WALL02
-        - U_BITS
+        - SURVIVORZ_HOSTILE_CRAFT
       mapBlocks:
-        - name: UFO_110
+        - name: Gunship
           width: 10
-          length: 10
+          length: 20
     missionScore: 1
     hitBonus: 20
     huntSpeed: 80
