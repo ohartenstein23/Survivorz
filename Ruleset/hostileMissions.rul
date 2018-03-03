@@ -251,7 +251,7 @@ ufos:
     reload: 0 # no gun
     breakOffTime: 30 # tries to break off quickly
     battlescapeTerrainData:
-      name: UFO_140 # Using abductor
+      name: Mining_Scout
       mapDataSets:
         - BLANKS
         - SURVIVORZ_HOSTILE_CRAFT
@@ -273,14 +273,12 @@ ufos:
     reload: 0 # no gun
     breakOffTime: 30 # tries to break off quickly
     battlescapeTerrainData:
-      name: UFO_120 # Large scout for now
+      name: Mining_Craft
       mapDataSets:
         - BLANKS
-        - U_EXT02
-        - U_WALL02
-        - U_BITS
+        - SURVIVORZ_HOSTILE_CRAFT
       mapBlocks:
-        - name: UFO_120
+        - name: Mining_Craft
           width: 20
           length: 20
     raceBonus:
