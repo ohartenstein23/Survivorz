@@ -100,8 +100,13 @@ facilities:
     monthlyCost: 5000
     verticalLevels:
     - type: ground
+      size: [2, 2, 0]
+      terrain: COLONY_FACILITIES
+      blocks: 1
+    - type: middle
       size: [2, 2, 8]
-      terrain: baseTerrain
+      terrain: COLONY_CROPS
+      blocks: 0
     requiresBaseFunc:
       - SMALL_GENERATOR
 
@@ -132,8 +137,13 @@ facilities:
     monthlyCost: 5000
     verticalLevels:
     - type: ground
+      size: [2, 2, 0]
+      terrain: COLONY_FACILITIES
+      blocks: 1
+    - type: middle
       size: [2, 2, 8]
-      terrain: baseTerrain
+      terrain: COLONY_CROPS
+      blocks: 1
     requiresBaseFunc:
       - SMALL_GENERATOR
 
@@ -154,8 +164,13 @@ facilities:
     monthlyCost: 5000
     verticalLevels:
     - type: ground
+      size: [2, 2, 0]
+      terrain: COLONY_FACILITIES
+      blocks: 1
+    - type: middle
       size: [2, 2, 8]
-      terrain: baseTerrain
+      terrain: COLONY_CROPS
+      blocks: 2
     requiresBaseFunc:
       - SMALL_GENERATOR
 
@@ -164,12 +179,36 @@ terrains:
     mapDataSets:
       - BLANKS
       - SURVIVORZ_CRAFT
+      - SURVIVORZ_COLONY_FACILITIES
     script: XBASE
     mapBlocks:
       - name: Transponder
         width: 10
         length: 10
         height: 5
+      - name: Agritorium
+        width: 20
+        length: 20
+        height: 4
+
+  - name: COLONY_CROPS
+    mapDataSets:
+      - BLANKS
+      - CULTIVAT
+    script: XBASE
+    mapBlocks:
+      - name: Farm Empty
+        width: 20
+        length: 20
+        height: 1
+      - name: Farm Growing Crops
+        width: 20
+        length: 20
+        height: 1
+      - name: Farm Basic Crops
+        width: 20
+        length: 20
+        height: 1
 
 items:
   - type: STR_PREFAB_FOUNDATION
