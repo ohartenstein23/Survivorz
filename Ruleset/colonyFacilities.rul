@@ -41,7 +41,8 @@ facilities:
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
-      terrain: baseTerrain
+      terrain: COLONY_FACILITIES
+      blocks: 1
     requiresBaseFunc:
       - SMALL_GENERATOR
 
@@ -71,7 +72,8 @@ facilities:
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
-      terrain: baseTerrain
+      terrain: COLONY_FACILITIES
+      blocks: 2
     requiresBaseFunc:
       - SMALL_GENERATOR
 
@@ -102,7 +104,7 @@ facilities:
     - type: ground
       size: [2, 2, 0]
       terrain: COLONY_FACILITIES
-      blocks: 1
+      blocks: 3
     - type: middle
       size: [2, 2, 8]
       terrain: COLONY_CROPS
@@ -139,7 +141,7 @@ facilities:
     - type: ground
       size: [2, 2, 0]
       terrain: COLONY_FACILITIES
-      blocks: 1
+      blocks: 3
     - type: middle
       size: [2, 2, 8]
       terrain: COLONY_CROPS
@@ -166,7 +168,7 @@ facilities:
     - type: ground
       size: [2, 2, 0]
       terrain: COLONY_FACILITIES
-      blocks: 1
+      blocks: 3
     - type: middle
       size: [2, 2, 8]
       terrain: COLONY_CROPS
@@ -186,6 +188,14 @@ terrains:
         width: 10
         length: 10
         height: 5
+      - name: Landing Pad
+        width: 10
+        length: 10
+        height: 2
+      - name: Guard Tower
+        width: 10
+        length: 10
+        height: 4
       - name: Agritorium
         width: 20
         length: 20
