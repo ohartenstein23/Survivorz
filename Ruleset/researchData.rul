@@ -355,7 +355,7 @@ extraStrings:
 
       STR_POST: "Power-On Systems Test"
       STR_POST_ITEM: "Power-On Systems Test"
-      STR_POST_PEDIA: "ESCSBIOS v.0.4.2{NEWLINE}BIOS Date: 0000.00.00 00:00:00 (System Hard Reset){NEWLINE}{NEWLINE}BIOS System Hard Reset Recovery:{NEWLINE}>:: Primary processor banks: Online{NEWLINE}>:: Initializing auxiliary processor banks: Complete{NEWLINE}>:: Initializing primary storage units: Failed - Corrupted sectors{NEWLINE}>:: Initializing auxiliary storage units: Complete{NEWLINE}>:: Scanning shipboard systems: Complete{NEWLINE}>::    Extensive damage to multiple systems logged{NEWLINE}>:: Scanning environmental surroundings: Complete{NEWLINE}>::    Scan data logged."
+      STR_POST_PEDIA: "ESCSBIOS v.0.5.0{NEWLINE}BIOS Date: 0000.00.00 00:00:00 (System Hard Reset){NEWLINE}{NEWLINE}BIOS System Hard Reset Recovery:{NEWLINE}>:: Primary processor banks: Online{NEWLINE}>:: Initializing auxiliary processor banks: Complete{NEWLINE}>:: Initializing primary storage units: Failed - Corrupted sectors{NEWLINE}>:: Initializing auxiliary storage units: Complete{NEWLINE}>:: Scanning shipboard systems: Complete{NEWLINE}>::    Extensive damage to multiple systems logged{NEWLINE}>:: Scanning environmental surroundings: Complete{NEWLINE}>::    Scan data logged."
 
       STR_DATABASE: "Database"
 
