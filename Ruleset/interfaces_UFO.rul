@@ -1119,6 +1119,22 @@ interfaces:
         border: 218  # blue
       - id: button
         color: 246   # purple
+  - type: globalResearchMenu
+    palette: PAL_BASESCAPE
+    elements:
+      - id: palette
+        color: 1     # burgundy
+      - id: window
+        color: 218   # blue
+      - id: text
+        color: 218   # blue
+        color2: 208  # white
+      - id: list
+        color: 246   # purple
+        color2: 208  # white
+        border: 218  # blue
+      - id: button
+        color: 246   # purple
   - type: selectNewResearch
     parent: researchMenu
     elements:
@@ -1845,3 +1861,64 @@ interfaces:
         color2: 244  # light blue
       - id: ammoColor
         color: 32    # red
+      #- id: ammoColorDTNone
+      #  color: 32    # red
+      #- id: ammoColorDTAP
+      #  color: 32    # red
+      #- id: ammoColorDTIN
+      #  color: 32    # red
+      #- id: ammoColorDTHE
+      #  color: 32    # red
+      #- id: ammoColorDTLaser
+      #  color: 32    # red
+      #- id: ammoColorDTPlasma
+      #  color: 32    # red
+      #- id: ammoColorDTStun
+      #  color: 32    # red
+      #- id: ammoColorDTMelee
+      #  color: 32    # red
+      #- id: ammoColorDTAcid
+      #  color: 32    # red
+      #- id: ammoColorDTSmoke
+      #  color: 32    # red
+      #- id: ammoColorDT10
+      #  color: 32    # red
+      #- id: ammoColorDT11
+      #  color: 32    # red
+      #- id: ammoColorDT12
+      #  color: 32    # red
+      #- id: ammoColorDT13
+      #  color: 32    # red
+      #- id: ammoColorDT14
+      #  color: 32    # red
+      #- id: ammoColorDT15
+      #  color: 32    # red
+      #- id: ammoColorDT16
+      #  color: 32    # red
+      #- id: ammoColorDT17
+      #  color: 32    # red
+      #- id: ammoColorDT18
+      #  color: 32    # red
+      #- id: ammoColorDT19
+      #  color: 32    # red
+  - type: statsForNerds
+    palette: PAL_BASESCAPE
+    elements:
+      - id: palette
+        color: 1     # burgundy
+      - id: window
+        color: 218   # blue
+      - id: text
+        color: 218   # blue
+        color2: 208  # white
+      - id: list
+        color: 246   # purple
+        color2: 241  # pink
+        border: 218  # blue
+      - id: listExtended
+        color: 208   # white
+        color2: 213  # gold
+      - id: button
+        color: 246   # purple
+      - id: comboBox
+        color: 241   # pink
