@@ -1,0 +1,223 @@
+armors:
+  - type: STR_GUNSHIP_ARMOR_UC
+    tags:
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50
+      ARMOR_ENERGY_SHIELD_DECAY: 50
+
+extended:
+  tags:
+    BattleUnit:
+#*** Tags for handling recoloring of units ***
+      UNIT_RECOLOR_DESYNC: int
+      UNIT_RECOLOR_COLOR: int
+      UNIT_RECOLOR_BRIGHTNESS: int
+      UNIT_RECOLOR_START_FRAME: int
+      UNIT_RECOLOR_FRAME_LENGTH: int
+
+#*** Tags for handling energy shields on units ***
+      UNIT_ENERGY_SHIELD_HP: int
+      UNIT_ENERGY_SHIELD_DECAY: int
+
+    RuleArmor:
+#*** Tags for energy shield on armor ***
+      ARMOR_ENERGY_SHIELD_HP_PER_TURN: int
+      ARMOR_ENERGY_SHIELD_DECAY: int
+
+  scripts:
+    createUnit:
+#*** Sets the frequency and offset for periodic unit recolors for buffs and debuffs ***
+      - offset: 1
+        code: |
+          var int recolorPeriod;
+          var int desync;
+
+          set recolorPeriod 32; # units flash every 32 frames
+          unit.getId desync;
+          offsetmod desync 11 0 recolorPeriod; # creates a desynchronization between unit flashes
+          unit.setTag Tag.UNIT_RECOLOR_DESYNC desync;
+
+          return;
+
+#*** Sets energy shields from unit armors at the beginning of the battlescape ***
+      - offset: 2
+        code: |
+          var ptr RuleArmor armorRuleset;
+          var int shieldAdded;
+
+          unit.getRuleArmor armorRuleset;
+          armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+
+          if eq shieldAdded 0;
+
+            return;
+
+          end;
+
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldAdded;
+
+          return;
+
+    newTurnUnit:
+#*** Handles decay of energy shields and shield HP added by armors
+      - offset: 1
+        code: |
+          var ptr RuleArmor armorRuleset;
+          var int shieldHP;
+          var int shieldDecay;
+          var int shieldAdded;
+
+          # Check armor first for decay parameter
+          unit.getRuleArmor armorRuleset;
+          armorRuleset.getTag shieldDecay Tag.ARMOR_ENERGY_SHIELD_DECAY;
+
+          # Next comes decay set by an item
+          if eq shieldDecay 0;
+
+            unit.getTag shieldDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
+
+          end;
+
+          # Apply the decay, treating it like the percent lost per turn
+          unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
+          sub shieldDecay 100;
+          mul shieldDecay -1;
+          muldiv shieldHP shieldDecay 100;
+
+          # Now add the per-turn amount from armor, to be balanced by decay parameter
+          armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
+          add shieldHP shieldAdded;
+
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+
+          return;
+
+    recolorUnitSprite:
+#*** Handles periodic recolors due to buffs/debuffs on units ***
+      - offset: 1
+        code: |
+          var int frame;
+          var int frameLength;
+          var int recolorPeriod;
+          var int desync;
+          var int color;
+          var int newShade;
+          var int temp;
+
+          # Check to make sure this unit isn't set to be recolored by a hit first
+          unit.getTag frame Tag.UNIT_RECOLOR_START_FRAME;
+          unit.getTag frameLength Tag.UNIT_RECOLOR_FRAME_LENGTH;
+
+          if neq frame 0;
+
+            set temp anim_frame;
+            sub temp frame;
+
+            if lt temp frameLength;
+
+              return new_pixel;
+
+            end;
+
+          end;
+
+          set recolorPeriod 32;
+          set frameLength 4;
+
+          unit.getTag desync Tag.UNIT_RECOLOR_DESYNC;
+          set frame anim_frame;
+          add frame desync;
+          mod frame recolorPeriod;
+
+          # First, a blue flash if the unit has an energy shield
+          unit.getTag temp Tag.UNIT_ENERGY_SHIELD_HP;
+          set color COLOR_X1_BLUE1;
+          if and neq temp 0 lt frame frameLength;
+
+            set temp frameLength;
+            sub temp frame;
+            mul temp 2; # a parameter that creates a nice flash animation
+            get_shade newShade new_pixel;
+            sub newShade temp;
+
+            if and gt newShade 3 lt newShade 16;
+
+              set_shade new_pixel newShade;
+              set_color new_pixel color;
+
+            end;
+
+            return new_pixel;
+
+          end;
+
+          sub frame frameLength;
+          sub frame 1;
+
+          # Next, a green flash if they have the reactions defense buff
+          #unit.getTag temp Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
+          set color COLOR_X1_GREEN0;
+          if and neq 0 0 lt frame frameLength;
+
+            set temp frameLength;
+            sub temp frame;
+            mul temp 2; # a parameter that creates a nice flash animation
+            get_shade newShade new_pixel;
+            sub newShade temp;
+
+            if and gt newShade 3 lt newShade 16;
+
+              set_shade new_pixel newShade;
+              set_color new_pixel color;
+
+            end;
+
+            return new_pixel;
+
+          end;
+
+          return new_pixel;
+
+#*** Handles recolors due to hitting a unit ***
+      - offset: 2
+        code: |
+          var int frame;
+          var int frameLength;
+          var int color;
+          var int newShade;
+          var int temp;
+
+          unit.getTag frame Tag.UNIT_RECOLOR_START_FRAME;
+          unit.getTag frameLength Tag.UNIT_RECOLOR_FRAME_LENGTH;
+
+          if neq frame 0;
+
+            set temp anim_frame;
+            sub temp frame;
+
+            if lt temp frameLength;
+
+              # Check shade, add some darkening decay, but don't recolor if it'd go too dark
+              get_shade newShade new_pixel;
+              mul temp 4; # a parameter that creates a nice flash animation
+              sub newShade temp;
+
+              if or lt newShade 4 gt newShade 15;
+
+                return new_pixel;
+
+              end;
+
+              # Add some brightness if the tag is set
+              unit.getTag temp Tag.UNIT_RECOLOR_BRIGHTNESS;
+              sub newShade temp;
+              limit_lower newShade 1;
+
+              unit.getTag color Tag.UNIT_RECOLOR_COLOR;
+              set_color new_pixel color;
+              set_shade new_pixel newShade;
+
+            end;
+
+          end;
+
+          return new_pixel;
