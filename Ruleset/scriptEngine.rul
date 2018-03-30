@@ -66,6 +66,11 @@ extended:
           var int shieldDecay;
           var int shieldAdded;
 
+          # Make sure this doesn't run an extra third time if there's a neutral side
+          if eq side 2;
+            return;
+          end;
+
           # Check armor first for decay parameter
           unit.getRuleArmor armorRuleset;
           armorRuleset.getTag shieldDecay Tag.ARMOR_ENERGY_SHIELD_DECAY;
