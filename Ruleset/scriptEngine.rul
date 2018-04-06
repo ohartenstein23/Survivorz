@@ -10,8 +10,6 @@ items:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
       ITEM_SETS_ENERGY_SHIELD_DECAY: 60
     size: 0.1
-    costBuy: 10000
-    costSell: 2500
     weight: 7
     bigSprite: 109
     floorSprite: 109
@@ -34,6 +32,39 @@ items:
     tuAimed: 10
     aimRange: 200
     battleType: 1
+    invWidth: 1
+    invHeight: 2
+
+  - type: STR_PHYSICAL_SHIELD
+    tags:
+      ITEM_PHYSICAL_SHIELD_ARMOR: 20
+      ITEM_PHYSICAL_SHIELD_HAS_ABLATIVES: 1
+    size: 0.1
+    weight: 7
+    bigSprite: 109
+    floorSprite: 109
+    handSprite: 208
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    damageType: 1
+    compatibleAmmo:
+      - STR_SHIELD_ABLATIVES
+    battleType: 1
+    invWidth: 1
+    invHeight: 2
+
+  - type: STR_SHIELD_ABLATIVES
+    weight: 2
+    bigSprite: 116
+    floorSprite: 116
+    bulletSprite: 12
+    handSprite: 264
+    power: 10
+    damageType: 3
+    clipSize: 7
+    battleType: 2
     invWidth: 1
     invHeight: 2
 
@@ -66,6 +97,10 @@ extended:
 #*** Tags for creating energy shields on hitting a unit ***
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int
       ITEM_SETS_ENERGY_SHIELD_DECAY: int
+
+#*** Tags for items acting as physical shields ***
+      ITEM_PHYSICAL_SHIELD_ARMOR: int
+      ITEM_PHYSICAL_SHIELD_HAS_ABLATIVES: int
 
   scripts:
     createUnit:
@@ -175,6 +210,93 @@ extended:
           return power part side;
 
 #*** Second defense layer: physical shield ***
+      - offset: 2
+        code: |
+          var ptre BattleItem shieldItem;
+          var ptre BattleItem shieldChargeItem;
+          var ptr RuleItem shieldRuleset;
+          var int shieldArmor;
+          var int shieldCharges;
+          var int frame;
+          var int temp;
+
+          if eq power 0;
+
+            return power part side;
+
+          end;
+
+          unit.getLeftHandWeapon shieldItem;
+          shieldItem.getRuleItem shieldRuleset;
+          shieldRuleset.getTag shieldArmor Tag.ITEM_PHYSICAL_SHIELD_ARMOR;
+
+          if eq shieldArmor 0;
+
+            unit.getRightHandWeapon shieldItem;
+            shieldItem.getRuleItem shieldRuleset;
+            shieldRuleset.getTag shieldArmor Tag.ITEM_PHYSICAL_SHIELD_ARMOR;
+
+          end;
+
+          if or eq shieldArmor 0 eq damaging_type 0 eq damaging_type 2 eq damaging_type 9 eq damaging_type 10;
+
+            return power part side;
+
+          end;
+
+          unit.isKneeled temp;
+
+          if neq temp 0;
+
+            if or eq side SIDE_LEFT eq side SIDE_RIGHT eq side SIDE_UNDER;
+
+              set temp SIDE_FRONT;
+
+            end;
+
+          else;
+
+            set temp side;
+
+          end;
+
+          if neq temp SIDE_FRONT;
+
+            return power part side;
+
+          end;
+
+          shieldRuleset.getTag shieldCharges Tag.ITEM_PHYSICAL_SHIELD_HAS_ABLATIVES;
+
+          if neq shieldCharges 0;
+
+            shieldItem.getAmmoItem shieldChargeItem;
+
+            if neq shieldChargeItem null;
+
+              shieldChargeItem.getAmmoQuantity shieldCharges;
+
+              if gt shieldCharges 1;
+
+                sub shieldCharges 1;
+                shieldChargeItem.setAmmoQuantity shieldCharges;
+                mul shieldArmor 2;
+
+                battle_game.getAnimFrame frame;
+                unit.setTag Tag.UNIT_RECOLOR_START_FRAME frame;
+                unit.setTag Tag.UNIT_RECOLOR_FRAME_LENGTH 3;
+                unit.setTag Tag.UNIT_RECOLOR_COLOR COLOR_X1_YELLOW;
+
+              end;
+
+            end;
+
+          end;
+
+          sub power shieldArmor;
+          limit_lower power 0;
+
+          return power part side;
 
 #*** Third defense layer: special environmental effects ***
 
