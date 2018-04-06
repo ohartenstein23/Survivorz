@@ -212,6 +212,12 @@ extended:
           armorRuleset.getTag shieldAdded Tag.ARMOR_ENERGY_SHIELD_HP_PER_TURN;
           add shieldHP shieldAdded;
 
+          if eq shieldHP 0;
+
+            unit.setTag Tag.UNIT_ENERGY_SHIELD_DECAY 0;
+
+          end;
+
           unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
 
           return;
