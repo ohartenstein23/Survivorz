@@ -9,6 +9,8 @@ items:
     tags:
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
       ITEM_SETS_ENERGY_SHIELD_DECAY: 60
+      ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER: 100
+      ITEM_SETS_DEFENSIVE_REACTIONS_DECAY: 60
     size: 0.1
     weight: 7
     bigSprite: 109
@@ -121,6 +123,10 @@ extended:
       UNIT_ENERGY_SHIELD_HP: int
       UNIT_ENERGY_SHIELD_DECAY: int
 
+#*** Tags for handling defensive reaction buffs ***
+      UNIT_DEFENSIVE_REACTIONS_BOOST: int
+      UNIT_DEFENSIVE_REACTIONS_DECAY: int
+
 #*** Tags for unit weakspot targeting debuff ***
       UNIT_WEAKSPOT_TARGETED_POWER: int
       UNIT_WEAKSPOT_TARGETED_DECAY: int
@@ -134,6 +140,10 @@ extended:
 #*** Tags for creating energy shields on hitting a unit ***
       ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int
       ITEM_SETS_ENERGY_SHIELD_DECAY: int
+
+#*** Tags for giving units a defensive reactions buff on hit ***
+      ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER: int
+      ITEM_SETS_DEFENSIVE_REACTIONS_DECAY: int
 
 #*** Tags for items acting as physical shields ***
       ITEM_PHYSICAL_SHIELD_ARMOR: int
@@ -222,6 +232,33 @@ extended:
 
           return;
 
+#*** Handles decay of defensive reactions buff ***
+      - offset: 2
+        code: |
+          var int reactionsBoost;
+          var int reactionsDecay;
+
+          # Make sure this doesn't run an extra third time if there's a neutral side
+          if eq side 2;
+            return;
+          end;
+
+          unit.getTag reactionsBoost Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
+          unit.getTag reactionsDecay Tag.UNIT_DEFENSIVE_REACTIONS_DECAY;
+          sub reactionsDecay 100;
+          mul reactionsDecay -1;
+          muldiv reactionsBoost reactionsDecay 100;
+
+          if eq reactionsBoost 0;
+
+            unit.setTag Tag.UNIT_DEFENSIVE_REACTIONS_DECAY 0;
+
+          end;
+
+          unit.setTag Tag.UNIT_DEFENSIVE_REACTIONS_BOOST reactionsBoost;
+
+          return;
+
 #*** Handles decay of weakspot targeting debuff ***
       - offset: 11
         code: |
@@ -248,6 +285,44 @@ extended:
           unit.setTag Tag.UNIT_WEAKSPOT_TARGETED_POWER weakspotTargeting;
 
           return;
+
+#*** Handles the defensive buff to reactions ***
+    reactionUnitAction:
+      - offset: 1
+        code: |
+          var int reactionsBoost;
+          var int defenderReactions;
+          var int attackerReactions;
+          var int timeUnits;
+          var int timeUnitsMax;
+
+          action_unit.getTag reactionsBoost Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
+
+          if eq reactionsBoost 0;
+
+            return reaction_chance;
+
+          end;
+
+          action_unit.Stats.getReactions defenderReactions;
+          action_unit.getTimeUnits timeUnits;
+          action_unit.getTimeUnitsMax timeUnitsMax;
+          add reactionsBoost 100;
+          muldiv defenderReactions reactionsBoost 100;
+          muldiv defenderReactions timeUnits timeUnitsMax;
+
+          reaction_unit.Stats.getReactions attackerReactions;
+          reaction_unit.getTimeUnits timeUnits;
+          reaction_unit.getTimeUnitsMax timeUnitsMax;
+          muldiv attackerReactions timeUnits timeUnitsMax;
+
+          if lt attackerReactions defenderReactions;
+
+            set reaction_chance 0;
+
+          end;
+
+          return reaction_chance;
 
     hitUnit:
 #*** First defense layer: does the unit have an energy shield? ***
@@ -483,6 +558,71 @@ extended:
           return;
 
 #*** Weapons that add to defensive reactions ***
+      - offset: 2
+        code: |
+          var ptr RuleItem weaponRuleset;
+          var int reactionsAdded;
+          var int scalingFactor;
+          var int linearAddition;
+          var int diminishingAddition;
+          var int currentReactions;
+          var int reactionsDecay;
+          var int currentDecay;
+
+          damaging_item.getRuleItem weaponRuleset;
+          weaponRuleset.getTag reactionsAdded Tag.ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER;
+
+          if eq reactionsAdded 0;
+
+            weapon_item.getRuleItem weaponRuleset;
+            weaponRuleset.getTag reactionsAdded Tag.ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER;
+
+            if eq reactionsAdded 0;
+
+              return;
+
+            end;
+
+          end;
+
+          set scalingFactor 50; # Percent factor for diminishing returns beyond the power of the item
+
+          set linearAddition currPower;
+          muldiv linearAddition reactionsAdded 100;
+          set diminishingAddition linearAddition;
+
+          unit.getTag currentReactions Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
+          sub linearAddition currentReactions;
+
+          if gt linearAddition 0;
+
+            set diminishingAddition currentReactions;
+
+          else;
+
+            mul linearAddition -1;
+            muldiv linearAddition 100 diminishingAddition;
+            sub scalingFactor linearAddition;
+            limit_lower scalingFactor 0;
+            set linearAddition 0;
+
+          end;
+
+          muldiv diminishingAddition scalingFactor 100;
+          add linearAddition diminishingAddition;
+          add currentReactions linearAddition;
+          unit.setTag Tag.UNIT_DEFENSIVE_REACTIONS_BOOST currentReactions;
+
+          weaponRuleset.getTag reactionsDecay Tag.ITEM_SETS_DEFENSIVE_REACTIONS_DECAY;
+          unit.getTag currentDecay Tag.UNIT_DEFENSIVE_REACTIONS_DECAY;
+
+          if gt reactionsDecay currentDecay;
+
+            unit.setTag Tag.UNIT_DEFENSIVE_REACTIONS_DECAY reactionsDecay;
+
+          end;
+
+          return;
 
 #*** Second layer of damageUnit logic: debuffing units ***
 #*** Weapons that target weak spots for other attacks ***
@@ -616,9 +756,9 @@ extended:
           sub frame 1;
 
           # Next, a green flash if they have the reactions defense buff
-          #unit.getTag temp Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
+          unit.getTag temp Tag.UNIT_DEFENSIVE_REACTIONS_BOOST;
           set color COLOR_X1_GREEN0;
-          if and neq 0 0 lt frame frameLength;
+          if and neq temp 0 lt frame frameLength;
 
             set temp frameLength;
             sub temp frame;
