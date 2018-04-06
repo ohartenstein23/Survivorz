@@ -4,6 +4,45 @@ armors:
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: 50
       ARMOR_ENERGY_SHIELD_DECAY: 50
 
+items:
+  - type: STR_SHIELD_BUFF
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 60
+    size: 0.1
+    costBuy: 10000
+    costSell: 2500
+    weight: 7
+    bigSprite: 109
+    floorSprite: 109
+    handSprite: 208
+    bulletSprite: 13
+    bulletSpeed: 10
+    hitSound: 19
+    hitAnimation: 26
+    power: 50
+    damageType: 0
+    damageAlter:
+      RandomType: 3
+      ToArmor: 0.0
+      ToStun: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ArmorEffectiveness: 0.0
+    clipSize: -1
+    accuracyAimed: 100
+    tuAimed: 10
+    aimRange: 200
+    battleType: 1
+    invWidth: 1
+    invHeight: 2
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_DAMAGE_SPECIAL: "SUPPORT"
+      STR_DAMAGE_10: "ENVIRONMENTAL"
+
 extended:
   tags:
     BattleUnit:
@@ -22,6 +61,11 @@ extended:
 #*** Tags for energy shield on armor ***
       ARMOR_ENERGY_SHIELD_HP_PER_TURN: int
       ARMOR_ENERGY_SHIELD_DECAY: int
+
+    RuleItem:
+#*** Tags for creating energy shields on hitting a unit ***
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int
+      ITEM_SETS_ENERGY_SHIELD_DECAY: int
 
   scripts:
     createUnit:
@@ -95,6 +139,120 @@ extended:
           unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
 
           return;
+
+    hitUnit:
+#*** First defense layer: does the unit have an energy shield? ***
+      - offset: 1
+        code: |
+          var int shieldHP;
+          var int shieldHPAfter;
+          var int frame;
+
+          unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
+
+          if or eq shieldHP 0 eq damaging_type 0 eq damaging_type 2 eq damaging_type 9 eq damaging_type 10;
+
+            return power part side;
+
+          end;
+
+          set shieldHPAfter shieldHP;
+          sub shieldHPAfter power;
+          sub power shieldHP;
+          limit_lower shieldHPAfter 0;
+          limit_lower power 0;
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHPAfter;
+
+          if and gt shieldHPAfter 0 eq power 0;
+
+            battle_game.getAnimFrame frame;
+            unit.setTag Tag.UNIT_RECOLOR_START_FRAME frame;
+            unit.setTag Tag.UNIT_RECOLOR_FRAME_LENGTH 3;
+            unit.setTag Tag.UNIT_RECOLOR_COLOR COLOR_X1_BLUE1;
+
+          end;
+
+          return power part side;
+
+#*** Second defense layer: physical shield ***
+
+#*** Third defense layer: special environmental effects ***
+
+#*** First debuff layer: weak spot targeting for added damage ***
+
+    damageUnit:
+#*** First layer of damageUnit logic: buffing units ***
+#*** Weapons that add to energy shields ***
+      - offset: 1
+        code: |
+          var ptr RuleItem weaponRuleset;
+          var int shieldAdded;
+          var int scalingFactor;
+          var int linearAddition;
+          var int diminishingAddition;
+          var int shieldHP;
+          var int shieldDecay;
+          var int currentDecay;
+
+          damaging_item.getRuleItem weaponRuleset;
+          weaponRuleset.getTag shieldAdded Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
+
+          if eq shieldAdded 0;
+
+            weapon_item.getRuleItem weaponRuleset;
+            weaponRuleset.getTag shieldAdded Tag.ITEM_ADDS_ENERGY_SHIELD_FROM_POWER;
+
+            if eq shieldAdded 0;
+
+              return;
+
+            end;
+
+          end;
+
+          set scalingFactor 50; # Percent factor for diminishing returns beyond the power of the item
+
+          set linearAddition currPower;
+          muldiv linearAddition shieldAdded 100;
+          set diminishingAddition linearAddition;
+
+          unit.getTag shieldHP Tag.UNIT_ENERGY_SHIELD_HP;
+          sub linearAddition shieldHP;
+
+          if gt linearAddition 0;
+
+            set diminishingAddition shieldHP;
+
+          else;
+
+            mul linearAddition -1;
+            muldiv linearAddition 100 diminishingAddition;
+            sub scalingFactor linearAddition;
+            limit_lower scalingFactor 0;
+            set linearAddition 0;
+
+          end;
+
+          muldiv diminishingAddition scalingFactor 100;
+          add linearAddition diminishingAddition;
+          add shieldHP linearAddition;
+          unit.setTag Tag.UNIT_ENERGY_SHIELD_HP shieldHP;
+
+          weaponRuleset.getTag shieldDecay Tag.ITEM_SETS_ENERGY_SHIELD_DECAY;
+          unit.getTag currentDecay Tag.UNIT_ENERGY_SHIELD_DECAY;
+
+          if gt shieldDecay currentDecay;
+
+            unit.setTag Tag.UNIT_ENERGY_SHIELD_DECAY shieldDecay;
+
+          end;
+
+          return;
+
+#*** Weapons that add to defensive reactions ***
+
+#*** Second layer of damageUnit logic: debuffing units ***
+#*** Weapons that target weak spots for other attacks ***
 
     recolorUnitSprite:
 #*** Handles periodic recolors due to buffs/debuffs on units ***
