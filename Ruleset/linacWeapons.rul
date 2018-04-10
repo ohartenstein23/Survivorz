@@ -11,6 +11,7 @@ items:
     bigSprite: 109
     floorSprite: 109
     handSprite: 208
+    fireSound: 11
     bulletSprite: 13
     bulletSpeed: 10
     hitSound: 19
@@ -65,6 +66,7 @@ items:
     bigSprite: 110
     floorSprite: 110
     handSprite: 216
+    fireSound: 11
     bulletSprite: 13
     bulletSpeed: 10
     hitSound: 19
