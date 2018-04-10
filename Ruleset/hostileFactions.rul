@@ -64,12 +64,12 @@ units:
       tu: 40
       stamina: 80
       health: 125
-      bravery: 80
+      bravery: 110
       reactions: 60
       firing: 54
       throwing: 62
       strength: 70
-      psiStrength: 100
+      psiStrength: 0
       psiSkill: 0
       melee: 76
     armor: HOSTILE_WALKER_MECH #MUTON_ARMOR0 (not anywhere near complete)
@@ -177,6 +177,8 @@ armors:
     storeItem: STR_NONE
     spriteInv: DRONE_FLYING
     forcedTorso: 1
+    psiDefence:
+      flatHundred: 10.0
 
   - type: SECTOID_ARMOR0
     corpseBattle:
