@@ -303,7 +303,7 @@ ufos:
     size: STR_SMALL
     sprite: 1
     damageMax: 500
-    speedMax: 3500
+    speedMax: 3000
     accel: 5
     radarRange: 750
     power: 40
