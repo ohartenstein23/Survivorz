@@ -72,6 +72,80 @@ armors:
       energy:
         flatHundred: 0.8
 
+  - type: STR_FLYING_DRONE_ARMOR_TARGETER_UC
+    spriteSheet: DRONE_FLYING.PCK
+    spriteInv: DRONE_FLYING
+    customArmorPreviewIndex: 1
+    corpseBattle:
+      - STR_RECOVER_FLYING_DRONE_ARMOR
+    corpseGeo: STR_RECOVER_FLYING_DRONE_ARMOR
+    storeItem: STR_SUPPORT_TARGETER
+    visibilityAtDay: 30
+    visibilityAtDark: 30
+    personalLight: 5
+    thermalVision: 80
+    fearImmune: true
+    bleedImmune: true
+    zombiImmune: true
+    painImmune: true
+    weight: 0
+    builtInWeapons:
+      - STR_SUPPORT_TARGETER_DRONE
+      - INV_NULL_LH
+      - INV_NULL_2X1_LS
+      - INV_NULL_2X1_RS
+      - INV_NULL_2X1_LL
+      - INV_NULL_2X1_RL
+      - INV_NULL_4X2_B
+      - INV_NULL_3X3_BACK
+    frontArmor: 20
+    sideArmor: 20
+    rearArmor: 20
+    underArmor: 20
+    psiDefense:
+      flatHundred: 10.0
+    drawingRoutine: 4
+    movementType: 1
+    moveSound: 15
+    scripts:
+      selectUnitSprite:
+        # Choose walking sprite even while flying
+        var int flying;
+
+        unit.isFlying flying;
+
+        if neq flying 0;
+
+          unit.getDirection sprite_offset;
+          mul sprite_offset 8;
+          add sprite_offset 8;
+
+        end;
+
+        add sprite_index sprite_offset;
+
+        return sprite_index;
+
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 0.4
+      - 0.75
+      - 1.0
+      - 1.0
+      - 0.0
+      - 0.9
+      - 0.4
+      - 0.0
+    units:
+      - STR_AI_SUBROUTINE
+    loftempsSet: [ 4 ]
+    allowKneeling: false
+    recovery:
+      energy:
+        flatHundred: 0.8
+
+
   - type: STR_HOVER_ARMOR_UC
     spriteSheet: HOVER.PCK
     spriteInv: DRONE_FLYING
@@ -352,6 +426,20 @@ ufopaedia:
     section: STR_WEAPONS_AND_EQUIPMENT
     text: STR_FLYING_DRONE_ARMOR_UC_PEDIA
 
+  - id: STR_FLYING_DRONE_ARMOR_TARGETER_UC
+    type_id: 5
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_FLYING_DRONE_ARMOR_TARGETER_UC_PEDIA
+    requires:
+      - STR_SUPPORT_TARGETER
+
+  - id: STR_SUPPORT_TARGETER_DRONE
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SUPPORT_TARGETER_DRONE_PEDIA
+    requires:
+      - STR_SUPPORT_TARGETER
+
 extraSprites:
   - type: DRONE_FLYING.PCK
     subX: 32
@@ -413,6 +501,10 @@ extraStrings:
       STR_FLYING_DRONE_ARMOR_UC_PEDIA: "This scout drone was designed to supplement colonists' exploration of new environments. Lightly armored and fast, it can relay infomation of surrounding terrain quickly to other units. Though unarmed, the onboard sensors are capable of detection in the near-infrared for otherwise low-visiblity conditions."
       STR_RECOVER_FLYING_DRONE_ARMOR: "Damaged AI/Drone"
       STR_REPAIR_FLYING_DRONE: "Repair AI/Drone"
+
+      STR_FLYING_DRONE_ARMOR_TARGETER_UC: "DRONE/TARGETER"
+      STR_FLYING_DRONE_ARMOR_TARGETER_UC_PEDIA: "A scout drone outfited with an enhanced targeting system for designating targets to support other ground units. The advanced optical components of the targeter supplement the drone's detection capabilities, granting it unparalleled battlefield vision in any condition."
+      STR_SUPPORT_TARGETER_DRONE_PEDIA: "Advanced targeting system mounted on a scout drone, has the same capabilities as the handheld system."
 
       STR_GUNSHIP_ARMOR_UC: "GUNSHIP"
       STR_GUNSHIP_ARMOR: "AI Gunship Chassis"

@@ -1,0 +1,310 @@
+extended:
+  tags:
+    RuleItem:
+#*** Tags for creating energy shields on hitting a unit ***
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: int
+      ITEM_SETS_ENERGY_SHIELD_DECAY: int
+
+#*** Tags for giving units a defensive reactions buff on hit ***
+      ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER: int
+      ITEM_SETS_DEFENSIVE_REACTIONS_DECAY: int
+
+#*** Tags for items acting as physical shields ***
+      ITEM_PHYSICAL_SHIELD_ARMOR: int
+      ITEM_PHYSICAL_SHIELD_HAS_ABLATIVES: int
+
+#*** Tags for items targeting a unit's weakspot ***
+      ITEM_TARGETS_WEAKSPOT_POWER: int
+      ITEM_TARGETS_WEAKSPOT_DECAY: int
+
+items:
+  - type: STR_SUPPORT_TARGETER
+    tags:
+      ITEM_TARGETS_WEAKSPOT_POWER: 100
+      ITEM_TARGETS_WEAKSPOT_DECAY: 25
+    size: 0.1
+    costBuy: 0
+    costSell: 37500
+    weight: 8
+    bigSprite: 130
+    #floorSprite: 109
+    #handSprite: 208
+    #bulletSprite: 13
+    #bulletSpeed: 10
+    #hitSound: 19
+    #hitAnimation: 26
+    power: 20
+    damageType: 0
+    damageAlter:
+      RandomType: 3
+      ToArmor: 0.0
+      ToStun: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ArmorEffectiveness: 0.0
+    clipSize: -1
+    accuracyAimed: 110
+    accuracyMultiplier:
+      firing: 0.0
+      flatHundred: 1.0
+    tuAimed: 65
+    aimRange: 200
+    noLOSAccuracyPenalty: 0
+    battleType: 1
+    invWidth: 2
+    invHeight: 2
+    experienceTrainingMode: 32
+
+  - type: STR_SUPPORT_TARGETER_DRONE
+    tags:
+      ITEM_TARGETS_WEAKSPOT_POWER: 100
+      ITEM_TARGETS_WEAKSPOT_DECAY: 25
+    weight: 0
+    bigSprite: 130
+    #floorSprite: 109
+    #handSprite: 208
+    #bulletSprite: 13
+    #bulletSpeed: 10
+    #hitSound: 19
+    #hitAnimation: 26
+    power: 20
+    damageType: 0
+    damageAlter:
+      RandomType: 3
+      ToArmor: 0.0
+      ToStun: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ArmorEffectiveness: 0.0
+    clipSize: -1
+    accuracyAimed: 110
+    accuracyMultiplier:
+      firing: 0.0
+      flatHundred: 1.0
+    tuAimed: 65
+    aimRange: 200
+    noLOSAccuracyPenalty: 0
+    battleType: 1
+    invWidth: 2
+    invHeight: 2
+    fixedWeapon: true
+    recover: false
+    experienceTrainingMode: 32
+
+  - type: STR_SUPPORT_LAUNCHER
+    size: 0.1
+    costBuy: 0
+    costSell: 32000
+    weight: 8
+    bigSprite: 135
+    #floorSprite: 109
+    #handSprite: 208
+    compatibleAmmo:
+      - STR_SUPPORT_LAUNCHER_AMMO_SHIELD
+    accuracyAimed: 110
+    accuracyMultiplier:
+      firing: 0.0
+      flatHundred: 1.0
+    arcingShot: true
+    tuAimed: 65
+    aimRange: 200
+    twoHanded: true
+    oneHandedPenalty: 100
+
+    noLOSAccuracyPenalty: 0
+    battleType: 1
+    invWidth: 1
+    invHeight: 3
+    experienceTrainingMode: 32
+
+  - type: STR_SUPPORT_LAUNCHER_AMMO_SHIELD
+    tags:
+      ITEM_ADDS_ENERGY_SHIELD_FROM_POWER: 100
+      ITEM_SETS_ENERGY_SHIELD_DECAY: 60
+      ITEM_ADDS_DEFENSIVE_REACTIONS_FROM_POWER: 50
+      ITEM_SETS_DEFENSIVE_REACTIONS_DECAY: 60
+    size: 0.01
+    costBuy: 0
+    costSell: 7500
+    weight: 4
+    bigSprite: 136
+    #bulletSprite: 13
+    #bulletSpeed: 10
+    #hitSound: 19
+    #hitAnimation: 26
+    power: 100
+    damageType: 0
+    damageAlter:
+      RandomType: 3
+      ToArmor: 0.0
+      ToStun: 0.0
+      ToHealth: 0.0
+      ToWound: 0.0
+      ArmorEffectiveness: 0.0
+    clipSize: 3
+    battleType: 2
+    invWidth: 1
+    invHeight: 1
+
+  - type: STR_SUPPORT_ASSAULT_SHIELD
+    tags:
+      ITEM_PHYSICAL_SHIELD_ARMOR: 20
+      ITEM_PHYSICAL_SHIELD_HAS_ABLATIVES: 1
+    size: 0.2
+    costBuy: 0
+    costSell: 32000
+    weight: 18
+    bigSprite: 140
+    #floorSprite: 109
+    #handSprite: 208
+    #bulletSprite: 13
+    #bulletSpeed: 10
+    #hitSound: 19
+    #hitAnimation: 26
+    compatibleAmmo:
+      - STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES
+    accuracyAimed: 50
+    confAimed:
+      name: STR_CHARGE_SHOT
+    tuAimed: 30
+    battleType: 1
+    invWidth: 2
+    invHeight: 3
+
+  - type: STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES
+    size: 0.05
+    costBuy: 0
+    costSell: 7500
+    weight: 6
+    bigSprite: 141
+    #floorSprite: 116
+    #bulletSprite: 12
+    #handSprite: 264
+    power: 25
+    shotgunPellets: 8
+    damageType: 1
+    clipSize: 7
+    battleType: 2
+    invWidth: 2
+    invHeight: 2
+
+manufacture:
+  - name: STR_SUPPORT_TARGETER
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SUPPORT_TARGETER
+    cost: 50000
+    space: 0
+    time: 24
+    producedItems:
+      STR_SUPPORT_TARGETER: 1
+
+  - name: STR_SUPPORT_LAUNCHER
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SUPPORT_LAUNCHER
+    cost: 40000
+    space: 0
+    time: 24
+    producedItems:
+      STR_SUPPORT_LAUNCHER: 1
+
+  - name: STR_SUPPORT_LAUNCHER_AMMO_SHIELD
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SUPPORT_LAUNCHER
+    cost: 10000
+    space: 0
+    time: 6
+    producedItems:
+      STR_SUPPORT_LAUNCHER_AMMO_SHIELD: 1
+
+  - name: STR_SUPPORT_ASSAULT_SHIELD
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SUPPORT_ASSAULT_SHIELD
+    cost: 40000
+    space: 0
+    time: 24
+    producedItems:
+      STR_SUPPORT_ASSAULT_SHIELD: 1
+
+  - name: STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SUPPORT_ASSAULT_SHIELD
+    cost: 10000
+    space: 0
+    time: 6
+    producedItems:
+      STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES: 1
+
+ufopaedia:
+  - id: STR_SUPPORT_TARGETER
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SUPPORT_TARGETER_PEDIA
+    requires:
+      - STR_SUPPORT_TARGETER
+
+  - id: STR_SUPPORT_LAUNCHER
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SUPPORT_LAUNCHER_PEDIA
+    requires:
+      - STR_SUPPORT_LAUNCHER
+
+  - id: STR_SUPPORT_LAUNCHER_AMMO_SHIELD
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SUPPORT_LAUNCHER_AMMO_SHIELD_PEDIA
+    requires:
+      - STR_SUPPORT_LAUNCHER
+
+  - id: STR_SUPPORT_ASSAULT_SHIELD
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SUPPORT_ASSAULT_SHIELD_PEDIA
+    requires:
+      - STR_SUPPORT_ASSAULT_SHIELD
+
+  - id: STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_SUPPORT_ASSAULT_SHIELD
+
+extraSprites:
+  - type: BIGOBS.PCK
+    width: 32
+    height: 48
+    files:
+      130: Resources/Bigobs/support_targeter.png
+      135: Resources/Bigobs/support_launcher.png
+      136: Resources/Bigobs/support_launcher_ammo_blue.png
+      140: Resources/Bigobs/support_assault_shield.png
+      141: Resources/Bigobs/support_reactive_charges.png
+
+extraStrings:
+  - type: en-US
+    strings:
+      STR_DAMAGE_NONE: "SUPPORT"
+
+#*** Item names ***
+      STR_SUPPORT_TARGETER: "Targeter"
+      STR_SUPPORT_TARGETER_DRONE: "Drone Targeting Suite"
+      STR_SUPPORT_LAUNCHER: "Smart Launcher"
+      STR_SUPPORT_LAUNCHER_AMMO_SHIELD: "Barrier Tags"
+      STR_SUPPORT_ASSAULT_SHIELD: "Assault Shield"
+      STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES: "Reactive Armor Charges"
+
+#*** Manufacturing categories ***
+      STR_SUPPORT_ITEMS: "Support Items"
+
+#*** Pedia articles ***
+      STR_SUPPORT_TARGETER_PEDIA: "The chief engineer's tinkering with scout drone sensor package yielded this combination broadband active electromagnetic sensor and enhanced optics suite. The targeter relays information on a 'painted' unit's weaknesses, increasing damage dealt to the target propotional to a weapon's firepower, but the effect will decay over time. Units designated by this device will flash red in the battlescape interface.{NEWLINE}{NEWLINE}It is light enough that it may be outfitted on scout drones with minimal modification to the device or the AI subroutine chassis."
+
+      STR_SUPPORT_LAUNCHER_PEDIA: "Borrowing the acceleration system from an early LINAC prototype for more massive projectiles, the smart launcher is designed for pinpoint delivery of various ground unit support devices - the functionality is highly dependent on the selected payload."
+      STR_SUPPORT_LAUNCHER_AMMO_SHIELD_PEDIA: "The personal research files from the head scientist contained work on highly experimental electromagnetic field manipulation and shaping methods, the chief result of which was the creation of a 'barrier' capable of reducing the velocity of or even deflecting incoming projectiles. A miniaturized version of that device is contained in each of these capsules to be fired by the smart launched. Units which are tagged by this device gain a temporary shield from incoming fire, and the resulting optical blur from the electromagnetic field reduces the reaction time of hostiles spotting the unit."
+
+      STR_SUPPORT_ASSAULT_SHIELD_PEDIA: "The garrison officer's military training included heavy assault tactics, often spearheaded by mechanized units and infantry carrying this shield. While the designs for the mechs are not available on colony vessels, the shield schematics are, and may now be manufactured. The defense of this shield further augmented by a set of reactive armor charges attached to the front that explode on projectile impact, reducing its power. They may also be manually detonated for as an improvised directed fragmentation weapon. When only a single charge is reamining, it must be replaced in order to provide the extra defense. Kneeling behind the shield ensures protection from the front and sides."

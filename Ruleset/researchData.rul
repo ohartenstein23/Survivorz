@@ -122,6 +122,35 @@ research:
       - STR_CHIEF_ENGINEER_ITEM
       - STR_ENVIRO_SCAN_EASY_ITEM
 
+# Support items
+  - name: STR_SUPPORT_TARGETER
+    cost: 8
+    score: 0
+    dependencies:
+      - STR_CHIEF_ENGINEER_ITEM
+      - STR_HOSTILE_MECH_CORPSE
+
+  - name: STR_SUPPORT_LAUNCHER
+    cost: 8
+    score: 0
+    dependencies:
+      - STR_HEAD_SCIENTIST_ITEM
+      - STR_HOSTILE_MECH_CORPSE
+
+  - name: STR_SUPPORT_ASSAULT_SHIELD
+    cost: 8
+    score: 0
+    dependencies:
+      - STR_GARRISON_OFFICER_ITEM
+      - STR_HOSTILE_MECH_CORPSE
+
+# Hostile units and autopsies
+  - name: STR_HOSTILE_MECH_CORPSE
+    cost: 6
+    score: 0
+    needItem: true
+    destroyItem: true
+
 # Hostile weapons articles and usage
   - name: STR_HOSTILE_WEAPONS
     cost: 0

@@ -642,6 +642,14 @@ extended:
           return new_pixel;
 
 ufopaedia:
+#*** Units/autopsies ***
+  - id: STR_HOSTILE_MECH_CORPSE
+    type_id: 8
+    section: STR_HOSTILE_UNITS
+    text: STR_HOSTILE_MECH_CORPSE_PEDIA
+    requires:
+      - STR_HOSTILE_MECH_CORPSE
+
 #*** Weapons ***
   - id: STR_HOSTILE_WEAPONS
     type_id: 8
@@ -775,6 +783,7 @@ extraStrings:
 
 # *** Units ***
       STR_HOSTILES: "Hostiles"
+      STR_HOSTILE_UNITS: "Hostile Units"
       STR_MINING_CREW: "Hostile Mining Crew"
       STR_MILITARY_CREW: "Hostile Military Crew"
       STR_HOSTILE_OVERSEER: "Hostile"
@@ -785,6 +794,8 @@ extraStrings:
       STR_HOSTILE_CORPSE: "Hostile Corpse"
       STR_HOSTILE_MECH_CORPSE: "Damaged Hostile Mech"
       STR_HOSTILE_MECHANIZED_HOVER_CORPSE: "Damaged Hostile Mech/Hover"
+
+      STR_HOSTILE_MECH_CORPSE_PEDIA: ">:: This mechanical unit represents significant risk to units encountering it.{NEWLINE}>:: Hardened outer armor plating resists impacts from kinetic slugs and ionized weapon discharges. Advanced gyro stabilization modules enhance firing accuracy in even the most adverse of conditions.{NEWLINE}>:: {NEWLINE}>:: While repeated strikes from LINAC series firearms will eventually render the unit non-functional, development of appropriate countermeasures is recommended.{NEWLINE}"
 
 # *** Weapons ***
       STR_HOSTILE_WEAPONS: "Hostile Weapons"
