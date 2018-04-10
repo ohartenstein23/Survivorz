@@ -25,6 +25,12 @@ alienMissions:
         count: 2
         trajectory: CRASH_CHECKOUT
         timer: 60 # Spawn first two ufos within an hour of each other
+      - ufo: STR_MILITARY_GUNSHIP # one of which has armed escort
+        count: 1
+        trajectory: CRASH_CHECKOUT_ESCORT
+        timer: 0
+        hunterKillerPercentage: 100
+        escort: true
       - ufo: STR_MINING_SCOUT
         count: 1
         trajectory: CRASH_CHECKOUT
@@ -33,6 +39,12 @@ alienMissions:
         count: 1
         trajectory: CRASH_CHECKOUT
         timer: 60 # Flies along with the previous one
+      - ufo: STR_MILITARY_GUNSHIP
+        count: 1
+        trajectory: CRASH_CHECKOUT_ESCORT
+        timer: 0
+        hunterKillerPercentage: 100
+        escort: true
 
 #*** Missions that create bases/outposts ***
   - type: STR_BASE_CREATION_FAMINE # Bases should be created instantly at the beginning of month 1 based on worldgen
@@ -363,6 +375,12 @@ ufoTrajectories:
       - [6, 0, 30] # Land in sub-region
       - [0, 2, 60] # Take off
       - [5, 2, 100]
+
+  - id: CRASH_CHECKOUT_ESCORT # For escort craft that come from orbit
+    groundTimer: 0
+    waypoints:
+      - [5, 3, 100]
+      - [5, 3, 100]
 
   - id: MINING_SCOUT # Will be run by hovercraft, so stays low
     groundTimer: 1
