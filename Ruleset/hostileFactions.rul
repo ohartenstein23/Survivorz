@@ -148,9 +148,9 @@ armors:
     underArmor: 40
     damageModifier:
       - 1.0
+      - 0.75
       - 0.6
-      - 0.4
-      - 0.8
+      - 1.0
       - 1.2
       - 1.0
       - 0.0
