@@ -18,6 +18,54 @@ extended:
       ITEM_TARGETS_WEAKSPOT_DECAY: int
 
 items:
+  - type: STR_SMOKESCREEN_LAUNCHER
+    size: 0.1
+    costBuy: 0
+    costSell: 24000
+    weight: 8
+    bigSprite: 130
+    #floorSprite: 109
+    #handSprite: 208
+    #bulletSprite: 13
+    #bulletSpeed: 10
+    #hitSound: 19
+    #hitAnimation: 26
+    compatibleAmmo:
+      - STR_SMOKESCREEN_LAUNCHER_AMMO
+    accuracyAimed: 1
+    accuracyMultiplier:
+      firing: 0.0
+      flatHundred: 1.0
+    tuAimed: 80
+    confAimed:
+      shots: 9
+    arcingShot: true
+    maxRange: 10
+    autoRange: 10
+    noLOSAccuracyPenalty: 100
+    kneelBonus: 100
+    battleType: 1
+    invWidth: 2
+    invHeight: 2
+    experienceTrainingMode: 32
+
+  - type: STR_SMOKESCREEN_LAUNCHER_AMMO
+    size: 0.05
+    costBuy: 0
+    costSell: 7500
+    weight: 6
+    bigSprite: 131
+    #floorSprite: 109
+    #handSprite: 208
+    hitSound: 0
+    hitAnimation: 0
+    damageType: 9
+    power: 40
+    clipSize: 9
+    battleType: 2
+    invWidth: 2
+    invHeight: 1
+
   - type: STR_SUPPORT_TARGETER
     tags:
       ITEM_TARGETS_WEAKSPOT_POWER: 100
@@ -26,7 +74,7 @@ items:
     costBuy: 0
     costSell: 37500
     weight: 8
-    bigSprite: 130
+    bigSprite: 135
     #floorSprite: 109
     #handSprite: 208
     #bulletSprite: 13
@@ -60,7 +108,7 @@ items:
       ITEM_TARGETS_WEAKSPOT_POWER: 100
       ITEM_TARGETS_WEAKSPOT_DECAY: 25
     weight: 0
-    bigSprite: 130
+    bigSprite: 135
     #floorSprite: 109
     #handSprite: 208
     #bulletSprite: 13
@@ -96,7 +144,7 @@ items:
     costBuy: 0
     costSell: 32000
     weight: 8
-    bigSprite: 135
+    bigSprite: 140
     #floorSprite: 109
     #handSprite: 208
     compatibleAmmo:
@@ -110,7 +158,7 @@ items:
     aimRange: 200
     twoHanded: true
     oneHandedPenalty: 100
-
+    kneelBonus: 100
     noLOSAccuracyPenalty: 0
     battleType: 1
     invWidth: 1
@@ -127,7 +175,7 @@ items:
     costBuy: 0
     costSell: 7500
     weight: 4
-    bigSprite: 136
+    bigSprite: 141
     #bulletSprite: 13
     #bulletSpeed: 10
     #hitSound: 19
@@ -154,7 +202,7 @@ items:
     costBuy: 0
     costSell: 32000
     weight: 18
-    bigSprite: 140
+    bigSprite: 145
     #floorSprite: 109
     #handSprite: 208
     #bulletSprite: 13
@@ -176,7 +224,7 @@ items:
     costBuy: 0
     costSell: 7500
     weight: 6
-    bigSprite: 141
+    bigSprite: 146
     #floorSprite: 116
     #bulletSprite: 12
     #handSprite: 264
@@ -189,6 +237,26 @@ items:
     invHeight: 2
 
 manufacture:
+  - name: STR_SMOKESCREEN_LAUNCHER
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SMOKESCREEN_LAUNCHER
+    cost: 32000
+    space: 0
+    time: 18
+    producedItems:
+      STR_SMOKESCREEN_LAUNCHER: 1
+
+  - name: STR_SMOKESCREEN_LAUNCHER_AMMO
+    category: STR_SUPPORT_ITEMS
+    requires:
+      - STR_SMOKESCREEN_LAUNCHER
+    cost: 10000
+    space: 0
+    time: 6
+    producedItems:
+      STR_SMOKESCREEN_LAUNCHER_AMMO: 1
+
   - name: STR_SUPPORT_TARGETER
     category: STR_SUPPORT_ITEMS
     requires:
@@ -240,6 +308,19 @@ manufacture:
       STR_SUPPORT_ASSAULT_SHIELD_REACTIVE_PLATES: 1
 
 ufopaedia:
+  - id: STR_SMOKESCREEN_LAUNCHER
+    type_id: 4
+    section: STR_WEAPONS_AND_EQUIPMENT
+    text: STR_SMOKESCREEN_LAUNCHER_PEDIA
+    requires:
+      - STR_SMOKESCREEN_LAUNCHER
+
+  - id: STR_SMOKESCREEN_LAUNCHER_AMMO
+    type_id: 4
+    section: STR_NOT_AVAILABLE
+    requires:
+      - STR_SMOKESCREEN_LAUNCHER
+
   - id: STR_SUPPORT_TARGETER
     type_id: 4
     section: STR_WEAPONS_AND_EQUIPMENT
@@ -279,11 +360,13 @@ extraSprites:
     width: 32
     height: 48
     files:
-      130: Resources/Bigobs/support_targeter.png
-      135: Resources/Bigobs/support_launcher.png
-      136: Resources/Bigobs/support_launcher_ammo_blue.png
-      140: Resources/Bigobs/support_assault_shield.png
-      141: Resources/Bigobs/support_reactive_charges.png
+      130: Resources/Bigobs/smoke_launcher.png
+      131: Resources/Bigobs/smoke_launcher_ammo.png
+      135: Resources/Bigobs/support_targeter.png
+      140: Resources/Bigobs/support_launcher.png
+      141: Resources/Bigobs/support_launcher_ammo_blue.png
+      145: Resources/Bigobs/support_assault_shield.png
+      146: Resources/Bigobs/support_reactive_charges.png
 
 extraStrings:
   - type: en-US
@@ -291,6 +374,8 @@ extraStrings:
       STR_DAMAGE_NONE: "SUPPORT"
 
 #*** Item names ***
+      STR_SMOKESCREEN_LAUNCHER: "Smokescreen Launcher"
+      STR_SMOKESCREEN_LAUNCHER_AMMO: "Smokescreen Pods"
       STR_SUPPORT_TARGETER: "Targeter"
       STR_SUPPORT_TARGETER_DRONE: "Drone Targeting Suite"
       STR_SUPPORT_LAUNCHER: "Smart Launcher"
@@ -302,6 +387,8 @@ extraStrings:
       STR_SUPPORT_ITEMS: "Support Items"
 
 #*** Pedia articles ***
+      STR_SMOKESCREEN_LAUNCHER_PEDIA: "Using the methods of gas compression used to contain the ammunition in the weapons recovered from the field, this projectile delivery system was devised to disperse particles in the air that strongly scatter light, concealing the movements of units. Small containers of this particulate are forcefully ejected by a chemical charge, spreading out in an area in front of the launcher. It is most effective when fired to the maximum extent of its range."
+
       STR_SUPPORT_TARGETER_PEDIA: "The chief engineer's tinkering with scout drone sensor package yielded this combination broadband active electromagnetic sensor and enhanced optics suite. The targeter relays information on a 'painted' unit's weaknesses, increasing damage dealt to the target propotional to a weapon's firepower, but the effect will decay over time. Units designated by this device will flash red in the battlescape interface.{NEWLINE}{NEWLINE}It is light enough that it may be outfitted on scout drones with minimal modification to the device or the AI subroutine chassis."
 
       STR_SUPPORT_LAUNCHER_PEDIA: "Borrowing the acceleration system from an early LINAC prototype for more massive projectiles, the smart launcher is designed for pinpoint delivery of various ground unit support devices - the functionality is highly dependent on the selected payload."

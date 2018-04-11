@@ -417,7 +417,7 @@ manufacture:
     requiredItems:
       STR_RECOVER_FLYING_DRONE_ARMOR: 1
     producedItems:
-      STR_ALIEN_ALLOYS: 1
+      STR_RECYCLED_MATERIALS: 1
     spawnedPersonType: STR_AI_SUBROUTINE
 
 ufopaedia:

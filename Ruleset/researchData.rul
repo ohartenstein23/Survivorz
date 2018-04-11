@@ -123,6 +123,12 @@ research:
       - STR_ENVIRO_SCAN_EASY_ITEM
 
 # Support items
+  - name: STR_SMOKESCREEN_LAUNCHER
+    cost: 7
+    score: 0
+    dependencies:
+      - STR_HOSTILE_WEAPONS
+
   - name: STR_SUPPORT_TARGETER
     cost: 8
     score: 0
