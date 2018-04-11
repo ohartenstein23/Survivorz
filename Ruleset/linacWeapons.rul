@@ -267,7 +267,7 @@ items:
     power: 50
     damageType: 3
     damageAlter:
-        ToArmorPre: 0.05
+        ToArmorPre: 0.4
         ToStun: 1.0
         ToTile: 0.8
     clipSize: 1
