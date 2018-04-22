@@ -1,141 +1,95 @@
 interfaces:
   - type: mainMenu
     music: GMSTORY
-    elements:
+    palette: PALETTE_MENUS
+    elements: &elementsPaletteMenu
       - id: palette
-        color: 0     # brown
+        color: 0
       - id: window
-        color: 133   # minty green
+        color: 15
+      - id: frames
+        color: 2
+      - id: heading
+        color: 2
       - id: text
-        color: 138   # yellow
+        color: 2
+        color2: 4
+      - id: list
+        color: 2
+        color2: 4
+        border: 2
+      - id: tooltip
+        color: 2
       - id: button
-        color: 133   # minty green
+        color: -3
+      - id: button1
+        color: -3
+      - id: button2
+        color: -3
+      - id: ironman
+        color: -3
       - id: confirmDefaults
-        color: 138   # yellow
+        color: 2
       - id: confirmVideo
-        color: 239   # bright green
+        color: 2
       - id: battlescapeTheme
         color: -1
         color2: -1
         border: 0
-  - type: tests
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: heading
-        color: 239   # bright green
-      - id: text
-        color: 138   # yellow
-      - id: frames
-        color: 239   # bright green
-      - id: button1
-        color: 239   # bright green
-      - id: button2
-        color: 133   # minty green
-  - type: newBattleMenu
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: heading
-        color: 239   # bright green
-      - id: text
-        color: 138   # yellow
-      - id: frames
-        color: 239   # bright green
-      - id: button1
-        color: 239   # bright green
-      - id: button2
-        color: 133   # minty green
-  - type: newGameMenu
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 138   # yellow
-      - id: ironman
-        color: 138   # yellow
-      - id: button
-        color: 133   # minty green
-  - type: endGameStatistics
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: list
-        color: 138   # yellow
-        color2: 133  # minty green
-        border: 133  # minty green
-      - id: button
-        color: 133   # minty green
-  - type: optionsMenu
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: tooltip
-        color: 133   # minty green
-      - id: button
-        color: 133   # minty green
-  - type: videoMenu
-    elements:
-      - id: text
-        color: 138   # yellow
-      - id: resolution
-        color: 239   # bright green
-      - id: button
-        color: 239   # bright green
-  - type: audioMenu
-    elements:
-      - id: text
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
-  - type: controlsMenu
-    elements:
-      - id: optionLists
-        color: 138   # yellow
-        color2: 239  # bright green
-        border: 133  # minty green
-  - type: geoscapeMenu
-    elements:
-      - id: text
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
-  - type: battlescapeMenu
-    elements:
-      - id: text
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
-  - type: advancedMenu
-    elements:
-      - id: optionLists
-        color: 138   # yellow
-        color2: 239  # bright green
-        border: 133  # minty green
       - id: disabledUserOption
-        color: 100   # grey
-  - type: modsMenu
-    elements:
+        color: 4
       - id: optionLists
-        color: 138   # yellow
-        border: 133  # minty green
-      - id: text
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
+        color: 2
+        border: 2
+
+  - type: tests
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: newBattleMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: newGameMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: endGameStatistics
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: optionsMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: videoMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: audioMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: controlsMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: geoscapeMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: battlescapeMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: advancedMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
+  - type: modsMenu
+    palette: PALETTE_MENUS
+    elements: *elementsPaletteMenu
+
   - type: saveMenus
     elements:
       - id: palette
@@ -1922,3 +1876,53 @@ interfaces:
         color: 246   # purple
       - id: comboBox
         color: 241   # pink
+
+customPalettes:
+  - type: PALETTE_HOLO_BACKGROUND
+    target: BACKPALS.DAT
+    palette:
+      0: [124, 124, 124]
+      1: [88, 88, 88]
+      2: [68, 68, 68]
+      3: [52, 52, 52]
+      4: [120, 92, 88]
+      5: [92, 68, 60]
+      6: [68, 44, 40]
+      7: [40, 24, 20]
+      8: [64, 196, 252]
+      9: [48, 148, 224]
+      10: [32, 108, 196]
+      11: [24, 72, 168]
+      12: [12, 40, 140]
+      13: [4, 16, 116]
+      14: [4, 0, 88]
+      15: [8, 0, 60]
+
+  - type: PALETTE_MENUS
+    target: PALETTE_MENUS
+    palette:
+      0: [0, 0, 0]
+      1: [4, 0, 88]
+      2: [8, 0, 60]
+      3: [160, 224, 132]
+      4: [24, 72, 168]
+      5: [48, 96, 72]
+      6: [4, 0, 88]
+      7: [8, 0, 60]
+      16: [220, 208, 204]
+      17: [176, 156, 148]
+      18: [4, 16, 116]
+      144: [252, 252, 164]
+      145: [220, 232, 140]
+      146: [192, 212, 120]
+      147: [164, 192, 104]
+      254: [160, 224, 132]
+      255: [24, 72, 168]
+
+extraSprites:
+  - type: BACK01.SCR
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
