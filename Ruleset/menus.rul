@@ -91,40 +91,51 @@ interfaces:
     elements: *elementsPaletteMenu
 
   - type: saveMenus
-    elements:
+    elements: &elementsGeoscapeFullMenu
       - id: palette
-        color: 6     # oxide
+        color: 0
       - id: window
-        color: 133   # minty green
+        color: 133
       - id: text
-        color: 239   # bright green
-        color2: 138  # yellow
+        color: 239
+        color2: 138
       - id: list
-        color: 138   # yellow
-        color2: 133  # minty green
-        border: 133  # minty green
+        color: 138
+        color2: 138
+        border: 253
       - id: button
-        color: -3 #133   # minty green
+        color: -3
       - id: confirmLoad
-        color: 239   # bright green
+        color: 239
       - id: confirmDelete
-        color: 138   # yellow
+        color: 138
+      - id: errorPalette
+        color: 0
+      - id: errorMessage
+        color: 239
+      - id: totals
+        color: 239
+      - id: heading
+        color: 239
+
   - type: loadingText
     elements:
       - id: battlescape
         color: 15    # white
       - id: geoscape
-        color: 133   # minty green
+        color: 239
+
   - type: pauseMenu
     elements:
       - id: palette
         color: 0     # brown
       - id: window
-        color: 239   # bright green
+        color: 253
       - id: text
-        color: 239   # bright green
+        color: 239
       - id: button
-        color: 239   # bright green
+        color: -3
+
   - type: errorMessages
     elements:
       - id: geoscapePalette
@@ -135,229 +146,86 @@ interfaces:
         color: 138   # yellow
       - id: battlescapeColor
         color: 0    # white
+
   - type: geoCraft
-    elements:
+    elements: &elementsGeoscapePartialMenu
       - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
+        color: 0
+        color2: 0
       - id: window
-        color: 239   # bright green
+        color: 253
+      - id: text
+        color: 239
+        color2: 138
+        border: 253
       - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
+        color: 239
+        color2: 138
+        border: 253
       - id: text2
-        color: 133   # minty green
-        color2: 138  # yellow
-        border: 133  # minty green
+        color: 239
+        color2: 138
+        border: 253
       - id: text3
-        color: 239   # bright green
-        color2: 133  # minty green
-        border: 239  # bright green
+        color: 239
+        color2: 138
+        border: 253
       - id: button
-        color: -3 #133   # minty green
+        color: -3
+      - id: button1
+        color: -3
+      - id: button2
+        color: -3
       - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
+        color: 239
+        color2: 138
+        border: 253
+
   - type: selectMusicTrack
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text
-        color: 138   # yellow
-      - id: list
-        color: 133   # minty green
-        border: 239  # bright green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: intercept
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: text2
-        color: 133   # minty green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
-      - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: ufoTracker
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: text2
-        color: 133   # minty green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
-      - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: craftPatrol
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: craftError
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: craftPilotError
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: targetInfo
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 138   # yellow
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: confirmDestination
-    elements:
-      - id: palette
-        color: 4     # aqua
-        color2: 6    # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: confirmCydonia
-    elements:
-      - id: palette
-        color: 5     # red
-      - id: window
-        color: 133   # minty green
-      - id: button
-        color: 133   # minty green
-      - id: text
-        color: -3 #138   # yellow
+    elements: *elementsGeoscapePartialMenu
+
   - type: confirmLanding
-    elements:
-      - id: palette
-        color: 3     # pink
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-        color2: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: lowFuel
-    elements:
-      - id: palette
-        color: 4     # aqua
-      - id: text
-        color: 138  # yellow
-      - id: window
-        color: 239   # bright green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: UFOInfo
-    elements:
-      - id: palette
-        color: 7     # dark blue/purple
-        color2: 2    # red/orange
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-        color2: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: UFOLost
-    elements:
-      - id: palette
-        color: 7     # dark blue/purple
-        color2: 2    # red/orange
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-        color2: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: multipleTargets
-    elements:
-      - id: palette
-        color: 7     # dark blue/purple
-        color2: 2    # red/orange
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-        color2: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: baseDestroyed
-    elements:
-      - id: palette
-        color: 7     # dark blue/purple
-        color2: 2    # red/orange
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-        color2: 138  # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: baseDefense
     palette: PAL_BASESCAPE
     elements:
@@ -369,147 +237,43 @@ interfaces:
         color: 218   # blue
       - id: button
         color: 218   # blue
+
   - type: terrorSite
-    elements:
-      - id: palette
-        color: 3     # pink
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: alienBase
-    elements:
-      - id: palette
-        color: 3     # pink
-      - id: window
-        color: 239   # bright green
-      - id: text
-        color: 133   # minty green
-      - id: button
-        color: -3 #138   # yellow
+    elements: *elementsGeoscapePartialMenu
+
   - type: itemsArriving
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 133   # minty green
-      - id: text1
-        color: 133   # minty green
-      - id: text2
-        color: 138   # yellow
-        border: 133  # minty green
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoResearch
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoResearchComplete
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoResearchRequired
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: trainingFinished
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoNewCraft
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoNewFacility
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoNewItem
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoManufacture
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: geoManufactureComplete
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: -3 #133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: dogfight
     elements:
       - id: minimizeButtonDummy
@@ -563,30 +327,13 @@ interfaces:
       - id: previewMid
         pos: [0, 140]
         size: [160, 52]
+
   - type: baseNaming
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-      - id: button
-        color: 133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: monthlyReport
-    elements:
-      - id: palette
-        color: 3
-      - id: window
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: text1
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: text2
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
+    elements: *elementsGeoscapeFullMenu
+
   - type: psiTraining
     palette: PAL_BASESCAPE
     elements:
@@ -645,21 +392,10 @@ interfaces:
         border: 218  # blue
       - id: button
         color: 218   # blue
+
   - type: fundingWindow
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text1
-        color: 239   # bright green
-      - id: text2
-        color: 133   # minty green
-      - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: button
-        color: 239   # bright green
+    elements: *elementsGeoscapePartialMenu
+
   - type: graphs
     palette: PAL_GRAPHS
     elements:
@@ -677,94 +413,25 @@ interfaces:
       - id: countryTotal
         color: 141    # magenta (inverted button offset)
         color2: 144  # also magenta (the line itself)
+
   - type: ufopaedia
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text
-        color: 138   # yellow
-      - id: list
-        color: 133
-        color2: 90
-        border: 239
-      - id: button1
-        color: 133   # minty green
-      - id: button2
-        color: 239   # bright green
+    elements: *elementsGeoscapePartialMenu
+
   - type: noContainment
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: text
-        color: 133   # minty green
-      - id: button
-        color: 133   # minty green
+    elements: *elementsGeoscapePartialMenu
+
   - type: promotions
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: heading
-        color: 133   # minty green
-      - id: text
-        color: 239   # bright green
-      - id: list
-        color: 138   # yellow
-      - id: button
-        color: 239   # bright green
+    elements: *elementsGeoscapeFullMenu
+
   - type: cannotReequip
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: heading
-        color: 133   # minty green
-      - id: text
-        color: 239   # bright green
-      - id: list
-        color: 138   # yellow
-      - id: button
-        color: 133   # minty green
+    elements: *elementsGeoscapeFullMenu
+
   - type: debriefing
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: heading
-        color: 133   # minty green
-      - id: text
-        color: 133   # minty green
-      - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: totals
-        color: 133   # minty green
-      - id: button
-        color: 239   # bright green
-      - id: errorPalette
-        color: 0     # brown
-      - id: errorMessage
-        color: 133   # minty green  
+    elements: *elementsGeoscapeFullMenu
+
   - type: commendations
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 239   # bright green
-      - id: heading
-        color: 133   # minty green
-      - id: list
-        color: 239   # bright green
-        color2: 138  # yellow
-      - id: button
-        color: 239   # bright green
+    elements: *elementsGeoscapeFullMenu
+
   - type: commendationsLate
     music: GMLOSE
     palette: PAL_BASESCAPE
@@ -782,32 +449,34 @@ interfaces:
         border: 218  # blue
       - id: button
         color: 218   # blue
+
   - type: geoscape
     elements:
       - id: palette
-        color: 0     # brown
-        color2: 6
+        color: 0
+        color2: 0
       - id: textLoad
-        color: 133   # minty green
+        color: 239
       - id: button
-        color: -3 #246   # light blue
-        color2: -3 #245  # slightly lighter blue
+        color: -3
+        color2: -3
       - id: text
-        color: 244   # even lighter blue
+        color: 239
       - id: genericWindow
-        color: 239   # bright green
+        color: 239
       - id: genericText
-        color: 239   # bright green
-        color2: 138  # yellow
-        border: 133  # minty green
+        color: 239
+        color2: 138
+        border: 133
       - id: genericButton1
-        color: -3 #133   # minty green
+        color: -3
       - id: genericButton2
-        color: -3 #239   # bright green
+        color: -3
       - id: errorPalette
-        color: 6     # brown
+        color: 0
       - id: errorMessage
-        color: 239   # bright green
+        color: 239
+
   - type: sellMenu
     palette: PAL_BASESCAPE
     elements:
@@ -1925,24 +1594,103 @@ customPalettes:
       0: [0, 0, 0]
       1: [4, 0, 88]
       2: [8, 0, 60]
+      134: [220, 208, 204]
+      135: [176, 156, 148]
+      136: [4, 16, 116]
+      #139: [160, 224, 132]
+      #139: [24, 72, 168]
       139: [48, 96, 72]
       140: [4, 0, 88]
       141: [8, 0, 60]
+      142: [4, 0, 88]
+      143: [8, 0, 60]
       240: [160, 224, 132]
       241: [24, 72, 168]
-      242: [8, 0, 60]
+      242: [48, 96, 72]
+      243: [4, 0, 88]
+      244: [8, 0, 60]
       254: [160, 224, 132]
       255: [24, 72, 168]
 
 extraSprites:
-  - type: BACK01.SCR
+  - type: BACK01.SCR # Most generic screens
     singleImage: true
     width: 320
     height: 200
     files:
       0: Resources/Background/background_holo.png
 
-  - type: GEOBORD.SCR
+  - type: GEOBORD.SCR # Geoscape background
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK02.SCR # Most soldier screens
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK03.SCR # Terror mission screen
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_transparent_geo.png
+
+  - type: BACK04.SCR # Base defense and equip craft
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK05.SCR # Research and building
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK12.SCR # Craft screens in geoscape
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_transparent_geo.png
+
+  - type: BACK13.SCR # Finance screens
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK14.SCR # Equip craft/armor
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK15.SCR # Ufo screens in geoscape
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_transparent_geo.png
+
+  - type: BACK16.SCR # Landing screen
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: BACK17.SCR # Manufacturing
     singleImage: true
     width: 320
     height: 200
