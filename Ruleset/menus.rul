@@ -104,7 +104,7 @@ interfaces:
         color2: 133  # minty green
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
       - id: confirmLoad
         color: 239   # bright green
       - id: confirmDelete
@@ -155,7 +155,7 @@ interfaces:
         color2: 133  # minty green
         border: 239  # bright green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
       - id: list
         color: 239   # bright green
         color2: 138  # yellow
@@ -172,7 +172,7 @@ interfaces:
         color: 133   # minty green
         border: 239  # bright green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: intercept
     elements:
       - id: palette
@@ -189,7 +189,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
       - id: list
         color: 239   # bright green
         color2: 138  # yellow
@@ -210,7 +210,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
       - id: list
         color: 239   # bright green
         color2: 138  # yellow
@@ -227,7 +227,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: craftError
     elements:
       - id: palette
@@ -240,7 +240,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: craftPilotError
     elements:
       - id: palette
@@ -253,7 +253,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: targetInfo
     elements:
       - id: palette
@@ -265,7 +265,7 @@ interfaces:
       - id: text2
         color: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: confirmDestination
     elements:
       - id: palette
@@ -278,7 +278,7 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: confirmCydonia
     elements:
       - id: palette
@@ -288,7 +288,7 @@ interfaces:
       - id: button
         color: 133   # minty green
       - id: text
-        color: 138   # yellow
+        color: -3 #138   # yellow
   - type: confirmLanding
     elements:
       - id: palette
@@ -299,7 +299,7 @@ interfaces:
         color: 133   # minty green
         color2: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: lowFuel
     elements:
       - id: palette
@@ -309,7 +309,7 @@ interfaces:
       - id: window
         color: 239   # bright green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: UFOInfo
     elements:
       - id: palette
@@ -321,7 +321,7 @@ interfaces:
         color: 133   # minty green
         color2: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: UFOLost
     elements:
       - id: palette
@@ -333,7 +333,7 @@ interfaces:
         color: 133   # minty green
         color2: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: multipleTargets
     elements:
       - id: palette
@@ -345,7 +345,7 @@ interfaces:
         color: 133   # minty green
         color2: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: baseDestroyed
     elements:
       - id: palette
@@ -357,7 +357,7 @@ interfaces:
         color: 133   # minty green
         color2: 138  # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: baseDefense
     palette: PAL_BASESCAPE
     elements:
@@ -378,7 +378,7 @@ interfaces:
       - id: text
         color: 133   # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: alienBase
     elements:
       - id: palette
@@ -388,7 +388,7 @@ interfaces:
       - id: text
         color: 133   # minty green
       - id: button
-        color: 138   # yellow
+        color: -3 #138   # yellow
   - type: itemsArriving
     elements:
       - id: palette
@@ -401,7 +401,7 @@ interfaces:
         color: 138   # yellow
         border: 133  # minty green
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoResearch
     elements:
       - id: palette
@@ -413,7 +413,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoResearchComplete
     elements:
       - id: palette
@@ -425,7 +425,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoResearchRequired
     elements:
       - id: palette
@@ -437,7 +437,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: trainingFinished
     elements:
       - id: palette
@@ -449,7 +449,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoNewCraft
     elements:
       - id: palette
@@ -461,7 +461,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoNewFacility
     elements:
       - id: palette
@@ -473,7 +473,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoNewItem
     elements:
       - id: palette
@@ -485,7 +485,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoManufacture
     elements:
       - id: palette
@@ -497,7 +497,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: geoManufactureComplete
     elements:
       - id: palette
@@ -509,7 +509,7 @@ interfaces:
       - id: text2
         color: 138   # yellow
       - id: button
-        color: 133   # minty green
+        color: -3 #133   # minty green
   - type: dogfight
     elements:
       - id: minimizeButtonDummy
@@ -790,8 +790,8 @@ interfaces:
       - id: textLoad
         color: 133   # minty green
       - id: button
-        color: 246   # light blue
-        color2: 245  # slightly lighter blue
+        color: -3 #246   # light blue
+        color2: -3 #245  # slightly lighter blue
       - id: text
         color: 244   # even lighter blue
       - id: genericWindow
@@ -801,9 +801,9 @@ interfaces:
         color2: 138  # yellow
         border: 133  # minty green
       - id: genericButton1
-        color: 133   # minty green
+        color: -3 #133   # minty green
       - id: genericButton2
-        color: 239   # bright green
+        color: -3 #239   # bright green
       - id: errorPalette
         color: 6     # brown
       - id: errorMessage
@@ -1919,8 +1919,30 @@ customPalettes:
       254: [160, 224, 132]
       255: [24, 72, 168]
 
+  - type: PALETTE_MENUS_GEOSCAPE
+    target: PAL_GEOSCAPE
+    palette:
+      0: [0, 0, 0]
+      1: [4, 0, 88]
+      2: [8, 0, 60]
+      139: [48, 96, 72]
+      140: [4, 0, 88]
+      141: [8, 0, 60]
+      240: [160, 224, 132]
+      241: [24, 72, 168]
+      242: [8, 0, 60]
+      254: [160, 224, 132]
+      255: [24, 72, 168]
+
 extraSprites:
   - type: BACK01.SCR
+    singleImage: true
+    width: 320
+    height: 200
+    files:
+      0: Resources/Background/background_holo.png
+
+  - type: GEOBORD.SCR
     singleImage: true
     width: 320
     height: 200
