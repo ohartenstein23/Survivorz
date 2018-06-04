@@ -277,27 +277,27 @@ interfaces:
   - type: dogfight
     elements:
       - id: minimizeButtonDummy
-        color: 80
+        color: 253
       - id: standoffButton
-        color: 81
+        color: 253
       - id: cautiousButton
-        color: 81
+        color: 253
       - id: standardButton
-        color: 81
+        color: 253
       - id: aggressiveButton
-        color: 81
+        color: 253
       - id: disengageButton
-        color: 81
+        color: 253
       - id: ufoButton
-        color: 81
+        color: 253
       - id: text
-        color: 89
+        color: 253
       - id: numbers
-        color: 89
+        color: 253
       - id: distance
-        color: 89
+        color: 253
       - id: minimizedNumber
-        color: 80
+        color: 253
       - id: radarDetail
         color: 108
         color2: 111
@@ -311,10 +311,10 @@ interfaces:
         color: 13
         color2: 14
       - id: disabledWeapon
-        color: 24
-        color2: 7
+        color: 32
+        color2: 13
       - id: disabledAmmo
-        color: 24
+        color: 216
       - id: shieldRange
         color: 80
         color2: 85
@@ -467,7 +467,7 @@ interfaces:
       - id: genericText
         color: 239
         color2: 138
-        border: 133
+        border: 253
       - id: genericButton1
         color: -3
       - id: genericButton2
@@ -1583,8 +1583,8 @@ customPalettes:
       18: [4, 16, 116]
       144: [252, 252, 164]
       145: [220, 232, 140]
-      146: [192, 212, 120]
-      147: [164, 192, 104]
+      146: [160, 224, 132]
+      147: [24, 72, 168]
       254: [160, 224, 132]
       255: [24, 72, 168]
 
@@ -1594,6 +1594,33 @@ customPalettes:
       0: [0, 0, 0]
       1: [4, 0, 88]
       2: [8, 0, 60]
+      90: [124, 244, 232]
+      91: [112, 228, 224]
+      92: [92, 164, 208]
+      93: [72, 104, 174]
+      94: [64, 56, 136]
+      95: [40, 24, 74]
+      107: [160, 224, 132]
+      108: [152, 220, 132]
+      109: [144, 206, 132]
+      110: [136, 192, 132]
+      111: [128, 178, 132]
+      112: [160, 224, 132]
+      113: [152, 220, 132]
+      114: [144, 206, 132]
+      115: [136, 192, 132]
+      116: [128, 178, 132]
+      117: [120, 164, 132]
+      118: [112, 150, 132]
+      119: [104, 136, 132]
+      120: [96, 122, 132]
+      121: [88, 108, 124]
+      122: [80, 96, 116]
+      123: [72, 82, 108]
+      124: [64, 68, 100]
+      125: [56, 54, 92]
+      126: [48, 40, 86]
+      127: [40, 24, 74]
       134: [220, 208, 204]
       135: [176, 156, 148]
       136: [4, 16, 116]
@@ -1639,7 +1666,7 @@ extraSprites:
     width: 320
     height: 200
     files:
-      0: Resources/Background/background_transparent_geo.png
+      0: Resources/Background/background_holo_transparent_1.png
 
   - type: BACK04.SCR # Base defense and equip craft
     singleImage: true
@@ -1660,7 +1687,7 @@ extraSprites:
     width: 320
     height: 200
     files:
-      0: Resources/Background/background_transparent_geo.png
+      0: Resources/Background/background_holo_transparent_0.png
 
   - type: BACK13.SCR # Finance screens
     singleImage: true
@@ -1681,7 +1708,7 @@ extraSprites:
     width: 320
     height: 200
     files:
-      0: Resources/Background/background_transparent_geo.png
+      0: Resources/Background/background_holo_transparent_1.png
 
   - type: BACK16.SCR # Landing screen
     singleImage: true
@@ -1696,3 +1723,10 @@ extraSprites:
     height: 200
     files:
       0: Resources/Background/background_holo.png
+
+  - type: INTERWIN.DAT # Interception window
+    singleImage: true
+    width: 160
+    height: 96
+    files:
+      0: Resources/Background/interwin01_survivorz.png
