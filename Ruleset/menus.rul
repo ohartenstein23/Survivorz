@@ -334,64 +334,78 @@ interfaces:
   - type: monthlyReport
     elements: *elementsGeoscapeFullMenu
 
+  - type: basescape
+    palette: PAL_BASESCAPE
+    elements: &elementsBasescape
+      - id: button
+        color: -3
+      - id: button1
+        color: -3
+      - id: button2
+        color: -3
+      - id: text
+        color: 241
+        color2: 243
+        border: 241
+      - id: text1
+        color: 241
+      - id: text2
+        color: 241
+      - id: text3
+        color: 218
+      - id: textTooltip
+        color: 218
+      - id: list
+        color: 241
+        color2: 243
+        border: 241
+      - id: list2
+        color: 241
+        color2: 243
+        border: 241
+      - id: listExtended
+        color: 241
+        color2: 243
+        border: 241
+      - id: baseView
+        color: 213   # gold   (time remaining)
+        color2: 16   # orange (selector color)
+      - id: palette
+        color: 0
+      - id: errorPalette
+        color: 0
+      - id: errorMessage
+        color: 241
+      - id: miniBase
+        color: 48    # green
+        color2: 32   # red
+        border: 218  # blue
+      - id: window
+        color: 241
+      - id: ammoColor
+        color: 243
+      - id: numbers
+        color: 241
+      - id: catBox
+        color: 241
+      - id: otherBase
+        color: -3
+
   - type: psiTraining
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 246   # purple
-      - id: text
-        color: 218   # light blue
-      - id: button1
-        color: 246   # purple
-      - id: button2
-        color: 218   # light blue
+    elements: *elementsBasescape
+
   - type: martialTraining
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 246   # purple
-      - id: text
-        color: 218   # light blue
-      - id: button1
-        color: 246   # purple
-      - id: button2
-        color: 218   # light blue
+    elements: *elementsBasescape
+
   - type: allocatePsi
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 213  # yellow
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: allocateMartial
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 213  # yellow
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
 
   - type: fundingWindow
     elements: *elementsGeoscapePartialMenu
@@ -435,20 +449,7 @@ interfaces:
   - type: commendationsLate
     music: GMLOSE
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 218  # blue
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
 
   - type: geoscape
     elements:
@@ -479,208 +480,56 @@ interfaces:
 
   - type: sellMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: ammoColor
-        color: 246   # purple
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: dependencyTree
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 241  # pink
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: buyMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: ammoColor
-        color: 246   # purple
-      - id: button
-        color: 218   # blue
-      - id: errorPalette
-        color: 0     # brown
-      - id: errorMessage
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: manageContainment
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 208   # white
-        color2: 218  # blue
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
-      - id: errorPalette
-        color: 6     # oxide
-      - id: errorMessage
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: transferBaseSelect
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 4     # dark green
-      - id: window
-        color: 213   # gold
-      - id: button
-        color: 213   # gold
-      - id: text
-        color: 213   # gold
-        color2: 208  # white
-      - id: list
-        color: 241   # pink
-        color2: 213  # gold
+    elements: *elementsBasescape
+
   - type: transferMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: ammoColor
-        color: 246   # purple
-      - id: button
-        color: 246   # purple
-      - id: errorPalette
-        color: 0     # brown
-      - id: errorMessage
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: transferConfirm
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 213   # gold
-      - id: button
-        color: 246   # purple
-      - id: text
-        color: 218   # blue
-        color2: 241  # pink
+    elements: *elementsBasescape
+
   - type: transferInfo
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 246   # purple
-      - id: button
-        color: 246   # purple
-      - id: text
-        color: 246   # purple
-      - id: list
-        color: 218   # blue
-        border: 246  # purple
+    elements: *elementsBasescape
+
   - type: selectFacility
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 213   # gold
-      - id: button
-        color: 213   # gold
-      - id: text
-        color: 208   # white
-      - id: list
-        color: 213   # gold
+    elements: *elementsBasescape
+
   - type: placeFacility
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 218   # blue
-      - id: button
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-      - id: numbers
-        color: 208   # white
-      - id: errorPalette
-        color: 0     # brown
-      - id: errorMessage
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: dismantleFacility
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 241   # pink
-      - id: button
-        color: 246   # purple
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
+    elements: *elementsBasescape
+
   - type: changeHeadquarters
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 241   # pink
-      - id: button
-        color: 246   # purple
-      - id: text
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: manufactureMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 246   # purple
-      - id: text1
-        color: 246   # purple
-        color2: 208  # white
-      - id: text2
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        border: 246  # purple
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: selectNewManufacture
     parent: manufactureMenu
     elements:
@@ -699,6 +548,7 @@ interfaces:
         color: 218   # blue
       - id: catBox
         color: 241   # pink
+
   - type: allocateManufacture
     parent: manufactureMenu
     elements:
@@ -712,6 +562,7 @@ interfaces:
         color2: 208  # white
       - id: button
         color: 218   # blue
+
   - type: manufactureInfo
     parent: manufactureMenu
     elements:
@@ -727,37 +578,15 @@ interfaces:
         color: 241   # pink
       - id: button2
         color: 246   # purple
+
   - type: researchMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        border: 218  # blue
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: globalResearchMenu
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 208  # white
-        border: 218  # blue
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: selectNewResearch
     parent: researchMenu
     elements:
@@ -771,6 +600,7 @@ interfaces:
         border: 218  # blue
       - id: button
         color: 246   # purple
+
   - type: allocateResearch
     parent: researchMenu
     elements:
@@ -783,25 +613,11 @@ interfaces:
         color: 213   # gold
       - id: button2
         color: 218   # blue
+
   - type: techTreeViewer
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 241  # pink
-        border: 218  # blue
-      - id: listExtended
-        color: 208   # white
-        color2: 213  # gold
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: techTreeSelect
     parent: techTreeViewer
     elements:
@@ -815,83 +631,55 @@ interfaces:
         border: 218  # blue
       - id: button
         color: 218   # blue
+
   - type: baseInfo
     palette: PAL_BASESCAPE
     elements:
       - id: text1
-        color: 241   # pink
+        color: 241
       - id: text2
-        color: 213   # gold
+        color: 213
       - id: numbers
-        color: 208   # white
+        color: 208
       - id: button
-        color: 246   # purple
+        color: -3
       - id: personnelBars
-        color: 16    # orange
+        color: 16
       - id: facilityBars
-        color: 48    # light green
+        color: 48
       - id: defenceBar
-        color: 32    # sorta red
+        color: 32
       - id: detectionBars
-        color: 128   # pale blue
+        color: 128
+
   - type: storesInfo
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 0     # brown
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-      - id: list
-        color: 218   # blue
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: costsInfo
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 241   # pink
-        color2: 218  # blue
-      - id: text2
-        color: 208   # white
-      - id: list
-        color: 218   # blue
-      - id: button
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: soldierList
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 2     # orange
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 218   # blue
-      - id: text2
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        color2: 246  # purple
-        border: 241  # pink
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
+  - type: soldierTransformation
+    palette: PAL_BASESCAPE
+    elements: *elementsBasescape
+
   - type: soldierInfo
     palette: PAL_BASESCAPE
     elements:
       - id: text1
-        color: 218   # blue
-        color2: 208  # white
+        color: 241
+        color2: 218
       - id: text2
-        color: 241   # pink
+        color: 241
       - id: numbers
-        color: 208   # white
+        color: 208
       - id: button
-        color: 246   # purple
+        color: -3
       - id: barTUs
         color: 52
         color2: 56
@@ -937,301 +725,79 @@ interfaces:
         color2: 184
         border: 176
       - id: errorPalette
-        color: 0     # brown
+        color: 0
       - id: errorMessage
-        color: 241   # pink
+        color: 241
+
   - type: sackSoldier
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 218   # blue
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: soldierArmor
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 4     # green
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 213   # gold
-      - id: list
-        color: 208   # white
-        border: 213  # gold
-      - id: button
-        color: 213   # gold
+    elements: *elementsBasescape
+
   - type: soldierAvatar
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 4     # green
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 213   # gold
-      - id: list
-        color: 208   # white
-        border: 213  # gold
-      - id: button
-        color: 213   # gold
+    elements: *elementsBasescape
+
   - type: soldierMemorial
     music: GMLOSE
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 218  # blue
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: soldierDiary
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 218   # blue
-      - id: text2
-        color: 241   # pink
-        color2: 218  # blue
-      - id: list
-        color: 218   # blue
-        color2: 241   # pink
-        border: 241  # pink
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: soldierDiaryPerformance
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 7     # violet
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 218   # blue
-      - id: text2
-        color: 241   # pink
-        color2: 218  # blue
-      - id: list
-        color: 218   # blue
-        color2: 241   # pink
-        border: 241  # pink
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: soldierDiaryMission
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 213   # gold
-        color2: 208  # white
-      - id: list
-        color: 208   # white
-        border: 213  # gold
-      - id: button
-        color: 213   # gold
+    elements: *elementsBasescape
+
   - type: craftEquipment
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 2     # orange
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-        color2: 208  # white
-      - id: button
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-        border: 241  # pink
-      - id: ammoColor
-        color: 246   # purple
-      - id: errorPalette
-        color: 2     # orange
-      - id: errorMessage
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: craftEquipmentSave
     parent: craftEquipment
-    elements:
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-        color2: 208  # white
-      - id: button
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-        border: 241  # pink
+    elements: *elementsBasescape
+
   - type: craftEquipmentLoad
     parent: craftEquipment
-    elements:
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-        color2: 208  # white
-      - id: button
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-        border: 241  # pink
+    elements: *elementsBasescape
+
   - type: craftArmor
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 4     # aqua
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-      - id: button
-        color: 218   # blue
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: otherCraft
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: craftInfo
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 3     # pink
-      - id: window
-        color: 218   # blue
-      - id: text1
-        color: 218   # blue
-        color2: 208  # white
-      - id: text2
-        color: 218   # blue
-        color2: 213  # gold
-      - id: button
-        color: 218   # blue
+    elements: *elementsBasescape
+
   - type: craftWeapons
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 4     # aqua
-      - id: window
-        color: 246   # purple
-      - id: text
-        color: 246   # purple
-        color2: 218  # blue
-      - id: list
-        color: 218   # blue
-      - id: button
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: craftSoldiers
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 2     # orange
-      - id: window
-        color: 246   # purple
-      - id: text
-        color: 246   # purple
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-        border: 246  # purple
-      - id: button
-        color: 218   # blue
-      - id: otherCraft
-        color: 246   # purple
+    elements: *elementsBasescape
+
   - type: craftPilots
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 6     # oxide
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 241   # pink
-        color2: 218  # blue
-      - id: text2
-        color: 208   # white
-      - id: list
-        color: 218   # blue
-      - id: button
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: craftPilotsSelect
     parent: craftPilots
-    elements:
-      - id: window
-        color: 241   # pink
-      - id: text1
-        color: 241   # pink
-        color2: 218  # blue
-      - id: text2
-        color: 208   # white
-      - id: list
-        color: 218   # blue
-      - id: button
-        color: 241   # pink
+    elements: *elementsBasescape
+
   - type: craftSelect
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 3     # pink
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-      - id: list
-        color: 218   # blue
-        border: 241  # pink
-      - id: button
-        color: 218   # blue
-      - id: errorPalette
-        color: 0     # brown
-      - id: errorMessage
-        color: 241   # pink
-  - type: basescape
-    palette: PAL_BASESCAPE
-    elements:
-      - id: button
-        color: 213   # gold
-      - id: text1
-        color: 241   # pink
-      - id: text2
-        color: 246   # purple
-      - id: text3
-        color: 218   # blue
-      - id: textTooltip
-        color: 218   # blue
-      - id: baseView
-        color: 213   # gold   (time remaining)
-        color2: 16   # orange (selector color)
-      - id: errorPalette
-        color: 6     # oxide
-      - id: errorMessage
-        color: 241   # pink
-      - id: miniBase
-        color: 48    # green
-        color2: 32   # red
-        border: 218  # blue
+    elements: *elementsBasescape
+
   - type: battlescape
     palette: PAL_BATTLESCAPE
     elements:
@@ -1372,6 +938,7 @@ interfaces:
         color2: 16
       - id: textItem
         color: 48
+        color2: 16
       - id: textAmmo
         color: 64
         color2: 16
@@ -1636,6 +1203,24 @@ customPalettes:
       242: [48, 96, 72]
       243: [4, 0, 88]
       244: [8, 0, 60]
+      254: [160, 224, 132]
+      255: [24, 72, 168]
+
+  - type: PALETTE_MENUS_BASESCAPE
+    target: PAL_BASESCAPE
+    palette:
+      0: [0, 0, 0]
+      1: [4, 0, 88]
+      2: [8, 0, 60]
+      240: [4, 0, 88]
+      241: [8, 0, 60]
+      242: [160, 224, 132]
+      243: [24, 72, 168]
+      244: [48, 96, 72]
+      245: [4, 0, 88]
+      246: [8, 0, 60]
+      247: [0, 0, 0]
+      248: [0, 0, 0]
       254: [160, 224, 132]
       255: [24, 72, 168]
 
