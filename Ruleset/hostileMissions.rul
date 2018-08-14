@@ -780,13 +780,13 @@ alienDeployments:
           - []
           - []
           - []
-    width: 60
-    length: 60
+    width: 70
+    length: 70
     height: 8
-    #terrains:
-    #  - UBASE
+    terrains:
+      - CULTA
     #shade: 15
-    #script: ALIENBASE
+    script: HOSTILE_BASE
     #briefing:
     #  textOffset: -16
     #  background: BACK01.SCR
@@ -804,13 +804,13 @@ alienDeployments:
 
   - type: STR_HOSTILE_BASE_PLAGUE
     data: *mainBaseDeploymentData
-    width: 60
-    length: 60
+    width: 70
+    length: 70
     height: 8
-    #terrains:
-    #  - UBASE
+    terrains:
+      - CULTA
     #shade: 15
-    #script: ALIENBASE
+    script: HOSTILE_BASE
     #briefing:
     #  textOffset: -16
     #  background: BACK01.SCR
@@ -828,13 +828,13 @@ alienDeployments:
 
   - type: STR_HOSTILE_BASE_WAR
     data: *mainBaseDeploymentData
-    width: 60
-    length: 60
+    width: 70
+    length: 70
     height: 8
-    #terrains:
-    #  - UBASE
+    terrains:
+      - CULTA
     #shade: 15
-    #script: ALIENBASE
+    script: HOSTILE_BASE
     #briefing:
     #  textOffset: -16
     #  background: BACK01.SCR

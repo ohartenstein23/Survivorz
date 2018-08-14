@@ -1,0 +1,437 @@
+terrains:
+  - name: Hostile_Facilities_00
+    mapDataSets:
+      - BLANKS
+      - SURVIVORZ_HOSTILE_FACILITIES_00
+    mapBlocks:
+      - name: Hostile Landing Pad
+        width: 10
+        length: 10
+        groups: 0
+
+  - name: Hostile_Facilities_01
+    mapDataSets:
+      - BLANKS
+      - SURVIVORZ_HOSTILE_CRAFT
+    mapBlocks:
+      - name: Hostile Pad Wall North
+        width: 40
+        length: 10
+      - name: Hostile Pad Wall South
+        width: 40
+        length: 10
+      - name: Hostile Pad Wall North Combined
+        width: 70
+        length: 10
+      - name: Hostile Pad Wall South Combined
+        width: 70
+        length: 10
+      - name: Hostile Pad Wall NS Combined
+        width: 40
+        length: 10
+      - name: Hostile Pad Wall East
+        width: 10
+        length: 20
+      - name: Hostile Pad Wall West
+        width: 10
+        length: 20
+      - name: Hostile Pad Wall EW Combined
+        width: 10
+        length: 20
+
+mapScripts:
+  - type: HOSTILE_BASE
+    commands:
+#*** start by determining landing pad positions ***
+    - type: fillArea
+      label: 1
+      executionChances: 25
+      rects:
+        - [1, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+
+    - type: fillArea
+      label: 2
+      executionChances: 25
+      rects:
+        - [4, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+
+    - type: fillArea
+      label: 3
+      conditionals: [-2]
+      executionChances: 33
+      rects:
+        - [1, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+
+    - type: fillArea
+      label: 4
+      conditionals: [-1]
+      executionChances: 33
+      rects:
+        - [4, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+
+    - type: fillArea
+      label: 5
+      conditionals: [-1, -2, -3, -4]
+      rects:
+        - [2, 2, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+
+#*** add some crafts on the landing pads and puts in walls ***
+    - type: removeBlock
+      conditionals: [1]
+      rects:
+        - [1, 1, 2, 2]
+    - type: addUFO
+      conditionals: [1]
+      UFOName: STR_MINING_SCOUT
+      executionChances: 30
+      rects:
+        - [1, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [1]
+      UFOName: STR_MINING_CRAFT
+      executionChances: 30
+      rects:
+        - [1, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [1]
+      UFOName: STR_MILITARY_GUNSHIP
+      executionChances: 20
+      rects:
+        - [1, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: fillArea
+      conditionals: [1]
+      rects:
+        - [1, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addBlock
+      conditionals: [1, -2]
+      rects:
+        - [0, 0, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 0
+    - type: addBlock
+      conditionals: [1, -2, -3]
+      rects:
+        - [0, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 1
+    - type: addBlock
+      conditionals: [1, -2]
+      rects:
+        - [3, 1, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 5
+    - type: addBlock
+      conditionals: [1]
+      rects:
+        - [0, 1, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 6
+    - type: addBlock
+      conditionals: [1, 2]
+      rects:
+        - [0, 0, 7, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 2
+    - type: addBlock
+      conditionals: [1, 2]
+      rects:
+        - [0, 3, 7, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 3
+    - type: addBlock
+      conditionals: [1, 3]
+      rects:
+        - [0, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 4
+    - type: addBlock
+      conditionals: [1, 2]
+      rects:
+        - [3, 1, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 7
+
+    - type: removeBlock
+      conditionals: [2]
+      rects:
+        - [4, 1, 2, 2]
+    - type: addUFO
+      conditionals: [2]
+      UFOName: STR_MINING_SCOUT
+      executionChances: 30
+      rects:
+        - [4, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [2]
+      UFOName: STR_MINING_CRAFT
+      executionChances: 30
+      rects:
+        - [4, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [2]
+      UFOName: STR_MILITARY_GUNSHIP
+      executionChances: 20
+      rects:
+        - [4, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: fillArea
+      conditionals: [2]
+      rects:
+        - [4, 1, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addBlock
+      conditionals: [-1, 2]
+      rects:
+        - [3, 0, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 0
+    - type: addBlock
+      conditionals: [-1, 2, -4]
+      rects:
+        - [3, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 1
+    - type: addBlock
+      conditionals: [2]
+      rects:
+        - [6, 1, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 5
+    - type: addBlock
+      conditionals: [-1, 2]
+      rects:
+        - [3, 1, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 6
+    - type: addBlock
+      conditionals: [2, 4]
+      rects:
+        - [3, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 4
+
+    - type: removeBlock
+      conditionals: [3]
+      rects:
+        - [1, 4, 2, 2]
+    - type: addUFO
+      conditionals: [3]
+      UFOName: STR_MINING_SCOUT
+      executionChances: 30
+      rects:
+        - [1, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [3]
+      UFOName: STR_MINING_CRAFT
+      executionChances: 30
+      rects:
+        - [1, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [3]
+      UFOName: STR_MILITARY_GUNSHIP
+      executionChances: 20
+      rects:
+        - [1, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: fillArea
+      conditionals: [3]
+      rects:
+        - [1, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addBlock
+      conditionals: [-1, 3, -4]
+      rects:
+        - [0, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 0
+    - type: addBlock
+      conditionals: [3, -4]
+      rects:
+        - [0, 6, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 1
+    - type: addBlock
+      conditionals: [3, -4]
+      rects:
+        - [3, 4, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 5
+    - type: addBlock
+      conditionals: [3]
+      rects:
+        - [0, 4, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 6
+    - type: addBlock
+      conditionals: [3, 4]
+      rects:
+        - [0, 3, 7, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 2
+    - type: addBlock
+      conditionals: [3, 4]
+      rects:
+        - [0, 6, 7, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 3
+    - type: addBlock
+      conditionals: [3, 4]
+      rects:
+        - [3, 4, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 7
+
+    - type: removeBlock
+      conditionals: [4]
+      rects:
+        - [4, 4, 2, 2]
+    - type: addUFO
+      conditionals: [4]
+      UFOName: STR_MINING_SCOUT
+      executionChances: 30
+      rects:
+        - [4, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [4]
+      UFOName: STR_MINING_CRAFT
+      executionChances: 30
+      rects:
+        - [4, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [4]
+      UFOName: STR_MILITARY_GUNSHIP
+      executionChances: 20
+      rects:
+        - [4, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: fillArea
+      conditionals: [4]
+      rects:
+        - [4, 4, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addBlock
+      conditionals: [-2, 4]
+      rects:
+        - [3, 3, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 0
+    - type: addBlock
+      conditionals: [-3, 4]
+      rects:
+        - [3, 6, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 1
+    - type: addBlock
+      conditionals: [4]
+      rects:
+        - [6, 4, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 5
+    - type: addBlock
+      conditionals: [-3, 4]
+      rects:
+        - [3, 4, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 6
+
+    - type: removeBlock
+      conditionals: [5]
+      rects:
+        - [2, 2, 2, 2]
+    - type: addUFO
+      conditionals: [5]
+      UFOName: STR_MINING_SCOUT
+      executionChances: 30
+      rects:
+        - [2, 2, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [5]
+      UFOName: STR_MINING_CRAFT
+      executionChances: 30
+      rects:
+        - [2, 2, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addUFO
+      conditionals: [5]
+      UFOName: STR_MILITARY_GUNSHIP
+      executionChances: 20
+      rects:
+        - [2, 2, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: fillArea
+      conditionals: [5]
+      rects:
+        - [2, 2, 2, 2]
+      terrain: Hostile_Facilities_00
+      groups: 0
+    - type: addBlock
+      conditionals: [5]
+      rects:
+        - [1, 1, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 0
+    - type: addBlock
+      conditionals: [5]
+      rects:
+        - [1, 4, 4, 1]
+      terrain: Hostile_Facilities_01
+      blocks: 1
+    - type: addBlock
+      conditionals: [5]
+      rects:
+        - [4, 2, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 5
+    - type: addBlock
+      conditionals: [5]
+      rects:
+        - [1, 2, 1, 2]
+      terrain: Hostile_Facilities_01
+      blocks: 6
+
+    - type: addCraft
+      terrain: CULTA
+
+    - type: fillArea
+      terrain: CULTA
+

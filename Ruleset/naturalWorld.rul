@@ -868,6 +868,8 @@ mapScripts:
     commands:
     - type: addCraft
     - type: addUFO
+      terrain: Hostile_Facilities_00
+      groups: 0
     - type: addBlock
       executions: 2
       size: [1, 1, 4]
