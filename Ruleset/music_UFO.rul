@@ -42,7 +42,7 @@ musics:
     normalization: 0.81
   - type: GMSTORY
     catPos: 12
-    normalization: 1.0
+    normalization: 1.99
   - type: GMTACTIC
     catPos: 17
     normalization: 1.14

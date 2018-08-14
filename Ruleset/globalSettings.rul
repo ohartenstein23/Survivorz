@@ -20,7 +20,7 @@ defeatFunds: -1
 lighting:
   enhanced: 7
 fixedUserOptions:
-  #battleUFOExtenderAccuracy: false
+  battleUFOExtenderAccuracy: true
   canSellLiveAliens: true
   battleExplosionHeight: 2
   alienBleeding: true
@@ -35,6 +35,7 @@ fixedUserOptions:
   anytimeMartialTraining: true
   customInitialBase: false
   everyoneFightsNobodyQuits: true
+  musicAlwaysLoop: true
 
 timePersonnel: 24
 costEngineer: 25000
