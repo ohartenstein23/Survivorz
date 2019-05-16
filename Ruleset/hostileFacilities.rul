@@ -12,7 +12,8 @@ terrains:
   - name: Hostile_Facilities_01
     mapDataSets:
       - BLANKS
-      - SURVIVORZ_HOSTILE_CRAFT
+      - SURVIVORZ_HOSTILE_CRAFT_00
+      - SURVIVORZ_HOSTILE_CRAFT_01
     mapBlocks:
       - name: Hostile Pad Wall North
         width: 40
@@ -37,6 +38,26 @@ terrains:
         length: 20
       - name: Hostile Pad Wall EW Combined
         width: 10
+        length: 20
+
+  - name: Hostile_Facilities_02
+    mapDataSets:
+      - BLANKS
+      - SURVIVORZ_HOSTILE_CRAFT_00
+      - SURVIVORZ_HOSTILE_CRAFT_01
+      - SURVIVORZ_HOSTILE_CRAFT_02
+    mapBlocks:
+      - name: Medium Facility Outer NW
+        width: 20
+        length: 20
+      - name: Medium Facility Inner NW
+        width: 20
+        length: 20
+      - name: Command Facility North
+        width: 20
+        length: 20
+      - name: Command Facility South
+        width: 20
         length: 20
 
 mapScripts:
@@ -429,6 +450,42 @@ mapScripts:
       terrain: Hostile_Facilities_01
       blocks: 6
 
+#*** Placing the HQ
+    - type: addBlock
+      label: 6
+      conditionals: [-1, -3]
+      size: 2
+      terrain: Hostile_Facilities_02
+      blocks: 2
+      rects:
+        - [0, 2, 2, 2]
+
+    - type: addBlock
+      conditionals: [6]
+      size: 2
+      terrain: Hostile_Facilities_02
+      blocks: 3
+      rects:
+        - [0, 4, 2, 2]
+
+    - type: addBlock
+      label: 7
+      conditionals: [-2, -4]
+      size: 2
+      terrain: Hostile_Facilities_02
+      blocks: 2
+      rects:
+        - [5, 2, 2, 2]
+
+    - type: addBlock
+      conditionals: [7]
+      size: 2
+      terrain: Hostile_Facilities_02
+      blocks: 3
+      rects:
+        - [5, 4, 2, 2]
+
+#*** player craft and filling
     - type: addCraft
       terrain: CULTA
 
