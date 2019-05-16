@@ -58,8 +58,6 @@ items:
     size: 0.2
     costBuy: 5000
     costSell: 3750
-    requiresBuy:
-      - STR_POST_ITEM
     clipSize: 10
 
   - type: STR_DAMAGED_SHUTTLE
@@ -102,16 +100,12 @@ ufopaedia:
       y: 40
       width: 140
       height: 100
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_LINAC_MASS_DRIVER
     type_id: 2
     section: STR_CRAFT_AND_WEAPONS
     text: STR_LINAC_MASS_DRIVER_PEDIA
     image_id: UP008.SPK # Cannon for now
-    requires:
-      - STR_POST_ITEM
 
 extraStrings:
   - type: en-US

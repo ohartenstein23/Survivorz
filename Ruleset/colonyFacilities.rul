@@ -2,8 +2,6 @@ facilities:
   - type: STR_CLEARING
     spriteShape: 3
     spriteFacility: 10
-    requires:
-      - STR_POST_ITEM
     buildCost: 5000
     buildTime: 3
     leavesBehindOnSell:
@@ -18,8 +16,6 @@ facilities:
   - type: STR_LANDING_PAD
     spriteShape: 3
     spriteFacility: 11
-    requires:
-      - STR_POST_ITEM
     buildCost: 8000
     buildCostItems:
       STR_PREFAB_FOUNDATION:
@@ -49,8 +45,6 @@ facilities:
   - type: STR_GUARD_TOWER
     spriteShape: 3
     spriteFacility: 12
-    requires:
-      - STR_POST_ITEM
     buildCost: 4500
     buildCostItems:
       STR_PREFAB_FOUNDATION:
@@ -80,8 +74,6 @@ facilities:
   - type: STR_FARM
     spriteShape: 100
     size: 2
-    requires:
-      - STR_POST_ITEM
     buildCost: 25000
     buildCostItems:
       STR_PREFAB_WALLS:
@@ -115,8 +107,6 @@ facilities:
   - type: STR_FARM_CROPS
     spriteShape: 108
     size: 2
-    requires:
-      - STR_POST_ITEM
     buildCost: 25000
     buildCostItems:
       STR_PREFAB_WALLS:
@@ -244,7 +234,7 @@ items:
 manufacture:
   - name: STR_PREFAB_FOUNDATION
     category: STR_PREFAB_ITEMS
-    size: 0
+    space: 0
     time: 4
     cost: 5000
     producedItems:
@@ -252,7 +242,7 @@ manufacture:
 
   - name: STR_PREFAB_WALLS
     category: STR_PREFAB_ITEMS
-    size: 0
+    space: 0
     time: 3
     cost: 2500
     producedItems:
@@ -260,7 +250,7 @@ manufacture:
 
   - name: STR_PREFAB_TECHNICAL
     category: STR_PREFAB_ITEMS
-    size: 0
+    space: 0
     time: 6
     cost: 6500
     producedItems:
@@ -271,50 +261,36 @@ ufopaedia:
     type_id: 8
     section: STR_COLONY_FACILITIES
     text: STR_PREFAB_FACILITIES_HOWTO_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_CLEARING
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_CLEARING_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_LANDING_PAD
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_LANDING_PAD_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_GUARD_TOWER
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_GUARD_TOWER_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_FARM
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_FARM_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_FARM_CROPS
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_FARM_CROPS_PEDIA
-    requires:
-      - STR_DATABASE
 
   - id: STR_FARM_CROPS_HARVEST
     type_id: 6
     section: STR_COLONY_FACILITIES
     text: STR_FARM_CROPS_HARVEST_PEDIA
-    requires:
-      - STR_DATABASE
 
 extraSprites:
   - type: BASEBITS.PCK

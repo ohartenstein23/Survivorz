@@ -2,7 +2,6 @@ startingBase:
   randomSoldiers:
     STR_AI_SUBROUTINE: 1
   items:
-    STR_POST_ITEM: 1
     STR_OFFICER_CRYOCHAMBER: 1
     STR_INACTIVE_OFFICER_CRYOCHAMBER: 2
     STR_ACTIVE_CRYOCHAMBER: 3
@@ -557,15 +556,11 @@ ufopaedia:
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_TRANSPONDER_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_HANGAR_LEFT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_HANGAR_LEFT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_HANGAR_RIGHT
     type_id: 6
@@ -578,36 +573,26 @@ ufopaedia:
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_HANGAR_RIGHT_DAMAGED_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_CARGO_LEFT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_CARGO_LEFT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_CARGO_RIGHT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_CARGO_RIGHT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_FRONT_QUARTERS_LEFT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_FRONT_QUARTERS_LEFT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_FRONT_QUARTERS_RIGHT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_FRONT_QUARTERS_RIGHT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_FRONT_CORRIDOR_RIGHT
     type_id: 6
@@ -627,15 +612,11 @@ ufopaedia:
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_COCKPIT_LEFT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_COCKPIT_RIGHT
     type_id: 6
     section: STR_SHIP_FACILITIES
     text: STR_COCKPIT_RIGHT_PEDIA
-    requires:
-      - STR_POST_ITEM
 
 extraStrings:
   - type: en-US

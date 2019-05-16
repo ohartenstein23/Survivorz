@@ -1,6 +1,6 @@
 alienRaces:
   - id: STR_NATURE
-    retaliation: false
+    retaliationAggression: -100
     members: # Just a bit of self-encouragement
       - STR_DUMMY
       - STR_DUMMY
@@ -322,7 +322,6 @@ missionScripts:
     firstMonth: 1
     executionOdds: 100
     researchTriggers:
-      STR_POST_ITEM: true
       STR_WORLDGEN_FAMINE: true
     missionWeights:
       0:
@@ -338,7 +337,6 @@ missionScripts:
     firstMonth: 1
     executionOdds: 100
     researchTriggers:
-      STR_POST_ITEM: true
       STR_WORLDGEN_PLAGUE: true
     missionWeights:
       0:
@@ -354,7 +352,6 @@ missionScripts:
     firstMonth: 1
     executionOdds: 100
     researchTriggers:
-      STR_POST_ITEM: true
       STR_WORLDGEN_WAR: true
     missionWeights:
       0:

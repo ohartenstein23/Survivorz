@@ -1,3 +1,23 @@
+arcScripts:
+# Sets up the type of world generated and pops up a starting article
+  - type: generateWorld
+    randomArcs:
+      STR_WORLDGEN_FAMINE: 1
+      STR_WORLDGEN_PLAGUE: 1
+      STR_WORLDGEN_WAR: 1
+    firstMonth: 0
+    lastMonth: 0
+    executionOdds: 100
+    maxArcs: 1
+
+  - type: startGame
+    sequentialArcs:
+      - STR_POST
+    firstMonth: 0
+    lastMonth: 0
+    executionOdds: 100
+    maxArcs: 1
+
 research:
 # Internal research projects
   - name: STR_UNAVAILABLE
@@ -5,46 +25,30 @@ research:
     points: 0
     needItem: true
 
-# Starting research, the getOneFree opens up the world mission generation
-  - name: STR_POST_ITEM
-    lookup: STR_POST
+# Starting research granted by the arcScript at the beginning of the game
+  - name: STR_POST
     cost: 0
     points: 0
-    needItem: true
-    destroyItem: true
-    getOneFree:
-      - STR_WORLDGEN_FAMINE # Resources are harder to come by, fewer lucrative missions
-      - STR_WORLDGEN_PLAGUE # Environments are more dangerous, your soldiers spend more time off
-      - STR_WORLDGEN_WAR # Face harder enemies earlier, more anti-player missions
-    unlocks:
-      - STR_DATABASE
+    dependencies:
+      - STR_UNAVAILABLE
 
   - name: STR_WORLDGEN_FAMINE
     dependencies:
       - STR_UNAVAILABLE
-    lookup: STR_PLANETARY_SCAN
     cost: 0
     points: 0
 
   - name: STR_WORLDGEN_PLAGUE
     dependencies:
       - STR_UNAVAILABLE
-    lookup: STR_PLANETARY_SCAN
     cost: 0
     points: 0
 
   - name: STR_WORLDGEN_WAR
     dependencies:
       - STR_UNAVAILABLE
-    lookup: STR_PLANETARY_SCAN
     cost: 0
     points: 0
-
-  - name: STR_DATABASE
-    cost: 0
-    points: 0
-    dependencies:
-      - STR_POST_ITEM
 
 # Research articles for items from waking up the officers
   - name: STR_CHIEF_ENGINEER_ITEM
@@ -52,8 +56,6 @@ research:
     points: 0
     needItem: true
     destroyItem: true
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_LINAC_GRENADE
 
@@ -62,8 +64,6 @@ research:
     points: 0
     needItem: true
     destroyItem: true
-    dependencies:
-      - STR_POST_ITEM
     spawnedItem: STR_ARMORY_ITEMS_SCIENTIST
 
   - name: STR_GARRISON_OFFICER_ITEM
@@ -71,30 +71,22 @@ research:
     points: 0
     needItem: true
     destroyItem: true
-    dependencies:
-      - STR_POST_ITEM
     spawnedItem: STR_ARMORY_ITEMS_OFFICER
 
 # *** Fixing ship facilities ***
   - name: STR_PORT_HANGAR_REPORT
     cost: 1
     points: 0
-    dependencies:
-      - STR_POST_ITEM
     requiresBaseFunc:
       - CRAFT_SPACE
 
   - name: STR_POWER_NODE_INVESTIGATION
     cost: 1
     points: 0
-    dependencies:
-      - STR_POST_ITEM
 
   - name: STR_POWER_NODE_REPORT
     cost: 1
     points: 0
-    dependencies:
-      - STR_POST_ITEM
     requiresBaseFunc:
       - POWER_NODE_RIGHT
 
@@ -104,8 +96,6 @@ research:
     points: 50
     needItem: true
     destroyItem: true
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_LINAC_GRENADE
 
@@ -181,8 +171,6 @@ research:
     cost: 5
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -190,8 +178,6 @@ research:
     cost: 3
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -199,8 +185,6 @@ research:
     cost: 10
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -208,8 +192,6 @@ research:
     cost: 4
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -217,8 +199,6 @@ research:
     cost: 10
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -226,8 +206,6 @@ research:
     cost: 4
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -235,8 +213,6 @@ research:
     cost: 5
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -244,8 +220,6 @@ research:
     cost: 3
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -253,8 +227,6 @@ research:
     cost: 3
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
     unlocks:
       - STR_HOSTILE_WEAPONS
 
@@ -262,17 +234,10 @@ research:
     cost: 5
     needItem: true
     destroyItem: false
-    dependencies:
-      - STR_POST_ITEM
 
 # Hostile weapons manufacturing?
 
 items:
-# getOneFree w/o item is repeatable, need this to make initial research run only once
-  - type: STR_POST_ITEM
-    costBuy: 0
-    costSell: 0
-
 # Research items from the officers
   - type: STR_CHIEF_ENGINEER_ITEM
     costBuy: 0
@@ -302,62 +267,32 @@ ufopaedia:
     section: STR_SYSTEM_REPORTS
     text: STR_POST_PEDIA
     requires:
-      - STR_POST_ITEM
+      - STR_POST
 
   - id: STR_SHIP_INITIAL_STATUS
     type_id: 8
     section: STR_SYSTEM_REPORTS
     text: STR_SHIP_INITIAL_STATUS_PEDIA
-    requires:
-      - STR_POST_ITEM
 
-  - id: STR_WORLDGEN_FAMINE
+  - id: STR_REASON_TO_EXIST
     type_id: 8
     section: STR_SYSTEM_REPORTS
-    title: STR_REASON_TO_EXIST
     text: STR_REASON_TO_EXIST_PEDIA
-    requires:
-      - STR_WORLDGEN_FAMINE
-      - STR_POST_ITEM
-
-  - id: STR_WORLDGEN_PLAGUE
-    type_id: 8
-    section: STR_SYSTEM_REPORTS
-    title: STR_REASON_TO_EXIST
-    text: STR_REASON_TO_EXIST_PEDIA
-    requires:
-      - STR_WORLDGEN_PLAGUE
-      - STR_POST_ITEM
-
-  - id: STR_WORLDGEN_WAR
-    type_id: 8
-    section: STR_SYSTEM_REPORTS
-    title: STR_REASON_TO_EXIST
-    text: STR_REASON_TO_EXIST_PEDIA
-    requires:
-      - STR_WORLDGEN_WAR
-      - STR_POST_ITEM
 
   - id: STR_PLANETARY_SCAN
     type_id: 8
     section: STR_SYSTEM_REPORTS
     text: STR_PLANETARY_SCAN_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_ECONOMY_HOWTO
     type_id: 8
     section: STR_SYSTEM_REPORTS
     text: STR_ECONOMY_HOWTO_PEDIA
-    requires:
-      - STR_POST_ITEM
 
   - id: STR_GRAPHS_HOWTO
     type_id: 8
     section: STR_SYSTEM_REPORTS
     text: STR_GRAPHS_HOWTO_PEDIA
-    requires:
-      - STR_POST_ITEM
 
 # *** Crew logs ***
   - id: STR_CHIEF_ENGINEER_ITEM
@@ -399,10 +334,7 @@ extraStrings:
       STR_CREW_LOGS: "CREW LOGS"
 
       STR_POST: "Power-On Systems Test"
-      STR_POST_ITEM: "Power-On Systems Test"
       STR_POST_PEDIA: "ESCSBIOS v.0.5.2{NEWLINE}BIOS Date: 0000.00.00 00:00:00 (System Hard Reset){NEWLINE}{NEWLINE}BIOS System Hard Reset Recovery:{NEWLINE}>:: Primary processor banks: Online{NEWLINE}>:: Initializing auxiliary processor banks: Complete{NEWLINE}>:: Initializing primary storage units: Failed - Corrupted sectors{NEWLINE}>:: Initializing auxiliary storage units: Complete{NEWLINE}>:: Scanning shipboard systems: Complete{NEWLINE}>::    Extensive damage to multiple systems logged{NEWLINE}>:: Scanning environmental surroundings: Complete{NEWLINE}>::    Scan data logged."
-
-      STR_DATABASE: "Database"
 
       STR_SHIP_INITIAL_STATUS: "Ship Systems Scan"
       STR_SHIP_INITIAL_STATUS_PEDIA: "Shipboard Systems Scan Report: {NEWLINE}>:: Primary Generators: Offline - Damaged{NEWLINE}>:: Auxiliary Generators: Online{NEWLINE}>:: Port Engine: Offline - Damaged{NEWLINE}>:: Starboard Engine: Online - At 67% Capacity{NEWLINE}>:: Thrusters: Online - At 45% Capacity{NEWLINE}>:: Port Hangar: Offline - Shuttle Damaged{NEWLINE}>:: Starboard Hangar: Available - Shuttle Functional{NEWLINE}>:: Drone Control: Online{NEWLINE}>:: Life Support: Online{NEWLINE}>:: Crew Cryogenics: Online - At 24% Capacity{NEWLINE}>:: Officer Cryogenics: Low-Power State - Damaged{NEWLINE}>:: Manufacturing Systems: Online{NEWLINE}>:: Materials Recycling: Online{NEWLINE}>:: Long-Range Scanners: Offline - Damaged{NEWLINE}>:: Short-Range Scanners: Online{NEWLINE}"
