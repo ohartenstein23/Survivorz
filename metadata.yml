@@ -6,3 +6,4 @@ id: survivorz
 loadResources:
   - UFO
 isMaster: true
+requiredExtendedVersion: "5.4.2"

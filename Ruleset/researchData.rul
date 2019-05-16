@@ -1,10 +1,15 @@
 research:
+# Internal research projects
+  - name: STR_UNAVAILABLE
+    cost: 0
+    points: 0
+    needItem: true
+
 # Starting research, the getOneFree opens up the world mission generation
   - name: STR_POST_ITEM
-    lookup:
-      - STR_POST
+    lookup: STR_POST
     cost: 0
-    score: 0
+    points: 0
     needItem: true
     destroyItem: true
     getOneFree:
@@ -17,37 +22,34 @@ research:
   - name: STR_WORLDGEN_FAMINE
     dependencies:
       - STR_UNAVAILABLE
-    lookup:
-      - STR_PLANETARY_SCAN
+    lookup: STR_PLANETARY_SCAN
     cost: 0
-    score: 0
+    points: 0
 
   - name: STR_WORLDGEN_PLAGUE
     dependencies:
       - STR_UNAVAILABLE
-    lookup:
-      - STR_PLANETARY_SCAN
+    lookup: STR_PLANETARY_SCAN
     cost: 0
-    score: 0
+    points: 0
 
   - name: STR_WORLDGEN_WAR
     dependencies:
       - STR_UNAVAILABLE
-    lookup:
-      - STR_PLANETARY_SCAN
+    lookup: STR_PLANETARY_SCAN
     cost: 0
-    score: 0
+    points: 0
 
   - name: STR_DATABASE
     cost: 0
-    score: 0
+    points: 0
     dependencies:
       - STR_POST_ITEM
 
 # Research articles for items from waking up the officers
   - name: STR_CHIEF_ENGINEER_ITEM
     cost: 1
-    score: 0
+    points: 0
     needItem: true
     destroyItem: true
     dependencies:
@@ -57,7 +59,7 @@ research:
 
   - name: STR_HEAD_SCIENTIST_ITEM
     cost: 1
-    score: 0
+    points: 0
     needItem: true
     destroyItem: true
     dependencies:
@@ -66,7 +68,7 @@ research:
 
   - name: STR_GARRISON_OFFICER_ITEM
     cost: 1
-    score: 0
+    points: 0
     needItem: true
     destroyItem: true
     dependencies:
@@ -76,7 +78,7 @@ research:
 # *** Fixing ship facilities ***
   - name: STR_PORT_HANGAR_REPORT
     cost: 1
-    score: 0
+    points: 0
     dependencies:
       - STR_POST_ITEM
     requiresBaseFunc:
@@ -84,13 +86,13 @@ research:
 
   - name: STR_POWER_NODE_INVESTIGATION
     cost: 1
-    score: 0
+    points: 0
     dependencies:
       - STR_POST_ITEM
 
   - name: STR_POWER_NODE_REPORT
     cost: 1
-    score: 0
+    points: 0
     dependencies:
       - STR_POST_ITEM
     requiresBaseFunc:
@@ -99,7 +101,7 @@ research:
 # Environmental scan data
   - name: STR_ENVIRO_SCAN_EASY_ITEM
     cost: 5
-    score: 50
+    points: 50
     needItem: true
     destroyItem: true
     dependencies:
@@ -110,42 +112,48 @@ research:
 # AI Subroutine Equipment
   - name: STR_AI_SUBROUTINE_BUY
     cost: 3
-    score: 0
+    points: 0
     dependencies:
       - STR_HOSTILE_WEAPONS
 
 # LINAC weapons
   - name: STR_LINAC_GRENADE
     cost: 0
-    score: 0
+    points: 0
     dependencies:
       - STR_CHIEF_ENGINEER_ITEM
       - STR_ENVIRO_SCAN_EASY_ITEM
 
+  - name: STR_LINAC_WEAPONS_PURCHASE
+    cost: 0
+    points: 0
+    dependencies:
+      - STR_UNAVAILABLE
+
 # Support items
   - name: STR_SMOKESCREEN_LAUNCHER
     cost: 7
-    score: 0
+    points: 0
     dependencies:
       - STR_HOSTILE_WEAPONS
 
   - name: STR_SUPPORT_TARGETER
     cost: 8
-    score: 0
+    points: 0
     dependencies:
       - STR_CHIEF_ENGINEER_ITEM
       - STR_HOSTILE_MECH_CORPSE
 
   - name: STR_SUPPORT_LAUNCHER
     cost: 8
-    score: 0
+    points: 0
     dependencies:
       - STR_HEAD_SCIENTIST_ITEM
       - STR_HOSTILE_MECH_CORPSE
 
   - name: STR_SUPPORT_ASSAULT_SHIELD
     cost: 8
-    score: 0
+    points: 0
     dependencies:
       - STR_GARRISON_OFFICER_ITEM
       - STR_HOSTILE_MECH_CORPSE
@@ -153,14 +161,14 @@ research:
 # Hostile units and autopsies
   - name: STR_HOSTILE_MECH_CORPSE
     cost: 6
-    score: 0
+    points: 0
     needItem: true
     destroyItem: true
 
 # Hostile weapons articles and usage
   - name: STR_HOSTILE_WEAPONS
     cost: 0
-    score: 10
+    points: 10
     dependencies:
       - STR_UNAVAILABLE
       - STR_HOSTILE_CARBINE
@@ -385,6 +393,8 @@ ufopaedia:
 extraStrings:
   - type: en-US
     strings:
+      STR_UNAVAILABLE: "(Unavailable)"
+
       STR_SYSTEM_REPORTS: "SYSTEM REPORTS"
       STR_CREW_LOGS: "CREW LOGS"
 

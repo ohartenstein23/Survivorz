@@ -2,6 +2,7 @@ interfaces:
   - type: mainMenu
     music: GMSTORY
     palette: PALETTE_MENUS
+    backgroundImage: BACK01.SCR
     elements: &elementsPaletteMenu
       - id: palette
         color: 0

@@ -478,3 +478,6 @@ extraStrings:
       STR_LONG_BURST: "Long Burst"
       STR_CHARGE_SHOT: "Fire Charge"
       STR_DAMAGE_ARMOR_PIERCING: "KINETIC"
+
+#*** Other ***
+      STR_LINAC_WEAPONS_PURCHASE: "(Cannot Purchase)"
