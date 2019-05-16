@@ -906,14 +906,16 @@ interfaces:
       - id: twoHandedGreen
         color: 52
   - type: briefing
-    elements:
-      - id: window
-        color: 239
-      - id: button
-        color: 133
-        color2: 133
-      - id: text
-        color: 133
+    palette: PAL_GEOSCAPE
+    elements: *elementsGeoscapeFullMenu
+    #elements:
+    #  - id: window
+    #    color: 239
+    #  - id: button
+    #    color: 133
+    #    color2: 133
+    #  - id: text
+    #    color: 133
   - type: inventory
     elements:
       - id: textName
