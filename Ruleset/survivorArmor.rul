@@ -9,7 +9,7 @@ armors:
     spriteHairColor: [144, 144, 164, 164, 245, 245, 166, 166]
     corpseBattle:
       - STR_CORPSE_ARMOR
-    storeItem: STR_PERSONAL_ARMOR
+    #storeItem: STR_PERSONAL_ARMOR
     visibilityAtDay: 30
     personalLight: 5
     frontArmor: 30

@@ -2,7 +2,7 @@ interfaces:
   - type: mainMenu
     music: GMSTORY
     palette: PALETTE_MENUS
-    backgroundImage: BACK01.SCR
+    backgroundImage: Background_Holo
     elements: &elementsPaletteMenu
       - id: palette
         color: 0
@@ -45,53 +45,66 @@ interfaces:
 
   - type: tests
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: newBattleMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: newGameMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: endGameStatistics
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: optionsMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: videoMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: audioMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: controlsMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: geoscapeMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: battlescapeMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: advancedMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: modsMenu
     palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
   - type: saveMenus
+    backgroundImage: Background_Holo
     elements: &elementsGeoscapeFullMenu
       - id: palette
         color: 0
@@ -127,6 +140,7 @@ interfaces:
         color: 239
 
   - type: pauseMenu
+    backgroundImage: Background_Holo
     elements:
       - id: palette
         color: 0     # brown
@@ -138,6 +152,7 @@ interfaces:
         color: -3
 
   - type: errorMessages
+    backgroundImage: Background_Holo
     elements:
       - id: geoscapePalette
         color: 6   # oxide
@@ -149,6 +164,7 @@ interfaces:
         color: 0    # white
 
   - type: geoCraft
+    backgroundImage: Background_Holo_Transparent_0
     elements: &elementsGeoscapePartialMenu
       - id: palette
         color: 0
@@ -183,51 +199,75 @@ interfaces:
         border: 253
 
   - type: selectMusicTrack
+    backgroundImage: Background_Holo_Transparent_0
+    elements: *elementsGeoscapePartialMenu
+
+  - type: dogfightExperience
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: intercept
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: ufoTracker
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: craftPatrol
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: craftError
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: craftPilotError
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: targetInfo
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: confirmDestination
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: confirmCydonia
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: confirmLanding
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: lowFuel
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: UFOInfo
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: UFOLost
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: multipleTargets
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: baseDestroyed
+    backgroundImage: Background_Holo_Transparent_0
+    elements: *elementsGeoscapePartialMenu
+
+  - type: dogfightInfo
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: baseDefense
+    backgroundImage: Background_Holo
     palette: PAL_BASESCAPE
     elements:
       - id: palette
@@ -240,39 +280,51 @@ interfaces:
         color: 218   # blue
 
   - type: terrorSite
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: alienBase
+    backgroundImage: Background_Holo_Transparent_1
     elements: *elementsGeoscapePartialMenu
 
   - type: itemsArriving
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoResearch
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoResearchComplete
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoResearchRequired
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: trainingFinished
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoNewCraft
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoNewFacility
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoNewItem
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoManufacture
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: geoManufactureComplete
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: dogfight
@@ -330,9 +382,11 @@ interfaces:
         size: [160, 52]
 
   - type: baseNaming
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: monthlyReport
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
   - type: basescape
@@ -394,21 +448,30 @@ interfaces:
 
   - type: psiTraining
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: martialTraining
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: allocatePsi
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: allocateMartial
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: fundingWindow
+    backgroundImage: Background_Holo_Transparent_0
+    elements: *elementsGeoscapePartialMenu
+  
+  - type: geoscapeEvent
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: graphs
@@ -430,29 +493,37 @@ interfaces:
         color2: 144  # also magenta (the line itself)
 
   - type: ufopaedia
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapePartialMenu
 
   - type: noContainment
+    backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
   - type: promotions
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
   - type: cannotReequip
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
   - type: debriefing
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
   - type: commendations
+    backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
   - type: commendationsLate
     music: GMLOSE
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: geoscape
+    backgroundImage: Background_Holo
     elements:
       - id: palette
         color: 0
@@ -464,6 +535,10 @@ interfaces:
         color2: -3
       - id: text
         color: 239
+      - id: slackingIndicator
+        color: 239
+        color2: 138
+        custom: -12  # above Intercept button
       - id: genericWindow
         color: 239
       - id: genericText
@@ -481,157 +556,123 @@ interfaces:
 
   - type: sellMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: dependencyTree
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: buyMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: manageContainment
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: transferBaseSelect
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: transferMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: transferConfirm
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: transferInfo
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: selectFacility
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: placeFacility
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: dismantleFacility
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: changeHeadquarters
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: manufactureMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: globalManufactureMenu
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: selectNewManufacture
     parent: manufactureMenu
-    elements:
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-      - id: list
-        color: 208   # white
-        color2: 218  # light blue
-        border: 241  # pink
-      - id: listExtended
-        color: 246   # purple
-        color2: 213  # gold
-      - id: button
-        color: 218   # blue
-      - id: catBox
-        color: 241   # pink
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: allocateManufacture
     parent: manufactureMenu
-    elements:
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: button
-        color: 218   # blue
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: manufactureInfo
     parent: manufactureMenu
-    elements:
-      - id: window
-        color: 241   # pink
-      - id: text
-        color: 241   # pink
-        color2: 208  # white
-      - id: list
-        color: 218   # blue
-        color2: 208  # white
-      - id: button1
-        color: 241   # pink
-      - id: button2
-        color: 246   # purple
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: researchMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: globalResearchMenu
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: globalResearchMenu
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: selectNewResearch
     parent: researchMenu
-    elements:
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-      - id: list
-        color: 208   # white
-        color2: 241  # pink
-        border: 218  # blue
-      - id: button
-        color: 246   # purple
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: allocateResearch
     parent: researchMenu
-    elements:
-      - id: window
-        color: 213   # gold
-      - id: text
-        color: 213   # gold
-        color2: 208  # white
-      - id: button1
-        color: 213   # gold
-      - id: button2
-        color: 218   # blue
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: techTreeViewer
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: techTreeSelect
     parent: techTreeViewer
-    elements:
-      - id: window
-        color: 213   # gold
-      - id: text
-        color: 213   # gold
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        border: 218  # blue
-      - id: button
-        color: 218   # blue
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
   - type: baseInfo
     palette: PAL_BASESCAPE
@@ -655,18 +696,17 @@ interfaces:
 
   - type: storesInfo
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: costsInfo
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierList
     palette: PAL_BASESCAPE
-    elements: *elementsBasescape
-
-  - type: soldierTransformation
-    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierInfo
@@ -732,75 +772,98 @@ interfaces:
 
   - type: sackSoldier
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierArmor
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierAvatar
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: soldierBonus
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierMemorial
     music: GMLOSE
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierDiary
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierDiaryPerformance
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: soldierDiaryMission
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftEquipment
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftEquipmentSave
     parent: craftEquipment
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftEquipmentLoad
     parent: craftEquipment
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftArmor
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftInfo
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftWeapons
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftSoldiers
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftPilots
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftPilotsSelect
     parent: craftPilots
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: craftSelect
     palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
     elements: *elementsBasescape
 
   - type: battlescape
     palette: PAL_BATTLESCAPE
+    backgroundImage: Background_Holo
     elements:
       - id: textLoad
         color: 15
@@ -1094,27 +1157,21 @@ interfaces:
       #  color: 32    # red
       #- id: ammoColorDT19
       #  color: 32    # red
+
   - type: statsForNerds
     palette: PAL_BASESCAPE
-    elements:
-      - id: palette
-        color: 1     # burgundy
-      - id: window
-        color: 218   # blue
-      - id: text
-        color: 218   # blue
-        color2: 208  # white
-      - id: list
-        color: 246   # purple
-        color2: 241  # pink
-        border: 218  # blue
-      - id: listExtended
-        color: 208   # white
-        color2: 213  # gold
-      - id: button
-        color: 246   # purple
-      - id: comboBox
-        color: 241   # pink
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: soldierTransformation
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: transformationList
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
 
 customPalettes:
   - type: PALETTE_HOLO_BACKGROUND
@@ -1228,7 +1285,7 @@ customPalettes:
       255: [24, 72, 168]
 
 extraSprites:
-  - type: BACK01.SCR # Most generic screens
+  - type: Background_Holo # Most generic screens
     singleImage: true
     width: 320
     height: 200
@@ -1242,75 +1299,19 @@ extraSprites:
     files:
       0: Resources/Background/background_holo.png
 
-  - type: BACK02.SCR # Most soldier screens
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK03.SCR # Terror mission screen
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo_transparent_1.png
-
-  - type: BACK04.SCR # Base defense and equip craft
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK05.SCR # Research and building
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK12.SCR # Craft screens in geoscape
+  - type: Background_Holo_Transparent_0
     singleImage: true
     width: 320
     height: 200
     files:
       0: Resources/Background/background_holo_transparent_0.png
 
-  - type: BACK13.SCR # Finance screens
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK14.SCR # Equip craft/armor
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK15.SCR # Ufo screens in geoscape
+  - type: Background_Holo_Transparent_1
     singleImage: true
     width: 320
     height: 200
     files:
       0: Resources/Background/background_holo_transparent_1.png
-
-  - type: BACK16.SCR # Landing screen
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
-
-  - type: BACK17.SCR # Manufacturing
-    singleImage: true
-    width: 320
-    height: 200
-    files:
-      0: Resources/Background/background_holo.png
 
   - type: INTERWIN.DAT # Interception window
     singleImage: true

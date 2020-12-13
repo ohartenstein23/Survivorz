@@ -65,10 +65,8 @@ armors:
       - 0.0
     loftempsSet: [ 0 ]
     camouflageAtDay: 1
-    camouflageAtNight: 1
+    camouflageAtDark: 1
     movementType: 1
-    units:
-      - STR_DUMMY_ALIEN
 
 items:
   - type: STR_DUMMY_CORPSE

@@ -8,6 +8,7 @@ facilities:
       - STR_CLEARING
     monthlyCost: 0
     canBeBuiltOver: true
+    mapName: Clearing
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
@@ -34,6 +35,7 @@ facilities:
       - STR_CLEARING
     monthlyCost: 5000
     crafts: 1
+    mapName: Landing_Pad
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
@@ -63,6 +65,7 @@ facilities:
       - STR_CLEARING
     removalTime: -1
     monthlyCost: 5000
+    mapName: Guard_Tower
     verticalLevels:
     - type: ground
       size: [1, 1, 8]
@@ -92,6 +95,7 @@ facilities:
     storage: 10
     removalTime: -1
     monthlyCost: 5000
+    mapName: Farm
     verticalLevels:
     - type: ground
       size: [2, 2, 0]
@@ -127,6 +131,7 @@ facilities:
     storage: 10
     removalTime: 32
     monthlyCost: 5000
+    mapName: Farm_Crops
     verticalLevels:
     - type: ground
       size: [2, 2, 0]
@@ -154,6 +159,7 @@ facilities:
     storage: 10
     removalTime: 1
     monthlyCost: 5000
+    mapName: Farm_Crops_Harvest
     verticalLevels:
     - type: ground
       size: [2, 2, 0]
