@@ -1208,6 +1208,11 @@ customPalettes:
       16: [220, 208, 204]
       17: [176, 156, 148]
       18: [4, 16, 116]
+      139: [48, 96, 72]
+      140: [4, 0, 88]
+      141: [8, 0, 60]
+      142: [4, 0, 88]
+      143: [8, 0, 60]
       144: [252, 252, 164]
       145: [220, 232, 140]
       146: [160, 224, 132]
@@ -1319,3 +1324,11 @@ extraSprites:
     height: 96
     files:
       0: Resources/Background/interwin01_survivorz.png
+
+  - type: MapEditorIcons
+    width: 320
+    height: 240
+    subX: 32
+    subY: 40
+    files:
+      0: Resources/Background/mapeditor_icons.png
