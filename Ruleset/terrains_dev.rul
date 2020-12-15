@@ -1,0 +1,36 @@
+terrains:
+  - name: Dev
+    mapDataSets:
+      - Dev_Blanks
+      - Dev_Elevation
+    script: Dev
+    mapBlocks:
+      - name: Flat
+        width: 10
+        length: 10
+        height: 1
+        groups: [0, 1]
+
+      - name: Hill_00
+        width: 10
+        length: 10
+        height: 1
+        groups: [0]
+
+      - name: Test_Obstacles
+        width: 10
+        length: 10
+        height: 1
+        groups: [5]
+
+mapScripts:
+  - type: Dev
+    commands:
+      - type: addCraft
+
+      - type: addUFO
+
+      - type: addBlock
+        groups: 5
+
+      - type: fillArea

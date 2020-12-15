@@ -4,7 +4,7 @@ globe:
   cityColor: 138
   baseColor: 133
   lineColor: 162
-  polylines: ~
+  polylines: []
   polygons:
     - - 0
       - 24.852
@@ -1767,92 +1767,92 @@ globe:
   textures:
     - id: 0
       terrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
       baseTerrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
     - id: 1
       terrain:
-        - name: CULTA
+        - name: Dev #CULTA
       baseTerrain:
-        - name: CULTA
+        - name: Dev #CULTA
     - id: 2
       terrain:
-        - name: CULTA
+        - name: Dev #CULTA
       baseTerrain:
-        - name: CULTA
+        - name: Dev #CULTA
     - id: 3
       terrain:
-        - name: CULTA
+        - name: Dev #CULTA
       baseTerrain:
-        - name: CULTA
+        - name: Dev #CULTA
     - id: 4
       terrain:
-        - name: CULTA
+        - name: Dev #CULTA
       baseTerrain:
-        - name: CULTA
+        - name: Dev #CULTA
     - id: 5
       terrain:
-        - name: MOUNT
+        - name: Dev #MOUNT
       baseTerrain:
-        - name: MOUNT
+        - name: Dev #MOUNT
     - id: 6
       terrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
       baseTerrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
     - id: 7
       terrain:
-        - name: DESERT
+        - name: Dev #DESERT
       baseTerrain:
-        - name: DESERT
+        - name: Dev #DESERT
     - id: 8
       terrain:
-        - name: DESERT
+        - name: Dev #DESERT
       baseTerrain:
-        - name: DESERT
+        - name: Dev #DESERT
     - id: 9
       terrain:
-        - name: POLAR
+        - name: Dev #POLAR
       baseTerrain:
-        - name: POLAR
+        - name: Dev #POLAR
     - id: 10
       terrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
       baseTerrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
     - id: 11
       terrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
       baseTerrain:
-        - name: FOREST
+        - name: Dev #FOREST
           area: [0, 360, -90, 0]
-        - name: JUNGLE
+        - name: Dev #JUNGLE
           area: [0, 360, 0, 90]
     - id: 12
       terrain:
-        - name: POLAR
+        - name: Dev #POLAR
       baseTerrain:
-        - name: POLAR
+        - name: Dev #POLAR
 
 baseDefenseMapFromLocation: 1
