@@ -445,6 +445,8 @@ interfaces:
         color: 241
       - id: otherBase
         color: -3
+      - id: otherCraft
+        color: -3
 
   - type: psiTraining
     palette: PAL_BASESCAPE
