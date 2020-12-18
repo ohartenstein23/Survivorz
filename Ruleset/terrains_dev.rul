@@ -11,17 +11,59 @@ terrains:
         height: 1
         groups: [0, 1]
 
-      - name: Hill_00
+      - name: Hill_CC
         width: 10
         length: 10
         height: 1
         groups: [0]
 
-      - name: Test_Obstacles
+      - name: Hill_SE
         width: 10
         length: 10
         height: 1
-        groups: [5]
+        groups: [0]
+
+      - name: Hill_NE
+        width: 10
+        length: 10
+        height: 1
+        groups: [0]
+
+      - name: Hill_NW
+        width: 10
+        length: 10
+        height: 1
+        groups: [0]
+
+      - name: Hill_SW
+        width: 10
+        length: 10
+        height: 1
+        groups: [0]
+
+      - name: Hill_Large_CC
+        width: 20
+        length: 20
+        height: 1
+        groups: [0]
+
+      - name: Hill_Large_NS
+        width: 20
+        length: 20
+        height: 1
+        groups: [0]
+
+      - name: Hill_Large_EW
+        width: 20
+        length: 20
+        height: 1
+        groups: [0]
+
+      #- name: Test_Obstacles
+      #  width: 10
+      #  length: 10
+      #  height: 1
+      #  groups: [5]
 
 mapScripts:
   - type: Dev
@@ -31,6 +73,10 @@ mapScripts:
       - type: addUFO
 
       - type: addBlock
-        groups: 5
+        size: 2
+        executions: 2
+
+      #- type: addBlock
+      #  groups: 5
 
       - type: fillArea
