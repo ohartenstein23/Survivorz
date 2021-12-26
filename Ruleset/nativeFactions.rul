@@ -1,6 +1,6 @@
 alienRaces:
   - id: STR_NATIVES # STR_ALIENS is used for new turn screen
-    retaliation: false
+    retaliationAggression: -100
     members:
       - STR_ALIEN_SOLDIER
       - STR_ALIEN_SOLDIER

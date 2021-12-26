@@ -109,8 +109,6 @@ units:
     energyRecovery: 90
     sniper: 50
     livingWeapon: true
-    builtInWeapons:
-      - STR_HOSTILE_FIRE_SUPPORT
 
   - type: STR_ALIEN_SLAVE
     # Enslaved alien soldier for mining crew, use sectoid sprite for now
@@ -188,10 +186,6 @@ armors:
     corpseBattle:
       - STR_HOSTILE_CORPSE
 
-  - type: MUTON_ARMOR0
-    corpseBattle:
-      - STR_HOSTILE_MECH_CORPSE
-
   - type: CYBERDISC_ARMOR
     corpseBattle:
       - HOSTILE_MECH_HOVER_CORPSE_1
@@ -199,6 +193,8 @@ armors:
       - HOSTILE_MECH_HOVER_CORPSE_3
       - HOSTILE_MECH_HOVER_CORPSE_4
     corpseGeo: STR_HOSTILE_MECH_HOVER_CORPSE
+    builtInWeapons:
+      - STR_HOSTILE_FIRE_SUPPORT
 
 items:
   - type: STR_RECYCLED_MATERIALS

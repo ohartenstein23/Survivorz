@@ -22,6 +22,6 @@ statGrowthMultipliers:
 #defeatScore: -900
 defeatFunds: -1000000
 constants:
-  - damageRange: 100
-  - explosiveDamageRange: 50
-  - fireDamageRange: [5, 10]
+  damageRange: 100
+  explosiveDamageRange: 50
+  fireDamageRange: [5, 10]

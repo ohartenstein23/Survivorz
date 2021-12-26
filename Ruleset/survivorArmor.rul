@@ -50,6 +50,7 @@ items:
     weight: 24
     bigSprite: 28
     floorSprite: 40
+    battleType: 11
     invWidth: 2
     invHeight: 3
     armor: 30

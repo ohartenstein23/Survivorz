@@ -10,7 +10,7 @@ armors:
     visibilityAtDay: 30
     visibilityAtDark: 15
     personalLight: 5
-    thermalVision: 50
+    heatVision: 50
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -29,7 +29,7 @@ armors:
     sideArmor: 20
     rearArmor: 20
     underArmor: 20
-    psiDefense:
+    psiDefence:
       flatHundred: 10.0
     drawingRoutine: 4
     movementType: 1
@@ -67,7 +67,7 @@ armors:
     units:
       - STR_AI_SUBROUTINE
     loftempsSet: [ 4 ]
-    allowKneeling: false
+    allowsKneeling: false
     recovery:
       energy:
         flatHundred: 0.8
@@ -83,7 +83,7 @@ armors:
     visibilityAtDay: 30
     visibilityAtDark: 30
     personalLight: 5
-    thermalVision: 80
+    heatVision: 80
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -102,7 +102,7 @@ armors:
     sideArmor: 20
     rearArmor: 20
     underArmor: 20
-    psiDefense:
+    psiDefence:
       flatHundred: 10.0
     drawingRoutine: 4
     movementType: 1
@@ -140,7 +140,7 @@ armors:
     units:
       - STR_AI_SUBROUTINE
     loftempsSet: [ 4 ]
-    allowKneeling: false
+    allowsKneeling: false
     recovery:
       energy:
         flatHundred: 0.8
@@ -159,7 +159,7 @@ armors:
     storeItem: STR_HOVER_ARMOR
     visibilityAtDay: 30
     personalLight: 15
-    thermalVision: 20
+    heatVision: 20
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -195,8 +195,8 @@ armors:
     loftempsSet: [ 92, 89, 90, 91 ]
     units:
       - STR_AI_SUBROUTINE
-    allowKneeling: false
-    allowSprinting: false
+    allowsKneeling: false
+    #allowSprinting: false
 
   - type: STR_GUNSHIP_ARMOR_UC
     spriteSheet: GUNSHIP.PCK
@@ -210,9 +210,9 @@ armors:
     corpseGeo: STR_RECOVER_GUNSHIP_ARMOR
     storeItem: STR_GUNSHIP_ARMOR
     visibilityAtDay: 30
-    visibilityAtNight: 15
+    visibilityAtDark: 15
     personalLight: 15
-    thermalVision: 50
+    heatVision: 50
     fearImmune: true
     bleedImmune: true
     zombiImmune: true
@@ -249,8 +249,8 @@ armors:
     loftempsSet: [ 92, 89, 90, 91 ]
     units:
       - STR_AI_SUBROUTINE
-    allowKneeling: false
-    allowSprinting: false
+    allowsKneeling: false
+    #allowsSprinting: false
 
 items:
   - type: STR_GUNSHIP_ARMOR
@@ -267,6 +267,7 @@ items:
     recover: true
     weight: 10
     floorSprite: 200
+    battleType: 11
     invWidth: 2
     invHeight: 2
 

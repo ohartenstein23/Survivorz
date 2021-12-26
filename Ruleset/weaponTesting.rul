@@ -12,5 +12,5 @@ items:
       ToTile: 5.0
       ToStun: 0.0
       ToWound: 0.0
-      RandomWounds: false
+      RandomWound: false
       IgnoreOverKill: false
