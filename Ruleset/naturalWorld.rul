@@ -707,19 +707,19 @@ globe:
   textures:
     - id: -2
       deployments:
-        - STR_ENVIRO_SCAN_EASY: 100
+        STR_ENVIRO_SCAN_EASY: 100
 
     - id: -3
       deployments:
-        - STR_ENVIRO_SCAN_MOUNT_FAMINE: 100
+        STR_ENVIRO_SCAN_MOUNT_FAMINE: 100
 
     - id: -4
       deployments:
-        - STR_ENVIRO_SCAN_MOUNT_PLAGUE: 100
+        STR_ENVIRO_SCAN_MOUNT_PLAGUE: 100
 
     - id: -5
       deployments:
-        - STR_ENVIRO_SCAN_MOUNT_WAR: 100
+        STR_ENVIRO_SCAN_MOUNT_WAR: 100
 
 terrains:
   - name: RESOURCES
@@ -880,7 +880,6 @@ mapScripts:
       executions: 2
       executionChances: 50
       label: 1
-      executions: 2
       size: [1, 1, 4]
       verticalLevels:
       - type: ground
@@ -914,7 +913,6 @@ mapScripts:
       executions: 2
       executionChances: 50
       label: 1
-      executions: 2
       size: [1, 1, 4]
       verticalLevels:
       - type: ground
