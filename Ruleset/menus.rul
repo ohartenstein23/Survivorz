@@ -98,7 +98,17 @@ interfaces:
     backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
 
+  - type: foldersMenu
+    palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
+    elements: *elementsPaletteMenu
+
   - type: modsMenu
+    palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
+    elements: *elementsPaletteMenu
+
+  - type: modsWindow
     palette: PALETTE_MENUS
     backgroundImage: Background_Holo
     elements: *elementsPaletteMenu
@@ -132,7 +142,7 @@ interfaces:
       - id: heading
         color: 239
 
-  - type: loadingText
+  - type: loadingText ################### remove?
     elements:
       - id: battlescape
         color: 15    # white
@@ -150,6 +160,11 @@ interfaces:
         color: 239
       - id: button
         color: -3
+
+  - type: noteMenu #################### check
+    palette: PALETTE_MENUS
+    backgroundImage: Background_Holo
+    elements: *elementsPaletteMenu
 
   - type: errorMessages
     backgroundImage: Background_Holo
@@ -389,7 +404,7 @@ interfaces:
     backgroundImage: Background_Holo
     elements: *elementsGeoscapeFullMenu
 
-  - type: basescape
+  - type: basescape # comes earlier than in OXCE ruleset because of YAML anchor
     palette: PAL_BASESCAPE
     elements: &elementsBasescape
       - id: button
@@ -471,6 +486,10 @@ interfaces:
   - type: fundingWindow
     backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
+
+  - type: oxceLinks ###################### check
+    backgroundImage: Background_Holo_Transparent_0
+    elements: *elementsGeoscapePartialMenu
   
   - type: geoscapeEvent
     backgroundImage: Background_Holo_Transparent_0
@@ -498,7 +517,7 @@ interfaces:
     backgroundImage: Background_Holo
     elements: *elementsGeoscapePartialMenu
 
-  - type: noContainment
+  - type: noContainment ########################## remove?
     backgroundImage: Background_Holo_Transparent_0
     elements: *elementsGeoscapePartialMenu
 
@@ -576,6 +595,10 @@ interfaces:
     backgroundImage: Background_Holo
     elements: *elementsBasescape
 
+  - type: globalContainmentMenu ################### check
+    backgroundImage: Background_Holo_Transparent_0
+    elements: *elementsGeoscapePartialMenu
+
   - type: transferBaseSelect
     palette: PAL_BASESCAPE
     backgroundImage: Background_Holo
@@ -611,7 +634,7 @@ interfaces:
     backgroundImage: Background_Holo
     elements: *elementsBasescape
 
-  - type: changeHeadquarters
+  - type: changeHeadquarters ##################### remove?
     palette: PAL_BASESCAPE
     backgroundImage: Background_Holo
     elements: *elementsBasescape
@@ -642,11 +665,6 @@ interfaces:
     elements: *elementsBasescape
 
   - type: researchMenu
-    palette: PAL_BASESCAPE
-    backgroundImage: Background_Holo
-    elements: *elementsBasescape
-
-  - type: globalResearchMenu
     palette: PAL_BASESCAPE
     backgroundImage: Background_Holo
     elements: *elementsBasescape
@@ -778,6 +796,11 @@ interfaces:
     elements: *elementsBasescape
 
   - type: soldierArmor
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements: *elementsBasescape
+
+  - type: soldierRank #################### check
     palette: PAL_BASESCAPE
     backgroundImage: Background_Holo
     elements: *elementsBasescape
@@ -1090,6 +1113,32 @@ interfaces:
       - id: buttonEnd
         pos: [220, 140]
         size: [20, 20]
+
+  - type: systemMenu ################# check
+    elements:
+      - id: text
+        color: 138   # yellow
+      - id: button
+        color: 239   # bright green
+  - type: articleText ################# check
+    elements:
+      - id: button
+        color: 80    # very light grey
+      - id: title
+        color: 244   # light blue
+      - id: text
+        color: 239   # grey
+        color2: 244  # light blue
+  - type: articleTextImage ################# check
+    elements:
+      - id: button
+        color: 83    # light grey
+      - id: title
+        color: 244   # light blue
+      - id: text
+        color: 239   # grey
+        color2: 244  # light blue
+
   - type: articleArmor
     elements:
       - id: button
@@ -1159,6 +1208,106 @@ interfaces:
       #  color: 32    # red
       #- id: ammoColorDT19
       #  color: 32    # red
+
+#################################### check all TFTD
+  - type: articleTFTD
+    palette: PAL_UFOPAEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 239      # grey (was 83: light grey)
+      - id: text
+        color: 239      # grey
+        color2: 244     # turquoise
+      - id: list
+        color: 239      # grey
+        color2: 244     # turquoise
+  - type: articleCraftTFTD
+    palette: PAL_UFOPAEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 239      # grey
+      - id: text
+        color: 239      # grey
+        color2: 244     # turquoise
+      - id: list
+        color: 239      # grey
+        color2: 244     # turquoise
+  - type: articleCraftWeaponTFTD
+    palette: PAL_BATTLEPEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 144      # orange (was 16: orange)
+      - id: text
+        color: 239      # grey
+        color2: 244     # light blue
+      - id: list
+        color: 239      # grey
+        color2: 244     # light blue
+  - type: articleVehicleTFTD
+    palette: PAL_BATTLEPEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 144      # orange (in vanilla PAL_UFOPAEDIA was used! but PAL_BATTLEPEDIA allows for pictures to be reused for inventory)
+      - id: text
+        color: 239      # grey
+        color2: 244     # light blue
+      - id: list
+        color: 239      # grey
+        color2: 244     # light blue
+  - type: articleItemTFTD
+    palette: PAL_BATTLEPEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 144      # orange
+      - id: text
+        color: 239      # grey
+        color2: 244     # light blue
+      - id: list
+        color: 239      # grey
+        color2: 244     # light blue
+      - id: ammoColor
+        color: 32       # red
+  - type: articleArmorTFTD
+    palette: PAL_BATTLEPEDIA
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 144      # orange (was 15: orange)
+      - id: text
+        color: 239      # grey
+        color2: 244     # light blue
+      - id: list
+        color: 239      # grey
+        color2: 244     # light blue
+  - type: articleBaseFacilityTFTD
+    palette: PAL_BASESCAPE
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 208      # white
+      - id: text
+        color: 208      # white
+        color2: 218     # blue
+      - id: list
+        color: 208      # white
+        color2: 218     # blue
+  - type: articleUsoTFTD
+    palette: PAL_GEOSCAPE
+    backgroundImage: Background_Holo
+    elements:
+      - id: button
+        color: 133      # minty green
+      - id: text
+        color: 133      # minty green
+        color2: 138     # yellow
+      - id: list
+        color: 133      # minty green
+        color2: 138     # yellow
 
   - type: statsForNerds
     palette: PAL_BASESCAPE
