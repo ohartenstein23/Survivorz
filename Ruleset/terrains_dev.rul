@@ -79,4 +79,9 @@ mapScripts:
       #- type: addBlock
       #  groups: 5
 
+      - type: addBlock
+        executionChances: 50
+        executions: 7
+
       - type: fillArea
+        blocks: [0]
